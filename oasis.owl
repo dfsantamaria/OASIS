@@ -1,0 +1,4931 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.dmi.unict.it/oasis.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.dmi.unict.it/oasis.owl">
+    <Prefix name="" IRI="http://www.dmi.unict.it/oasis.owl"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+        <IRI>http://www.dmi.unict.it/~santamaria/ext/metadata/foaf.rdf</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+        <Literal xml:lang="en">Carmelo Fabio Longo</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+        <Literal xml:lang="en">Corrado Santoro</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+        <Literal xml:lang="en">Daniele Francesco Santamaria</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+        <Literal xml:lang="en">Domenico Cantone</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+        <Literal xml:lang="en">Marianna Nicolosi-Asmundo</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="en">OASIS- An Ontology for Agents, Systems, and Integration of Services</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal>OASIS</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal xml:lang="en">This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Action"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ActionStatus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ActionThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ActivationStatus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ActiveStatus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Activity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Actor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Actuator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ActuatorConfiguration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ActuatorTemplate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Agent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AgentBehaviorTemplate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AgentConfiguration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Appellation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Asset"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Behavior"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BehaviorTemplate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BehaviorThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BehavioralRealization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BlockchaiNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BlockchainAccount"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BlockchainBlock"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BlockchainDigitalToken"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BlockchainInteraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BlockchainObjectDescription"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BlockchainSmartContractAccount"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BlockchainSmartContractAgent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BlockchainSmartContractCreation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BlockchainSmartContractInteraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BlockchainSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BlockchainTransaction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CompositeValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conditional"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConditionalAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConditionalBody"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConditionalBodyAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConditionalDescriptor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConditionalEntryTemplate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConditionalHead"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConditionalHeadAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConditionalInputParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConditionalObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConditionalOperator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConditionalOperatorArgument"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConditionalOutputParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConditionalParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConditionalRuleThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConditionalSet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConditionalSubject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConditionalThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Configuration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConfigurationThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConfiguredActuator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConfiguredAgent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConfiguredThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Connection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConnectionEntry"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConnectionThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cryptocurrency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CryptocurrencyExchangeBlockchainInteraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataOperator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DeactiveStatus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DelegationActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DelegationObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DelegationProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DelegationSubject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DelegationThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DescriptionObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Descriptor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Device"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DeviceBehaviorTemplate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DigitalAsset"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EOA-BlockchainAccount"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EOA-EthereumAccount"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ERC20SmartContractAgent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EdgeDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EntrustmentActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EntryTemplate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EtherCryptocurrency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EtherExchangeSmartContractInteraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumAccount"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumBlock"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumERC721SmartContractAgent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumSmartContractAccount"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumSmartContractCreation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumSmartContractInteraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumToken"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTokenERC1155"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTokenERC20"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTokenERC721"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTransaction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Event"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExecutionActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExistentialOperator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExternalBehavior"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FailedStatus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Feasibility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FeasibilityFalse"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FeasibilityTrue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Feature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FileDescriptionObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Format"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fungible-Token"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FungibleBlockchainSmartContractAgent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GeneralPurposeBlockchainSmartContractAgent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GeometricExtension"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GoalDescription"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GoalEntrustment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GoalExecution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GoalThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Human"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HumanAgentBehaviorTemplate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InformationObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InternalBehavior"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Message"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MessageDescriptor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MessageObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MessageOperator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MessageOperatorArgument"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MessageParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MessageThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Non-fungibleToken"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NonFungibleBlockchainSmartContractAgent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OntologyDescriptionObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Operator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OperatorArgument"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OpportunityValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalActuator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalAsset"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalSpace"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlanDescription"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlanEntrustment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlanExecution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlanThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Projection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PunningClass"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Realization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReferenceTemplate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RequestDescriptionObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Robot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RobotAgentBehaviorTemplate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Scheduling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Semi-fungibleToken"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SensorActuator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmartContract"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmartContractEntry"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmartContractInstance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmartContractTemplateEntry"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmartContractThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SoftwareAgent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SoftwareAgentBehaviorTemplate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Space"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpaceOperator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Status"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SucceededStatus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#System"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskActualInputParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskActualOutputParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskActualParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskDescription"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskDescriptor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskEntrustment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskExecution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskFormalInputParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskFormalOutputParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskFormalParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskInputParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskInputParameterRealization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskInputParameterSetRealization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskInputParameterTemplate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskObjectTemplate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskOperator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskOperatorArgument"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskOutputParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskOutputParameterRealization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskOutputParameterSetRealization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskOutputParameterTemplate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskParameterRealization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskParameterSetRealization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskParameterTemplate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemperatureValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Template"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TimeOperator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TransferActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#User"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VirtualActuator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VirtualSpace"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/2006/time#TemporalEntity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#activatedByScheduling"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#adoptsActuatorTemplate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#adoptsAgentBehaviorTemplate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#adoptsTemplate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#configurationProvidedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#connectsTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#consistsOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#consistsOfConnectionEntry"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#consistsOfDescription"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#consistsOfEntrustment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#consistsOfEntry"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#consistsOfExecution"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#consistsOfGoalDescription"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#consistsOfGoalEntrustment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#consistsOfGoalExecution"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#consistsOfSmartContractEntry"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#consistsOfSmartContractInstance"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#consistsOfTaskDescription"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#consistsOfTaskEntrustment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#consistsOfTaskInputParameterRealization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#consistsOfTaskOutputParameterRealization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#consistsOfTaskParameterRealization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#cosistsOfTaskExecution"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#defines"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#definesSmartContractEntryType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#deliversMessage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#dependsOn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#descriptionProvidedByEntity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#drawnBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#drawnFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#entrustedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#entrustedFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#entrustedWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#entrusts"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#establishedWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#exploits"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#fallsWithin"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#goalDescriptionDrawnFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#goalExecutionDrawnBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasActuatorType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAgentType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAppellation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBehavior"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBehavioralRealization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCompositeValue"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConditional"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConditionalAtom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConditionalBody"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConditionalBodyAtom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConditionalDescriptor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConditionalHead"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConditionalHeadAtom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConditionalInputParameter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConditionalObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConditionalOperator"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConditionalOperatorArgument"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConditionalOutputParameter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConditionalParameter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConditionalRuleThing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConditionalSet"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConditionalSubject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConditionalThing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConfiguration"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConfigurationType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConnection"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConnectionEntry"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConnectionEntryType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDelegationObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDelegationProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDelegationRelationWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDelegationSubject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDescriptor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasExecutionObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFeasibility"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFeature"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFormat"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasGenericObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasGeometricExtension"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasGoalExecution"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasInformationObjectType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMessageObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMessageOperator"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMessageOperatorArgument"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMessageParameter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMessagePart"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasNext"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasNextTaskInputParameterRealization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasNextTaskOutputParameterRealization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasNextTaskParameterRealization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasObjectType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOperator"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOperatorArgument"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOpportunityValue"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasParameter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRealization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasScheduling"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSmartContractEntryType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSmartContractType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSpaceSpan"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSpaceType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSpecificity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasStatus"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasStatusType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSystemType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTaskActualInputParameter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTaskActualOutputParameter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTaskActualParameter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTaskDescriptor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTaskExecution"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTaskFormalInputParameter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTaskFormalOutputParameter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTaskInputParameter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTaskInputParameterRealization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTaskInputParameterSetRealization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTaskInputParameterTemplate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTaskObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTaskObjectTemplate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTaskOperator"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTaskOperatorArgument"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTaskOutputParameter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTaskOutputParameterRealization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTaskOutputParameterSetRealization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTaskOutputParameterTemplate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTaskParameter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTaskParameterRealization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTaskParameterSetRealization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTaskParameterTemplate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTemplate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTimeSpan"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTransferDestination"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTransferObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTransferRelationWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTransferSource"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#implements"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#implementsBehavior"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#implementsGoalDescription"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#importsOntologyDescriptionObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#involves"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAuthorOfSmartContract"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isDescribedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isInvolvedInConfigurationSetUpWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isInvolvedInEntrustmentWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isInvolvedInSchedulingWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isProjectionOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isRelatedWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isStoredInBlockChainTransaction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#messageDeliveredTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#overloads"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#overrides"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#partecipatesInSmartContract"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#previousVersionOntologyDescriptionObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#provides"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#refersAsNewTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#refersExactlyTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#refersTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#requestedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#requests"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#setsUp"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#settles"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#signsSmartContract"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#taskActualInputParameterDrawnBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#taskActualInputParameterDrawnFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#taskActualOutputParameterDrawnBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#taskActualOutputParameterDrawnFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#taskActualParameterDrawnBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#taskActualParameterDrawnFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#taskDescriptionDrawnFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#taskExecutionDrawnBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#taskObjectDrawnBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#taskObjectDrawnFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#triggeredBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#triggeredFor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#triggers"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#uses"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#usesBeliefOntologyDescriptionObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#usesOntologyDescriptionObject"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#descriptionProvidedByEntityIRI"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#descriptionProvidedByIRI"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#descriptionProvidedByLiteral"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#descriptionProvidedByOASISOSC"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#descriptionProvidedByURL"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasBinaryData"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasConditionDataValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasConnectionInfo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDataValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasFileDescription"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasFileType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasIPAddress"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasInputValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasOutputValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPortNumber"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPublicKey"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasScheduleRepetition"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#beliefHasTimeSpan"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#beliefProvidedBy"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#hasBeliefInformation"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#isDescribedByOntologyDescription"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#isInTheBeliefOf"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Action"/>
+        <Class IRI="#ActionThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ActionStatus"/>
+        <Class IRI="#Status"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ActivationStatus"/>
+        <Class IRI="#Status"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ActiveStatus"/>
+        <Class IRI="#ActivationStatus"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Actor"/>
+        <Class IRI="#ActionThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Actuator"/>
+        <Class IRI="#Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ActuatorConfiguration"/>
+        <Class IRI="#Configuration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ActuatorTemplate"/>
+        <Class IRI="#Template"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Agent"/>
+        <Class IRI="#Actor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AgentBehaviorTemplate"/>
+        <Class IRI="#BehaviorTemplate"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AgentConfiguration"/>
+        <Class IRI="#Configuration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Appellation"/>
+        <Class IRI="#DescriptionObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Asset"/>
+        <Class IRI="#DescriptionObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Behavior"/>
+        <Class IRI="#BehaviorThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Behavior"/>
+        <Class IRI="#DescriptionObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BehaviorTemplate"/>
+        <Class IRI="#Template"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BehavioralRealization"/>
+        <Class IRI="#DescriptionObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BehavioralRealization"/>
+        <Class IRI="#Realization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BlockchaiNode"/>
+        <Class IRI="#Robot"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BlockchainAccount"/>
+        <Class IRI="#BlockchainObjectDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BlockchainBlock"/>
+        <Class IRI="#BlockchainObjectDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BlockchainDigitalToken"/>
+        <Class IRI="#BlockchainObjectDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BlockchainInteraction"/>
+        <Class IRI="#BlockchainObjectDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BlockchainObjectDescription"/>
+        <Class IRI="#DescriptionObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BlockchainSmartContractAccount"/>
+        <Class IRI="#BlockchainAccount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BlockchainSmartContractAgent"/>
+        <Class IRI="#SoftwareAgent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BlockchainSmartContractCreation"/>
+        <Class IRI="#BlockchainInteraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BlockchainSmartContractInteraction"/>
+        <Class IRI="#BlockchainInteraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BlockchainSystem"/>
+        <Class IRI="#System"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BlockchainTransaction"/>
+        <Class IRI="#BlockchainObjectDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conditional"/>
+        <Class IRI="#ConditionalThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConditionalAtom"/>
+        <Class IRI="#ConditionalThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConditionalBody"/>
+        <Class IRI="#ConditionalRuleThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConditionalBodyAtom"/>
+        <Class IRI="#ConditionalAtom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConditionalDescriptor"/>
+        <Class IRI="#Descriptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConditionalEntryTemplate"/>
+        <Class IRI="#ConditionalThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConditionalEntryTemplate"/>
+        <Class IRI="#EntryTemplate"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConditionalHead"/>
+        <Class IRI="#ConditionalRuleThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConditionalHeadAtom"/>
+        <Class IRI="#ConditionalAtom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConditionalInputParameter"/>
+        <Class IRI="#ConditionalParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConditionalObject"/>
+        <Class IRI="#ConditionalDescriptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConditionalOperator"/>
+        <Class IRI="#ConditionalDescriptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConditionalOperator"/>
+        <Class IRI="#Operator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConditionalOperatorArgument"/>
+        <Class IRI="#OperatorArgument"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConditionalOutputParameter"/>
+        <Class IRI="#ConditionalParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConditionalParameter"/>
+        <Class IRI="#ConditionalDescriptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConditionalRuleThing"/>
+        <Class IRI="#ConditionalThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConditionalSet"/>
+        <Class IRI="#ConditionalThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConditionalSubject"/>
+        <Class IRI="#ConditionalDescriptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Configuration"/>
+        <Class IRI="#ConfigurationThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConfiguredActuator"/>
+        <Class IRI="#ConfiguredThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConfiguredAgent"/>
+        <Class IRI="#ConfiguredThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConfiguredThing"/>
+        <Class IRI="#ConfigurationThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Connection"/>
+        <Class IRI="#ConnectionThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConnectionEntry"/>
+        <Class IRI="#CompositeValue"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConnectionEntry"/>
+        <Class IRI="#ConnectionThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConnectionThing"/>
+        <Class IRI="#DescriptionObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cryptocurrency"/>
+        <Class IRI="#DescriptionObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CryptocurrencyExchangeBlockchainInteraction"/>
+        <Class IRI="#BlockchainInteraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataOperator"/>
+        <Class IRI="#ConditionalOperator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DeactiveStatus"/>
+        <Class IRI="#ActivationStatus"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DelegationActivity"/>
+        <Class IRI="#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DelegationObject"/>
+        <Class IRI="#DelegationThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DelegationProperty"/>
+        <Class IRI="#DelegationThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DelegationSubject"/>
+        <Class IRI="#DelegationThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DelegationThing"/>
+        <Class IRI="#DescriptionObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Device"/>
+        <Class IRI="#Robot"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DeviceBehaviorTemplate"/>
+        <Class IRI="#RobotAgentBehaviorTemplate"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DigitalAsset"/>
+        <Class IRI="#Asset"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EOA-BlockchainAccount"/>
+        <Class IRI="#BlockchainAccount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EOA-EthereumAccount"/>
+        <Class IRI="#EOA-BlockchainAccount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EOA-EthereumAccount"/>
+        <Class IRI="#EthereumAccount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ERC20SmartContractAgent"/>
+        <Class IRI="#FungibleBlockchainSmartContractAgent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EdgeDevice"/>
+        <Class IRI="#Device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EntrustmentActivity"/>
+        <Class IRI="#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EntryTemplate"/>
+        <Class IRI="#Template"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EtherCryptocurrency"/>
+        <Class IRI="#Cryptocurrency"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EtherExchangeSmartContractInteraction"/>
+        <Class IRI="#CryptocurrencyExchangeBlockchainInteraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EtherExchangeSmartContractInteraction"/>
+        <Class IRI="#EthereumSmartContractInteraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumAccount"/>
+        <Class IRI="#BlockchainAccount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumBlock"/>
+        <Class IRI="#BlockchainBlock"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumERC721SmartContractAgent"/>
+        <Class IRI="#NonFungibleBlockchainSmartContractAgent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumNode"/>
+        <Class IRI="#BlockchaiNode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumSmartContractAccount"/>
+        <Class IRI="#BlockchainSmartContractAccount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumSmartContractAccount"/>
+        <Class IRI="#EthereumAccount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumSmartContractCreation"/>
+        <Class IRI="#BlockchainSmartContractCreation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumSmartContractInteraction"/>
+        <Class IRI="#BlockchainSmartContractInteraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumSystem"/>
+        <Class IRI="#BlockchainSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumToken"/>
+        <Class IRI="#BlockchainDigitalToken"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTokenERC1155"/>
+        <Class IRI="#EthereumToken"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTokenERC1155"/>
+        <Class IRI="#Semi-fungibleToken"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTokenERC20"/>
+        <Class IRI="#EthereumToken"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTokenERC20"/>
+        <Class IRI="#Fungible-Token"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTokenERC721"/>
+        <Class IRI="#EthereumToken"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTokenERC721"/>
+        <Class IRI="#Non-fungibleToken"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTransaction"/>
+        <Class IRI="#BlockchainTransaction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExecutionActivity"/>
+        <Class IRI="#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExistentialOperator"/>
+        <Class IRI="#ConditionalOperator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExternalBehavior"/>
+        <Class IRI="#Behavior"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FailedStatus"/>
+        <Class IRI="#ActionStatus"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Feasibility"/>
+        <Class IRI="#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FeasibilityFalse"/>
+        <Class IRI="#Feasibility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FeasibilityTrue"/>
+        <Class IRI="#Feasibility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FileDescriptionObject"/>
+        <Class IRI="#InformationObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Format"/>
+        <Class IRI="#DescriptionObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fungible-Token"/>
+        <Class IRI="#DigitalAsset"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FungibleBlockchainSmartContractAgent"/>
+        <Class IRI="#BlockchainSmartContractAgent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GeneralPurposeBlockchainSmartContractAgent"/>
+        <Class IRI="#BlockchainSmartContractAgent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GeometricExtension"/>
+        <Class IRI="#CompositeValue"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GoalDescription"/>
+        <Class IRI="#GoalThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GoalDescription"/>
+        <Class IRI="#RequestDescriptionObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GoalEntrustment"/>
+        <Class IRI="#EntrustmentActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GoalExecution"/>
+        <Class IRI="#ExecutionActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GoalExecution"/>
+        <Class IRI="#GoalThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GoalThing"/>
+        <Class IRI="#BehaviorThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Human"/>
+        <Class IRI="#Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HumanAgentBehaviorTemplate"/>
+        <Class IRI="#AgentBehaviorTemplate"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InformationObject"/>
+        <Class IRI="#DescriptionObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InternalBehavior"/>
+        <Class IRI="#Behavior"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Message"/>
+        <Class IRI="#DescriptionObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Message"/>
+        <Class IRI="#MessageThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MessageDescriptor"/>
+        <Class IRI="#Descriptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MessageObject"/>
+        <Class IRI="#MessageDescriptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MessageOperator"/>
+        <Class IRI="#MessageDescriptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MessageOperator"/>
+        <Class IRI="#Operator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MessageOperatorArgument"/>
+        <Class IRI="#OperatorArgument"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MessageParameter"/>
+        <Class IRI="#MessageDescriptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Non-fungibleToken"/>
+        <Class IRI="#DigitalAsset"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NonFungibleBlockchainSmartContractAgent"/>
+        <Class IRI="#BlockchainSmartContractAgent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OntologyDescriptionObject"/>
+        <Class IRI="#InformationObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Operator"/>
+        <Class IRI="#ActionThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OperatorArgument"/>
+        <Class IRI="#DescriptionObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OpportunityValue"/>
+        <Class IRI="#CompositeValue"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalActuator"/>
+        <Class IRI="#Actuator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalAsset"/>
+        <Class IRI="#Asset"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalSpace"/>
+        <Class IRI="#Space"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlanDescription"/>
+        <Class IRI="#PlanThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlanDescription"/>
+        <Class IRI="#RequestDescriptionObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlanEntrustment"/>
+        <Class IRI="#EntrustmentActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlanExecution"/>
+        <Class IRI="#ExecutionActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlanExecution"/>
+        <Class IRI="#PlanThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlanThing"/>
+        <Class IRI="#BehaviorThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Realization"/>
+        <Class IRI="#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReferenceTemplate"/>
+        <Class IRI="#Template"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RequestDescriptionObject"/>
+        <Class IRI="#DescriptionObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Robot"/>
+        <Class IRI="#Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RobotAgentBehaviorTemplate"/>
+        <Class IRI="#AgentBehaviorTemplate"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Scheduling"/>
+        <Class IRI="#DescriptionObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Semi-fungibleToken"/>
+        <Class IRI="#DigitalAsset"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sensor"/>
+        <Class IRI="#Device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SensorActuator"/>
+        <Class IRI="#PhysicalActuator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Service"/>
+        <Class IRI="#BehavioralRealization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmartContract"/>
+        <Class IRI="#SmartContractThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmartContractEntry"/>
+        <Class IRI="#CompositeValue"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmartContractEntry"/>
+        <Class IRI="#SmartContractThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmartContractInstance"/>
+        <Class IRI="#SmartContractThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmartContractTemplateEntry"/>
+        <Class IRI="#EntryTemplate"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmartContractThing"/>
+        <Class IRI="#DescriptionObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SoftwareAgent"/>
+        <Class IRI="#Robot"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SoftwareAgentBehaviorTemplate"/>
+        <Class IRI="#RobotAgentBehaviorTemplate"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpaceOperator"/>
+        <Class IRI="#ConditionalOperator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Status"/>
+        <Class IRI="#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SucceededStatus"/>
+        <Class IRI="#ActionStatus"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskActualInputParameter"/>
+        <Class IRI="#TaskActualParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskActualInputParameter"/>
+        <Class IRI="#TaskInputParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskActualOutputParameter"/>
+        <Class IRI="#TaskActualParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskActualOutputParameter"/>
+        <Class IRI="#TaskOutputParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskActualParameter"/>
+        <Class IRI="#TaskParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskDescription"/>
+        <Class IRI="#RequestDescriptionObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskDescription"/>
+        <Class IRI="#TaskThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskDescriptor"/>
+        <Class IRI="#Descriptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskEntrustment"/>
+        <Class IRI="#EntrustmentActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskExecution"/>
+        <Class IRI="#ExecutionActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskExecution"/>
+        <Class IRI="#TaskThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskFormalInputParameter"/>
+        <Class IRI="#TaskFormalParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskFormalInputParameter"/>
+        <Class IRI="#TaskInputParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskFormalOutputParameter"/>
+        <Class IRI="#TaskFormalParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskFormalOutputParameter"/>
+        <Class IRI="#TaskOutputParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskFormalParameter"/>
+        <Class IRI="#TaskParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskInputParameter"/>
+        <Class IRI="#TaskParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskInputParameterRealization"/>
+        <Class IRI="#TaskParameterRealization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskInputParameterSetRealization"/>
+        <Class IRI="#TaskParameterSetRealization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskInputParameterTemplate"/>
+        <Class IRI="#TaskFormalInputParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskInputParameterTemplate"/>
+        <Class IRI="#TaskParameterTemplate"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskObject"/>
+        <Class IRI="#TaskDescriptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskObjectTemplate"/>
+        <Class IRI="#Template"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskOperator"/>
+        <Class IRI="#Operator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskOperator"/>
+        <Class IRI="#TaskDescriptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskOperatorArgument"/>
+        <Class IRI="#OperatorArgument"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskOutputParameter"/>
+        <Class IRI="#TaskParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskOutputParameterRealization"/>
+        <Class IRI="#TaskParameterRealization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskOutputParameterSetRealization"/>
+        <Class IRI="#TaskParameterSetRealization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskOutputParameterTemplate"/>
+        <Class IRI="#TaskFormalOutputParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskOutputParameterTemplate"/>
+        <Class IRI="#TaskParameterTemplate"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskParameter"/>
+        <Class IRI="#TaskDescriptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskParameterRealization"/>
+        <Class IRI="#Realization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskParameterRealization"/>
+        <Class IRI="#TaskParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskParameterSetRealization"/>
+        <Class IRI="#Realization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskParameterSetRealization"/>
+        <Class IRI="#TaskParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskParameterTemplate"/>
+        <Class IRI="#Template"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskThing"/>
+        <Class IRI="#BehaviorThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemperatureValue"/>
+        <Class IRI="#CompositeValue"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Template"/>
+        <Class IRI="#DescriptionObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TimeOperator"/>
+        <Class IRI="#ConditionalOperator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TransferActivity"/>
+        <Class IRI="#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#User"/>
+        <Class IRI="#Human"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VirtualActuator"/>
+        <Class IRI="#Actuator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VirtualSpace"/>
+        <Class IRI="#Space"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#activatedByScheduling"/>
+        <ObjectProperty IRI="#isInvolvedInSchedulingWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#adoptsActuatorTemplate"/>
+        <ObjectProperty IRI="#adoptsTemplate"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#adoptsAgentBehaviorTemplate"/>
+        <ObjectProperty IRI="#adoptsTemplate"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#adoptsTemplate"/>
+        <ObjectProperty IRI="#isDescribedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#configurationProvidedBy"/>
+        <ObjectProperty IRI="#isInvolvedInConfigurationSetUpWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#connectsTo"/>
+        <ObjectProperty IRI="#isInvolvedInConfigurationSetUpWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#consistsOfConnectionEntry"/>
+        <ObjectProperty IRI="#consistsOfEntry"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#consistsOfDescription"/>
+        <ObjectProperty IRI="#consistsOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#consistsOfEntrustment"/>
+        <ObjectProperty IRI="#consistsOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#consistsOfEntry"/>
+        <ObjectProperty IRI="#consistsOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#consistsOfExecution"/>
+        <ObjectProperty IRI="#consistsOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#consistsOfGoalDescription"/>
+        <ObjectProperty IRI="#consistsOfDescription"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#consistsOfGoalEntrustment"/>
+        <ObjectProperty IRI="#consistsOfEntrustment"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#consistsOfGoalExecution"/>
+        <ObjectProperty IRI="#consistsOfExecution"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#consistsOfSmartContractEntry"/>
+        <ObjectProperty IRI="#consistsOfEntry"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#consistsOfSmartContractInstance"/>
+        <ObjectProperty IRI="#consistsOfDescription"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#consistsOfTaskDescription"/>
+        <ObjectProperty IRI="#consistsOfDescription"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#consistsOfTaskEntrustment"/>
+        <ObjectProperty IRI="#consistsOfEntrustment"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#consistsOfTaskInputParameterRealization"/>
+        <ObjectProperty IRI="#consistsOfTaskParameterRealization"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#consistsOfTaskOutputParameterRealization"/>
+        <ObjectProperty IRI="#consistsOfTaskParameterRealization"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#consistsOfTaskParameterRealization"/>
+        <ObjectProperty IRI="#consistsOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#cosistsOfTaskExecution"/>
+        <ObjectProperty IRI="#consistsOfExecution"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#definesSmartContractEntryType"/>
+        <ObjectProperty IRI="#defines"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#deliversMessage"/>
+        <ObjectProperty IRI="#isRelatedWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#dependsOn"/>
+        <ObjectProperty IRI="#isRelatedWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#descriptionProvidedByEntity"/>
+        <ObjectProperty IRI="#isRelatedWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#drawnBy"/>
+        <ObjectProperty IRI="#isRelatedWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#drawnFrom"/>
+        <ObjectProperty IRI="#isRelatedWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#entrustedBy"/>
+        <ObjectProperty IRI="#isInvolvedInEntrustmentWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#entrustedFrom"/>
+        <ObjectProperty IRI="#isInvolvedInEntrustmentWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#entrustedWith"/>
+        <ObjectProperty IRI="#isInvolvedInEntrustmentWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#entrusts"/>
+        <ObjectProperty IRI="#isInvolvedInEntrustmentWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#establishedWith"/>
+        <ObjectProperty IRI="#isRelatedWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#exploits"/>
+        <ObjectProperty IRI="#hasFeature"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#fallsWithin"/>
+        <ObjectProperty IRI="#isRelatedWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#goalDescriptionDrawnFrom"/>
+        <ObjectProperty IRI="#drawnFrom"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#goalExecutionDrawnBy"/>
+        <ObjectProperty IRI="#drawnBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasActuatorType"/>
+        <ObjectProperty IRI="#hasType"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAgentType"/>
+        <ObjectProperty IRI="#hasType"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAppellation"/>
+        <ObjectProperty IRI="#isDescribedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasBehavior"/>
+        <ObjectProperty IRI="#isDescribedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasBehavioralRealization"/>
+        <ObjectProperty IRI="#hasRealization"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConditional"/>
+        <ObjectProperty IRI="#hasConditionalThing"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConditionalAtom"/>
+        <ObjectProperty IRI="#hasConditionalThing"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConditionalBody"/>
+        <ObjectProperty IRI="#hasConditionalRuleThing"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConditionalBodyAtom"/>
+        <ObjectProperty IRI="#hasConditionalAtom"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConditionalDescriptor"/>
+        <ObjectProperty IRI="#hasDescriptor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConditionalHead"/>
+        <ObjectProperty IRI="#hasConditionalRuleThing"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConditionalHeadAtom"/>
+        <ObjectProperty IRI="#hasConditionalAtom"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConditionalInputParameter"/>
+        <ObjectProperty IRI="#hasConditionalParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConditionalObject"/>
+        <ObjectProperty IRI="#hasConditionalDescriptor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConditionalObject"/>
+        <ObjectProperty IRI="#hasGenericObject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConditionalOperator"/>
+        <ObjectProperty IRI="#hasConditionalDescriptor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConditionalOperator"/>
+        <ObjectProperty IRI="#hasOperator"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConditionalOperatorArgument"/>
+        <ObjectProperty IRI="#hasOperatorArgument"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConditionalOutputParameter"/>
+        <ObjectProperty IRI="#hasConditionalParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConditionalParameter"/>
+        <ObjectProperty IRI="#hasConditionalDescriptor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConditionalParameter"/>
+        <ObjectProperty IRI="#hasParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConditionalRuleThing"/>
+        <ObjectProperty IRI="#hasConditionalThing"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConditionalSet"/>
+        <ObjectProperty IRI="#hasConditionalThing"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConditionalSubject"/>
+        <ObjectProperty IRI="#hasConditionalDescriptor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConditionalSubject"/>
+        <ObjectProperty IRI="#hasSubject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConfiguration"/>
+        <ObjectProperty IRI="#isInvolvedInConfigurationSetUpWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConfigurationType"/>
+        <ObjectProperty IRI="#hasType"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConnection"/>
+        <ObjectProperty IRI="#isInvolvedInConfigurationSetUpWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConnectionEntry"/>
+        <ObjectProperty IRI="#hasCompositeValue"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConnectionEntryType"/>
+        <ObjectProperty IRI="#hasType"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDelegationObject"/>
+        <ObjectProperty IRI="#hasDelegationRelationWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDelegationProperty"/>
+        <ObjectProperty IRI="#hasDelegationRelationWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDelegationSubject"/>
+        <ObjectProperty IRI="#hasDelegationRelationWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFeasibility"/>
+        <ObjectProperty IRI="#hasFeature"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFormat"/>
+        <ObjectProperty IRI="#isDescribedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasGeometricExtension"/>
+        <ObjectProperty IRI="#hasCompositeValue"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasGoalExecution"/>
+        <ObjectProperty IRI="#hasExecutionObject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasInformationObjectType"/>
+        <ObjectProperty IRI="#hasType"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMessageObject"/>
+        <ObjectProperty IRI="#hasGenericObject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMessageObject"/>
+        <ObjectProperty IRI="#hasMessagePart"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMessageOperator"/>
+        <ObjectProperty IRI="#hasMessagePart"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMessageOperator"/>
+        <ObjectProperty IRI="#hasOperator"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMessageOperatorArgument"/>
+        <ObjectProperty IRI="#hasOperatorArgument"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMessageParameter"/>
+        <ObjectProperty IRI="#hasMessagePart"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMessageParameter"/>
+        <ObjectProperty IRI="#hasParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasNext"/>
+        <ObjectProperty IRI="#isDescribedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasNextTaskInputParameterRealization"/>
+        <ObjectProperty IRI="#hasNextTaskParameterRealization"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasNextTaskOutputParameterRealization"/>
+        <ObjectProperty IRI="#hasNextTaskParameterRealization"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasNextTaskParameterRealization"/>
+        <ObjectProperty IRI="#hasNext"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasObjectType"/>
+        <ObjectProperty IRI="#hasType"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasOpportunityValue"/>
+        <ObjectProperty IRI="#hasCompositeValue"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasScheduling"/>
+        <ObjectProperty IRI="#isInvolvedInSchedulingWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSmartContractEntryType"/>
+        <ObjectProperty IRI="#hasType"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSmartContractType"/>
+        <ObjectProperty IRI="#hasType"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSpaceSpan"/>
+        <ObjectProperty IRI="#isRelatedWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSpaceType"/>
+        <ObjectProperty IRI="#hasType"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSpecificity"/>
+        <ObjectProperty IRI="#hasFeature"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasStatus"/>
+        <ObjectProperty IRI="#hasFeature"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasStatusType"/>
+        <ObjectProperty IRI="#hasType"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSystemType"/>
+        <ObjectProperty IRI="#hasType"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskActualInputParameter"/>
+        <ObjectProperty IRI="#hasTaskActualParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskActualInputParameter"/>
+        <ObjectProperty IRI="#hasTaskInputParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskActualOutputParameter"/>
+        <ObjectProperty IRI="#hasTaskActualParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskActualOutputParameter"/>
+        <ObjectProperty IRI="#hasTaskOutputParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskActualParameter"/>
+        <ObjectProperty IRI="#hasTaskParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskDescriptor"/>
+        <ObjectProperty IRI="#hasDescriptor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskExecution"/>
+        <ObjectProperty IRI="#hasExecutionObject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskFormalInputParameter"/>
+        <ObjectProperty IRI="#hasTaskInputParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskFormalOutputParameter"/>
+        <ObjectProperty IRI="#hasTaskOutputParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskInputParameter"/>
+        <ObjectProperty IRI="#hasTaskParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskInputParameterRealization"/>
+        <ObjectProperty IRI="#hasTaskParameterRealization"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskInputParameterSetRealization"/>
+        <ObjectProperty IRI="#hasTaskParameterSetRealization"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskInputParameterTemplate"/>
+        <ObjectProperty IRI="#hasTaskInputParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskInputParameterTemplate"/>
+        <ObjectProperty IRI="#hasTaskParameterTemplate"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskObject"/>
+        <ObjectProperty IRI="#hasGenericObject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskObject"/>
+        <ObjectProperty IRI="#hasTaskDescriptor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskObjectTemplate"/>
+        <ObjectProperty IRI="#hasTaskObject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskObjectTemplate"/>
+        <ObjectProperty IRI="#hasTemplate"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskOperator"/>
+        <ObjectProperty IRI="#hasOperator"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskOperator"/>
+        <ObjectProperty IRI="#hasTaskDescriptor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskOperatorArgument"/>
+        <ObjectProperty IRI="#hasOperatorArgument"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskOutputParameter"/>
+        <ObjectProperty IRI="#hasTaskParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskOutputParameterRealization"/>
+        <ObjectProperty IRI="#hasTaskParameterRealization"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskOutputParameterSetRealization"/>
+        <ObjectProperty IRI="#hasTaskParameterSetRealization"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskOutputParameterTemplate"/>
+        <ObjectProperty IRI="#hasTaskOutputParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskOutputParameterTemplate"/>
+        <ObjectProperty IRI="#hasTaskParameterTemplate"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskParameter"/>
+        <ObjectProperty IRI="#hasParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskParameter"/>
+        <ObjectProperty IRI="#hasTaskDescriptor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskParameterRealization"/>
+        <ObjectProperty IRI="#hasRealization"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskParameterRealization"/>
+        <ObjectProperty IRI="#hasTaskParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskParameterSetRealization"/>
+        <ObjectProperty IRI="#hasRealization"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskParameterTemplate"/>
+        <ObjectProperty IRI="#hasTaskParameter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTaskParameterTemplate"/>
+        <ObjectProperty IRI="#hasTemplate"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTemplate"/>
+        <ObjectProperty IRI="#isDescribedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTimeSpan"/>
+        <ObjectProperty IRI="#isRelatedWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTransferDestination"/>
+        <ObjectProperty IRI="#hasTransferRelationWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTransferObject"/>
+        <ObjectProperty IRI="#hasTransferRelationWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTransferRelationWith"/>
+        <ObjectProperty IRI="#isRelatedWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTransferSource"/>
+        <ObjectProperty IRI="#hasTransferRelationWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#implementsBehavior"/>
+        <ObjectProperty IRI="#implements"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#implementsGoalDescription"/>
+        <ObjectProperty IRI="#implements"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#importsOntologyDescriptionObject"/>
+        <ObjectProperty IRI="#usesOntologyDescriptionObject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isAuthorOfSmartContract"/>
+        <ObjectProperty IRI="#partecipatesInSmartContract"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isProjectionOf"/>
+        <ObjectProperty IRI="#isInvolvedInConfigurationSetUpWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isStoredInBlockChainTransaction"/>
+        <ObjectProperty IRI="#isDescribedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#messageDeliveredTo"/>
+        <ObjectProperty IRI="#isRelatedWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#overloads"/>
+        <ObjectProperty IRI="#isRelatedWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#overrides"/>
+        <ObjectProperty IRI="#isRelatedWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#partecipatesInSmartContract"/>
+        <ObjectProperty IRI="#isRelatedWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#previousVersionOntologyDescriptionObject"/>
+        <ObjectProperty IRI="#usesOntologyDescriptionObject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#provides"/>
+        <ObjectProperty IRI="#isRelatedWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#refersAsNewTo"/>
+        <ObjectProperty IRI="#refersTo"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#refersExactlyTo"/>
+        <ObjectProperty IRI="#refersTo"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#setsUp"/>
+        <ObjectProperty IRI="#isInvolvedInConfigurationSetUpWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#settles"/>
+        <ObjectProperty IRI="#consistsOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#signsSmartContract"/>
+        <ObjectProperty IRI="#partecipatesInSmartContract"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#taskActualInputParameterDrawnBy"/>
+        <ObjectProperty IRI="#taskActualParameterDrawnBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#taskActualInputParameterDrawnFrom"/>
+        <ObjectProperty IRI="#taskActualParameterDrawnFrom"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#taskActualOutputParameterDrawnBy"/>
+        <ObjectProperty IRI="#taskActualParameterDrawnBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#taskActualOutputParameterDrawnFrom"/>
+        <ObjectProperty IRI="#taskActualParameterDrawnFrom"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#taskActualParameterDrawnBy"/>
+        <ObjectProperty IRI="#drawnBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#taskActualParameterDrawnFrom"/>
+        <ObjectProperty IRI="#drawnFrom"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#taskDescriptionDrawnFrom"/>
+        <ObjectProperty IRI="#drawnFrom"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#taskExecutionDrawnBy"/>
+        <ObjectProperty IRI="#drawnBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#taskObjectDrawnBy"/>
+        <ObjectProperty IRI="#drawnBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#taskObjectDrawnFrom"/>
+        <ObjectProperty IRI="#drawnFrom"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#triggeredBy"/>
+        <ObjectProperty IRI="#isRelatedWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#triggeredFor"/>
+        <ObjectProperty IRI="#isRelatedWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#triggers"/>
+        <ObjectProperty IRI="#isRelatedWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#usesBeliefOntologyDescriptionObject"/>
+        <ObjectProperty IRI="#usesOntologyDescriptionObject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#usesOntologyDescriptionObject"/>
+        <ObjectProperty IRI="#uses"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#triggeredBy"/>
+        <ObjectProperty IRI="#triggers"/>
+    </InverseObjectProperties>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#consistsOf"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#fallsWithin"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#activatedByScheduling"/>
+        <Class IRI="#ExecutionActivity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#adoptsActuatorTemplate"/>
+        <Class IRI="#Actuator"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#adoptsAgentBehaviorTemplate"/>
+        <Class IRI="#Behavior"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#configurationProvidedBy"/>
+        <Class IRI="#Configuration"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#consistsOfConnectionEntry"/>
+        <Class IRI="#Connection"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#consistsOfEntrustment"/>
+        <Class IRI="#EntrustmentActivity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#consistsOfGoalDescription"/>
+        <Class IRI="#Behavior"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#consistsOfGoalEntrustment"/>
+        <Class IRI="#PlanEntrustment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#consistsOfGoalExecution"/>
+        <Class IRI="#PlanExecution"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#consistsOfSmartContractEntry"/>
+        <ObjectUnionOf>
+            <Class IRI="#SmartContract"/>
+            <Class IRI="#SmartContractInstance"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#consistsOfSmartContractInstance"/>
+        <Class IRI="#SmartContract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#consistsOfTaskEntrustment"/>
+        <Class IRI="#GoalEntrustment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#consistsOfTaskInputParameterRealization"/>
+        <Class IRI="#TaskInputParameterSetRealization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#consistsOfTaskOutputParameterRealization"/>
+        <Class IRI="#TaskOutputParameterSetRealization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#consistsOfTaskParameterRealization"/>
+        <Class IRI="#TaskParameterSetRealization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#cosistsOfTaskExecution"/>
+        <Class IRI="#GoalExecution"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#deliversMessage"/>
+        <Class IRI="#Connection"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#descriptionProvidedByEntity"/>
+        <Class IRI="#OntologyDescriptionObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#entrustedBy"/>
+        <Class IRI="#EntrustmentActivity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#entrustedFrom"/>
+        <Class IRI="#EntrustmentActivity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#entrustedWith"/>
+        <Class IRI="#EntrustmentActivity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#entrusts"/>
+        <Class IRI="#EntrustmentActivity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#establishedWith"/>
+        <Class IRI="#Connection"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#fallsWithin"/>
+        <Class IRI="#Space"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#goalDescriptionDrawnFrom"/>
+        <Class IRI="#GoalDescription"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#goalExecutionDrawnBy"/>
+        <Class IRI="#GoalExecution"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasActuatorType"/>
+        <Class IRI="#Actuator"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAgentType"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBehavior"/>
+        <ObjectUnionOf>
+            <Class IRI="#Agent"/>
+            <Class IRI="#AgentBehaviorTemplate"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBehavioralRealization"/>
+        <Class IRI="#BehaviorThing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasConditional"/>
+        <Class IRI="#ConditionalSet"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasConditionalBody"/>
+        <Class IRI="#Conditional"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasConditionalBodyAtom"/>
+        <Class IRI="#ConditionalBody"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasConditionalDescriptor"/>
+        <Class IRI="#Conditional"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasConditionalHead"/>
+        <Class IRI="#Conditional"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasConditionalHeadAtom"/>
+        <Class IRI="#ConditionalHead"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasConditionalParameter"/>
+        <Class IRI="#ConditionalAtom"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasConditionalRuleThing"/>
+        <Class IRI="#Conditional"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasConditionalSubject"/>
+        <Class IRI="#Conditional"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasConnection"/>
+        <Class IRI="#AgentConfiguration"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasConnectionEntry"/>
+        <Class IRI="#Connection"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDelegationObject"/>
+        <Class IRI="#DelegationActivity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDelegationProperty"/>
+        <Class IRI="#DelegationActivity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDelegationSubject"/>
+        <Class IRI="#DelegationActivity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasExecutionObject"/>
+        <Class IRI="#RequestDescriptionObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasGeometricExtension"/>
+        <Class IRI="#PhysicalSpace"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasGoalExecution"/>
+        <Class IRI="#GoalDescription"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasInformationObjectType"/>
+        <Class IRI="#InformationObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMessageObject"/>
+        <Class IRI="#Message"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMessageOperator"/>
+        <Class IRI="#Message"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMessageParameter"/>
+        <Class IRI="#Message"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasNextTaskInputParameterRealization"/>
+        <Class IRI="#TaskInputParameterRealization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasNextTaskOutputParameterRealization"/>
+        <Class IRI="#TaskOutputParameterRealization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasNextTaskParameterRealization"/>
+        <Class IRI="#TaskParameterRealization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasObjectType"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasScheduling"/>
+        <Class IRI="#RequestDescriptionObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSmartContractType"/>
+        <Class IRI="#SmartContract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSpaceType"/>
+        <Class IRI="#Space"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasStatusType"/>
+        <Class IRI="#Status"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSystemType"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTaskExecution"/>
+        <Class IRI="#TaskDescription"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTaskInputParameterRealization"/>
+        <Class IRI="#TaskFormalInputParameter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTaskInputParameterTemplate"/>
+        <Class IRI="#TaskDescription"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTaskObjectTemplate"/>
+        <Class IRI="#TaskDescription"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTaskOutputParameterRealization"/>
+        <Class IRI="#TaskFormalOutputParameter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTaskOutputParameterTemplate"/>
+        <Class IRI="#TaskDescription"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTaskParameterRealization"/>
+        <Class IRI="#TaskFormalParameter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTaskParameterSetRealization"/>
+        <Class IRI="#BehavioralRealization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTaskParameterTemplate"/>
+        <Class IRI="#TaskDescription"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#implementsBehavior"/>
+        <Class IRI="#Behavior"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#implementsGoalDescription"/>
+        <Class IRI="#GoalDescription"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#importsOntologyDescriptionObject"/>
+        <Class IRI="#OntologyDescriptionObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAuthorOfSmartContract"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isProjectionOf"/>
+        <Class IRI="#ConfiguredThing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isStoredInBlockChainTransaction"/>
+        <Class IRI="#OntologyDescriptionObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#messageDeliveredTo"/>
+        <Class IRI="#Message"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#overloads"/>
+        <Class IRI="#TaskParameter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#partecipatesInSmartContract"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#previousVersionOntologyDescriptionObject"/>
+        <Class IRI="#OntologyDescriptionObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#requestedTo"/>
+        <Class IRI="#RequestDescriptionObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#setsUp"/>
+        <Class IRI="#Configuration"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#settles"/>
+        <ObjectUnionOf>
+            <Class IRI="#Actuator"/>
+            <Class IRI="#Agent"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#signsSmartContract"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#taskActualInputParameterDrawnBy"/>
+        <Class IRI="#TaskActualInputParameter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#taskActualInputParameterDrawnFrom"/>
+        <ObjectUnionOf>
+            <Class IRI="#TaskFormalInputParameter"/>
+            <Class IRI="#TaskInputParameterTemplate"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#taskActualOutputParameterDrawnBy"/>
+        <Class IRI="#TaskActualOutputParameter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#taskActualOutputParameterDrawnFrom"/>
+        <ObjectUnionOf>
+            <Class IRI="#TaskFormalOutputParameter"/>
+            <Class IRI="#TaskOutputParameterTemplate"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#taskActualParameterDrawnBy"/>
+        <Class IRI="#TaskActualParameter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#taskActualParameterDrawnFrom"/>
+        <Class IRI="#TaskActualParameter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#taskDescriptionDrawnFrom"/>
+        <Class IRI="#TaskDescription"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#taskExecutionDrawnBy"/>
+        <Class IRI="#TaskExecution"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#taskObjectDrawnBy"/>
+        <Class IRI="#TaskObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#taskObjectDrawnFrom"/>
+        <Class IRI="#TaskObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#triggeredBy"/>
+        <Class IRI="#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#triggeredFor"/>
+        <Class IRI="#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#activatedByScheduling"/>
+        <Class IRI="#Scheduling"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#adoptsActuatorTemplate"/>
+        <Class IRI="#ActuatorTemplate"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#adoptsAgentBehaviorTemplate"/>
+        <Class IRI="#AgentBehaviorTemplate"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#adoptsTemplate"/>
+        <Class IRI="#Template"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#configurationProvidedBy"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#consistsOfConnectionEntry"/>
+        <Class IRI="#ConnectionEntry"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#consistsOfEntrustment"/>
+        <Class IRI="#EntrustmentActivity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#consistsOfGoalDescription"/>
+        <Class IRI="#GoalDescription"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#consistsOfGoalEntrustment"/>
+        <Class IRI="#GoalEntrustment"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#consistsOfGoalExecution"/>
+        <Class IRI="#GoalExecution"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#consistsOfSmartContractEntry"/>
+        <Class IRI="#SmartContractEntry"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#consistsOfSmartContractInstance"/>
+        <Class IRI="#SmartContractInstance"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#consistsOfTaskDescription"/>
+        <Class IRI="#TaskDescription"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#consistsOfTaskEntrustment"/>
+        <Class IRI="#TaskEntrustment"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#consistsOfTaskInputParameterRealization"/>
+        <Class IRI="#TaskInputParameterRealization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#consistsOfTaskOutputParameterRealization"/>
+        <Class IRI="#TaskOutputParameterRealization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#consistsOfTaskParameterRealization"/>
+        <Class IRI="#TaskParameterRealization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#cosistsOfTaskExecution"/>
+        <Class IRI="#TaskExecution"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#deliversMessage"/>
+        <Class IRI="#Message"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#descriptionProvidedByEntity"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#entrustedBy"/>
+        <Class IRI="#RequestDescriptionObject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#entrustedFrom"/>
+        <Class IRI="#RequestDescriptionObject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#entrustedWith"/>
+        <Class IRI="#ExecutionActivity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#entrusts"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#establishedWith"/>
+        <Class IRI="#Connection"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#fallsWithin"/>
+        <Class IRI="#Space"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#goalDescriptionDrawnFrom"/>
+        <Class IRI="#GoalDescription"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#goalExecutionDrawnBy"/>
+        <Class IRI="#GoalDescription"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAppellation"/>
+        <Class IRI="#Appellation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBehavior"/>
+        <Class IRI="#Behavior"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBehavioralRealization"/>
+        <Class IRI="#BehavioralRealization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConditional"/>
+        <Class IRI="#Conditional"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConditionalBody"/>
+        <Class IRI="#ConditionalBody"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConditionalBodyAtom"/>
+        <Class IRI="#ConditionalBodyAtom"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConditionalDescriptor"/>
+        <Class IRI="#ConditionalDescriptor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConditionalHead"/>
+        <Class IRI="#ConditionalHead"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConditionalHeadAtom"/>
+        <Class IRI="#ConditionalHeadAtom"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConditionalInputParameter"/>
+        <Class IRI="#ConditionalInputParameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConditionalObject"/>
+        <Class IRI="#ConditionalObject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConditionalOperator"/>
+        <Class IRI="#ConditionalOperator"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConditionalOperatorArgument"/>
+        <Class IRI="#ConditionalOperatorArgument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConditionalOutputParameter"/>
+        <Class IRI="#ConditionalOutputParameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConditionalParameter"/>
+        <Class IRI="#ConditionalParameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConditionalRuleThing"/>
+        <ObjectUnionOf>
+            <Class IRI="#ConditionalBody"/>
+            <Class IRI="#ConditionalHead"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConditionalSet"/>
+        <Class IRI="#ConditionalSet"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConditionalSubject"/>
+        <Class IRI="#ConditionalSubject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConfiguration"/>
+        <Class IRI="#Configuration"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConnection"/>
+        <Class IRI="#Connection"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConnectionEntry"/>
+        <Class IRI="#ConnectionEntry"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDelegationObject"/>
+        <Class IRI="#DelegationObject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDelegationProperty"/>
+        <Class IRI="#DelegationProperty"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDelegationSubject"/>
+        <Class IRI="#DelegationSubject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDescriptor"/>
+        <Class IRI="#Descriptor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasExecutionObject"/>
+        <Class IRI="#ExecutionActivity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFeasibility"/>
+        <Class IRI="#Feasibility"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFormat"/>
+        <Class IRI="#Format"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasGeometricExtension"/>
+        <Class IRI="#GeometricExtension"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasGoalExecution"/>
+        <Class IRI="#GoalExecution"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMessageObject"/>
+        <Class IRI="#MessageObject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMessageOperator"/>
+        <Class IRI="#MessageOperator"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMessageOperatorArgument"/>
+        <Class IRI="#MessageOperatorArgument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMessageParameter"/>
+        <Class IRI="#MessageParameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasNextTaskInputParameterRealization"/>
+        <Class IRI="#TaskInputParameterRealization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasNextTaskOutputParameterRealization"/>
+        <Class IRI="#TaskOutputParameterRealization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasNextTaskParameterRealization"/>
+        <Class IRI="#TaskParameterRealization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasOperatorArgument"/>
+        <Class IRI="#OperatorArgument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasOpportunityValue"/>
+        <Class IRI="#OpportunityValue"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasScheduling"/>
+        <Class IRI="#Scheduling"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSpaceSpan"/>
+        <Class IRI="#Space"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasStatus"/>
+        <Class IRI="#Status"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTaskExecution"/>
+        <Class IRI="#TaskExecution"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTaskInputParameter"/>
+        <Class IRI="#TaskInputParameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTaskInputParameterRealization"/>
+        <Class IRI="#TaskInputParameterRealization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTaskInputParameterSetRealization"/>
+        <Class IRI="#TaskInputParameterSetRealization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTaskInputParameterTemplate"/>
+        <Class IRI="#TaskInputParameterTemplate"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTaskObject"/>
+        <Class IRI="#TaskObject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTaskObjectTemplate"/>
+        <Class IRI="#TaskObjectTemplate"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTaskOperator"/>
+        <Class IRI="#TaskOperator"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTaskOperatorArgument"/>
+        <Class IRI="#TaskOperatorArgument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTaskOutputParameter"/>
+        <Class IRI="#TaskOutputParameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTaskOutputParameterRealization"/>
+        <Class IRI="#TaskOutputParameterRealization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTaskOutputParameterSetRealization"/>
+        <Class IRI="#TaskOutputParameterSetRealization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTaskOutputParameterTemplate"/>
+        <Class IRI="#TaskOutputParameterTemplate"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTaskParameter"/>
+        <Class IRI="#TaskParameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTaskParameterRealization"/>
+        <Class IRI="#TaskParameterRealization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTaskParameterSetRealization"/>
+        <Class IRI="#TaskParameterSetRealization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTemplate"/>
+        <Class IRI="#Template"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTimeSpan"/>
+        <Class IRI="http://www.w3.org/2006/time#TemporalEntity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#implementsBehavior"/>
+        <Class IRI="#Behavior"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#implementsGoalDescription"/>
+        <Class IRI="#GoalDescription"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#importsOntologyDescriptionObject"/>
+        <Class IRI="#OntologyDescriptionObject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isAuthorOfSmartContract"/>
+        <Class IRI="#SmartContract"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isProjectionOf"/>
+        <Class IRI="#Actor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isStoredInBlockChainTransaction"/>
+        <Class IRI="#BlockchainTransaction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#messageDeliveredTo"/>
+        <Class IRI="#Connection"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#overloads"/>
+        <Class IRI="#TaskParameterTemplate"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#partecipatesInSmartContract"/>
+        <Class IRI="#SmartContract"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#previousVersionOntologyDescriptionObject"/>
+        <Class IRI="#OntologyDescriptionObject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#refersAsNewTo"/>
+        <Class IRI="#ReferenceTemplate"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#requestedTo"/>
+        <Class IRI="#Actor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#setsUp"/>
+        <Class IRI="#ConfiguredThing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#settles"/>
+        <ObjectUnionOf>
+            <Class IRI="#Actuator"/>
+            <Class IRI="#Agent"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#signsSmartContract"/>
+        <Class IRI="#SmartContract"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#taskActualInputParameterDrawnBy"/>
+        <ObjectUnionOf>
+            <Class IRI="#TaskFormalInputParameter"/>
+            <Class IRI="#TaskInputParameterTemplate"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#taskActualOutputParameterDrawnBy"/>
+        <ObjectUnionOf>
+            <Class IRI="#TaskFormalOutputParameter"/>
+            <Class IRI="#TaskOutputParameterTemplate"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#taskActualParameterDrawnBy"/>
+        <ObjectUnionOf>
+            <Class IRI="#TaskFormalParameter"/>
+            <Class IRI="#TaskParameterTemplate"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#taskActualParameterDrawnFrom"/>
+        <ObjectUnionOf>
+            <Class IRI="#TaskFormalParameter"/>
+            <Class IRI="#TaskParameterTemplate"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#taskDescriptionDrawnFrom"/>
+        <Class IRI="#TaskDescription"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#taskExecutionDrawnBy"/>
+        <Class IRI="#TaskDescription"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#taskObjectDrawnBy"/>
+        <Class IRI="#TaskObject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#taskObjectDrawnFrom"/>
+        <Class IRI="#TaskObject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#triggers"/>
+        <Class IRI="#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#usesOntologyDescriptionObject"/>
+        <Class IRI="#OntologyDescriptionObject"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#descriptionProvidedByEntityIRI"/>
+        <DataProperty IRI="#descriptionProvidedByLiteral"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#descriptionProvidedByIRI"/>
+        <DataProperty IRI="#descriptionProvidedByLiteral"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#descriptionProvidedByOASISOSC"/>
+        <DataProperty IRI="#descriptionProvidedByLiteral"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#descriptionProvidedByURL"/>
+        <DataProperty IRI="#descriptionProvidedByLiteral"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasBinaryData"/>
+        <DataProperty IRI="#hasFileDescription"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasConditionDataValue"/>
+        <DataProperty IRI="#hasDataValue"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasFileType"/>
+        <DataProperty IRI="#hasFileDescription"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasIPAddress"/>
+        <DataProperty IRI="#hasConnectionInfo"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasInputValue"/>
+        <DataProperty IRI="#hasDataValue"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasOutputValue"/>
+        <DataProperty IRI="#hasDataValue"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasPortNumber"/>
+        <DataProperty IRI="#hasConnectionInfo"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasPublicKey"/>
+        <DataProperty IRI="#hasDataValue"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasScheduleRepetition"/>
+        <DataProperty IRI="#hasDataValue"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#descriptionProvidedByEntityIRI"/>
+        <Class IRI="#OntologyDescriptionObject"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#descriptionProvidedByIRI"/>
+        <Class IRI="#OntologyDescriptionObject"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#descriptionProvidedByLiteral"/>
+        <Class IRI="#OntologyDescriptionObject"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#descriptionProvidedByURL"/>
+        <Class IRI="#OntologyDescriptionObject"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasBinaryData"/>
+        <Class IRI="#FileDescriptionObject"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasFileDescription"/>
+        <Class IRI="#FileDescriptionObject"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasFileType"/>
+        <Class IRI="#FileDescriptionObject"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasInputValue"/>
+        <Class IRI="#TaskInputParameter"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasOutputValue"/>
+        <Class IRI="#TaskOutputParameter"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasScheduleRepetition"/>
+        <Class IRI="#Scheduling"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#descriptionProvidedByOASISOSC"/>
+        <Datatype abbreviatedIRI="xsd:unsignedLong"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasBinaryData"/>
+        <Datatype abbreviatedIRI="xsd:base64Binary"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasFileType"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasScheduleRepetition"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ActionStatus</IRI>
+        <Literal xml:lang="en">This class describes the status of an execution object.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ActionStatus</IRI>
+        <Literal xml:lang="en">Action status</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ActionThing</IRI>
+        <Literal xml:lang="en">This class describes an object involved in some actions</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ActionThing</IRI>
+        <Literal xml:lang="en">Action thing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ActivationStatus</IRI>
+        <Literal xml:lang="en">This class describes the status of activable objects such as believes or scheduling activities.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ActivationStatus</IRI>
+        <Literal xml:lang="en">Activation status</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ActiveStatus</IRI>
+        <Literal xml:lang="en">This class describes the active status of  activable objects such as believes or scheduling activities.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ActiveStatus</IRI>
+        <Literal xml:lang="en">Active status</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Activity</IRI>
+        <Literal xml:lang="en">This class describes a general activity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Activity</IRI>
+        <Literal xml:lang="en">Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Actor</IRI>
+        <Literal xml:lang="en">This class describes actors</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Actor</IRI>
+        <Literal xml:lang="en">Actor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Actuator</IRI>
+        <Literal xml:lang="en">This class descrives general actuators</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Actuator</IRI>
+        <Literal xml:lang="en">Actuator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ActuatorTemplate</IRI>
+        <Literal xml:lang="en">This class describes an actuator template</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ActuatorTemplate</IRI>
+        <Literal xml:lang="en">Actuator template</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Agent</IRI>
+        <Literal xml:lang="en">This class describes a general Agent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Agent</IRI>
+        <Literal xml:lang="en">Agent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AgentBehaviorTemplate</IRI>
+        <Literal xml:lang="en">This class describes a template for agent behaviors.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AgentBehaviorTemplate</IRI>
+        <Literal xml:lang="en">Agent behavior template</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AgentConfiguration</IRI>
+        <Literal xml:lang="en">This class describes an agent configuration object</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AgentConfiguration</IRI>
+        <Literal xml:lang="en">Agent Configuration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Behavior</IRI>
+        <Literal xml:lang="en">This class describes an agent behavior</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Behavior</IRI>
+        <Literal xml:lang="en">Behavior</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BehaviorThing</IRI>
+        <Literal xml:lang="en">This class describes a part of a Behavior</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#BehaviorThing</IRI>
+        <Literal xml:lang="en">Behavior thing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CompositeValue</IRI>
+        <Literal xml:lang="en">This class describes a general complex value</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CompositeValue</IRI>
+        <Literal xml:lang="en">Value</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Conditional</IRI>
+        <Literal xml:lang="en">This class describes a single conditional</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Conditional</IRI>
+        <Literal xml:lang="en">Conditional</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ConditionalBody</IRI>
+        <Literal>Conditional body</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ConditionalDescriptor</IRI>
+        <Literal xml:lang="en">This class describes a conditional descriptor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ConditionalDescriptor</IRI>
+        <Literal xml:lang="en">Conditional descriptor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ConditionalHead</IRI>
+        <Literal>Conditional head</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ConditionalObject</IRI>
+        <Literal>Conditional object</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ConditionalOperator</IRI>
+        <Literal xml:lang="en">This class describes operators used in conditionals.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ConditionalOperator</IRI>
+        <Literal xml:lang="en">Conditional operator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ConditionalParameter</IRI>
+        <Literal xml:lang="en">This class describes conditional restriction parameters</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ConditionalParameter</IRI>
+        <Literal xml:lang="en">Conditional  parameter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ConditionalSet</IRI>
+        <Literal xml:lang="en">This class describes a set of conditionals. All the conditionals  binded to a single set must holds.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ConditionalSet</IRI>
+        <Literal xml:lang="en">Conditional set</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ConditionalSubject</IRI>
+        <Literal xml:lang="en">This class describes the subject of a conditional</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ConditionalSubject</IRI>
+        <Literal xml:lang="en">Conditional subject</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ConditionalThing</IRI>
+        <Literal xml:lang="en">Conditional thing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Configuration</IRI>
+        <Literal xml:lang="en">This class describes a configuration object</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Configuration</IRI>
+        <Literal xml:lang="en">Configuration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ConfigurationThing</IRI>
+        <Literal xml:lang="en">This class describes a part of a configuration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ConfigurationThing</IRI>
+        <Literal xml:lang="en">Configuration part</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ConfiguredThing</IRI>
+        <Literal xml:lang="en">This class describes a configured projection of something</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ConfiguredThing</IRI>
+        <Literal xml:lang="en">Configured thing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Connection</IRI>
+        <Literal xml:lang="en">This class describes a connection point of an Agent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Connection</IRI>
+        <Literal xml:lang="en">Connection</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ConnectionEntry</IRI>
+        <Literal xml:lang="en">This class describes a connection entry.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ConnectionEntry</IRI>
+        <Literal xml:lang="en">Connection entry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ConnectionThing</IRI>
+        <Literal xml:lang="en">This class describes a part of a connection</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ConnectionThing</IRI>
+        <Literal xml:lang="en">Connection part</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DataOperator</IRI>
+        <Literal xml:lang="en">This class describes data operators used in conditionals.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#DataOperator</IRI>
+        <Literal xml:lang="en">Data operator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DeactiveStatus</IRI>
+        <Literal xml:lang="en">This class describes the deactive status of  activable objects such as believes or scheduling activities.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#DeactiveStatus</IRI>
+        <Literal xml:lang="en">Deactive status</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DescriptionObject</IRI>
+        <Literal xml:lang="en">This class describes an object providing a description of something</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#DescriptionObject</IRI>
+        <Literal xml:lang="en">Description object</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Descriptor</IRI>
+        <Literal xml:lang="en">Descriptor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Descriptor</IRI>
+        <Literal xml:lang="en">This class describes a descriptor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Device</IRI>
+        <Literal xml:lang="en">This class describes a general Device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Device</IRI>
+        <Literal xml:lang="en">Device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DeviceBehaviorTemplate</IRI>
+        <Literal xml:lang="en">This class describes a device agent behavior template</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#DeviceBehaviorTemplate</IRI>
+        <Literal xml:lang="en">Device agent behavior template</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EntrustmentActivity</IRI>
+        <Literal xml:lang="en">This class describes an object providing an entrustment of something to someone.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#EntrustmentActivity</IRI>
+        <Literal xml:lang="en">Entrustment activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Event</IRI>
+        <Literal xml:lang="en">This class describes a general event</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Event</IRI>
+        <Literal xml:lang="en">Event</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ExecutionActivity</IRI>
+        <Literal xml:lang="en">This class describes an actiivy than can be executed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ExecutionActivity</IRI>
+        <Literal xml:lang="en">Execution activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ExistentialOperator</IRI>
+        <Literal xml:lang="en">This class describes existential operators used in conditionals.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ExistentialOperator</IRI>
+        <Literal xml:lang="en">Existential operator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Feasibility</IRI>
+        <Literal xml:lang="en">This class describes the feasibility of a task.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Feasibility</IRI>
+        <Literal xml:lang="en">Feasibility</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FeasibilityFalse</IRI>
+        <Literal xml:lang="en">This class describes the false feasibility of a task.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#FeasibilityFalse</IRI>
+        <Literal xml:lang="en">Feasibility false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FeasibilityTrue</IRI>
+        <Literal xml:lang="en">This class describes the true feasibility of a task.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#FeasibilityTrue</IRI>
+        <Literal xml:lang="en">Feasibility true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Feature</IRI>
+        <Literal xml:lang="en">This class describes a feature</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Feature</IRI>
+        <Literal xml:lang="en">Feature</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#FileDescriptionObject</IRI>
+        <Literal>File description object</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GeometricExtension</IRI>
+        <Literal xml:lang="en">Geometric extension</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GeometricExtension</IRI>
+        <Literal xml:lang="en">This class describes a set of spatial coordinates.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GoalDescription</IRI>
+        <Literal xml:lang="en">This class describes an the description of  a goal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GoalDescription</IRI>
+        <Literal xml:lang="en">Goal description</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GoalEntrustment</IRI>
+        <Literal xml:lang="en">This class describes entrustment of a goal to someone.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GoalEntrustment</IRI>
+        <Literal xml:lang="en">Goal entrustment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GoalExecution</IRI>
+        <Literal xml:lang="en">This class describes the execution of a goal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GoalExecution</IRI>
+        <Literal xml:lang="en">Goal execution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GoalThing</IRI>
+        <Literal xml:lang="en">This class describes a part of a goal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GoalThing</IRI>
+        <Literal xml:lang="en">Goal part</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Human</IRI>
+        <Literal xml:lang="en">This class describes a general Human Agent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Human</IRI>
+        <Literal xml:lang="en">Human agent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#HumanAgentBehaviorTemplate</IRI>
+        <Literal xml:lang="en">This class describes an human agent behavior template</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HumanAgentBehaviorTemplate</IRI>
+        <Literal xml:lang="en">Human agent behavior template</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Message</IRI>
+        <Literal xml:lang="en">This class describes a message</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Message</IRI>
+        <Literal xml:lang="en">Message</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MessageDescriptor</IRI>
+        <Literal xml:lang="en">Message descriptor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MessageObject</IRI>
+        <Literal xml:lang="en">Message object</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MessageOperator</IRI>
+        <Literal xml:lang="en">Message operator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MessageParameter</IRI>
+        <Literal xml:lang="en">Message parameter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MessageThing</IRI>
+        <Literal xml:lang="en">Message part</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OntologyDescriptionObject</IRI>
+        <Literal xml:lang="en">This class describes ontology description objects</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OntologyDescriptionObject</IRI>
+        <Literal xml:lang="en">Ontology description object</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Operator</IRI>
+        <Literal xml:lang="en">This class describes a general operator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Operator</IRI>
+        <Literal xml:lang="en">Operator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OpportunityValue</IRI>
+        <Literal xml:lang="en">Opportunity value</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OpportunityValue</IRI>
+        <Literal xml:lang="en">This class describes the opportunity value of a goal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PhysicalSpace</IRI>
+        <Literal xml:lang="en">Physical space</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PlanDescription</IRI>
+        <Literal xml:lang="en">This class describes the description of  a plan.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PlanDescription</IRI>
+        <Literal xml:lang="en">Plan description</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PlanEntrustment</IRI>
+        <Literal xml:lang="en">This class describes entrustment of a plan to someone.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PlanEntrustment</IRI>
+        <Literal xml:lang="en">Plan entrustment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PlanExecution</IRI>
+        <Literal xml:lang="en">Plan execution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PlanThing</IRI>
+        <Literal xml:lang="en">This class describes  the part of a plan.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PlanThing</IRI>
+        <Literal xml:lang="en">Plan part</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#RequestDescriptionObject</IRI>
+        <Literal xml:lang="en">This class describes an object providing a description of action that can be requested</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#RequestDescriptionObject</IRI>
+        <Literal xml:lang="en">Request description object</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Robot</IRI>
+        <Literal xml:lang="en">This class describes a general Autonomous System</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Robot</IRI>
+        <Literal xml:lang="en">Robot agent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#RobotAgentBehaviorTemplate</IRI>
+        <Literal xml:lang="en">This class describes an robot agent behavior template</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#RobotAgentBehaviorTemplate</IRI>
+        <Literal xml:lang="en">Robot agent behavior template</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Scheduling</IRI>
+        <Literal xml:lang="en">Scheduling</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Scheduling</IRI>
+        <Literal xml:lang="en">This class describes the scheduling of an action</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Sensor</IRI>
+        <Literal xml:lang="en">This class describes a general Sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Sensor</IRI>
+        <Literal xml:lang="en">Sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SmartContract</IRI>
+        <Literal xml:lang="en">Smart contract</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SmartContract</IRI>
+        <Literal xml:lang="en">This class describes a smart contract</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SmartContractEntry</IRI>
+        <Literal xml:lang="en">This class describes a smart contract entry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SmartContractEntry</IRI>
+        <Literal xml:lang="en">Smart contract entry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SmartContractThing</IRI>
+        <Literal xml:lang="en">This class describes a smart contract part</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SmartContractThing</IRI>
+        <Literal xml:lang="en">Smart contract part</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SoftwareAgent</IRI>
+        <Literal xml:lang="en">This class describes a general software Agent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SoftwareAgent</IRI>
+        <Literal xml:lang="en">Software agent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SoftwareAgentBehaviorTemplate</IRI>
+        <Literal xml:lang="en">This class describes a software agent behavior template</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SoftwareAgentBehaviorTemplate</IRI>
+        <Literal xml:lang="en">Software agent behavior template</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Space</IRI>
+        <Literal xml:lang="en">This class describes a general space.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Space</IRI>
+        <Literal xml:lang="en">Space</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SpaceOperator</IRI>
+        <Literal xml:lang="en">This class describes space operators used in conditionals.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SpaceOperator</IRI>
+        <Literal xml:lang="en">Space operator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Status</IRI>
+        <Literal xml:lang="en">This class describes a general status of something.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Status</IRI>
+        <Literal xml:lang="en">Status</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#System</IRI>
+        <Literal xml:lang="en">This class describes a set of things working together as parts of a mechanism.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#System</IRI>
+        <Literal xml:lang="en">System</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TaskDescription</IRI>
+        <Literal xml:lang="en">This class describes the description of a task.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TaskDescription</IRI>
+        <Literal xml:lang="en">Task description</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TaskDescriptor</IRI>
+        <Literal xml:lang="en">This class represents the descriptors of a task</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TaskDescriptor</IRI>
+        <Literal xml:lang="en">Task descriptor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TaskEntrustment</IRI>
+        <Literal xml:lang="en">This class describes entrustment of a task to someone.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TaskEntrustment</IRI>
+        <Literal xml:lang="en">Task entrustment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TaskExecution</IRI>
+        <Literal xml:lang="en">This class describes the execution of a task.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TaskExecution</IRI>
+        <Literal xml:lang="en">Task execution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TaskInputParameter</IRI>
+        <Literal>Task input parameter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TaskObject</IRI>
+        <Literal xml:lang="en">Task object</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TaskObject</IRI>
+        <Literal xml:lang="en">This class describes the object of a task</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TaskObjectTemplate</IRI>
+        <Literal>Task object template</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TaskOperator</IRI>
+        <Literal xml:lang="en">This class describes task operators.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TaskOperator</IRI>
+        <Literal xml:lang="en">Task operator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TaskOutputParameter</IRI>
+        <Literal>Task output parameter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TaskParameter</IRI>
+        <Literal xml:lang="en">Task parameter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TaskParameter</IRI>
+        <Literal xml:lang="en">This class describes the parameter of the object of a task.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TaskParameterTemplate</IRI>
+        <Literal>Task parameter template</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TaskThing</IRI>
+        <Literal xml:lang="en">This class describes  a part of a task.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TaskThing</IRI>
+        <Literal xml:lang="en">Task part</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TemperatureValue</IRI>
+        <Literal xml:lang="en">This class describe values of temperature</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TemperatureValue</IRI>
+        <Literal xml:lang="en">Temperature value</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Template</IRI>
+        <Literal xml:lang="en">This class describes a template</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Template</IRI>
+        <Literal xml:lang="en">Template</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TimeOperator</IRI>
+        <Literal xml:lang="en">This class describes time operators used in conditionals.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TimeOperator</IRI>
+        <Literal xml:lang="en">Time operator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#VirtualSpace</IRI>
+        <Literal xml:lang="en">Virtual space</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#activatedByScheduling</IRI>
+        <Literal xml:lang="en">This property links execution activities to a scheduling</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#adoptsTemplate</IRI>
+        <Literal xml:lang="en">This property links things to a Template</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#configurationProvidedBy</IRI>
+        <Literal xml:lang="en">This property links a configuration to its agent creator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#consistsOf</IRI>
+        <Literal xml:lang="en">This property links things to their forming parts</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#consistsOfConnectionEntry</IRI>
+        <Literal xml:lang="en">This property links things connections to their entries</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#consistsOfDescription</IRI>
+        <Literal xml:lang="en">This property links things to a description object</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#consistsOfEntrustment</IRI>
+        <Literal xml:lang="en">This property links things to an entrustment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#consistsOfEntry</IRI>
+        <Literal xml:lang="en">This property links things to an entry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#consistsOfExecution</IRI>
+        <Literal xml:lang="en">This property links things to an execution object</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#consistsOfGoalDescription</IRI>
+        <Literal xml:lang="en">This property links things to a description of a goal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#consistsOfGoalEntrustment</IRI>
+        <Literal xml:lang="en">This property links things to goal entrustments</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#consistsOfGoalExecution</IRI>
+        <Literal xml:lang="en">This property links plans to an execution of a goal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#consistsOfSmartContractEntry</IRI>
+        <Literal xml:lang="en">This property links smart contracts to their entries</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#consistsOfTaskDescription</IRI>
+        <Literal xml:lang="en">This property links things to a description of a task</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#consistsOfTaskEntrustment</IRI>
+        <Literal xml:lang="en">This property links things to task entrustments</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#cosistsOfTaskExecution</IRI>
+        <Literal xml:lang="en">This property links goals to an execution of a task</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#dependsOn</IRI>
+        <Literal xml:lang="en">This property links things to their depending objects</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#entrustedFrom</IRI>
+        <Literal xml:lang="en">This property links entrustment activities to the related behavior description object</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#entrustedWith</IRI>
+        <Literal xml:lang="en">This property links things entrustment activities with the related execution activities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#entrusts</IRI>
+        <Literal xml:lang="en">This property links entrustment activities to agents responsible to perform the related activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#establishedWith</IRI>
+        <Literal xml:lang="en">This property links two connection entry points</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#fallsWithin</IRI>
+        <Literal xml:lang="en">This property links spaces to the contained spaces</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasAppellation</IRI>
+        <Literal xml:lang="en">This property links things to an appellation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasBehavior</IRI>
+        <Literal xml:lang="en">This property links agents to the related behavior</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasCompositeValue</IRI>
+        <Literal xml:lang="en">This property links things to a value</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasConditionalDescriptor</IRI>
+        <Literal xml:lang="en">This property links things to a conditional descriptor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasConditionalOperator</IRI>
+        <Literal xml:lang="en">This property links things to a conditional operator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasConditionalRuleThing</IRI>
+        <Literal xml:lang="en">This property links things to conditionals</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasConditionalSubject</IRI>
+        <Literal xml:lang="en">This property links things to a conditional subject</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasConfiguration</IRI>
+        <Literal xml:lang="en">This property links things to a configuration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasConnection</IRI>
+        <Literal xml:lang="en">This property links agents to their connection entry point</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasConnectionEntry</IRI>
+        <Literal xml:lang="en">This property links connections to their entries</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasConnectionEntryType</IRI>
+        <Literal xml:lang="en">This property links connection entries  to the related entry type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDescriptor</IRI>
+        <Literal xml:lang="en">This property links things to a descriptor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasExecutionObject</IRI>
+        <Literal xml:lang="en">This property links behavior descriptions with the related execution activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasGeometricExtension</IRI>
+        <Literal xml:lang="en">This property links physical space with geometric extension</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasGoalExecution</IRI>
+        <Literal xml:lang="en">This property links description of goals with the related goal execution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasOperator</IRI>
+        <Literal xml:lang="en">This property links things with operators</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasOpportunityValue</IRI>
+        <Literal xml:lang="en">This property links things to opportunity values</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasParameter</IRI>
+        <Literal xml:lang="en">This property links things to their parameters</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasScheduling</IRI>
+        <Literal xml:lang="en">This property links behavior descriptions with scheduling activities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSmartContractEntryType</IRI>
+        <Literal xml:lang="en">This property links smart contract entries to  the related entry type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSpaceSpan</IRI>
+        <Literal xml:lang="en">This property links things to spaces</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSpaceType</IRI>
+        <Literal xml:lang="en">This property links spaces to the related space type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasStatus</IRI>
+        <Literal xml:lang="en">This property links things to a status</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSubject</IRI>
+        <Literal xml:lang="en">This property links things to a subject</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTaskDescriptor</IRI>
+        <Literal xml:lang="en">This property links things to a task descriptor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTaskExecution</IRI>
+        <Literal xml:lang="en">This property links descriptions of tasks with the related execution task</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTaskObject</IRI>
+        <Literal xml:lang="en">This property links things to a task object</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTaskOperator</IRI>
+        <Literal xml:lang="en">This property links things to a task operator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTimeSpan</IRI>
+        <Literal xml:lang="en">This property links things to a temporal entity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasType</IRI>
+        <Literal xml:lang="en">This property links things to the related type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isAuthorOfSmartContract</IRI>
+        <Literal xml:lang="en">This property links agents to smart contracts as authors</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isDescribedBy</IRI>
+        <Literal xml:lang="en">This property links things to a description thing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isInvolvedInEntrustmentWith</IRI>
+        <Literal xml:lang="en">This property links things involved in entrustments</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#partecipatesInSmartContract</IRI>
+        <Literal xml:lang="en">This property links agents to  smart contracts</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#setsUp</IRI>
+        <Literal xml:lang="en">This property links configurations of components to the configurated object</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#settles</IRI>
+        <Literal xml:lang="en">This property links things to things phisically mounted on them</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#triggers</IRI>
+        <Literal xml:lang="en">This property links agents to triggered events</Literal>
+    </AnnotationAssertion>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="#beliefHasTimeSpan"/>
+        <AnnotationProperty IRI="#hasBeliefInformation"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="#beliefProvidedBy"/>
+        <AnnotationProperty IRI="#hasBeliefInformation"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="#isInTheBeliefOf"/>
+        <AnnotationProperty IRI="#hasBeliefInformation"/>
+    </SubAnnotationPropertyOf>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#beliefHasTimeSpan"/>
+        <AbbreviatedIRI>xsd:dateTimeStamp</AbbreviatedIRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#beliefProvidedBy"/>
+        <AbbreviatedIRI>xsd:anyURI</AbbreviatedIRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#isDescribedByOntologyDescription"/>
+        <AbbreviatedIRI>xsd:anyURI</AbbreviatedIRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#isInTheBeliefOf"/>
+        <IRI>http://www.dmi.unict.it/profeta.owl#Belief</IRI>
+    </AnnotationPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,321 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.dmi.unict.it/oasis-abox.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.dmi.unict.it/oasis-abox.owl">
+    <Prefix name="" IRI="http://www.dmi.unict.it/oasis-abox.owl"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://www.dmi.unict.it/oasis.owl</Import>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+        <Literal xml:lang="en">Carmelo Fabio Longo</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+        <Literal xml:lang="en">Corrado Santoro</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+        <Literal xml:lang="en">Daniele Francesco Santamaria</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+        <Literal xml:lang="en">Domenico Cantone</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+        <Literal xml:lang="en">Marianna Nicolosi Asmundo</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="en">This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal xml:lang="en">OASIS</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal xml:lang="en">OASIS- An Ontology for Agents, Systems, and Integration of Services</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#OperatorArgumentType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#LightComponentType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#add"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#any"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#blockchain_digital_token"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#burn"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#check"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#delegate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#equal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ether_cryptocurrency"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#execute"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#exist"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#greatherEqual"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#greatherThan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#install"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#installation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#lessEqual"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#lessThan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#mint"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#own"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#owner"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ownership"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#parse"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#remove"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#retrieve"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#spaceSpan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#timeSpan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#uninstall"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#update"/>
+    </Declaration>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
+        <NamedIndividual IRI="#add"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#ExistentialOperator"/>
+        <NamedIndividual IRI="#any"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainDigitalToken"/>
+        <NamedIndividual IRI="#blockchain_digital_token"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
+        <NamedIndividual IRI="#burn"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
+        <NamedIndividual IRI="#check"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
+        <NamedIndividual IRI="#delegate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#DataOperator"/>
+        <NamedIndividual IRI="#equal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#EtherCryptocurrency"/>
+        <NamedIndividual IRI="#ether_cryptocurrency"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
+        <NamedIndividual IRI="#execute"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
+        <NamedIndividual IRI="#exist"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#ExistentialOperator"/>
+        <NamedIndividual IRI="#exist"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#DataOperator"/>
+        <NamedIndividual IRI="#greatherEqual"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#DataOperator"/>
+        <NamedIndividual IRI="#greatherThan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
+        <NamedIndividual IRI="#install"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#OperatorArgument"/>
+        <NamedIndividual IRI="#installation"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#DataOperator"/>
+        <NamedIndividual IRI="#lessEqual"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#DataOperator"/>
+        <NamedIndividual IRI="#lessThan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
+        <NamedIndividual IRI="#mint"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
+        <NamedIndividual IRI="#own"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
+        <NamedIndividual IRI="#owner"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
+        <NamedIndividual IRI="#ownership"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
+        <NamedIndividual IRI="#parse"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
+        <NamedIndividual IRI="#remove"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
+        <NamedIndividual IRI="#retrieve"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#SpaceOperator"/>
+        <NamedIndividual IRI="#spaceSpan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#TimeOperator"/>
+        <NamedIndividual IRI="#timeSpan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
+        <NamedIndividual IRI="#transfer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
+        <NamedIndividual IRI="#uninstall"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
+        <NamedIndividual IRI="#update"/>
+    </ClassAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#equal</IRI>
+        <Literal>==</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#exist</IRI>
+        <Literal xml:lang="en">exist</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#greatherEqual</IRI>
+        <Literal>&gt;=</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#greatherEqual</IRI>
+        <Literal xml:lang="en">greather equal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#greatherThan</IRI>
+        <Literal>&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#greatherThan</IRI>
+        <Literal xml:lang="en">greather</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#lessEqual</IRI>
+        <Literal>&lt;=</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#lessEqual</IRI>
+        <Literal>less equal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#lessThan</IRI>
+        <Literal>&lt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#lessThan</IRI>
+        <Literal xml:lang="en">less</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#spaceSpan</IRI>
+        <Literal xml:lang="en">space span</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#timeSpan</IRI>
+        <Literal xml:lang="en">time span</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
