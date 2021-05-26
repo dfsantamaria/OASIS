@@ -495,13 +495,25 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <Class IRI="#Service"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#SmartContract"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#SmartContractEntry"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#SmartContractEntryParticipant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmartContractEntryValue"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#SmartContractInstance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmartContractInstanceEntry"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmartContractSchema"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmartContractSchemaEntry"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SmartContractTemplateEntry"/>
@@ -687,6 +699,12 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <ObjectProperty IRI="#consistsOfSmartContractInstance"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#consistsOfSmartContractInstanceEntry"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#consistsOfSmartContractSchemaEntry"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#consistsOfTaskDescription"/>
     </Declaration>
     <Declaration>
@@ -706,9 +724,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#defines"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#definesSmartContractEntryType"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#deliversMessage"/>
@@ -745,18 +760,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#fallsWithin"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#goalDescriptionDrawnFrom"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#goalExecutionDrawnBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasActuatorType"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasAgentType"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasAppellation"/>
@@ -825,16 +828,10 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <ObjectProperty IRI="#hasConfiguration"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasConfigurationType"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hasConnection"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasConnectionEntry"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasConnectionEntryType"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasDelegationObject"/>
@@ -870,12 +867,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <ObjectProperty IRI="#hasGeometricExtension"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasGoalExecution"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasInformationObjectType"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hasMessageObject"/>
     </Declaration>
     <Declaration>
@@ -903,9 +894,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <ObjectProperty IRI="#hasNextTaskParameterRealization"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasObjectType"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hasOperator"/>
     </Declaration>
     <Declaration>
@@ -924,16 +912,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <ObjectProperty IRI="#hasScheduling"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasSmartContractEntryType"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasSmartContractType"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hasSpaceSpan"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasSpaceType"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasSpecificity"/>
@@ -942,13 +921,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <ObjectProperty IRI="#hasStatus"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasStatusType"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hasSubject"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasSystemType"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasTaskActualInputParameter"/>
@@ -1038,28 +1011,16 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <ObjectProperty IRI="#hasTransferSource"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasType"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#implements"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#implementsBehavior"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#implementsGoalDescription"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#importsOntologyDescriptionObject"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#involves"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isAuthorOfSmartContract"/>
+        <ObjectProperty IRI="#isDescribedBy"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isDescribedBy"/>
+        <ObjectProperty IRI="#isInstanceOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isInvolvedInConfigurationSetUpWith"/>
@@ -1077,6 +1038,9 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <ObjectProperty IRI="#isRelatedWith"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isSmartContractInstanceEntryOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isStoredInBlockChainTransaction"/>
     </Declaration>
     <Declaration>
@@ -1087,9 +1051,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#overrides"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#partecipatesInSmartContract"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#previousVersionOntologyDescriptionObject"/>
@@ -1117,9 +1078,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#settles"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#signsSmartContract"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#taskActualInputParameterDrawnBy"/>
@@ -1847,20 +1805,32 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <Class IRI="#BehavioralRealization"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#SmartContract"/>
+        <Class IRI="#SmartContractEntry"/>
         <Class IRI="#SmartContractThing"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#SmartContractEntryParticipant"/>
         <Class IRI="#SmartContractEntry"/>
-        <Class IRI="#CompositeValue"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#SmartContractEntryValue"/>
         <Class IRI="#SmartContractEntry"/>
-        <Class IRI="#SmartContractThing"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SmartContractInstance"/>
         <Class IRI="#SmartContractThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmartContractInstanceEntry"/>
+        <Class IRI="#SmartContractEntry"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmartContractSchema"/>
+        <Class IRI="#SmartContractThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmartContractSchemaEntry"/>
+        <Class IRI="#SmartContractEntry"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SmartContractTemplateEntry"/>
@@ -2135,6 +2105,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <ObjectProperty IRI="#consistsOfDescription"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#consistsOfSmartContractInstanceEntry"/>
+        <ObjectProperty IRI="#consistsOfSmartContractEntry"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#consistsOfSmartContractSchemaEntry"/>
+        <ObjectProperty IRI="#consistsOfSmartContractEntry"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#consistsOfTaskDescription"/>
         <ObjectProperty IRI="#consistsOfDescription"/>
     </SubObjectPropertyOf>
@@ -2157,10 +2135,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#cosistsOfTaskExecution"/>
         <ObjectProperty IRI="#consistsOfExecution"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#definesSmartContractEntryType"/>
-        <ObjectProperty IRI="#defines"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#deliversMessage"/>
@@ -2209,22 +2183,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#fallsWithin"/>
         <ObjectProperty IRI="#isRelatedWith"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#goalDescriptionDrawnFrom"/>
-        <ObjectProperty IRI="#drawnFrom"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#goalExecutionDrawnBy"/>
-        <ObjectProperty IRI="#drawnBy"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasActuatorType"/>
-        <ObjectProperty IRI="#hasType"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasAgentType"/>
-        <ObjectProperty IRI="#hasType"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasAppellation"/>
@@ -2323,20 +2281,12 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <ObjectProperty IRI="#isInvolvedInConfigurationSetUpWith"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasConfigurationType"/>
-        <ObjectProperty IRI="#hasType"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasConnection"/>
         <ObjectProperty IRI="#isInvolvedInConfigurationSetUpWith"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasConnectionEntry"/>
         <ObjectProperty IRI="#hasCompositeValue"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasConnectionEntryType"/>
-        <ObjectProperty IRI="#hasType"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasDelegationObject"/>
@@ -2361,14 +2311,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasGeometricExtension"/>
         <ObjectProperty IRI="#hasCompositeValue"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasGoalExecution"/>
-        <ObjectProperty IRI="#hasExecutionObject"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasInformationObjectType"/>
-        <ObjectProperty IRI="#hasType"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasMessageObject"/>
@@ -2415,10 +2357,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <ObjectProperty IRI="#hasNext"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasObjectType"/>
-        <ObjectProperty IRI="#hasType"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasOpportunityValue"/>
         <ObjectProperty IRI="#hasCompositeValue"/>
     </SubObjectPropertyOf>
@@ -2427,20 +2365,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <ObjectProperty IRI="#isInvolvedInSchedulingWith"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasSmartContractEntryType"/>
-        <ObjectProperty IRI="#hasType"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasSmartContractType"/>
-        <ObjectProperty IRI="#hasType"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasSpaceSpan"/>
         <ObjectProperty IRI="#isRelatedWith"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasSpaceType"/>
-        <ObjectProperty IRI="#hasType"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasSpecificity"/>
@@ -2449,14 +2375,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasStatus"/>
         <ObjectProperty IRI="#hasFeature"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasStatusType"/>
-        <ObjectProperty IRI="#hasType"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasSystemType"/>
-        <ObjectProperty IRI="#hasType"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasTaskActualInputParameter"/>
@@ -2615,24 +2533,20 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <ObjectProperty IRI="#hasTransferRelationWith"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#implementsBehavior"/>
-        <ObjectProperty IRI="#implements"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#implementsGoalDescription"/>
-        <ObjectProperty IRI="#implements"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#importsOntologyDescriptionObject"/>
         <ObjectProperty IRI="#usesOntologyDescriptionObject"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isAuthorOfSmartContract"/>
-        <ObjectProperty IRI="#partecipatesInSmartContract"/>
+        <ObjectProperty IRI="#isInstanceOf"/>
+        <ObjectProperty IRI="#isRelatedWith"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isProjectionOf"/>
         <ObjectProperty IRI="#isInvolvedInConfigurationSetUpWith"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isSmartContractInstanceEntryOf"/>
+        <ObjectProperty IRI="#isInstanceOf"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isStoredInBlockChainTransaction"/>
@@ -2648,10 +2562,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#overrides"/>
-        <ObjectProperty IRI="#isRelatedWith"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#partecipatesInSmartContract"/>
         <ObjectProperty IRI="#isRelatedWith"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -2677,10 +2587,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#settles"/>
         <ObjectProperty IRI="#consistsOf"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#signsSmartContract"/>
-        <ObjectProperty IRI="#partecipatesInSmartContract"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#taskActualInputParameterDrawnBy"/>
@@ -2791,13 +2697,21 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#consistsOfSmartContractEntry"/>
         <ObjectUnionOf>
-            <Class IRI="#SmartContract"/>
             <Class IRI="#SmartContractInstance"/>
+            <Class IRI="#SmartContractSchema"/>
         </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#consistsOfSmartContractInstance"/>
-        <Class IRI="#SmartContract"/>
+        <Class IRI="#SmartContractSchema"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#consistsOfSmartContractInstanceEntry"/>
+        <Class IRI="#SmartContractInstance"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#consistsOfSmartContractSchemaEntry"/>
+        <Class IRI="#SmartContractSchema"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#consistsOfTaskEntrustment"/>
@@ -2850,22 +2764,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#fallsWithin"/>
         <Class IRI="#Space"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#goalDescriptionDrawnFrom"/>
-        <Class IRI="#GoalDescription"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#goalExecutionDrawnBy"/>
-        <Class IRI="#GoalExecution"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasActuatorType"/>
-        <Class IRI="#Actuator"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasAgentType"/>
-        <Class IRI="#Agent"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasBehavior"/>
@@ -2943,14 +2841,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <Class IRI="#PhysicalSpace"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasGoalExecution"/>
-        <Class IRI="#GoalDescription"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasInformationObjectType"/>
-        <Class IRI="#InformationObject"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasMessageObject"/>
         <Class IRI="#Message"/>
     </ObjectPropertyDomain>
@@ -2975,28 +2865,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <Class IRI="#TaskParameterRealization"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasObjectType"/>
-        <Class IRI="#Device"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasScheduling"/>
         <Class IRI="#RequestDescriptionObject"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasSmartContractType"/>
-        <Class IRI="#SmartContract"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasSpaceType"/>
-        <Class IRI="#Space"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasStatusType"/>
-        <Class IRI="#Status"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasSystemType"/>
-        <Class IRI="#System"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasTaskExecution"/>
@@ -3035,20 +2905,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <Class IRI="#TaskDescription"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#implementsBehavior"/>
-        <Class IRI="#Behavior"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#implementsGoalDescription"/>
-        <Class IRI="#GoalDescription"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#importsOntologyDescriptionObject"/>
         <Class IRI="#OntologyDescriptionObject"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isAuthorOfSmartContract"/>
-        <Class IRI="#Agent"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isProjectionOf"/>
@@ -3064,11 +2922,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#overloads"/>
-        <Class IRI="#TaskParameter"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#partecipatesInSmartContract"/>
-        <Class IRI="#Agent"/>
+        <Class IRI="#TaskFormalParameter"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#previousVersionOntologyDescriptionObject"/>
@@ -3088,10 +2942,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
             <Class IRI="#Actuator"/>
             <Class IRI="#Agent"/>
         </ObjectUnionOf>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#signsSmartContract"/>
-        <Class IRI="#Agent"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#taskActualInputParameterDrawnBy"/>
@@ -3196,6 +3046,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <Class IRI="#SmartContractInstance"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#consistsOfSmartContractInstanceEntry"/>
+        <Class IRI="#SmartContractInstanceEntry"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#consistsOfSmartContractSchemaEntry"/>
+        <Class IRI="#SmartContractSchemaEntry"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#consistsOfTaskDescription"/>
         <Class IRI="#TaskDescription"/>
     </ObjectPropertyRange>
@@ -3250,14 +3108,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#fallsWithin"/>
         <Class IRI="#Space"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#goalDescriptionDrawnFrom"/>
-        <Class IRI="#GoalDescription"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#goalExecutionDrawnBy"/>
-        <Class IRI="#GoalDescription"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasAppellation"/>
@@ -3377,10 +3227,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasGeometricExtension"/>
         <Class IRI="#GeometricExtension"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasGoalExecution"/>
-        <Class IRI="#GoalExecution"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasMessageObject"/>
@@ -3503,20 +3349,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <Class IRI="http://www.w3.org/2006/time#TemporalEntity"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#implementsBehavior"/>
-        <Class IRI="#Behavior"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#implementsGoalDescription"/>
-        <Class IRI="#GoalDescription"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#importsOntologyDescriptionObject"/>
         <Class IRI="#OntologyDescriptionObject"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isAuthorOfSmartContract"/>
-        <Class IRI="#SmartContract"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isProjectionOf"/>
@@ -3533,10 +3367,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <ObjectPropertyRange>
         <ObjectProperty IRI="#overloads"/>
         <Class IRI="#TaskParameterTemplate"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#partecipatesInSmartContract"/>
-        <Class IRI="#SmartContract"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#previousVersionOntologyDescriptionObject"/>
@@ -3560,10 +3390,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
             <Class IRI="#Actuator"/>
             <Class IRI="#Agent"/>
         </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#signsSmartContract"/>
-        <Class IRI="#SmartContract"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#taskActualInputParameterDrawnBy"/>
@@ -4376,16 +4202,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <Literal xml:lang="en">Sensor</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#SmartContract</IRI>
-        <Literal xml:lang="en">Smart contract</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#SmartContract</IRI>
-        <Literal xml:lang="en">This class describes a smart contract</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#SmartContractEntry</IRI>
         <Literal xml:lang="en">This class describes a smart contract entry</Literal>
@@ -4394,6 +4210,16 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#SmartContractEntry</IRI>
         <Literal xml:lang="en">Smart contract entry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SmartContractSchema</IRI>
+        <Literal xml:lang="en">Smart contract</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SmartContractSchema</IRI>
+        <Literal xml:lang="en">This class describes a smart contract</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -4762,11 +4588,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#hasConnectionEntryType</IRI>
-        <Literal xml:lang="en">This property links connection entries  to the related entry type</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasDescriptor</IRI>
         <Literal xml:lang="en">This property links things to a descriptor</Literal>
     </AnnotationAssertion>
@@ -4779,11 +4600,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasGeometricExtension</IRI>
         <Literal xml:lang="en">This property links physical space with geometric extension</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#hasGoalExecution</IRI>
-        <Literal xml:lang="en">This property links description of goals with the related goal execution</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -4807,18 +4623,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#hasSmartContractEntryType</IRI>
-        <Literal xml:lang="en">This property links smart contract entries to  the related entry type</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasSpaceSpan</IRI>
         <Literal xml:lang="en">This property links things to spaces</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#hasSpaceType</IRI>
-        <Literal xml:lang="en">This property links spaces to the related space type</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -4857,16 +4663,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#hasType</IRI>
-        <Literal xml:lang="en">This property links things to the related type</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#isAuthorOfSmartContract</IRI>
-        <Literal xml:lang="en">This property links agents to smart contracts as authors</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#isDescribedBy</IRI>
         <Literal xml:lang="en">This property links things to a description thing</Literal>
     </AnnotationAssertion>
@@ -4874,11 +4670,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#isInvolvedInEntrustmentWith</IRI>
         <Literal xml:lang="en">This property links things involved in entrustments</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#partecipatesInSmartContract</IRI>
-        <Literal xml:lang="en">This property links agents to  smart contracts</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
