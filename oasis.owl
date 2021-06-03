@@ -37,6 +37,14 @@
         <Literal xml:lang="en">Marianna Nicolosi-Asmundo</Literal>
     </Annotation>
     <Annotation>
+        <AnnotationProperty IRI="#importsOntologyToken"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">2</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="#priorVersionOntologyToken"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </Annotation>
+    <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <Literal xml:lang="en">OASIS- An Ontology for Agents, Systems, and Integration of Services</Literal>
     </Annotation>
@@ -1191,10 +1199,16 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <AnnotationProperty IRI="#hasBeliefInformation"/>
     </Declaration>
     <Declaration>
+        <AnnotationProperty IRI="#importsOntologyToken"/>
+    </Declaration>
+    <Declaration>
         <AnnotationProperty IRI="#isDescribedByOntologyDescription"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty IRI="#isInTheBeliefOf"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#priorVersionOntologyToken"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Action"/>
@@ -4707,12 +4721,20 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <AbbreviatedIRI>xsd:anyURI</AbbreviatedIRI>
     </AnnotationPropertyRange>
     <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#importsOntologyToken"/>
+        <AbbreviatedIRI>xsd:int</AbbreviatedIRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyRange>
         <AnnotationProperty IRI="#isDescribedByOntologyDescription"/>
         <AbbreviatedIRI>xsd:anyURI</AbbreviatedIRI>
     </AnnotationPropertyRange>
     <AnnotationPropertyRange>
         <AnnotationProperty IRI="#isInTheBeliefOf"/>
         <IRI>http://www.dmi.unict.it/profeta.owl#Belief</IRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#priorVersionOntologyToken"/>
+        <AbbreviatedIRI>xsd:int</AbbreviatedIRI>
     </AnnotationPropertyRange>
 </Ontology>
 

@@ -34,6 +34,14 @@
         <Literal xml:lang="en">Marianna Nicolosi Asmundo</Literal>
     </Annotation>
     <Annotation>
+        <AnnotationProperty IRI="http://www.dmi.unict.it/oasis.owl#importsOntologyToken"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">3</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://www.dmi.unict.it/oasis.owl#priorVersionOntologyToken"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">2</Literal>
+    </Annotation>
+    <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <Literal xml:lang="en">This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
