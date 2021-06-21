@@ -427,7 +427,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#entrustedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isInvolvedInEntrustmentWith"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#EntrustmentActivity"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#RequestDescriptionObject"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject"/>
     </owl:ObjectProperty>
     
 
@@ -437,7 +437,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#entrustedFrom">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isInvolvedInEntrustmentWith"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#EntrustmentActivity"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#RequestDescriptionObject"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject"/>
         <rdfs:comment xml:lang="en">This property links entrustment activities to the related behavior description object</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -795,7 +795,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasExecutionObject -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasExecutionObject">
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#RequestDescriptionObject"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#ExecutionActivity"/>
         <rdfs:comment xml:lang="en">This property links behavior descriptions with the related execution activity</rdfs:comment>
     </owl:ObjectProperty>
@@ -839,6 +839,15 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#PhysicalSpace"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#GeometricExtension"/>
         <rdfs:comment xml:lang="en">This property links physical space with geometric extension</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#hasLifeSpan -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasLifeSpan">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTimeSpan"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#LifeSpan"/>
     </owl:ObjectProperty>
     
 
@@ -973,7 +982,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasScheduling">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isInvolvedInSchedulingWith"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#RequestDescriptionObject"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Scheduling"/>
         <rdfs:comment xml:lang="en">This property links behavior descriptions with scheduling activities</rdfs:comment>
     </owl:ObjectProperty>
@@ -1252,7 +1261,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTimeSpan">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TemporalEntity"/>
         <rdfs:comment xml:lang="en">This property links things to a temporal entity</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -1448,7 +1457,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#requestedTo -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#requestedTo">
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#RequestDescriptionObject"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Actor"/>
     </owl:ObjectProperty>
     
@@ -2495,6 +2504,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#DigitalServiceAsset -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#DigitalServiceAsset">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ServiceAsset"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#DigitalToken -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#DigitalToken">
@@ -2682,6 +2699,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#Event -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Event">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TemporalEntity"/>
         <rdfs:comment xml:lang="en">This class describes a general event</rdfs:comment>
         <rdfs:label xml:lang="en">Event</rdfs:label>
     </owl:Class>
@@ -2818,7 +2836,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#GoalDescription">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalThing"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#RequestDescriptionObject"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject"/>
         <rdfs:comment xml:lang="en">This class describes an the description of  a goal.</rdfs:comment>
         <rdfs:label xml:lang="en">Goal description</rdfs:label>
     </owl:Class>
@@ -2884,10 +2902,28 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
+        <rdfs:comment xml:lang="en">This class describes an object providing a description of action that can be requested</rdfs:comment>
+        <rdfs:label xml:lang="en">Intention description object</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#InternalBehavior -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#InternalBehavior">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#LifeSpan -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#LifeSpan">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TemporalEntity"/>
     </owl:Class>
     
 
@@ -2952,6 +2988,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#MessageThing">
         <rdfs:label xml:lang="en">Message part</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#Non-DigitalServiceAsset -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Non-DigitalServiceAsset">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ServiceAsset"/>
     </owl:Class>
     
 
@@ -3030,10 +3074,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#PlanDescription -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanThing"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#RequestDescriptionObject"/>
-        <rdfs:comment xml:lang="en">This class describes the description of  a plan.</rdfs:comment>
-        <rdfs:label xml:lang="en">Plan description</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject"/>
     </owl:Class>
     
 
@@ -3096,12 +3137,13 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#RequestDescriptionObject -->
+    <!-- http://www.dmi.unict.it/oasis.owl#RequestPlanDescription -->
 
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#RequestDescriptionObject">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
-        <rdfs:comment xml:lang="en">This class describes an object providing a description of action that can be requested</rdfs:comment>
-        <rdfs:label xml:lang="en">Request description object</rdfs:label>
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#RequestPlanDescription">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanThing"/>
+        <rdfs:comment xml:lang="en">This class describes the description of  a plan.</rdfs:comment>
+        <rdfs:label xml:lang="en">Plan description</rdfs:label>
     </owl:Class>
     
 
@@ -3166,6 +3208,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Service">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BehavioralRealization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#ServiceAsset -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#ServiceAsset">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#UntangibleAsset"/>
     </owl:Class>
     
 
@@ -3351,7 +3401,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#TaskDescription -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#RequestDescriptionObject"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject"/>
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskThing"/>
         <rdfs:comment xml:lang="en">This class describes the description of a task.</rdfs:comment>
         <rdfs:label xml:lang="en">Task description</rdfs:label>
@@ -3589,6 +3639,12 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#TemporalEntity -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TemporalEntity"/>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#TimeOperator -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TimeOperator">
@@ -3637,12 +3693,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Space"/>
         <rdfs:label xml:lang="en">Virtual space</rdfs:label>
     </owl:Class>
-    
-
-
-    <!-- http://www.w3.org/2006/time#TemporalEntity -->
-
-    <owl:Class rdf:about="http://www.w3.org/2006/time#TemporalEntity"/>
 </rdf:RDF>
 
 

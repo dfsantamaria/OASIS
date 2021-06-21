@@ -1,327 +1,364 @@
 <?xml version="1.0"?>
-<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+<rdf:RDF xmlns="http://www.dmi.unict.it/oasis-abox.owl"
      xml:base="http://www.dmi.unict.it/oasis-abox.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://www.dmi.unict.it/oasis-abox.owl">
-    <Prefix name="" IRI="http://www.dmi.unict.it/oasis-abox.owl"/>
-    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
-    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
-    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Import>http://www.dmi.unict.it/oasis.owl</Import>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
-        <Literal xml:lang="en">Carmelo Fabio Longo</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
-        <Literal xml:lang="en">Corrado Santoro</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
-        <Literal xml:lang="en">Daniele Francesco Santamaria</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
-        <Literal xml:lang="en">Domenico Cantone</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
-        <Literal xml:lang="en">Marianna Nicolosi Asmundo</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://www.dmi.unict.it/oasis.owl#importsOntologyToken"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">3</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://www.dmi.unict.it/oasis.owl#priorVersionOntologyToken"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">2</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <Literal xml:lang="en">This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+     xmlns:oasis="http://www.dmi.unict.it/oasis.owl#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://www.dmi.unict.it/oasis-abox.owl">
+        <owl:imports rdf:resource="http://www.dmi.unict.it/oasis.owl"/>
+        <terms:created xml:lang="en">Carmelo Fabio Longo</terms:created>
+        <terms:created xml:lang="en">Corrado Santoro</terms:created>
+        <terms:created xml:lang="en">Daniele Francesco Santamaria</terms:created>
+        <terms:created xml:lang="en">Domenico Cantone</terms:created>
+        <terms:created xml:lang="en">Marianna Nicolosi Asmundo</terms:created>
+        <oasis:importsOntologyToken rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</oasis:importsOntologyToken>
+        <oasis:priorVersionOntologyToken rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</oasis:priorVersionOntologyToken>
+        <rdfs:comment xml:lang="en">This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <Literal xml:lang="en">OASIS</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <Literal xml:lang="en">OASIS- An Ontology for Agents, Systems, and Integration of Services</Literal>
-    </Annotation>
-    <Declaration>
-        <Class IRI="#OperatorArgumentType"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#LightComponentType"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#add"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#any"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#blockchain_digital_token"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#burn"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#check"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#delegate"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#equal"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#ether_cryptocurrency"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#execute"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#exist"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#greatherEqual"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#greatherThan"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#install"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#installation"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#lessEqual"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#lessThan"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#mint"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#own"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#ownership"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#parse"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#remove"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#retrieve"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#spaceSpan"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#timeSpan"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#uninstall"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#update"/>
-    </Declaration>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
-        <NamedIndividual IRI="#add"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ExistentialOperator"/>
-        <NamedIndividual IRI="#any"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainDigitalToken"/>
-        <NamedIndividual IRI="#blockchain_digital_token"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
-        <NamedIndividual IRI="#burn"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
-        <NamedIndividual IRI="#check"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
-        <NamedIndividual IRI="#delegate"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#DataOperator"/>
-        <NamedIndividual IRI="#equal"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#EtherCryptocurrency"/>
-        <NamedIndividual IRI="#ether_cryptocurrency"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
-        <NamedIndividual IRI="#execute"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
-        <NamedIndividual IRI="#exist"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ExistentialOperator"/>
-        <NamedIndividual IRI="#exist"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#DataOperator"/>
-        <NamedIndividual IRI="#greatherEqual"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#DataOperator"/>
-        <NamedIndividual IRI="#greatherThan"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
-        <NamedIndividual IRI="#install"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#OperatorArgument"/>
-        <NamedIndividual IRI="#installation"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#DataOperator"/>
-        <NamedIndividual IRI="#lessEqual"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#DataOperator"/>
-        <NamedIndividual IRI="#lessThan"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
-        <NamedIndividual IRI="#mint"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
-        <NamedIndividual IRI="#own"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
-        <NamedIndividual IRI="#owner"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
-        <NamedIndividual IRI="#ownership"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
-        <NamedIndividual IRI="#parse"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
-        <NamedIndividual IRI="#remove"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
-        <NamedIndividual IRI="#retrieve"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#SpaceOperator"/>
-        <NamedIndividual IRI="#spaceSpan"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TimeOperator"/>
-        <NamedIndividual IRI="#timeSpan"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
-        <NamedIndividual IRI="#transfer"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
-        <NamedIndividual IRI="#uninstall"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Action"/>
-        <NamedIndividual IRI="#update"/>
-    </ClassAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#equal</IRI>
-        <Literal>==</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#exist</IRI>
-        <Literal xml:lang="en">exist</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#greatherEqual</IRI>
-        <Literal>&gt;=</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#greatherEqual</IRI>
-        <Literal xml:lang="en">greather equal</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#greatherThan</IRI>
-        <Literal>&gt;</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#greatherThan</IRI>
-        <Literal xml:lang="en">greather</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#lessEqual</IRI>
-        <Literal>&lt;=</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#lessEqual</IRI>
-        <Literal>less equal</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#lessThan</IRI>
-        <Literal>&lt;</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#lessThan</IRI>
-        <Literal xml:lang="en">less</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#spaceSpan</IRI>
-        <Literal xml:lang="en">space span</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#timeSpan</IRI>
-        <Literal xml:lang="en">time span</Literal>
-    </AnnotationAssertion>
-</Ontology>
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.</rdfs:comment>
+        <rdfs:label xml:lang="en">OASIS</rdfs:label>
+        <rdfs:label xml:lang="en">OASIS- An Ontology for Agents, Systems, and Integration of Services</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#OperatorArgumentType -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis-abox.owl#OperatorArgumentType"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#LightComponentType -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#LightComponentType"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#accept -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#accept">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#add -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#add">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#any -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#any">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ExistentialOperator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainDigitalToken"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#burn -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#burn">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#check -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#check">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#close -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#close">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#compute -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#compute">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#delegate -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#delegate">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#equal -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#equal">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#DataOperator"/>
+        <rdfs:label>==</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#establish -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#establish">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#ether_cryptocurrency -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#ether_cryptocurrency">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#EtherCryptocurrency"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#execute -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#execute">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#exist -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#exist">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ExistentialOperator"/>
+        <rdfs:label xml:lang="en">exist</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#greatherEqual -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#greatherEqual">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#DataOperator"/>
+        <rdfs:label>&gt;=</rdfs:label>
+        <rdfs:label xml:lang="en">greather equal</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#greatherThan -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#greatherThan">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#DataOperator"/>
+        <rdfs:label>&gt;</rdfs:label>
+        <rdfs:label xml:lang="en">greather</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#install -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#install">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#installation -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#installation">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#OperatorArgument"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#lessEqual -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#lessEqual">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#DataOperator"/>
+        <rdfs:label>&lt;=</rdfs:label>
+        <rdfs:label>less equal</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#lessThan -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#lessThan">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#DataOperator"/>
+        <rdfs:label>&lt;</rdfs:label>
+        <rdfs:label xml:lang="en">less</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#mint -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#mint">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#modify -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#modify">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#own -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#own">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#owner -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#owner">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#ownership -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#ownership">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#parse -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#parse">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#publish -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#publish">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#reject -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#reject">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#remove -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#remove">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#retract -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#retract">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#retrieve -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#retrieve">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#spaceSpan -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#spaceSpan">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#SpaceOperator"/>
+        <rdfs:label xml:lang="en">space span</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#timeSpan -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#timeSpan">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TimeOperator"/>
+        <rdfs:label xml:lang="en">time span</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#transfer -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#transfer">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#uninstall -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#uninstall">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#update -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#update">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
 
 
 
