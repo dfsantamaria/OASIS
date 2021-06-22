@@ -2139,6 +2139,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#CompositeValue -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#CompositeValue">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#SetThing"/>
         <rdfs:comment xml:lang="en">This class describes a general complex value</rdfs:comment>
         <rdfs:comment xml:lang="en">Value</rdfs:comment>
     </owl:Class>
@@ -2549,6 +2550,21 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EdgeDevice">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Device"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#EndurandThing -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EndurandThing"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#EndurantFeature -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EndurantFeature">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#EndurandThing"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Feature"/>
     </owl:Class>
     
 
@@ -3000,6 +3016,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#Non-PhysicalFeature -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Non-PhysicalFeature">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Feature"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#Non-fungibleToken -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Non-fungibleToken">
@@ -3054,10 +3078,33 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#PerdurantFeature -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#PerdurantFeature">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#PerdurantThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#PerdurantThing -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#PerdurantThing"/>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#PhysicalActuator -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#PhysicalActuator">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Actuator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#PhysicalFeature -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#PhysicalFeature">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Feature"/>
     </owl:Class>
     
 
@@ -3124,6 +3171,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#Realization -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Realization">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BehaviorThing"/>
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Feature"/>
     </owl:Class>
     
@@ -3217,6 +3265,12 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#ServiceAsset">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#UntangibleAsset"/>
     </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#SetThing -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#SetThing"/>
     
 
 
