@@ -396,6 +396,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#deploys -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#deploys">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#descriptionProvidedByEntity -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#descriptionProvidedByEntity">
@@ -1408,6 +1416,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#overrides -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#overrides">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#owns -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#owns">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
     </owl:ObjectProperty>
     
