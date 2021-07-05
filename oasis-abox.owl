@@ -35,11 +35,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
      -->
 
     
-
-
-    <!-- http://www.dmi.unict.it/oasis-abox.owl#OperatorArgumentType -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis-abox.owl#OperatorArgumentType"/>
     
 
 

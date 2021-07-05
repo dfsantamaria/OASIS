@@ -421,6 +421,15 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#encompassesActivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#encompassesActivity">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWithActivity"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Activity"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#entrustedBy -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#entrustedBy">
@@ -1432,6 +1441,15 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#isRelatedWithActivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isRelatedWithActivity">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Activity"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#isSmartContractInstanceEntryOf -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isSmartContractInstanceEntryOf">
@@ -1483,6 +1501,12 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#owns">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#performs -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#performs"/>
     
 
 
@@ -2599,7 +2623,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#DigitalToken -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#DigitalToken">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#DigitalAsset"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Token"/>
     </owl:Class>
     
 
@@ -3201,6 +3225,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#PhysicalToken -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#PhysicalToken">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Token"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#PlanDescription -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription">
@@ -3788,6 +3820,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalOperator"/>
         <rdfs:comment xml:lang="en">This class describes time operators used in conditionals.</rdfs:comment>
         <rdfs:label xml:lang="en">Time operator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#Token -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Token">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
     </owl:Class>
     
 
