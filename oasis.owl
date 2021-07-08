@@ -1373,6 +1373,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#implementedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#implementedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#importsOntologyDescriptionObject -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#importsOntologyDescriptionObject">
@@ -2563,6 +2571,20 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#DelegationThing">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
     </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#DeprecatedActivity -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#DeprecatedActivity">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#DeprecatedThing -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#DeprecatedThing"/>
     
 
 
