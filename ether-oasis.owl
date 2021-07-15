@@ -15,6 +15,63 @@
     <Import>http://www.dmi.unict.it/oasis-abox.owl</Import>
     <Import>http://www.dmi.unict.it/oasis.owl</Import>
     <Declaration>
+        <Class IRI="#EOA-EthereumAccount"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ERC20SmartContractAgent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EtherCryptocurrency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EtherExchangeSmartContractInteraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumAccount"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumBlock"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumERC1150SmartContractAgent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumERC721SmartContractAgent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumSmartContractAccount"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumSmartContractCreation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumSmartContractInteraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumToken"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTokenERC1155"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTokenERC20"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTokenERC721"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTransaction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#RequestDescriptionObject"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#approveAll_ERC721_EOA-Account"/>
     </Declaration>
     <Declaration>
@@ -154,6 +211,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#burn_ERC721_token_task_operator_argument"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ether_cryptocurrency"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#ethereum-system"/>
@@ -353,8 +413,104 @@
     <Declaration>
         <NamedIndividual IRI="#transfer_ERC721_token_task_operator_argument"/>
     </Declaration>
+    <SubClassOf>
+        <Class IRI="#EOA-EthereumAccount"/>
+        <Class IRI="#EthereumAccount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EOA-EthereumAccount"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#EOA-BlockchainAccount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ERC20SmartContractAgent"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#FungibleBlockchainSmartContractAgent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EtherCryptocurrency"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#Cryptocurrency"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EtherExchangeSmartContractInteraction"/>
+        <Class IRI="#EthereumSmartContractInteraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EtherExchangeSmartContractInteraction"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#CryptocurrencyExchangeBlockchainInteraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumAccount"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainAccount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumBlock"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainBlock"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumERC1150SmartContractAgent"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#SemiFungibleBlockChainSmartContractAgent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumERC721SmartContractAgent"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#NonFungibleBlockchainSmartContractAgent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumNode"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchaiNode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumSmartContractAccount"/>
+        <Class IRI="#EthereumAccount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumSmartContractAccount"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainSmartContractAccount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumSmartContractCreation"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainSmartContractCreation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumSmartContractInteraction"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainSmartContractInteraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumSystem"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumToken"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainDigitalToken"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTokenERC1155"/>
+        <Class IRI="#EthereumToken"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTokenERC1155"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#Semi-fungibleToken"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTokenERC20"/>
+        <Class IRI="#EthereumToken"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTokenERC20"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#Fungible-Token"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTokenERC721"/>
+        <Class IRI="#EthereumToken"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTokenERC721"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#Non-fungibleToken"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTransaction"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainTransaction"/>
+    </SubClassOf>
     <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#EOA-EthereumAccount"/>
+        <Class IRI="#EOA-EthereumAccount"/>
         <NamedIndividual IRI="#approveAll_ERC721_EOA-Account"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -398,7 +554,7 @@
         <NamedIndividual IRI="#approveAll_ERC721_conditional_set"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#EthereumTokenERC721"/>
+        <Class IRI="#EthereumTokenERC721"/>
         <NamedIndividual IRI="#approveAll_ERC721_token"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -430,7 +586,7 @@
         <NamedIndividual IRI="#approveAll_ERC721_token_task_operator_argument"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#EOA-EthereumAccount"/>
+        <Class IRI="#EOA-EthereumAccount"/>
         <NamedIndividual IRI="#approve_ERC721_EOA-Account"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -474,7 +630,7 @@
         <NamedIndividual IRI="#approve_ERC721_conditional_set"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#EthereumTokenERC721"/>
+        <Class IRI="#EthereumTokenERC721"/>
         <NamedIndividual IRI="#approve_ERC721_token"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -510,7 +666,7 @@
         <NamedIndividual IRI="#approve_ERC721_token_task_operator_argument"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#EthereumTokenERC721"/>
+        <Class IRI="#EthereumTokenERC721"/>
         <NamedIndividual IRI="#burn_ERC721_token"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -542,6 +698,10 @@
         <NamedIndividual IRI="#burn_ERC721_token_task_operator_argument"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#EtherCryptocurrency"/>
+        <NamedIndividual IRI="#ether_cryptocurrency"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="http://www.dmi.unict.it/oasis.owl#System"/>
         <NamedIndividual IRI="#ethereum-system"/>
     </ClassAssertion>
@@ -554,7 +714,7 @@
         <NamedIndividual IRI="#ethereum_ERC721_smart_contract_behavior_template"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#EthereumTokenERC721"/>
+        <Class IRI="#EthereumTokenERC721"/>
         <NamedIndividual IRI="#mint_ERC721_token"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -586,7 +746,7 @@
         <NamedIndividual IRI="#mint_ERC721_token_task_output_template"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#EOA-EthereumAccount"/>
+        <Class IRI="#EOA-EthereumAccount"/>
         <NamedIndividual IRI="#owner_ERC721_EOA-Account"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -618,7 +778,7 @@
         <NamedIndividual IRI="#owner_ERC721_conditional_set"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#EthereumTokenERC721"/>
+        <Class IRI="#EthereumTokenERC721"/>
         <NamedIndividual IRI="#owner_ERC721_token"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -654,11 +814,11 @@
         <NamedIndividual IRI="#owner_ERC721_token_task_output_template"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#EthereumAccount"/>
+        <Class IRI="#EthereumAccount"/>
         <NamedIndividual IRI="#transfer_ERC20_Ethereum_account_1"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#EthereumAccount"/>
+        <Class IRI="#EthereumAccount"/>
         <NamedIndividual IRI="#transfer_ERC20_Ethereum_account_2"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -690,7 +850,7 @@
         <NamedIndividual IRI="#transfer_ERC20_conditional_set"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#EtherCryptocurrency"/>
+        <Class IRI="#EtherCryptocurrency"/>
         <NamedIndividual IRI="#transfer_ERC20_token"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -730,11 +890,11 @@
         <NamedIndividual IRI="#transfer_ERC20_token_task_operator_argument"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#EOA-EthereumAccount"/>
+        <Class IRI="#EOA-EthereumAccount"/>
         <NamedIndividual IRI="#transfer_ERC721_EOA-Account_1"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#EOA-EthereumAccount"/>
+        <Class IRI="#EOA-EthereumAccount"/>
         <NamedIndividual IRI="#transfer_ERC721_EOA-Account_2"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -766,7 +926,7 @@
         <NamedIndividual IRI="#transfer_ERC721_conditional_set"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#EthereumTokenERC721"/>
+        <Class IRI="#EthereumTokenERC721"/>
         <NamedIndividual IRI="#transfer_ERC721_token"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -1408,7 +1568,7 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersExactlyTo"/>
         <NamedIndividual IRI="#transfer_ERC20_token_task_operator_argument"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#ether_cryptocurrency"/>
+        <NamedIndividual IRI="#ether_cryptocurrency"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditionalBody"/>

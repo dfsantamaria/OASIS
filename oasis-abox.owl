@@ -35,6 +35,11 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
      -->
 
     
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EtherCryptocurrency -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EtherCryptocurrency"/>
     
 
 
@@ -119,6 +124,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#decline -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#decline">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis-abox.owl#delegate -->
 
     <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#delegate">
@@ -140,14 +153,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#establish">
         <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis-abox.owl#ether_cryptocurrency -->
-
-    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#ether_cryptocurrency">
-        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#EtherCryptocurrency"/>
     </owl:NamedIndividual>
     
 
@@ -298,6 +303,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#request -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#request">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis-abox.owl#retract -->
 
     <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#retract">
@@ -309,6 +322,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis-abox.owl#retrieve -->
 
     <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#retrieve">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#seek -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#seek">
         <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
     </owl:NamedIndividual>
     

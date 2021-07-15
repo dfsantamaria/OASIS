@@ -150,6 +150,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#associatedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#associatedWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#configurationProvidedBy -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#configurationProvidedBy">
@@ -359,6 +367,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#constitutes -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#constitutes">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#cosistsOfTaskExecution -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#cosistsOfTaskExecution">
@@ -403,6 +419,12 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#describes -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#describes"/>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#descriptionProvidedByEntity -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#descriptionProvidedByEntity">
@@ -416,6 +438,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#drawnBy -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#drawnBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#embeds -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#embeds">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
     </owl:ObjectProperty>
     
@@ -1413,15 +1443,24 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#isInvolvedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isInvolvedIn"/>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#isInvolvedInConfigurationSetUpWith -->
 
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isInvolvedInConfigurationSetUpWith"/>
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isInvolvedInConfigurationSetUpWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isInvolvedIn"/>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://www.dmi.unict.it/oasis.owl#isInvolvedInEntrustmentWith -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isInvolvedInEntrustmentWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isInvolvedIn"/>
         <rdfs:comment xml:lang="en">This property links things involved in entrustments</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -1429,7 +1468,9 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <!-- http://www.dmi.unict.it/oasis.owl#isInvolvedInSchedulingWith -->
 
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isInvolvedInSchedulingWith"/>
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isInvolvedInSchedulingWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isInvolvedIn"/>
+    </owl:ObjectProperty>
     
 
 
@@ -1482,6 +1523,16 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Message"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Connection"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#mines -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#mines">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchaiNode"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainBlock"/>
     </owl:ObjectProperty>
     
 
@@ -2658,23 +2709,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#EOA-EthereumAccount -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EOA-EthereumAccount">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#EOA-BlockchainAccount"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#EthereumAccount"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#ERC20SmartContractAgent -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#ERC20SmartContractAgent">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#FungibleBlockchainSmartContractAgent"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.dmi.unict.it/oasis.owl#EdgeDevice -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EdgeDevice">
@@ -2712,131 +2746,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EntryTemplate">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Template"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#EtherCryptocurrency -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EtherCryptocurrency">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Cryptocurrency"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#EtherExchangeSmartContractInteraction -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EtherExchangeSmartContractInteraction">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#CryptocurrencyExchangeBlockchainInteraction"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#EthereumSmartContractInteraction"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#EthereumAccount -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EthereumAccount">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainAccount"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#EthereumBlock -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EthereumBlock">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainBlock"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#EthereumERC721SmartContractAgent -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EthereumERC721SmartContractAgent">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#NonFungibleBlockchainSmartContractAgent"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#EthereumNode -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EthereumNode">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchaiNode"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#EthereumSmartContractAccount -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EthereumSmartContractAccount">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainSmartContractAccount"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#EthereumAccount"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#EthereumSmartContractCreation -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EthereumSmartContractCreation">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainSmartContractCreation"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#EthereumSmartContractInteraction -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EthereumSmartContractInteraction">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainSmartContractInteraction"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#EthereumSystem -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EthereumSystem">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainSystem"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#EthereumToken -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EthereumToken">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainDigitalToken"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#EthereumTokenERC1155 -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EthereumTokenERC1155">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#EthereumToken"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Semi-fungibleToken"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#EthereumTokenERC20 -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EthereumTokenERC20">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#EthereumToken"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Fungible-Token"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#EthereumTokenERC721 -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EthereumTokenERC721">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#EthereumToken"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Non-fungibleToken"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#EthereumTransaction -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EthereumTransaction">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainTransaction"/>
     </owl:Class>
     
 
@@ -3367,6 +3276,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Semi-fungibleToken">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#DigitalToken"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#SemiFungibleBlockChainSmartContractAgent -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#SemiFungibleBlockChainSmartContractAgent">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainSmartContractAgent"/>
     </owl:Class>
     
 
