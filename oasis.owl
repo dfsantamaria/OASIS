@@ -3272,18 +3272,18 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#Semi-fungibleToken -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Semi-fungibleToken">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#DigitalToken"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.dmi.unict.it/oasis.owl#SemiFungibleBlockChainSmartContractAgent -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#SemiFungibleBlockChainSmartContractAgent">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainSmartContractAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#SemiFungibleToken -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#SemiFungibleToken">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#DigitalToken"/>
     </owl:Class>
     
 
