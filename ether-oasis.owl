@@ -14,6 +14,26 @@
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Import>http://www.dmi.unict.it/oasis-abox.owl</Import>
     <Import>http://www.dmi.unict.it/oasis.owl</Import>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+        <Literal>Daniele Francesco Santamaria</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+        <Literal>Domenico Cantone</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+        <Literal>Giampaolo Bella</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+        <Literal>Marianna Nicolosi Asmundo</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+        <Literal>This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.</Literal>
+    </Annotation>
     <Declaration>
         <Class IRI="#EOA-EthereumAccount"/>
     </Declaration>
@@ -33,13 +53,37 @@
         <Class IRI="#EthereumBlock"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#EthereumCustomToken"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#EthereumERC1150SmartContractAgent"/>
     </Declaration>
     <Declaration>
         <Class IRI="#EthereumERC721SmartContractAgent"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#EthereumFungibleSmartContractAgent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumFungibleToken"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumGeneralPurposeSmartContractAgent"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#EthereumNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumNonFungibleSmartContractAgent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumNonFungibleToken"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumSemiFungibleSmartContractAgent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumSemiFungibleToken"/>
     </Declaration>
     <Declaration>
         <Class IRI="#EthereumSmartContractAccount"/>
@@ -57,6 +101,12 @@
         <Class IRI="#EthereumToken"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#EthereumTokenActiveEndurantFeature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTokenDeprecatedEndurantFeature"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#EthereumTokenERC1155"/>
     </Declaration>
     <Declaration>
@@ -66,10 +116,142 @@
         <Class IRI="#EthereumTokenERC721"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#EthereumTokenEndurantFeature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTokenEndurantFeatureStatusChanged"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTokenEndurantFeatureType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTokenFeatureModificationActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTokenProtocolCompliant"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#EthereumTransaction"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#EthereumTransactionHash"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumWalletOwnerEndurantFeature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainTransactionHash"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="http://www.dmi.unict.it/oasis.owl#RequestDescriptionObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#describesEtherExchangeInteraction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#describesEthereumSmartContractCreation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#describesEthereumSmartContractInteraction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#embedsEthereumTransaction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEthereumSmartContractAccount"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEthereumTokenEndurantFeature"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEthereumTokenFeatureModificationResult"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEthereumTokenFeatureModificationSource"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEthereumTransactionHash"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEthereumTransactionStatus"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isDescribedByEthereumToken"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isEthereumTokenFeatureModifiedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#associatedWithEndurantFeature"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#describesBlockchainSmartContractCreation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#describesBlockchainSmartContractInteraction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#describesCryptocurrencyExchangeBlockchainInteraction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#embedsBlockchainTransaction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainAccount"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionHash"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#isDescribedByDigitalToken"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEthereumAccountAddress"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEthereumBlockHeight"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEthereumDataDescription"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEthereumFeatureDataDescription"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEthereumTokenID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEthereumTransactionFromAddress"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEthereumTransactionHashValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEthereumTransactionToAddress"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isInTheWalletOf"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainAccountAddress"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainBlockHeight"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainDataDescription"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTokenID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionFromAddress"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionHashValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionToAddress"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#approveAll_ERC721_EOA-Account"/>
@@ -413,6 +595,16 @@
     <Declaration>
         <NamedIndividual IRI="#transfer_ERC721_token_task_operator_argument"/>
     </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/license"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#EthereumTokenEndurantFeatureStatusChanged"/>
+        <ObjectUnionOf>
+            <Class IRI="#EthereumTokenActiveEndurantFeature"/>
+            <Class IRI="#EthereumTokenDeprecatedEndurantFeature"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#EOA-EthereumAccount"/>
         <Class IRI="#EthereumAccount"/>
@@ -423,7 +615,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ERC20SmartContractAgent"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#FungibleBlockchainSmartContractAgent"/>
+        <Class IRI="#EthereumFungibleSmartContractAgent"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#EtherCryptocurrency"/>
@@ -446,16 +638,48 @@
         <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainBlock"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#EthereumCustomToken"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#CustomToken"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#EthereumERC1150SmartContractAgent"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#SemiFungibleBlockChainSmartContractAgent"/>
+        <Class IRI="#EthereumSemiFungibleSmartContractAgent"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#EthereumERC721SmartContractAgent"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#NonFungibleBlockchainSmartContractAgent"/>
+        <Class IRI="#EthereumNonFungibleSmartContractAgent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumFungibleSmartContractAgent"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#FungibleBlockchainSmartContractAgent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumFungibleToken"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#FungibleToken"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumGeneralPurposeSmartContractAgent"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#GeneralPurposeBlockchainSmartContractAgent"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#EthereumNode"/>
         <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchaiNode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumNonFungibleSmartContractAgent"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#NonFungibleBlockchainSmartContractAgent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumNonFungibleToken"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#NonFungibleToken"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumSemiFungibleSmartContractAgent"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#SemiFungibleBlockChainSmartContractAgent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumSemiFungibleToken"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#SemiFungibleToken"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#EthereumSmartContractAccount"/>
@@ -482,33 +706,73 @@
         <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainDigitalToken"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#EthereumTokenERC1155"/>
-        <Class IRI="#EthereumToken"/>
+        <Class IRI="#EthereumTokenActiveEndurantFeature"/>
+        <Class IRI="#EthereumTokenEndurantFeatureStatusChanged"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTokenDeprecatedEndurantFeature"/>
+        <Class IRI="#EthereumTokenEndurantFeatureStatusChanged"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#EthereumTokenERC1155"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Semi-fungibleToken"/>
+        <Class IRI="#EthereumSemiFungibleToken"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTokenERC1155"/>
+        <Class IRI="#EthereumTokenProtocolCompliant"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#EthereumTokenERC20"/>
-        <Class IRI="#EthereumToken"/>
+        <Class IRI="#EthereumFungibleToken"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#EthereumTokenERC20"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Fungible-Token"/>
+        <Class IRI="#EthereumTokenProtocolCompliant"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#EthereumTokenERC721"/>
+        <Class IRI="#EthereumNonFungibleToken"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTokenERC721"/>
+        <Class IRI="#EthereumTokenProtocolCompliant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTokenEndurantFeature"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#EndurantFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTokenEndurantFeatureStatusChanged"/>
+        <Class IRI="#EthereumTokenEndurantFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTokenEndurantFeatureType"/>
+        <Class IRI="#EthereumTokenEndurantFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTokenFeatureModificationActivity"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#TokenFeatureModificationActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTokenProtocolCompliant"/>
         <Class IRI="#EthereumToken"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumTokenERC721"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Non-fungibleToken"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#EthereumTransaction"/>
         <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainTransaction"/>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTransactionHash"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainTransactionHash"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumWalletOwnerEndurantFeature"/>
+        <Class IRI="#EthereumTokenEndurantFeatureType"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#EthereumTokenActiveEndurantFeature"/>
+        <Class IRI="#EthereumTokenDeprecatedEndurantFeature"/>
+    </DisjointClasses>
     <ClassAssertion>
         <Class IRI="#EOA-EthereumAccount"/>
         <NamedIndividual IRI="#approveAll_ERC721_EOA-Account"/>
@@ -699,6 +963,10 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#EtherCryptocurrency"/>
+        <NamedIndividual IRI="#ether_cryptocurrency"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#PunningClass"/>
         <NamedIndividual IRI="#ether_cryptocurrency"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -1690,6 +1958,269 @@
         <NamedIndividual IRI="#transfer_ERC721_token_task_operator_argument"/>
         <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token"/>
     </ObjectPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#describesEtherExchangeInteraction"/>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#describesCryptocurrencyExchangeBlockchainInteraction"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#describesEthereumSmartContractCreation"/>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#describesBlockchainSmartContractCreation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#describesEthereumSmartContractInteraction"/>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#describesBlockchainSmartContractInteraction"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#embedsEthereumTransaction"/>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#embedsBlockchainTransaction"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasEthereumSmartContractAccount"/>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainAccount"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasEthereumTokenEndurantFeature"/>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasFeature"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasEthereumTokenFeatureModificationResult"/>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTokenFeatureModificationResult"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasEthereumTokenFeatureModificationSource"/>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTokenFeatureModificationSource"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasEthereumTransactionHash"/>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionHash"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasEthereumTransactionStatus"/>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTransactionStatus"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isDescribedByEthereumToken"/>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#isDescribedByDigitalToken"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isEthereumTokenFeatureModifiedIn"/>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#associatedWithEndurantFeature"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#describesEtherExchangeInteraction"/>
+        <Class IRI="#EthereumTransaction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#describesEthereumSmartContractCreation"/>
+        <Class IRI="#EthereumTransaction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#describesEthereumSmartContractInteraction"/>
+        <Class IRI="#EthereumTransaction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#embedsEthereumTransaction"/>
+        <Class IRI="#EthereumBlock"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEthereumSmartContractAccount"/>
+        <Class IRI="#EthereumSmartContractCreation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEthereumTokenEndurantFeature"/>
+        <Class IRI="#EthereumToken"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEthereumTokenFeatureModificationResult"/>
+        <Class IRI="#EthereumTokenFeatureModificationActivity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEthereumTokenFeatureModificationSource"/>
+        <Class IRI="#EthereumTokenFeatureModificationActivity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEthereumTransactionHash"/>
+        <Class IRI="#EthereumTransaction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEthereumTransactionStatus"/>
+        <Class IRI="#EthereumTransaction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isDescribedByEthereumToken"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#Asset"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isEthereumTokenFeatureModifiedIn"/>
+        <Class IRI="#EthereumTokenDeprecatedEndurantFeature"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#describesEtherExchangeInteraction"/>
+        <Class IRI="#EtherExchangeSmartContractInteraction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#describesEthereumSmartContractCreation"/>
+        <Class IRI="#EthereumSmartContractCreation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#describesEthereumSmartContractInteraction"/>
+        <Class IRI="#EthereumSmartContractInteraction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#embedsEthereumTransaction"/>
+        <Class IRI="#EthereumTransaction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEthereumSmartContractAccount"/>
+        <Class IRI="#EthereumSmartContractAccount"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEthereumTokenEndurantFeature"/>
+        <Class IRI="#EthereumTokenEndurantFeature"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEthereumTokenFeatureModificationResult"/>
+        <Class IRI="#EthereumTokenEndurantFeature"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEthereumTokenFeatureModificationSource"/>
+        <Class IRI="#EthereumTokenDeprecatedEndurantFeature"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEthereumTransactionHash"/>
+        <Class IRI="#EthereumTransactionHash"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEthereumTransactionStatus"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainTransactionStatus"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isDescribedByEthereumToken"/>
+        <Class IRI="#EthereumToken"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isEthereumTokenFeatureModifiedIn"/>
+        <Class IRI="#EthereumTokenEndurantFeature"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasEthereumAccountAddress"/>
+        <DataProperty IRI="#hasEthereumDataDescription"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasEthereumAccountAddress"/>
+        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainAccountAddress"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasEthereumBlockHeight"/>
+        <DataProperty IRI="#hasEthereumDataDescription"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasEthereumBlockHeight"/>
+        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainBlockHeight"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasEthereumDataDescription"/>
+        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainDataDescription"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasEthereumTokenID"/>
+        <DataProperty IRI="#hasEthereumDataDescription"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasEthereumTokenID"/>
+        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTokenID"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasEthereumTransactionFromAddress"/>
+        <DataProperty IRI="#hasEthereumDataDescription"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasEthereumTransactionFromAddress"/>
+        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionFromAddress"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasEthereumTransactionHashValue"/>
+        <DataProperty IRI="#hasEthereumDataDescription"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasEthereumTransactionHashValue"/>
+        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionHashValue"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasEthereumTransactionToAddress"/>
+        <DataProperty IRI="#hasEthereumDataDescription"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasEthereumTransactionToAddress"/>
+        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionToAddress"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#isInTheWalletOf"/>
+        <DataProperty IRI="#hasEthereumFeatureDataDescription"/>
+    </SubDataPropertyOf>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasEthereumTransactionHashValue"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEthereumAccountAddress"/>
+        <Class IRI="#EthereumAccount"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEthereumBlockHeight"/>
+        <Class IRI="#EthereumBlock"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEthereumDataDescription"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainObjectDescription"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEthereumTokenID"/>
+        <Class IRI="#EthereumToken"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEthereumTransactionFromAddress"/>
+        <Class IRI="#EthereumTransaction"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEthereumTransactionHashValue"/>
+        <Class IRI="#EthereumTransactionHash"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEthereumTransactionToAddress"/>
+        <Class IRI="#EthereumTransaction"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isInTheWalletOf"/>
+        <Class IRI="#EthereumWalletOwnerEndurantFeature"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasEthereumAccountAddress"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasEthereumBlockHeight"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasEthereumTokenID"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasEthereumTransactionFromAddress"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasEthereumTransactionHashValue"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasEthereumTransactionToAddress"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isInTheWalletOf"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
 </Ontology>
 
 
