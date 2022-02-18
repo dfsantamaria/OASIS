@@ -1,6 +1,6 @@
 # OASIS - An ontology for Agent, Systems and Integration of Services
 
-#Papers and articles
+# Papers and articles
 
 -  Blockchains through ontologies: the case study of the Ethereum ERC721 standard in OASIS. Giampaolo Bella, Domenico Cantone, Cristiano Longo, Marianna Nicolosi-Asmundo, Daniele Francesco Santamaria. To app. in: Proceedings of IDC 2021, The 14th International Symposium on Intelligent Distributed Computing, 16-18 September, 2021, Scilla, Reggio Calabria, Italy.
 -  Semantic Representation as a Key Enabler for Blockchain-Based Commerce. Giampaolo Bella, Domenico Cantone, Cristiano Longo, Marianna Nicolosi-Asmundo and Daniele Francesco Santamaria. In: K. Tserpes et al. (Eds.): GECON 2021, Lecture Note in Computer Science, Vol. 13072, pp. 191–198, Springer, 2021.
