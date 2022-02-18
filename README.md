@@ -251,6 +251,6 @@ C) Create a new agent and a new behavior eventually related with a behavior temp
 
 
 Check the file
-- Python\OASIS-MAN\test\Test-BehaviorManager.py
+- OASIS-MAN\Python\test\Test-BehaviorManager.py
 
 for an example.
