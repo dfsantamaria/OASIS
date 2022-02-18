@@ -1,5 +1,11 @@
 # OASIS - An ontology for Agent, Systems, and Integration of Services
 
+
+# Projects based on OASIS
+
+- CLARA (former PROFONTO) https://github.com/dfsantamaria/CLARA
+- POC4COMMERCE NGI-ONTOCHAIN https://github.com/dfsantamaria/POC4COMMERCE
+
 # Papers and articles
 
 -  Blockchains through ontologies: the case study of the Ethereum ERC721 standard in OASIS. Giampaolo Bella, Domenico Cantone, Cristiano Longo, Marianna Nicolosi-Asmundo, Daniele Francesco Santamaria. To app. in: Proceedings of IDC 2021, The 14th International Symposium on Intelligent Distributed Computing, 16-18 September, 2021, Scilla, Reggio Calabria, Italy.
