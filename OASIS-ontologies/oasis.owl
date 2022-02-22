@@ -109,6 +109,24 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/ec-oasis.owl#isPercentageComputedOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/ec-oasis.owl#isPercentageComputedOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isDescribedBy"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#PercentageCost"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#NumericCost"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#accepts -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#accepts">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#interactsWith"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#activatedByScheduling -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#activatedByScheduling">
@@ -919,6 +937,25 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#hasDuration -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasDuration">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTimeSpan"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Duration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#hasEndTime -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasEndTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTimeSpan"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TimeWindow"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TimeSpan"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#hasExecutionObject -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasExecutionObject">
@@ -984,7 +1021,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasLifeSpan">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTimeSpan"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#LifeSpan"/>
     </owl:ObjectProperty>
     
 
@@ -1173,6 +1209,16 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasSpecificity">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasFeature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#hasStartTime -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasStartTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTimeSpan"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TimeWindow"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TimeSpan"/>
     </owl:ObjectProperty>
     
 
@@ -1902,6 +1948,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#rejects -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#rejects">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#interactsWith"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#requests -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#requests">
@@ -2373,6 +2427,23 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#hasTimeValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTimeValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasDataValue"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TimeSpan"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#dateTime"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -2673,6 +2744,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#CalendarTemporalEntity -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#CalendarTemporalEntity">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TemporalEntity"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#CommodityThing -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#CommodityThing"/>
@@ -2935,6 +3014,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#Cost -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Cost">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#CompositeValue"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#Cryptocurrency -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Cryptocurrency">
@@ -3091,6 +3178,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#DigitalToken">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#UntangibleToken"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#Duration -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Duration">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TemporalEntity"/>
     </owl:Class>
     
 
@@ -3427,10 +3522,18 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#LifeSpan -->
+    <!-- http://www.dmi.unict.it/oasis.owl#Measurement -->
 
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#LifeSpan">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TemporalEntity"/>
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Measurement">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#CompositeValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#MeasurementUnit -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#MeasurementUnit">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
     </owl:Class>
     
 
@@ -3557,6 +3660,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#NumericCost -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#NumericCost">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Cost"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#OntologyDescriptionObject -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#OntologyDescriptionObject">
@@ -3600,6 +3711,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#PendingTransactionStatus">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainTransactionStatus"/>
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#EndurantFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#PercentageCost -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#PercentageCost">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Cost"/>
     </owl:Class>
     
 
@@ -4275,12 +4394,28 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#TimeMeasurementUnit -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TimeMeasurementUnit">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#MeasurementUnit"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#TimeOperator -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TimeOperator">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalOperator"/>
         <rdfs:comment xml:lang="en">This class describes time operators used in conditionals.</rdfs:comment>
         <rdfs:label xml:lang="en">Time operator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#TimeSpan -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TimeSpan">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TemporalEntity"/>
     </owl:Class>
     
 
