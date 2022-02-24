@@ -890,6 +890,15 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#hasCost -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasCost">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasCompositeValue"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Cost"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#hasDelegationObject -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasDelegationObject">
