@@ -1973,6 +1973,16 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#requestsPlan -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#requestsPlan">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#requests"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Agent"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#setsUp -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#setsUp">
