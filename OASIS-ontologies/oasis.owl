@@ -3729,7 +3729,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#PendingTransactionStatus">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainTransactionStatus"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#EndurantFeature"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#PerdurantFeature"/>
     </owl:Class>
     
 
