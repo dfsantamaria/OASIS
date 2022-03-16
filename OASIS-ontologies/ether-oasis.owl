@@ -182,9 +182,6 @@
         <ObjectProperty IRI="#isEthereumTokenFeatureModifiedIn"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#associatedWithEndurantFeature"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#describesBlockchainSmartContractCreation"/>
     </Declaration>
     <Declaration>
@@ -632,6 +629,13 @@
         <AnnotationProperty IRI="http://purl.org/dc/terms/license"/>
     </Declaration>
     <EquivalentClasses>
+        <Class IRI="#EthereumTokenPerdurantFeature"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#EthereumTokenPerdurantFeatureStatusChanged"/>
+            <Class IRI="#EthereumTokenPerdurantFeatureType"/>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#EthereumTokenPerdurantFeatureStatusChanged"/>
         <ObjectUnionOf>
             <Class IRI="#EthereumTokenActivePerdurantFeature"/>
@@ -747,6 +751,10 @@
         <Class IRI="#EthereumTokenPerdurantFeatureStatusChanged"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#EthereumTokenDeprecatedPerdurantFeature"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#DeprecatedThing"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#EthereumTokenERC1155"/>
         <Class IRI="#EthereumSemiFungibleToken"/>
     </SubClassOf>
@@ -787,6 +795,10 @@
         <Class IRI="#EthereumTokenPerdurantFeature"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#EthereumTokenPerdurantFeatureType"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#Type"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#EthereumTokenProtocolCompliant"/>
         <Class IRI="#EthereumToken"/>
     </SubClassOf>
@@ -802,10 +814,6 @@
         <Class IRI="#EthereumWalletOwnerPerdurantFeature"/>
         <Class IRI="#EthereumTokenPerdurantFeatureType"/>
     </SubClassOf>
-    <DisjointClasses>
-        <Class IRI="#EthereumTokenActivePerdurantFeature"/>
-        <Class IRI="#EthereumTokenDeprecatedPerdurantFeature"/>
-    </DisjointClasses>
     <ClassAssertion>
         <Class IRI="#EOA-EthereumAccount"/>
         <NamedIndividual IRI="#approveAll_ERC721_EOA-Account"/>
@@ -2021,7 +2029,7 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasEthereumTokenPerdurantFeature"/>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasFeature"/>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasPerdurantFeature"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasEthereumTransactionHash"/>
@@ -2037,7 +2045,7 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isEthereumTokenFeatureModifiedIn"/>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#associatedWithEndurantFeature"/>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#associatedWithPerdurantFeature"/>
     </SubObjectPropertyOf>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#describesEtherExchangeInteraction"/>

@@ -176,11 +176,11 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#associatedWithEndurantFeature -->
+    <!-- http://www.dmi.unict.it/oasis.owl#associatedWithPerdurantFeature -->
 
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#associatedWithEndurantFeature">
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#associatedWithPerdurantFeature">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#associatedWith"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#EndurantFeature"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#PerdurantFeature"/>
     </owl:ObjectProperty>
     
 
@@ -1187,6 +1187,15 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#hasPerdurantFeature -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasPerdurantFeature">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasFeature"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#PerdurantFeature"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#hasRealization -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasRealization"/>
@@ -1584,7 +1593,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTokenFeatureModificationResult">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasModificationResult"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TokenFeatureModificationActivity"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#EndurantFeature"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#PerdurantFeature"/>
     </owl:ObjectProperty>
     
 
@@ -1696,6 +1705,16 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#involves -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#involves"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#isAssetAssociatedWithResource -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isAssetAssociatedWithResource">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#associatedWith"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Asset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:ObjectProperty>
     
 
 
@@ -4518,6 +4537,12 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TransferActivity">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Activity"/>
     </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#Type -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Type"/>
     
 
 
