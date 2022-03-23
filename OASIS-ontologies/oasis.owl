@@ -9,7 +9,7 @@
      xmlns:oasis="http://www.dmi.unict.it/oasis.owl#"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="http://www.dmi.unict.it/oasis.owl">
-        <terms:created rdf:resource="http://www.dmi.unict.it/~santamaria/ext/metadata/foaf.rdf"/>
+        <terms:created rdf:resource="http://www.dmi.unict.it/santamaria/ext/metadata/foaf.rdf"/>
         <terms:created xml:lang="en">Carmelo Fabio Longo</terms:created>
         <terms:created xml:lang="en">Corrado Santoro</terms:created>
         <terms:created xml:lang="en">Daniele Francesco Santamaria</terms:created>
@@ -965,6 +965,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#hasEndurantFeature -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasEndurantFeature">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasFeature"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#hasExecutionObject -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasExecutionObject">
@@ -994,7 +1002,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasFeasibility -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasFeasibility">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasFeature"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasPerdurantFeature"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Feasibility"/>
     </owl:ObjectProperty>
     
@@ -1202,6 +1210,15 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#hasRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasRole">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasPerdurantFeature"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Role"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#hasScheduling -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasScheduling">
@@ -1227,6 +1244,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasSpecificity">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasFeature"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Specificity"/>
     </owl:ObjectProperty>
     
 
@@ -2493,6 +2511,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#AcceptedStatus -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#AcceptedStatus">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ClosedStatus"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#Action -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Action">
@@ -2790,6 +2816,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#ClosedStatus -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#ClosedStatus">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#DeactiveStatus"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#CommodityThing -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#CommodityThing"/>
@@ -3016,7 +3050,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#ConfirmedTransactionStatus">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainTransactionStatus"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#PerdurantFeature"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#PerdurantStatus"/>
     </owl:Class>
     
 
@@ -3327,7 +3361,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#FailedTransactionStatus">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainTransactionStatus"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#PerdurantFeature"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#PerdurantStatus"/>
     </owl:Class>
     
 
@@ -3716,6 +3750,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#OpenStatus -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#OpenStatus">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ActiveStatus"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#Operator -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Operator">
@@ -3748,7 +3790,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#PendingTransactionStatus">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainTransactionStatus"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#PerdurantFeature"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#PerdurantStatus"/>
     </owl:Class>
     
 
@@ -3766,6 +3808,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#PerdurantFeature">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Feature"/>
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#PerdurantThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#PerdurantStatus -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#PerdurantStatus">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#PerdurantFeature"/>
     </owl:Class>
     
 
@@ -3876,6 +3926,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#RejectedStatus -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#RejectedStatus">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ClosedStatus"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#RequestPlanDescription -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#RequestPlanDescription">
@@ -3883,6 +3941,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanThing"/>
         <rdfs:comment xml:lang="en">This class describes the description of  a plan.</rdfs:comment>
         <rdfs:label xml:lang="en">Plan description</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#RetiredStatus -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#RetiredStatus">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ClosedStatus"/>
     </owl:Class>
     
 
@@ -3903,6 +3969,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#AgentBehaviorTemplate"/>
         <rdfs:comment xml:lang="en">This class describes an robot agent behavior template</rdfs:comment>
         <rdfs:label xml:lang="en">Robot agent behavior template</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#Role -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Role">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#PerdurantFeature"/>
     </owl:Class>
     
 
@@ -4104,6 +4178,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalOperator"/>
         <rdfs:comment xml:lang="en">This class describes space operators used in conditionals.</rdfs:comment>
         <rdfs:label xml:lang="en">Space operator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#Specificity -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Specificity">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
     </owl:Class>
     
 
