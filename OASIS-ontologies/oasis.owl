@@ -109,16 +109,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/ec-oasis.owl#isPercentageComputedOn -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/ec-oasis.owl#isPercentageComputedOn">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isDescribedBy"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#PercentageCost"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#NumericCost"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.dmi.unict.it/oasis.owl#accepts -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#accepts">
@@ -893,16 +883,17 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasCost -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasCost">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasCostCompositeValue"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasCompositeValue"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Cost"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#hasCostCompositeValue -->
+    <!-- http://www.dmi.unict.it/oasis.owl#hasCurrency -->
 
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasCostCompositeValue">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasCompositeValue"/>
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasCurrency">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isDescribedBy"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Currency"/>
     </owl:ObjectProperty>
     
 
@@ -1223,6 +1214,15 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#hasPercentageValue -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasPercentageValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasCompositeValue"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#PercentageValue"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#hasPerdurantFeature -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasPerdurantFeature">
@@ -1252,6 +1252,16 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasRole">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasPerdurantFeature"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#hasRoleType -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasRoleType">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasEndurantFeature"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Role"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#RoleType"/>
     </owl:ObjectProperty>
     
 
@@ -1733,6 +1743,15 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#hasValidityPerTimeUnit -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasValidityPerTimeUnit">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasCompositeValue"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TemporalEntity"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#implementedBy -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#implementedBy">
@@ -1769,16 +1788,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#associatedWith"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Asset"/>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#isCostPerTimeUnit -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isCostPerTimeUnit">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasCostCompositeValue"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Cost"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TemporalEntity"/>
     </owl:ObjectProperty>
     
 
@@ -1873,6 +1882,26 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isModifiedIn"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#FungibleThing"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#NonFungibleThing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#isPercentageCostComputedOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isPercentageCostComputedOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isPercentangeComputedOn"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#PercentageCost"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#NumericCost"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#isPercentangeComputedOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isPercentangeComputedOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasCompositeValue"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isDescribedBy"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#PercentageValue"/>
     </owl:ObjectProperty>
     
 
@@ -3207,7 +3236,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#Cryptocurrency -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Cryptocurrency">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Currency"/>
     </owl:Class>
     
 
@@ -3216,6 +3245,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#CryptocurrencyExchangeBlockchainInteraction">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainInteraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#Currency -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Currency">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
     </owl:Class>
     
 
@@ -3511,6 +3548,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Feature">
         <rdfs:comment xml:lang="en">This class describes a feature</rdfs:comment>
         <rdfs:label xml:lang="en">Feature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#FiatCurrency -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#FiatCurrency">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Currency"/>
     </owl:Class>
     
 
@@ -3948,6 +3993,15 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#PercentageCost">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Cost"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#PercentageValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#PercentageValue -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#PercentageValue">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#CompositeValue"/>
     </owl:Class>
     
 
@@ -4142,6 +4196,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Role">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#PerdurantFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#RoleType -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#RoleType">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Type"/>
     </owl:Class>
     
 

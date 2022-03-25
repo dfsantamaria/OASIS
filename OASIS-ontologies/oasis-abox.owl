@@ -78,6 +78,12 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#bid -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#bid"/>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token -->
 
     <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token">
@@ -90,6 +96,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#burn">
         <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#buyer -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#buyer">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#RoleType"/>
     </owl:NamedIndividual>
     
 
@@ -281,6 +295,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#publisher -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#publisher">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#RoleType"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis-abox.owl#reject -->
 
     <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#reject">
@@ -325,6 +347,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#seek">
         <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#seller -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#seller">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#RoleType"/>
     </owl:NamedIndividual>
     
 
