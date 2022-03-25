@@ -8,9 +8,9 @@
 
 # Papers and articles
 
--  Blockchains through ontologies: the case study of the Ethereum ERC721 standard in OASIS. Giampaolo Bella, Domenico Cantone, Cristiano Longo, Marianna Nicolosi-Asmundo, Daniele Francesco Santamaria. To app. in: Proceedings of IDC 2021, The 14th International Symposium on Intelligent Distributed Computing, 16-18 September, 2021, Scilla, Reggio Calabria, Italy.
+-  Blockchains through ontologies: the case study of the Ethereum ERC721 standard in OASIS. Giampaolo Bella, Domenico Cantone, Cristiano Longo, Marianna Nicolosi-Asmundo, Daniele Francesco Santamaria. To app. in D. Camacho et al. (eds.), Intelligent Distributed Computing XIV, Studies in Computational Intelligence 1026, Chapter 23.
 -  Semantic Representation as a Key Enabler for Blockchain-Based Commerce. Giampaolo Bella, Domenico Cantone, Cristiano Longo, Marianna Nicolosi-Asmundo and Daniele Francesco Santamaria. In: K. Tserpes et al. (Eds.): GECON 2021, Lecture Note in Computer Science, Vol. 13072, pp. 191–198, Springer, 2021.
--  Ontological Smart Contracts in OASIS: Ontology forAgents, Systems, and Integration of Services. Domenico Cantone, Carmelo Fabio Longo, Marianna Nicolosi-Asmundo, Daniele Francesco Santamaria, Corrado Santoro. To app. in: Proceedings of IDC 2021, The 14th International Symposium on Intelligent Distributed Computing, 16-18 September, 2021, Scilla, Reggio Calabria, Italy.
+-  Ontological Smart Contracts in OASIS: Ontology forAgents, Systems, and Integration of Services. Domenico Cantone, Carmelo Fabio Longo, Marianna Nicolosi-Asmundo, Daniele Francesco Santamaria, Corrado Santoro. To app. in D. Camacho et al. (eds.), Intelligent Distributed Computing XIV, Studies in Computational Intelligence 1026, Chapter 22.
 -  Towards an Ontology-Based Framework for a Behavior-Oriented Integration of the IoT. Domenico Cantone, Carmelo Fabio Longo, Marianna Nicolosi-Asmundo, Daniele Francesco Santamaria, Corrado Santoro. Proceedings of the 20th Workshop From Objects to Agents, 26-28 June, 2019, Parma, Italy, CEUR Workshop Proceedings, ISSN 1613-0073, Vol. 2404, pp. 119--126.
 
 ## Licensing information
