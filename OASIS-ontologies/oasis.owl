@@ -2594,10 +2594,19 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#hasQuantityData -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasQuantityData">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasDataValue"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Quantity"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#hasQuantityValue -->
 
     <owl:DatatypeProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasQuantityValue">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasDataValue"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasQuantityData"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Quantity"/>
         <rdfs:range>
             <rdfs:Datatype>
