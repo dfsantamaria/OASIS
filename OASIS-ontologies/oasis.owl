@@ -411,16 +411,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#deliversMessage -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#deliversMessage">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#interactsWith"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Connection"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Message"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.dmi.unict.it/oasis.owl#dependsOn -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#dependsOn">
@@ -605,6 +595,26 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Space"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Space"/>
         <rdfs:comment xml:lang="en">This property links spaces to the contained spaces</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#goalDescriptionSubmittedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#goalDescriptionSubmittedTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#submittedTo"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#goalExecutionDrawnBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#goalExecutionDrawnBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#drawnBy"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalExecution"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
     </owl:ObjectProperty>
     
 
@@ -1058,54 +1068,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isDescribedBy"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#MeasurementUnit"/>
     </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#hasMessageObject -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasMessageObject">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasMessagePart"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasObjectThing"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Message"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#MessageObject"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#hasMessageOperator -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasMessageOperator">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasMessagePart"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasOperator"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Message"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#MessageOperator"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#hasMessageOperatorArgument -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasMessageOperatorArgument">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasOperatorArgument"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#MessageOperatorArgument"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#hasMessageParameter -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasMessageParameter">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasMessagePart"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasParameter"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Message"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#MessageParameter"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#hasMessagePart -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasMessagePart"/>
     
 
 
@@ -1973,16 +1935,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#messageDeliveredTo -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#messageDeliveredTo">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Message"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Connection"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.dmi.unict.it/oasis.owl#mines -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#mines">
@@ -2023,6 +1975,26 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#performs">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#interactsWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#planDescriptionSubmittedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#planDescriptionSubmittedTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#submittedTo"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#planExecutionDrawnBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#planExecutionDrawnBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#drawnBy"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanExecution"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
     </owl:ObjectProperty>
     
 
@@ -3497,6 +3469,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#ExpiredStatus -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#ExpiredStatus">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ClosedStatus"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#ExternalBehavior -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#ExternalBehavior">
@@ -3792,62 +3772,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Message">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#MessageThing"/>
         <rdfs:comment xml:lang="en">This class describes a message</rdfs:comment>
         <rdfs:label xml:lang="en">Message</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#MessageDescriptor -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#MessageDescriptor">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Descriptor"/>
-        <rdfs:label xml:lang="en">Message descriptor</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#MessageObject -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#MessageObject">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#MessageDescriptor"/>
-        <rdfs:label xml:lang="en">Message object</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#MessageOperator -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#MessageOperator">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#MessageDescriptor"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Operator"/>
-        <rdfs:label xml:lang="en">Message operator</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#MessageOperatorArgument -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#MessageOperatorArgument">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#OperatorArgument"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#MessageParameter -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#MessageParameter">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#MessageDescriptor"/>
-        <rdfs:label xml:lang="en">Message parameter</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#MessageThing -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#MessageThing">
-        <rdfs:label xml:lang="en">Message part</rdfs:label>
     </owl:Class>
     
 
