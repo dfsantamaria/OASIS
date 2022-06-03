@@ -2899,7 +2899,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#BlockchainSystem -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#BlockchainSystem">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#System"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#MultiAgentSystem"/>
     </owl:Class>
     
 
@@ -3786,6 +3786,15 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#MultiAgentSystem -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#MultiAgentSystem">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#System"/>
+        <rdfs:comment xml:lang="eng">a Multi-Agent System is a set of agents who operate togheter on voluntary base or by design</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#NonDigitalServiceAsset -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#NonDigitalServiceAsset">
@@ -4301,6 +4310,15 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
         <rdfs:comment xml:lang="en">This class describes a smart contract part</rdfs:comment>
         <rdfs:label xml:lang="en">Smart contract part</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#Society -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Society">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#System"/>
+        <rdfs:comment xml:lang="eng">A society is a set of agents who operate haphazardly  togheter</rdfs:comment>
     </owl:Class>
     
 
