@@ -15,6 +15,7 @@
         <terms:created xml:lang="en">Daniele Francesco Santamaria</terms:created>
         <terms:created xml:lang="en">Domenico Cantone</terms:created>
         <terms:created xml:lang="en">Marianna Nicolosi-Asmundo</terms:created>
+        <oasis:ontologyTokenEthereumSmartContractAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0x36194ab80f7649572cab9ec524950df32f638b08</oasis:ontologyTokenEthereumSmartContractAddress>
         <oasis:priorVersionOntologyToken rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</oasis:priorVersionOntologyToken>
         <rdfs:comment xml:lang="en">OASIS- An Ontology for Agents, Systems, and Integration of Services</rdfs:comment>
         <rdfs:label>OASIS</rdfs:label>
@@ -87,6 +88,20 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:AnnotationProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isInTheBeliefOf">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasBeliefInformation"/>
     </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#ontologyTokenEthereumSmartContractAddress -->
+
+    <owl:AnnotationProperty rdf:about="http://www.dmi.unict.it/oasis.owl#ontologyTokenEthereumSmartContractAddress">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ontologyTokenSmartContractAddress"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#ontologyTokenSmartContractAddress -->
+
+    <owl:AnnotationProperty rdf:about="http://www.dmi.unict.it/oasis.owl#ontologyTokenSmartContractAddress"/>
     
 
 

@@ -16,6 +16,7 @@
         <terms:created xml:lang="en">Domenico Cantone</terms:created>
         <terms:created xml:lang="en">Marianna Nicolosi Asmundo</terms:created>
         <oasis:importsOntologyToken rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</oasis:importsOntologyToken>
+        <oasis:ontologyTokenEthereumSmartContractAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0x36194ab80f7649572cab9ec524950df32f638b08</oasis:ontologyTokenEthereumSmartContractAddress>
         <oasis:priorVersionOntologyToken rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</oasis:priorVersionOntologyToken>
         <rdfs:comment xml:lang="en">This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
