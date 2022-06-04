@@ -70,6 +70,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#importsOntologyToken -->
 
     <owl:AnnotationProperty rdf:about="http://www.dmi.unict.it/oasis.owl#importsOntologyToken">
+        <rdfs:comment xml:lang="eng">This property is used to mention the the OASIS-OntoToken token number of the imported ontologies</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     </owl:AnnotationProperty>
     
@@ -78,6 +79,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#isDescribedByOntologyDescription -->
 
     <owl:AnnotationProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isDescribedByOntologyDescription">
+        <rdfs:comment xml:lang="eng">This property is used to provide the current ontology with a meta-ontology, i.e., an ontology that describes another ontology</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     </owl:AnnotationProperty>
     
@@ -108,6 +110,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#priorVersionOntologyToken -->
 
     <owl:AnnotationProperty rdf:about="http://www.dmi.unict.it/oasis.owl#priorVersionOntologyToken">
+        <rdfs:comment xml:lang="eng">This property is used to mention the the OASIS-OntoToken token number of the previous version of the ontology</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     </owl:AnnotationProperty>
     
