@@ -270,6 +270,23 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#consistsOfFinalProcessState -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfFinalProcessState">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOfNextProcessState"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#InitialProcessState"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#NonTerminatingProcessState"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#FinalProcessState"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#consistsOfGoalDescription -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfGoalDescription">
@@ -299,6 +316,43 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanExecution"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalExecution"/>
         <rdfs:comment xml:lang="en">This property links plans to an execution of a goal</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#consistsOfNextProcessState -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfNextProcessState">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOfProcessState"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcessState"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcessState"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#consistsOfNonTerminatingProcessState -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfNonTerminatingProcessState">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOfNextProcessState"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#InitialProcessState"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#NonTerminatingProcessState"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#NonTerminatingProcessState"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#consistsOfProcessState -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfProcessState">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOf"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcessState"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcessState"/>
     </owl:ObjectProperty>
     
 
@@ -1963,6 +2017,16 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#nonTerminatingProcessStateImplementedByPlan -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#nonTerminatingProcessStateImplementedByPlan">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#implementedBy"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#NonTerminatingProcessState"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#overloads -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#overloads">
@@ -2023,6 +2087,46 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#usesOntologyDescriptionObject"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#OntologyDescriptionObject"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#OntologyDescriptionObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#processConsistsOfFinalProcessState -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#processConsistsOfFinalProcessState">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#processConsistsOfProcessState"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Process"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#FinalProcessState"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#processConsistsOfInitialProcessState -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#processConsistsOfInitialProcessState">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#processConsistsOfProcessState"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Process"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#InitialProcessState"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#processConsistsOfNonTerminatingProcessState -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#processConsistsOfNonTerminatingProcessState">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#processConsistsOfProcessState"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Process"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#NonTerminatingProcessState"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#processConsistsOfProcessState -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#processConsistsOfProcessState">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOf"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Process"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcessState"/>
     </owl:ObjectProperty>
     
 
@@ -3576,6 +3680,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#FinalProcessState -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#FinalProcessState">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TerminatingProcessState"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#Format -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Format">
@@ -3702,6 +3814,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#InformationObject">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#InitialProcessState -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#InitialProcessState">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TerminatingProcessState"/>
     </owl:Class>
     
 
@@ -3888,6 +4008,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#NonTerminatingProcessState -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#NonTerminatingProcessState">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcessState"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#NumericCost -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#NumericCost">
@@ -4058,6 +4186,30 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BehaviorThing"/>
         <rdfs:comment xml:lang="en">This class describes  the part of a plan.</rdfs:comment>
         <rdfs:label xml:lang="en">Plan part</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#Process -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Process">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ActionThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#ProcessState -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#ProcessState">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#NonTerminatingProcessState"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TerminatingProcessState"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ActionThing"/>
     </owl:Class>
     
 
@@ -4718,6 +4870,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#TemporalEntity -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TemporalEntity"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#TerminatingProcessState -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TerminatingProcessState">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcessState"/>
+    </owl:Class>
     
 
 
