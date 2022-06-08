@@ -3684,6 +3684,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#FinalProcessState">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TerminatingProcessState"/>
+        <rdfs:label xml:lang="en">Final Process State</rdfs:label>
+        <rdfs:label xml:lang="en">This class implements the final state of a process.</rdfs:label>
     </owl:Class>
     
 
@@ -3822,6 +3824,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#InitialProcessState">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TerminatingProcessState"/>
+        <rdfs:comment xml:lang="en">This class implements the initial state of a process.</rdfs:comment>
+        <rdfs:label xml:lang="en">Initial Process State</rdfs:label>
     </owl:Class>
     
 
@@ -4012,6 +4016,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#NonTerminatingProcessState">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcessState"/>
+        <rdfs:comment xml:lang="en">This class implements a particular process state that does not terminate(e.g. loop).</rdfs:comment>
+        <rdfs:label xml:lang="en">Non Terminating Process State</rdfs:label>
     </owl:Class>
     
 
@@ -4194,6 +4200,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Process">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ActionThing"/>
+        <rdfs:comment xml:lang="en">This class implements a model(Abstract State Machine) for processes.</rdfs:comment>
+        <rdfs:label xml:lang="en">Process</rdfs:label>
     </owl:Class>
     
 
@@ -4210,6 +4218,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ActionThing"/>
+        <rdfs:comment xml:lang="en">This class defines the possible instances of processes.</rdfs:comment>
+        <rdfs:label xml:lang="en">Process State</rdfs:label>
     </owl:Class>
     
 
@@ -4877,6 +4887,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TerminatingProcessState">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcessState"/>
+        <rdfs:comment xml:lang="en">This class implements a process state that terminates.</rdfs:comment>
+        <rdfs:label xml:lang="en">Terminating Process State</rdfs:label>
     </owl:Class>
     
 
