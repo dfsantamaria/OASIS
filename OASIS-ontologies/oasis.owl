@@ -283,7 +283,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#FinalProcessState"/>
-        <rdfs:comment>This property connects a state to the final state.</rdfs:comment>
+        <rdfs:comment>This property connects a process state to the final process state.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -327,7 +327,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOfProcessState"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcessState"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcessState"/>
-        <rdfs:comment>This property connects a state to the next.</rdfs:comment>
+        <rdfs:comment xml:lang="eng">This property connects a process state with the next process state.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -345,7 +345,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#NonTerminatingProcessState"/>
-        <rdfs:comment>This property connects a state to a non terminating process state.</rdfs:comment>
+        <rdfs:comment xml:lang="eng">This property connects a process state with a non terminating process state.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -356,7 +356,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOf"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcessState"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcessState"/>
-        <rdfs:comment>This property connects a state to another process state.</rdfs:comment>
+        <rdfs:comment xml:lang="eng">This property connects a process state to another process state.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -2101,7 +2101,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#processConsistsOfProcessState"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Process"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#FinalProcessState"/>
-        <rdfs:comment>This property connects a process to a final state.</rdfs:comment>
+        <rdfs:comment xml:lang="eng">This property connects a process with  its final state.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -2112,7 +2112,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#processConsistsOfProcessState"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Process"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#InitialProcessState"/>
-        <rdfs:comment>This property connects a process to a initial state.</rdfs:comment>
+        <rdfs:comment xml:lang="eng">This property connects a process with its initial state.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -2123,7 +2123,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#processConsistsOfProcessState"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Process"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#NonTerminatingProcessState"/>
-        <rdfs:comment>This property connects a process to a non terminating state.</rdfs:comment>
+        <rdfs:comment xml:lang="eng">This property connects a process with its non terminating state.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -2134,7 +2134,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOf"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Process"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcessState"/>
-        <rdfs:comment>This property connects a process to a state.</rdfs:comment>
+        <rdfs:comment xml:lang="eng">This property connects a process with its process state.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -3693,7 +3693,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#FinalProcessState">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TerminatingProcessState"/>
         <rdfs:label xml:lang="en">Final Process State</rdfs:label>
-        <rdfs:label xml:lang="en">This class implements the final state of a process.</rdfs:label>
+        <rdfs:label xml:lang="en">This class represents the final state of a process.</rdfs:label>
     </owl:Class>
     
 
@@ -3832,7 +3832,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#InitialProcessState">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TerminatingProcessState"/>
-        <rdfs:comment xml:lang="en">This class implements the initial state of a process.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This class represents the initial state of a process.</rdfs:comment>
         <rdfs:label xml:lang="en">Initial Process State</rdfs:label>
     </owl:Class>
     
@@ -4024,7 +4024,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#NonTerminatingProcessState">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcessState"/>
-        <rdfs:comment xml:lang="en">This class implements a particular process state that does not terminate(e.g. loop).</rdfs:comment>
+        <rdfs:comment xml:lang="en">This class represents an internal process state of a process.</rdfs:comment>
         <rdfs:label xml:lang="en">Non Terminating Process State</rdfs:label>
     </owl:Class>
     
@@ -4208,7 +4208,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Process">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ActionThing"/>
-        <rdfs:comment xml:lang="en">This class implements a model(Abstract State Machine) for processes.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This class represents a process by folllowing the Abstract State Machine model.</rdfs:comment>
         <rdfs:label xml:lang="en">Process</rdfs:label>
     </owl:Class>
     
@@ -4226,7 +4226,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ActionThing"/>
-        <rdfs:comment xml:lang="en">This class defines the possible instances of processes.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This class represents the processes state of a process.</rdfs:comment>
         <rdfs:label xml:lang="en">Process State</rdfs:label>
     </owl:Class>
     
@@ -4895,7 +4895,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TerminatingProcessState">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcessState"/>
-        <rdfs:comment xml:lang="en">This class implements a process state that terminates.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This class represents a process state of a process that is either initial or final.</rdfs:comment>
         <rdfs:label xml:lang="en">Terminating Process State</rdfs:label>
     </owl:Class>
     
