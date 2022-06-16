@@ -14,6 +14,7 @@
         <terms:created xml:lang="en">Corrado Santoro</terms:created>
         <terms:created xml:lang="en">Daniele Francesco Santamaria</terms:created>
         <terms:created xml:lang="en">Domenico Cantone</terms:created>
+        <terms:created xml:lang="eng">Gianpietro Castiglione</terms:created>
         <terms:created xml:lang="en">Marianna Nicolosi-Asmundo</terms:created>
         <oasis:ontologyTokenEthereumSmartContractAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0x36194ab80f7649572cab9ec524950df32f638b08</oasis:ontologyTokenEthereumSmartContractAddress>
         <oasis:priorVersionOntologyToken rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</oasis:priorVersionOntologyToken>
@@ -753,14 +754,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasBehavior">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isDescribedBy"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Agent"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#AgentBehaviorTemplate"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Actor"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
         <rdfs:comment xml:lang="en">This property links agents to the related behavior</rdfs:comment>
     </owl:ObjectProperty>
@@ -3004,6 +2998,12 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#Actor -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Actor">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.dmi.unict.it/oasis.owl#hasBehavior"/>
+                <owl:someValuesFrom rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ActionThing"/>
         <rdfs:comment xml:lang="en">This class describes actors</rdfs:comment>
         <rdfs:label xml:lang="en">Actor</rdfs:label>
@@ -3824,6 +3824,17 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#ExternalBehavior">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+        <owl:disjointWith rdf:resource="http://www.dmi.unict.it/oasis.owl#InternalBehavior"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#ExtrinsicBehavior -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#ExtrinsicBehavior">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+        <owl:disjointWith rdf:resource="http://www.dmi.unict.it/oasis.owl#IntrisicBehavior"/>
+        <rdfs:comment xml:lang="eng">This class represents either a behavior that is either the direct consenquence of a third-part actor&apos;s will or programming or an unintensional behavior</rdfs:comment>
     </owl:Class>
     
 
@@ -4065,6 +4076,15 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#InternalBehavior">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#IntrisicBehavior -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#IntrisicBehavior">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+        <rdfs:comment xml:lang="eng">This class represents a behavior that is the direct consenquence of the actor will or programming</rdfs:comment>
     </owl:Class>
     
 
@@ -4816,6 +4836,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#System -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#System">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Actor"/>
         <rdfs:comment xml:lang="en">This class describes a set of things working together as parts of a mechanism.</rdfs:comment>
         <rdfs:label xml:lang="en">System</rdfs:label>
     </owl:Class>
