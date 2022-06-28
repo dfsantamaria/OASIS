@@ -161,7 +161,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#adoptsAgentBehaviorTemplate">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#adoptsTemplate"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Agent"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#AgentBehaviorTemplate"/>
     </owl:ObjectProperty>
     
@@ -2145,8 +2145,73 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#overloads">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#interactsWith"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalParameter"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameterTemplate"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#overloadsBehavior -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsBehavior">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#overloads"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#overloadsGoalDescription -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsGoalDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#overloads"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#overloadsInputParameter -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsInputParameter">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#overloads"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalInputParameter"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#overloadsOutputParameter -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsOutputParameter">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#overloads"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOutputParameterTemplate"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOutputParameterTemplate"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#overloadsTaskDescription -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsTaskDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#overloads"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#overloadsTaskObject -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsTaskObject">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#overloads"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskObjectTemplate"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
