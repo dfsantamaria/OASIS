@@ -2184,7 +2184,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsTaskInputParameter">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#overloads"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalInputParameter"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskFormalInputParameter"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2211,7 +2218,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsTaskOutputParameter">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#overloads"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOutputParameterTemplate"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOutputParameterTemplate"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOutputParameterTemplate"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
