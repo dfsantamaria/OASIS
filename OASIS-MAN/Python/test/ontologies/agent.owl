@@ -4,13 +4,50 @@
    xmlns:owl="http://www.w3.org/2002/07/owl#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 >
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#refersExactlyTo">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  <rdf:Description rdf:about="http://www.test.org/myOntology#MyAgentTaskOperator">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#turn"/>
+    <oasis:overloadsTaskOperator rdf:resource="http://www.test.org/myOntologyTemplate#MyTemplateTaskOperator"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.test.org/myOntology#MyAgentTaskObject">
     <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
     <oasis:refersAsNewTo rdf:resource="http://www.test.org/myOntology#agent-object-entity-1"/>
-    <oasis:overloads rdf:resource="http://www.test.org/myOntologyTemplate#MyTemplateTaskObject"/>
+    <oasis:overloadsTaskObject rdf:resource="http://www.test.org/myOntologyTemplate#MyTemplateTaskObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsBehavior">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.test.org/myOntology#MyAgentBehavior">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+    <oasis:consistsOfGoalDescription rdf:resource="http://www.test.org/myOntology#MyAgentGoal"/>
+    <oasis:overloadsBehavior rdf:resource="http://www.test.org/myOntologyTemplate#MyTemplateBehavior"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskFormalInputParameter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.test.org/myOntology#MyAgent">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Agent"/>
+    <oasis:hasBehavior rdf:resource="http://www.test.org/myOntology#MyAgentBehavior"/>
+    <oasis:overloadsAgent rdf:resource="http://www.test.org/myOntologyTemplate#MyAgentBehaviorTemplate"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.test.org/myOntology#MyAgentGoal">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+    <oasis:consistsOfTaskDescription rdf:resource="http://www.test.org/myOntology#MyAgentTask"/>
+    <oasis:overloadsGoalDescription rdf:resource="http://www.test.org/myOntologyTemplate#MyTemplateGoal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskOperator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.test.org/myOntology#MyAgentInput1">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalInputParameter"/>
+    <oasis:refersAsNewTo rdf:resource="http://www.test.org/myOntology#agent-input-entity-1"/>
+    <oasis:overloadsTaskFormalInputParameter rdf:resource="http://www.test.org/myOntologyTemplate#MyTemplateInput1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskObject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsTaskObject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.test.org/myOntology#MyAgentTask">
     <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
@@ -19,80 +56,70 @@
     <oasis:hasTaskObject rdf:resource="http://www.test.org/myOntology#MyAgentTaskObject"/>
     <oasis:hasTaskFormalInputParameter rdf:resource="http://www.test.org/myOntology#MyAgentInput1"/>
     <oasis:hasTaskFormalOutputParameter rdf:resource="http://www.test.org/myOntology#MyAgentOutput1"/>
-    <oasis:overloads rdf:resource="http://www.test.org/myOntologyTemplate#MyTemplateTask"/>
+    <oasis:overloadsTaskDescription rdf:resource="http://www.test.org/myOntologyTemplate#MyTemplateTask"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfTaskDescription">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.test.org/myOntology#MyAgentBehavior">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
-    <oasis:consistsOfGoalDescription rdf:resource="http://www.test.org/myOntology#MyAgentGoal"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.test.org/myOntology#MyAgentInput1">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalInputParameter"/>
-    <oasis:refersAsNewTo rdf:resource="http://www.test.org/myOntology#agent-input-entity-1"/>
-    <oasis:overloads rdf:resource="http://www.test.org/myOntologyTemplate#MyTemplateInput1"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasBehavior">
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#refersAsNewTo">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.test.org/myOntology#MyAgentOutput1">
     <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalOutputParameter"/>
     <oasis:refersAsNewTo rdf:resource="http://www.test.org/myOntology#agent-output-entity-1"/>
-    <oasis:overloads rdf:resource="http://www.test.org/myOntologyTemplate#MyTemplateOutput1"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfGoalDescription">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis-abox.owl#off">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
+    <oasis:overloadsTaskFormalOutputParameter rdf:resource="http://www.test.org/myOntologyTemplate#MyTemplateOutput1"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.test.org/myOntology#">
     <owl:imports rdf:resource="http://www.test.org/myOntologyTemplate#"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.test.org/myOntology#MyAgentGoal">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
-    <oasis:consistsOfTaskDescription rdf:resource="http://www.test.org/myOntology#MyAgentTask"/>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis-abox.owl#off">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskOperator">
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsTaskFormalOutputParameter">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.test.org/myOntology#MyAgent">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Agent"/>
-    <oasis:hasBehavior rdf:resource="http://www.test.org/myOntology#MyAgentBehavior"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#refersAsNewTo">
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskFormalOutputParameter">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#overloads">
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsTaskFormalInputParameter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsTaskDescription">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis-abox.owl#turn">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsTaskOperator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfTaskDescription">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsTaskOperatorArgument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsGoalDescription">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskOperatorArgument">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.test.org/myOntology#MyAgentTaskOperator">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
-    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#turn"/>
-    <oasis:overloads rdf:resource="http://www.test.org/myOntologyTemplate#MyTemplateTaskOperator"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.test.org/myOntology#MyAgentOperatorArgument">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
-    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#off"/>
-    <oasis:overloads rdf:resource="http://www.test.org/myOntologyTemplate#MyTemplateOperatorArgument"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis-abox.owl#turn">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskObject">
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsAgent">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskFormalInputParameter">
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#refersExactlyTo">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#imports">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskFormalOutputParameter">
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasBehavior">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.test.org/myOntology#MyAgentOperatorArgument">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
+    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#off"/>
+    <oasis:overloadsTaskOperatorArgument rdf:resource="http://www.test.org/myOntologyTemplate#MyTemplateOperatorArgument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfGoalDescription">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
 </rdf:RDF>
