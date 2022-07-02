@@ -35,7 +35,7 @@ agentTemplateName=b.createAgentTemplate("MyAgentBehaviorTemplate")
 object1 = "http://www.test.org/myOntologyTemplate#template-object-entity-1"
 input1 = "http://www.test.org/myOntologyTemplate#template-input-entity-1"
 output1 = "http://www.test.org/myOntologyTemplate#template-output-entity-1"
-b.createAgentBehaviorTemplate("MyTemplateBehavior", "MyTemplateGoal", "MyTemplateTask",
+b.createAgentBehaviorTemplate("MyAgentBehaviorTemplate", "MyTemplateBehavior", "MyTemplateGoal", "MyTemplateTask",
                          ["MyTemplateTaskOperator", "turn"],
                          ["MyTemplateOperatorArgument", "off"],
                          [
@@ -48,7 +48,7 @@ b.createAgentBehaviorTemplate("MyTemplateBehavior", "MyTemplateGoal", "MyTemplat
                              ["MyTemplateOutput1", "refersAsNewTo", output1]
                          ])
 #connect agent to agent behavior
-b.connectAgentTemplateToBehavior("MyAgentBehaviorTemplate", "MyTemplateBehavior")
+#b.connectAgentTemplateToBehavior("MyAgentBehaviorTemplate", "MyTemplateBehavior")
 
 #Create agent
 b.createAgent("MyAgent")
