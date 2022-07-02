@@ -1,4 +1,4 @@
-from source.BehaviorManager import *
+from BehaviorManager import *
 
 #test
 #create a fresh ontology for the agent
@@ -50,14 +50,13 @@ b.createAgentBehaviorTemplate("MyTemplateBehavior", "MyTemplateGoal", "MyTemplat
 #connect agent to agent behavior
 b.connectAgentTemplateToBehavior("MyAgentBehaviorTemplate", "MyTemplateBehavior")
 
-
-#Crate agent
+#Create agent
 b.createAgent("MyAgent")
 #create agent behavior
 agentobject1 = "http://www.test.org/myOntology#agent-object-entity-1"
 agentinput1 = "http://www.test.org/myOntology#agent-input-entity-1"
 agentoutput1 = "http://www.test.org/myOntology#agent-output-entity-1"
-b.createAgentBehavior("MyAgentBehavior", "MyAgentGoal", "MyAgentTask",
+b.createAgentBehavior("MyAgent", "MyAgentBehavior", "MyAgentGoal", "MyAgentTask",
                          ["MyAgentTaskOperator", "turn"],
                          ["MyAgentOperatorArgument", "off"],
                          [
@@ -82,58 +81,7 @@ b.createAgentBehavior("MyAgentBehavior", "MyAgentGoal", "MyAgentTask",
                           ]
                          ])
 #connect agent to agent behavior
-b.connectAgentToBehavior("MyAgent", "MyAgentBehavior")
-
-
-
-executionobject1 = "http://www.test.org/myExecOntology#execution-object-entity-1"
-executioninput1 = "http://www.test.org/myExecOntology#execution-input-entity-1"
-executionoutput1 = "http://www.test.org/myExecOntology#execution-output-entity-1"
-#creating agent action
-b.createAgentAction("MyAgent", "planExecution", "executionGoal", "executionTask",
-                         ["executionOperator", "turn"],
-                         ["executionArgument", "off"],
-                         [
-                             ["executionObject", "refersExactlyTo", executionobject1]
-                         ],
-                         [
-                             ["executionInput1", "refersExactlyTo", executioninput1]
-                         ],
-                         [
-                             ["executionOutput1", "refersExactlyTo", executionoutput1]
-                         ],
-                         [
-                          "MyAgentTask",
-                          [
-                              ["executionObject", "MyAgentTaskObject"]
-                          ],
-                          [
-                              ["executionInput1", "MyAgentInput1"]
-                          ],
-                          [
-                              ["executionOutput1", "MyAgentOutput1"]
-                          ]
-                         ])
-
-
-#creating Plan
-planobject1 = "http://www.test.org/myPlanOntology#plan-object-entity-1"
-planinput1 = "http://www.test.org/myPlanOntology#plan-input-entity-1"
-planoutput1 = "http://www.test.org/myPlanOntology#plan-output-entity-1"
-#creating agent action
-b.createAgentPlanDescription("MyAgent", "planDescription", "planGoal", "planTask",
-                         ["planOperator", "turn"],
-                         ["planArgument", "off"],
-                         [
-                             ["planObject", "refersAsNewTo", planobject1]
-                         ],
-                         [
-                             ["planInput1", "refersAsNewTo", planinput1]
-                         ],
-                         [
-                             ["planOutput1", "refersExactlyTo", planoutput1]
-                         ])
-
+#b.connectAgentToBehavior("MyAgent", "MyAgentBehavior")
 
 
 #serialization
