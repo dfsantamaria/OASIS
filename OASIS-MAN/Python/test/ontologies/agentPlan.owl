@@ -3,11 +3,11 @@
    xmlns:owl="http://www.w3.org/2002/07/owl#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 >
-  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#imports">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://www.test.org/myOntologyPlans#">
     <owl:imports rdf:resource="http://www.test.org/myOntologyActions#"/>
     <owl:imports rdf:resource="http://www.test.org/myOntology#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#imports">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
 </rdf:RDF>
