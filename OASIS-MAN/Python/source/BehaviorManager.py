@@ -13,7 +13,7 @@ class BehaviorManager:
         #
         self.addOntoMap("oasis", "https://www.dmi.unict.it/santamaria/projects/oasis/sources/oasis.owl", None, 0)  # OASIS ontology object
         self.ontologies[self.ontoMap["oasis"]["onto"]]=self.loadOntology(self.ontoMap["oasis"]["url"])
-        self.addOntoMap("abox", "https://www.dmi.unict.it/santamaria/projects/oasis/sources/oasis-abox.owl",None, 1)  # OASIS-ABox ontology object
+        self.addOntoMap("abox", "https://www.dmi.unict.it/santamaria/projects/oasis/sources/oasis-abox.owl", None, 1)  # OASIS-ABox ontology object
         self.ontologies[self.ontoMap["abox"]["onto"]] = self.loadOntology(self.ontoMap["abox"]["url"])
 
         self.owlobj = URIRef("http://www.w3.org/2002/07/owl#ObjectProperty")
@@ -29,8 +29,12 @@ class BehaviorManager:
             self.startOntology("action", actionURL, actionNamespace, actionGraph, 4, {"base"})
 
         if planGraph is not None:
-            self.startOntology("plan", planURL, planNamespace, planGraph, 5, {"action","base"})
+            self.startOntology("plan", planURL, planNamespace, planGraph, 5, {"base"})
 
+        self.addImportOASIS(ontologyTemplateGraph, ontologyTemplateNamespace)
+        self.addImportOASIS(ontologyGraph, ontologyNamespace)
+        self.addImportOASIS(actionGraph, actionNamespace)
+        self.addImportOASIS(planGraph, planNamespace)
         return
 
 
@@ -43,13 +47,13 @@ class BehaviorManager:
         self.addOntoMap(shortName, url, None, nwpos)
         self.ontologies[self.ontoMap[shortName]["onto"]] = graph  # User template ontology
         if len([item for item in self.ontologies[self.ontoMap[shortName]["onto"]].namespaces() if item[1] == 'http://www.w3.org/2002/07/owl#'])==0:
-            self.ontologies[self.ontoMap[shortName]["onto"]].bind("owl","http://www.w3.org/2002/07/owl#")
+            self.ontologies[self.ontoMap[shortName]["onto"]].namespace_manager.bind("owl","http://www.w3.org/2002/07/owl#")
         if len([item for item in self.ontologies[self.ontoMap[shortName]["onto"]].namespaces()
                 if item[1] == self.ontoMap["oasis"]["namespace"]]) == 0:
-                self.ontologies[self.ontoMap[shortName]["onto"]].bind("oasis", self.ontoMap["oasis"]["namespace"])
+                self.ontologies[self.ontoMap[shortName]["onto"]].namespace_manager.bind("oasis", self.ontoMap["oasis"]["namespace"])
         if len([item for item in self.ontologies[self.ontoMap[shortName]["onto"]].namespaces()
                 if item[1] == self.ontoMap["abox"]["namespace"]]) == 0:
-                 self.ontologies[self.ontoMap[shortName]["onto"]].bind("oabox", self.ontoMap["abox"]["namespace"])
+                 self.ontologies[self.ontoMap[shortName]["onto"]].namespace_manager.bind("oabox", self.ontoMap["abox"]["namespace"])
 
         if namespace is None:
             self.addOntoMap(shortName, None, self.getNamespace(self.ontologies[self.ontoMap[shortName]["onto"]]), None)
@@ -129,6 +133,7 @@ class BehaviorManager:
             self.addObjPropAssertion(ontology, URIRef(ontologyNS), OWL.imports, URIRef(s))
 
 
+
     def getNoAnchorNamespace(self, namespace):
         if namespace.endswith('#'):
            return namespace[:-1]
@@ -137,8 +142,8 @@ class BehaviorManager:
     #import OASIS and OASIS-Abox in the current ontology
     def addImportOASIS(self, ontology, namespace):
         self.addImportAxioms(ontology, namespace, [self.ontoMap["oasis"]["url"], self.ontoMap["abox"]["url"]])
-        ontology.bind("oasis", self.ontoMap["oasis"]["namespace"])
-        ontology.bind("oabox", self.ontoMap["abox"]["namespace"])
+        ontology.namespace_manager.bind("oasis", self.ontoMap["oasis"]["namespace"])
+        ontology.namespace_manager.bind("oabox", self.ontoMap["abox"]["namespace"])
 
         # Create an user agent given the agent entity name
 
@@ -482,18 +487,22 @@ class BehaviorManager:
 
         return
 
-    def createAgentPlanDescription(self, agentname, planName, goalName, taskName, operators, operatorsArguments,
+    def createAgentPlanRequestDescription(self, agentname, planName, goalName, taskName, operators, operatorsArguments,
                         objects, inputs, outputs):
-        return self.createAgentPlan(agentname, self.getOASISEntityByName("requests"), planName, "PlanDescription", goalName, taskName, operators, operatorsArguments, objects, inputs,  outputs)
+        return self.createAgentPlanRequest(agentname, self.getOASISEntityByName("requests"), planName, "PlanDescription", goalName, taskName, operators, operatorsArguments, objects, inputs,  outputs)
 
-    def createAgentPlan(self, agentname, propertyAgent, planName, planClass, goalName, taskName, operators, operatorsArguments, objects, inputs,  outputs):
+    def createAgentPlanRequest(self, agentname, propertyAgent, planName, planClass, goalName, taskName, operators, operatorsArguments, objects, inputs,  outputs):
         agent = self.ontoMap["base"]["namespace"] + agentname;
         plan, goal, task, taskOperator, taskOperatorArgument = self.__createPlanPath__( self.ontologies[self.ontoMap["plan"]["onto"]],
                                                                                              self.ontoMap["plan"]["namespace"],
                                                                                              planName, planClass, goalName, taskName, operators, operatorsArguments)
 
         self.addObjPropAssertion(self.ontologies[self.ontoMap["plan"]["onto"]], agent, propertyAgent, plan)
-
+        if objects:
+            for object in objects:
+                objName = self.addTaskObjectToTask(self.ontologies[self.ontoMap["plan"]["onto"]],  self.ontoMap["plan"]["namespace"],
+                                                   self.ontoMap["plan"]["namespace"]+taskName, object[0],object[1],object[2]
+                                                   )
         # create, add, and connect the task input parameters
         if inputs:
             for input in inputs:
