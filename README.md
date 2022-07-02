@@ -51,7 +51,7 @@ B) (Optional) Create a new behavior template by typing </br>
    Then, create a new agent template behavior by typing: </br>
 
 
-      b.createAgentBehaviorTemplate(MyTemplateBehavior, MyTemplateGoal, MyTemplateTask,
+      b.createAgentBehaviorTemplate(MyAgentBehavior, MyTemplateBehavior, MyTemplateGoal, MyTemplateTask,
                                      [MyTemplateTaskOperator, action], 
                                      [MyTemplateOperatorArgument, actionArgument],
                                      [
@@ -66,6 +66,7 @@ B) (Optional) Create a new behavior template by typing </br>
 
         
    where:
+   - "MyAgentBehavior" is the entity name of the agent template.
    - "MyTemplateBehavior" is the entity name of the behavior template. 
    - "MyTemplateGoal" is the entity name of the goal template.
    - "MyTemplateTask" is the entity name of the task template.
@@ -89,14 +90,6 @@ B) (Optional) Create a new behavior template by typing </br>
        - "MyTemplateOutput1" is the entity name of the output.
        - "taskOutputProperty" is either "refersAsNewTo" or "refersExactlyTo".
        - "output" is the element associated with the output element.  
-     
- - Connect the behavior with the related template
- 
-       b.connectAgentTemplateToBehavior(MyAgentBehaviorTemplate, MyTemplateBehavior)
-       
-   where: </br>
-   - "MyAgentBehaviorTemplate" is the the behavior template created as described above.
-   - "MyTemplateBehavior" is the behavior created as above.
 
 C) Create a new agent and a new behavior eventually related with a behavior template.
    
@@ -109,7 +102,7 @@ C) Create a new agent and a new behavior eventually related with a behavior temp
    
    Create a new agent behavior and eventually connect it to its template by typing
    
-      b.createAgentBehavior(MyAgentBehavior, MyAgentGoal, MyAgentTask,
+      b.createAgentBehavior(MyAgent, MyAgentBehavior, MyAgentGoal, MyAgentTask,
                             [MyAgentTaskOperator, action],
                             [MyAgentOperatorArgument, actionArgument],
                          [
@@ -135,6 +128,7 @@ C) Create a new agent and a new behavior eventually related with a behavior temp
                          ])
 
    where:
+   - "MyAgent" is the entity name of the agent.
    - "MyAgentBehavior" is the entity name of the behavior. 
    - "MyAgentGoal" is the entity name of the goal.
    - "MyAgentTask" is the entity name of the task.
