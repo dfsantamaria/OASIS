@@ -352,10 +352,12 @@ class BehaviorManager:
         return behavior, goal, task, taskOperator, taskOperatorArgument
 
     #create a behavior template given an agent template IRI
-    def createAgentBehaviorTemplate(self, behaviorName, goalName, taskName, operators, operatorsArguments, objects, inputs, outputs):
+    def createAgentBehaviorTemplate(self, agentName, behaviorName, goalName, taskName, operators, operatorsArguments, objects, inputs, outputs):
+        agent = URIRef(self.ontoMap["template"]["namespace"]+ agentName)
         #create  and add the behavior
         #behavior, goal, task, taskOperator, taskOperatorArgument = self.__createBehaviorPath__(self.ontologies[self.ontoMap["template"]["onto"]], self.ontoMap["template"]["namespace"], behaviorName, goalName, taskName, operators, operatorsArguments)
         behavior, goal, task, taskOperator, taskOperatorArgument=self.__createBehavior__("template",  behaviorName, goalName, taskName, operators, operatorsArguments, objects, inputs, outputs)
+        self.connectAgentTemplateToBehavior(agentName, behaviorName)
         #self.createAgentBehavior(behavior, goal, task, operators, operatorsArguments, objects, inputs, outputs, [])
         self.addClassAssertion(self.ontologies[self.ontoMap["template"]["onto"]], behavior,
                                self.getOASISEntityByName("Template"))
