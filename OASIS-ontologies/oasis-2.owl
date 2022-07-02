@@ -2118,11 +2118,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#overloadsTaskInputParameter -->
+    <!-- http://www.dmi.unict.it/oasis.owl#overloadsTaskFormalInputParameter -->
 
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsTaskInputParameter">
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsTaskFormalInputParameter">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#overloads"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalInputParameter"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalInputParameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#overloadsTaskFormalOutputParameter -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsTaskFormalOutputParameter">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#overloads"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalOutputParameter"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalOutputParameter"/>
     </owl:ObjectProperty>
     
 
@@ -2132,14 +2143,17 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsTaskObject">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#overloads"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#overloadsTaskOutputParameter -->
+    <!-- http://www.dmi.unict.it/oasis.owl#overloadsTaskOperator -->
 
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsTaskOutputParameter">
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsTaskOperator">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#overloads"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
     </owl:ObjectProperty>
     
 
@@ -2494,6 +2508,24 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#submittedTo"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#taskOperatorDrawnBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskOperatorDrawnBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#drawnBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#taskOperatorSubmittedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskOperatorSubmittedTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#submittedTo"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
     </owl:ObjectProperty>
     
 
