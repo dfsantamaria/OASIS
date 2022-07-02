@@ -4,23 +4,23 @@ from BehaviorManager import *
 #create a fresh ontology for the agent
 namespace =  Namespace("http://www.test.org/myOntology#")
 ontology=Graph()
-ontology.bind("base", namespace)
+ontology.namespace_manager.bind("base", namespace)
 
 
 #create a fresh ontology for the agent template
 namespaceTemp =  Namespace("http://www.test.org/myOntologyTemplate#")
 ontologyTemp=Graph()
-ontologyTemp.bind("base", namespaceTemp)
+ontologyTemp.namespace_manager.bind("base", namespaceTemp)
 
 #create a fresh ontology for the agent actions
 namespaceAct = Namespace("http://www.test.org/myOntologyActions#")
 ontologyAct=Graph()
-ontologyAct.bind("base", namespaceAct)
+ontologyAct.namespace_manager.bind("base", namespaceAct)
 
 #create a fresh ontology for the agent plan
 namespacePlan = Namespace("http://www.test.org/myOntologyPlans#")
 ontologyPlan=Graph()
-ontologyPlan.bind("base", namespacePlan)
+ontologyPlan.namespace_manager.bind("base", namespacePlan)
 
 # Create the graph
 b = BehaviorManager(ontology, namespace, None,
@@ -82,6 +82,59 @@ b.createAgentBehavior("MyAgent", "MyAgentBehavior", "MyAgentGoal", "MyAgentTask"
                          ])
 #connect agent to agent behavior
 #b.connectAgentToBehavior("MyAgent", "MyAgentBehavior")
+
+
+executionobject1 = "http://www.test.org/myExecOntology#execution-object-entity-1"
+executioninput1 = "http://www.test.org/myExecOntology#execution-input-entity-1"
+executionoutput1 = "http://www.test.org/myExecOntology#execution-output-entity-1"
+#creating agent action
+b.createAgentAction("MyAgent", "planExecution", "executionGoal", "executionTask",
+                         ["executionOperator", "turn"],
+                         ["executionArgument", "off"],
+                         [
+                             ["executionObject", "refersExactlyTo", executionobject1]
+                         ],
+                         [
+                             ["executionInput1", "refersExactlyTo", executioninput1]
+                         ],
+                         [
+                             ["executionOutput1", "refersExactlyTo", executionoutput1]
+                         ],
+                         [
+                          "MyAgentTask",
+                          [
+                              ["executionObject", "MyAgentTaskObject"]
+                          ],
+                          [
+                              ["executionInput1", "MyAgentInput1"]
+                          ],
+                          [
+                              ["executionOutput1", "MyAgentOutput1"]
+                          ]
+                         ])
+
+
+#creating Plan
+planobject1 = "http://www.test.org/myPlanOntology#plan-object-entity-1"
+planinput1 = "http://www.test.org/myPlanOntology#plan-input-entity-1"
+planoutput1 = "http://www.test.org/myPlanOntology#plan-output-entity-1"
+#creating agent plan
+b.createAgentPlanRequestDescription("MyAgent", "planDescription", "planGoal", "planTask",
+                         ["planOperator", "turn"],
+                         ["planArgument", "off"],
+                         [
+                             ["planObject", "refersAsNewTo", planobject1]
+                         ],
+                         [
+                             ["planInput1", "refersAsNewTo", planinput1]
+                         ],
+                         [
+                             ["planOutput1", "refersAsNewTo", planoutput1]
+                         ])
+
+
+
+
 
 
 #serialization
