@@ -129,50 +129,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#ProcedureConsistsOfFinalProcedureState -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#ProcedureConsistsOfFinalProcedureState">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcedureConsistsOfProcedureState"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Procedure"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#FinalProcedureState"/>
-        <rdfs:comment xml:lang="eng">This property connects a process with  its final state.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#ProcedureConsistsOfInitialProcedureState -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#ProcedureConsistsOfInitialProcedureState">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcedureConsistsOfProcedureState"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Procedure"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#InitialProcedureState"/>
-        <rdfs:comment xml:lang="eng">This property connects a process with its initial state.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#ProcedureConsistsOfNonTerminatingProcedureState -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#ProcedureConsistsOfNonTerminatingProcedureState">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcedureConsistsOfProcedureState"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Procedure"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#NonTerminatingProcedureState"/>
-        <rdfs:comment xml:lang="eng">This property connects a process with its non terminating state.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#ProcedureConsistsOfProcedureState -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#ProcedureConsistsOfProcedureState">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOf"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Procedure"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcedureState"/>
-        <rdfs:comment xml:lang="eng">This property connects a process with its process state.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.dmi.unict.it/oasis.owl#accepts -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#accepts">
@@ -185,7 +141,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#activatedByScheduling">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isInvolvedInSchedulingWith"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#ExecutionActivity"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Scheduling"/>
         <rdfs:comment xml:lang="en">This property links execution activities to a scheduling</rdfs:comment>
     </owl:ObjectProperty>
@@ -205,6 +161,47 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#associatedWithPerdurantFeature">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#associatedWith"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#PerdurantFeature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#composedOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#composedOf"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#composedOfRealization -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#composedOfRealization">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#composedOf"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#RealizationThing"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#RealizationThing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#composedOfTaskParameterRealization -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#composedOfTaskParameterRealization">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#composedOfRealization"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#RealizationThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#SetThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#RealizationThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -261,8 +258,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfEntrustment">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOf"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#EntrustmentActivity"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#EntrustmentActivity"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
         <rdfs:comment xml:lang="en">This property links things to an entrustment</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -281,6 +278,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfExecution">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOf"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
         <rdfs:comment xml:lang="en">This property links things to an execution object</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -308,7 +306,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfGoalDescription">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOfDescription"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
         <rdfs:comment xml:lang="en">This property links things to a description of a goal</rdfs:comment>
     </owl:ObjectProperty>
@@ -319,8 +317,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfGoalEntrustment">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOfEntrustment"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalEntrustment"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:comment xml:lang="en">This property links things to goal entrustments</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -330,8 +342,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfGoalExecution">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOfExecution"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanExecution"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalExecution"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:comment xml:lang="en">This property links plans to an execution of a goal</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -373,6 +391,16 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcedureState"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcedureState"/>
         <rdfs:comment xml:lang="eng">This property connects a process state to another process state.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#consistsOfRealization -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfRealization">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOf"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#RealizationThing"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#RealizationThing"/>
     </owl:ObjectProperty>
     
 
@@ -435,12 +463,43 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#consistsOfTaskDescriptionRealization -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfTaskDescriptionRealization">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOfRealization"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#BehaviouralRealization"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#RealizationThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#consistsOfTaskEntrustment -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfTaskEntrustment">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOfEntrustment"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskEntrustment"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:comment xml:lang="en">This property links things to task entrustments</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -450,8 +509,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfTaskInputParameterRealization">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOfTaskParameterRealization"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameterSetRealization"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameterRealization"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#RealizationThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#RealizationThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskInputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -460,8 +533,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfTaskObjectEntrustment">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOfEntrustment"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObjectEntrustment"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -470,8 +557,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfTaskOperatorArgumentEntrustment">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOfEntrustment"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgumentEntrustment"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -480,8 +581,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfTaskOperatorEntrustment">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOfEntrustment"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorEntrustment"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -490,8 +605,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfTaskOutputParameterRealization">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOfTaskParameterRealization"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOutputParameterSetRealization"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOutputParameterRealization"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#RealizationThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#RealizationThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -499,9 +628,23 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#consistsOfTaskParameterRealization -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfTaskParameterRealization">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOf"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameterSetRealization"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameterRealization"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOfRealization"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#RealizationThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#RealizationThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -518,8 +661,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#cosistsOfTaskExecution">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOfExecution"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalExecution"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskExecution"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:comment xml:lang="en">This property links goals to an execution of a task</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -610,6 +759,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#drawnBy">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescriptor"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -645,14 +802,30 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#entrustedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isInvolvedInEntrustmentWith"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#EntrustmentActivity"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject"/>
+                            <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescriptor"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range>
             <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviorThing"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescriptor"/>
-                </owl:unionOf>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject"/>
+                            <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescriptor"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
             </owl:Class>
         </rdfs:range>
     </owl:ObjectProperty>
@@ -663,14 +836,18 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#entrustedFrom">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isInvolvedInEntrustmentWith"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#EntrustmentActivity"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
         <rdfs:range>
             <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviorThing"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescriptor"/>
-                </owl:unionOf>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject"/>
+                            <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescriptor"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
             </owl:Class>
         </rdfs:range>
         <rdfs:comment xml:lang="en">This property links entrustment activities to the related behavior description object</rdfs:comment>
@@ -682,12 +859,11 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#entrustedWith">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isInvolvedInEntrustmentWith"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#EntrustmentActivity"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviorThing"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionActivity"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
                     <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescriptor"/>
                 </owl:unionOf>
             </owl:Class>
@@ -701,7 +877,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#entrusts">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isInvolvedInEntrustmentWith"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#EntrustmentActivity"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Agent"/>
         <rdfs:comment xml:lang="en">This property links entrustment activities to agents responsible to perform the related activity</rdfs:comment>
     </owl:ObjectProperty>
@@ -749,8 +925,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#goalDescriptionSubmittedTo">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#submittedTo"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -759,8 +949,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#goalEntrustedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#entrustedBy"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -769,8 +973,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#goalEntrustedFrom">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#entrustedFrom"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -779,8 +997,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#goalEntrustedWith">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#entrustedWith"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalExecution"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -789,8 +1021,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#goalExecutionDrawnBy">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#drawnBy"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalExecution"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -805,23 +1051,30 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#hasBehavior -->
+    <!-- http://www.dmi.unict.it/oasis.owl#hasBehaviour -->
 
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasBehavior">
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasBehaviour">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isDescribedBy"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Actor"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
         <rdfs:comment xml:lang="en">This property links agents to the related behavior</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#hasBehavioralRealization -->
+    <!-- http://www.dmi.unict.it/oasis.owl#hasBehaviouralRealization -->
 
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasBehavioralRealization">
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasBehaviouralRealization">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasRealization"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#BehaviorThing"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#BehavioralRealization"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#BehaviouralRealization"/>
     </owl:ObjectProperty>
     
 
@@ -1147,6 +1400,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasEndurantFeature">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasFeature"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#EndurantFeature"/>
     </owl:ObjectProperty>
     
 
@@ -1198,20 +1452,28 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasExecutionObject">
         <rdfs:domain>
             <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskFormalParameter"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
-                </owl:unionOf>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject"/>
+                            <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescriptor"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
             </owl:Class>
         </rdfs:domain>
         <rdfs:range>
             <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionActivity"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskActualParameter"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
-                </owl:unionOf>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject"/>
+                            <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescriptor"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
             </owl:Class>
         </rdfs:range>
         <rdfs:comment xml:lang="en">This property links behavior descriptions with the related execution activity</rdfs:comment>
@@ -1258,8 +1520,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasGoalExecution">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasExecutionObject"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalExecution"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -1327,22 +1603,10 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#hasNextPlanExecution -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasNextPlanExecution">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasNext"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanExecution"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanExecution"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.dmi.unict.it/oasis.owl#hasNextTaskInputParameterRealization -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasNextTaskInputParameterRealization">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasNextTaskParameterRealization"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameterRealization"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameterRealization"/>
     </owl:ObjectProperty>
     
 
@@ -1351,8 +1615,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasNextTaskOutputParameterRealization">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasNextTaskParameterRealization"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOutputParameterRealization"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOutputParameterRealization"/>
     </owl:ObjectProperty>
     
 
@@ -1361,8 +1623,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasNextTaskParameterRealization">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasNext"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameterRealization"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameterRealization"/>
     </owl:ObjectProperty>
     
 
@@ -1376,6 +1636,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasOperator -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasOperator">
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Operator"/>
         <rdfs:comment xml:lang="en">This property links things with operators</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -1429,8 +1690,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasPlanExecution">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasExecutionObject"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanExecution"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -1446,7 +1721,10 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <!-- http://www.dmi.unict.it/oasis.owl#hasRealization -->
 
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasRealization"/>
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasRealization">
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#RealizationThing"/>
+    </owl:ObjectProperty>
     
 
 
@@ -1527,38 +1805,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#hasTaskActualInputParameter -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskActualInputParameter">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTaskActualParameter"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTaskInputParameter"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskExecution"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskActualInputParameter"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#hasTaskActualOutputParameter -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskActualOutputParameter">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTaskActualParameter"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTaskOutputParameter"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskExecution"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskActualOutputParameter"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#hasTaskActualParameter -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskActualParameter">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTaskParameter"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskExecution"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskActualParameter"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.dmi.unict.it/oasis.owl#hasTaskDescriptor -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskDescriptor">
@@ -1572,29 +1818,23 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskExecution">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasExecutionObject"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskExecution"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:comment xml:lang="en">This property links descriptions of tasks with the related execution task</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#hasTaskFormalInputParameter -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskFormalInputParameter">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTaskInputParameter"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalInputParameter"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#hasTaskFormalOutputParameter -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskFormalOutputParameter">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTaskOutputParameter"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalOutputParameter"/>
     </owl:ObjectProperty>
     
 
@@ -1603,7 +1843,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskInputParameter">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTaskParameter"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameter"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
     </owl:ObjectProperty>
     
 
@@ -1612,8 +1853,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskInputParameterEntrustment">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTaskParameterEntrustment"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameterEntrustment"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskInputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -1622,8 +1877,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskInputParameterExecution">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTaskParameterExecution"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalInputParameter"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskActualInputParameter"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskInputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskInputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -1632,17 +1901,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskInputParameterRealization">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTaskParameterRealization"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalInputParameter"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameterRealization"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#hasTaskInputParameterSetRealization -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskInputParameterSetRealization">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTaskParameterSetRealization"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameterSetRealization"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskInputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#RealizationThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskInputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -1652,6 +1926,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskObject">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasObjectThing"/>
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTaskDescriptor"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
         <rdfs:comment xml:lang="en">This property links things to a task object</rdfs:comment>
     </owl:ObjectProperty>
@@ -1662,8 +1937,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskObjectExecution">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasExecutionObject"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -1673,6 +1962,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskOperator">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasOperator"/>
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTaskDescriptor"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
         <rdfs:comment xml:lang="en">This property links things to a task operator</rdfs:comment>
     </owl:ObjectProperty>
@@ -1683,6 +1973,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskOperatorArgument">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasOperatorArgument"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
     </owl:ObjectProperty>
     
@@ -1692,6 +1983,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskOutputParameter">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTaskParameter"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
     </owl:ObjectProperty>
     
@@ -1701,8 +1993,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskOutputParameterEntrustment">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTaskParameterEntrustment"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOutputParameterEntrustment"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -1711,8 +2017,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskOutputParameterExecution">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTaskParameterExecution"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalOutputParameter"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskActualInputParameter"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -1721,17 +2041,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskOutputParameterRealization">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTaskParameterRealization"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalOutputParameter"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOutputParameterRealization"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#hasTaskOutputParameterSetRealization -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskOutputParameterSetRealization">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTaskParameterSetRealization"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOutputParameterSetRealization"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#RealizationThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -1750,8 +2075,15 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskParameterEntrustment">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasParameter"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameterEntrustment"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
     </owl:ObjectProperty>
     
 
@@ -1760,8 +2092,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskParameterExecution">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasExecutionObject"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalParameter"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskActualParameter"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -1771,18 +2117,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskParameterRealization">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasRealization"/>
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTaskParameter"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalParameter"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameterRealization"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#hasTaskParameterSetRealization -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskParameterSetRealization">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasRealization"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#BehavioralRealization"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameterSetRealization"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#RealizationThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2202,12 +2552,12 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#overloadsBehavior -->
+    <!-- http://www.dmi.unict.it/oasis.owl#overloadsBehaviour -->
 
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsBehavior">
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsBehaviour">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#overloads"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
     </owl:ObjectProperty>
     
 
@@ -2236,8 +2586,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsTaskFormalInputParameter">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#overloads"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalInputParameter"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalInputParameter"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameter"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameter"/>
     </owl:ObjectProperty>
     
 
@@ -2246,8 +2596,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#overloadsTaskFormalOutputParameter">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#overloads"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalOutputParameter"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalOutputParameter"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
     </owl:ObjectProperty>
     
 
@@ -2300,8 +2650,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#planDescriptionSubmittedTo">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#submittedTo"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2310,8 +2674,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#planEntrustedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#entrustedBy"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2320,8 +2698,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#planEntrustedFrom">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#entrustedFrom"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2330,8 +2722,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#planEntrustedWith">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#entrustedWith"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanExecution"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2340,8 +2746,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#planExecutionDrawnBy">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#drawnBy"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanExecution"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2352,6 +2772,50 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#usesOntologyDescriptionObject"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#OntologyDescriptionObject"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#OntologyDescriptionObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#procedureConsistsOfFinalProcedureState -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#procedureConsistsOfFinalProcedureState">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#procedureConsistsOfProcedureState"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Procedure"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#FinalProcedureState"/>
+        <rdfs:comment xml:lang="eng">This property connects a process with  its final state.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#procedureConsistsOfInitialProcedureState -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#procedureConsistsOfInitialProcedureState">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#procedureConsistsOfProcedureState"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Procedure"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#InitialProcedureState"/>
+        <rdfs:comment xml:lang="eng">This property connects a process with its initial state.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#procedureConsistsOfNonTerminatingProcedureState -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#procedureConsistsOfNonTerminatingProcedureState">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#procedureConsistsOfProcedureState"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Procedure"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#NonTerminatingProcedureState"/>
+        <rdfs:comment xml:lang="eng">This property connects a process with its non terminating state.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#procedureConsistsOfProcedureState -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#procedureConsistsOfProcedureState">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOf"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Procedure"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcedureState"/>
+        <rdfs:comment xml:lang="eng">This property connects a process with its process state.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -2458,39 +2922,26 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#taskActualInputParameterDrawnBy -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskActualInputParameterDrawnBy">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#taskActualParameterDrawnBy"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskActualInputParameter"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#taskActualOutputParameterDrawnBy -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskActualOutputParameterDrawnBy">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#taskActualParameterDrawnBy"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskActualOutputParameter"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#taskActualParameterDrawnBy -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskActualParameterDrawnBy">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#drawnBy"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskActualParameter"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.dmi.unict.it/oasis.owl#taskDescriptionSubmittedTo -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskDescriptionSubmittedTo">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#submittedTo"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2499,8 +2950,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskEntrustedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#entrustedBy"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2509,8 +2974,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskEntrustedFrom">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#entrustedFrom"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2519,8 +2998,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskEntrustedWith">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#entrustedWith"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskExecution"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2529,35 +3022,94 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskExecutionDrawnBy">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#drawnBy"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskExecution"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#taskFormalInputParameterSubmittedTo -->
+    <!-- http://www.dmi.unict.it/oasis.owl#taskExecutionInputParameterDrawnBy -->
 
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskFormalInputParameterSubmittedTo">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#taskFormalParameterSubmittedTo"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalInputParameter"/>
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskExecutionInputParameterDrawnBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#taskExecutionParameterDrawnBy"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskInputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskInputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#taskFormalOutputParameterSubmittedTo -->
+    <!-- http://www.dmi.unict.it/oasis.owl#taskExecutionOutputParameterDrawnBy -->
 
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskFormalOutputParameterSubmittedTo">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#taskFormalParameterSubmittedTo"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalOutputParameter"/>
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskExecutionOutputParameterDrawnBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#taskExecutionParameterDrawnBy"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#taskFormalParameterSubmittedTo -->
+    <!-- http://www.dmi.unict.it/oasis.owl#taskExecutionParameterDrawnBy -->
 
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskFormalParameterSubmittedTo">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#submittedTo"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalParameter"/>
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskExecutionParameterDrawnBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#drawnBy"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2566,8 +3118,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskInputEntrustedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#entrustedBy"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameterEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalParameter"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2576,8 +3142,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskInputParameterEntrustedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#taskInputEntrustedBy"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameterEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalInputParameter"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskInputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2586,8 +3166,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskInputParameterEntrustedFrom">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#taskParameterEntrustedFrom"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameterEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalInputParameter"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskInputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskInputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2596,8 +3190,46 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskInputParameterEntrustedWith">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#taskParameterEntrustedWith"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameterEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskActualInputParameter"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskInputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskInputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#taskInputParameterSubmittedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskInputParameterSubmittedTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#taskParameterSubmittedTo"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskInputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskInputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2606,8 +3238,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskObjectDrawnBy">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#drawnBy"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2616,8 +3262,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskObjectEntrustedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#entrustedBy"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObjectEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2626,8 +3286,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskObjectEntrustedFrom">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#entrustedFrom"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObjectEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2636,8 +3310,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskObjectEntrustedWith">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#entrustedWith"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObjectEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2646,8 +3334,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskObjectSubmittedTo">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#submittedTo"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2656,8 +3358,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskOperatorArgumentEntrustedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#entrustedBy"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgumentEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2666,8 +3382,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskOperatorArgumentEntrustedFrom">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#entrustedFrom"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgumentEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2676,8 +3406,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskOperatorArgumentEntrustedWith">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#entrustedWith"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgumentEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2686,6 +3430,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskOperatorDrawnBy">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#drawnBy"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2694,8 +3454,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskOperatorEntrustedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#entrustedBy"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2704,8 +3478,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskOperatorEntrustedFrom">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#entrustedFrom"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2714,8 +3502,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskOperatorEntrustedWith">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#entrustedWith"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2724,8 +3526,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskOperatorSubmittedTo">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#submittedTo"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2734,8 +3550,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskOutputParameterEntrustedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#taskInputEntrustedBy"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOutputParameterEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalOutputParameter"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2744,8 +3574,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskOutputParameterEntrustedFrom">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#taskParameterEntrustedFrom"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOutputParameterEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalOutputParameter"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2754,8 +3598,46 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskOutputParameterEntrustedWith">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#taskParameterEntrustedWith"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOutputParameterEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskActualOutputParameter"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#taskOutputParameterSubmittedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskOutputParameterSubmittedTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#taskParameterSubmittedTo"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2764,8 +3646,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskParameterEntrustedFrom">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#entrustedFrom"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameterEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalParameter"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2774,8 +3670,46 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskParameterEntrustedWith">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#entrustedWith"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameterEntrustment"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskActualParameter"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#taskParameterSubmittedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskParameterSubmittedTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#submittedTo"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -3062,7 +3996,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:DatatypeProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasInputValue">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasDataValue"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameter"/>
     </owl:DatatypeProperty>
     
 
@@ -3071,7 +4004,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:DatatypeProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasOutputValue">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasDataValue"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
     </owl:DatatypeProperty>
     
 
@@ -3226,8 +4158,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Actor">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.dmi.unict.it/oasis.owl#hasBehavior"/>
-                <owl:someValuesFrom rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+                <owl:onProperty rdf:resource="http://www.dmi.unict.it/oasis.owl#hasBehaviour"/>
+                <owl:someValuesFrom rdf:resource="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ActionThing"/>
@@ -3291,31 +4223,26 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#Behavior -->
+    <!-- http://www.dmi.unict.it/oasis.owl#Behaviour -->
 
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Behavior">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BehaviorThing"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Behaviour">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject"/>
         <rdfs:comment xml:lang="en">This class describes an agent behavior</rdfs:comment>
         <rdfs:label xml:lang="en">Behavior</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#BehaviorThing -->
+    <!-- http://www.dmi.unict.it/oasis.owl#BehaviourThing -->
 
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviorThing">
-        <rdfs:comment xml:lang="en">This class describes a part of a Behavior</rdfs:comment>
-        <rdfs:label xml:lang="en">Behavior thing</rdfs:label>
-    </owl:Class>
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#BehavioralRealization -->
+    <!-- http://www.dmi.unict.it/oasis.owl#BehaviouralRealization -->
 
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#BehavioralRealization">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Realization"/>
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviouralRealization">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#RealizationThing"/>
     </owl:Class>
     
 
@@ -3451,6 +4378,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#CommodityThing -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#CommodityThing"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#CompositeParameter -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#CompositeParameter">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#SetThing"/>
+    </owl:Class>
     
 
 
@@ -3629,6 +4564,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#ConfigurationThing -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#ConfigurationThing">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
         <rdfs:comment xml:lang="en">This class describes a part of a configuration</rdfs:comment>
         <rdfs:label xml:lang="en">Configuration part</rdfs:label>
     </owl:Class>
@@ -3906,10 +4842,9 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#EntrustmentActivity -->
+    <!-- http://www.dmi.unict.it/oasis.owl#EntrustmentThing -->
 
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentActivity">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Activity"/>
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing">
         <rdfs:comment xml:lang="en">This class describes an object providing an entrustment of something to someone.</rdfs:comment>
         <rdfs:label xml:lang="en">Entrustment activity</rdfs:label>
     </owl:Class>
@@ -3963,10 +4898,9 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#ExecutionActivity -->
+    <!-- http://www.dmi.unict.it/oasis.owl#ExecutionThing -->
 
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionActivity">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Activity"/>
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing">
         <rdfs:comment xml:lang="en">This class describes an actiivy than can be executed.</rdfs:comment>
         <rdfs:label xml:lang="en">Execution activity</rdfs:label>
     </owl:Class>
@@ -3991,20 +4925,20 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#ExternalBehavior -->
+    <!-- http://www.dmi.unict.it/oasis.owl#ExternalBehaviour -->
 
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#ExternalBehavior">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
-        <owl:disjointWith rdf:resource="http://www.dmi.unict.it/oasis.owl#InternalBehavior"/>
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#ExternalBehaviour">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
+        <owl:disjointWith rdf:resource="http://www.dmi.unict.it/oasis.owl#InternalBehaviour"/>
     </owl:Class>
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#ExtrinsicBehavior -->
+    <!-- http://www.dmi.unict.it/oasis.owl#ExtrinsicBehaviour -->
 
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#ExtrinsicBehavior">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
-        <owl:disjointWith rdf:resource="http://www.dmi.unict.it/oasis.owl#IntrisicBehavior"/>
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#ExtrinsicBehaviour">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
+        <owl:disjointWith rdf:resource="http://www.dmi.unict.it/oasis.owl#IntrisicBehaviour"/>
         <rdfs:comment xml:lang="eng">This class represents either a behavior that is either the direct consenquence of a third-part actor&apos;s will or programming or an unintensional behavior</rdfs:comment>
     </owl:Class>
     
@@ -4164,32 +5098,10 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#GoalEntrustment -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#GoalEntrustment">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#EntrustmentActivity"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalThing"/>
-        <rdfs:comment xml:lang="en">This class describes entrustment of a goal to someone.</rdfs:comment>
-        <rdfs:label xml:lang="en">Goal entrustment</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#GoalExecution -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#GoalExecution">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ExecutionActivity"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalThing"/>
-        <rdfs:comment xml:lang="en">This class describes the execution of a goal.</rdfs:comment>
-        <rdfs:label xml:lang="en">Goal execution</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://www.dmi.unict.it/oasis.owl#GoalThing -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#GoalThing">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BehaviorThing"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject"/>
         <rdfs:comment xml:lang="en">This class describes a part of a goal</rdfs:comment>
         <rdfs:label xml:lang="en">Goal part</rdfs:label>
     </owl:Class>
@@ -4234,18 +5146,18 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#InternalBehavior -->
+    <!-- http://www.dmi.unict.it/oasis.owl#InternalBehaviour -->
 
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#InternalBehavior">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#InternalBehaviour">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
     </owl:Class>
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#IntrisicBehavior -->
+    <!-- http://www.dmi.unict.it/oasis.owl#IntrisicBehaviour -->
 
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#IntrisicBehavior">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#IntrisicBehaviour">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
         <rdfs:comment xml:lang="eng">This class represents a behavior that is the direct consenquence of the actor will or programming</rdfs:comment>
     </owl:Class>
     
@@ -4569,34 +5481,9 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#PlanEntrustment -->
+    <!-- http://www.dmi.unict.it/oasis.owl#PlanningThing -->
 
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#PlanEntrustment">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#EntrustmentActivity"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanThing"/>
-        <rdfs:comment xml:lang="en">This class describes entrustment of a plan to someone.</rdfs:comment>
-        <rdfs:label xml:lang="en">Plan entrustment</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#PlanExecution -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#PlanExecution">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ExecutionActivity"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanThing"/>
-        <rdfs:label xml:lang="en">Plan execution</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#PlanThing -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#PlanThing">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BehaviorThing"/>
-        <rdfs:comment xml:lang="en">This class describes  the part of a plan.</rdfs:comment>
-        <rdfs:label xml:lang="en">Plan part</rdfs:label>
-    </owl:Class>
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
     
 
 
@@ -4636,9 +5523,9 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#Projection -->
+    <!-- http://www.dmi.unict.it/oasis.owl#ProjectionThing -->
 
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Projection"/>
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#ProjectionThing"/>
     
 
 
@@ -4664,12 +5551,9 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#Realization -->
+    <!-- http://www.dmi.unict.it/oasis.owl#RealizationThing -->
 
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Realization">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BehaviorThing"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Feature"/>
-    </owl:Class>
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#RealizationThing"/>
     
 
 
@@ -4685,7 +5569,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#RequestPlanDescription">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanThing"/>
         <rdfs:comment xml:lang="en">This class describes the description of  a plan.</rdfs:comment>
         <rdfs:label xml:lang="en">Plan description</rdfs:label>
     </owl:Class>
@@ -4799,7 +5682,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#Service -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Service">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BehavioralRealization"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BehaviouralRealization"/>
     </owl:Class>
     
 
@@ -4995,37 +5878,10 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#TaskActualInputParameter -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskActualInputParameter">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskActualParameter"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameter"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#TaskActualOutputParameter -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskActualOutputParameter">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskActualParameter"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#TaskActualParameter -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskActualParameter">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.dmi.unict.it/oasis.owl#TaskDescription -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskDescription">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskThing"/>
         <rdfs:comment xml:lang="en">This class describes the description of a task.</rdfs:comment>
         <rdfs:label xml:lang="en">Task description</rdfs:label>
     </owl:Class>
@@ -5042,84 +5898,10 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#TaskEntrustment -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskEntrustment">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#EntrustmentActivity"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskThing"/>
-        <rdfs:comment xml:lang="en">This class describes entrustment of a task to someone.</rdfs:comment>
-        <rdfs:label xml:lang="en">Task entrustment</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#TaskExecution -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskExecution">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ExecutionActivity"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskThing"/>
-        <rdfs:comment xml:lang="en">This class describes the execution of a task.</rdfs:comment>
-        <rdfs:label xml:lang="en">Task execution</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#TaskFormalInputParameter -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskFormalInputParameter">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalParameter"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameter"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#TaskFormalOutputParameter -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskFormalOutputParameter">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalParameter"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#TaskFormalParameter -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskFormalParameter">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.dmi.unict.it/oasis.owl#TaskInputParameter -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskInputParameter">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
-        <rdfs:label>Task input parameter</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#TaskInputParameterEntrustment -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskInputParameterEntrustment">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameter"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameterEntrustment"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#TaskInputParameterRealization -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskInputParameterRealization">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameterRealization"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#TaskInputParameterSetRealization -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskInputParameterSetRealization">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameterSetRealization"/>
     </owl:Class>
     
 
@@ -5130,15 +5912,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescriptor"/>
         <rdfs:comment xml:lang="en">Task object</rdfs:comment>
         <rdfs:comment xml:lang="en">This class describes the object of a task</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#TaskObjectEntrustment -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskObjectEntrustment">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#EntrustmentActivity"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescriptor"/>
     </owl:Class>
     
 
@@ -5162,54 +5935,10 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#TaskOperatorArgumentEntrustment -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgumentEntrustment">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#EntrustmentActivity"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescriptor"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#TaskOperatorEntrustment -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperatorEntrustment">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#EntrustmentActivity"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescriptor"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.dmi.unict.it/oasis.owl#TaskOutputParameter -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
-        <rdfs:label>Task output parameter</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#TaskOutputParameterEntrustment -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOutputParameterEntrustment">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOutputParameter"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameterEntrustment"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#TaskOutputParameterRealization -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOutputParameterRealization">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameterRealization"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#TaskOutputParameterSetRealization -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOutputParameterSetRealization">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameterSetRealization"/>
     </owl:Class>
     
 
@@ -5220,43 +5949,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescriptor"/>
         <rdfs:comment xml:lang="en">Task parameter</rdfs:comment>
         <rdfs:comment xml:lang="en">This class describes the parameter of the object of a task.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#TaskParameterEntrustment -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskParameterEntrustment">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#EntrustmentActivity"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#TaskParameterRealization -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskParameterRealization">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Realization"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#TaskParameterSetRealization -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskParameterSetRealization">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Realization"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskParameter"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#TaskThing -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TaskThing">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BehaviorThing"/>
-        <rdfs:comment xml:lang="en">This class describes  a part of a task.</rdfs:comment>
-        <rdfs:label xml:lang="en">Task part</rdfs:label>
     </owl:Class>
     
 
@@ -5278,6 +5970,12 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:comment xml:lang="en">This class describes a template</rdfs:comment>
         <rdfs:label xml:lang="en">Template</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#TemplateThing -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#TemplateThing"/>
     
 
 
