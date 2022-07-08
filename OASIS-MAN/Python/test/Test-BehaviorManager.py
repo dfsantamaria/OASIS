@@ -1,26 +1,26 @@
-from BehaviorManager import *
+from source.BehaviorManager import *
 
 #test
 #create a fresh ontology for the agent
 namespace =  Namespace("http://www.test.org/myOntology#")
 ontology=Graph()
-ontology.namespace_manager.bind("base", namespace)
+ontology.bind("base", namespace)
 
 
 #create a fresh ontology for the agent template
 namespaceTemp =  Namespace("http://www.test.org/myOntologyTemplate#")
 ontologyTemp=Graph()
-ontologyTemp.namespace_manager.bind("base", namespaceTemp)
+ontologyTemp.bind("base", namespaceTemp)
 
 #create a fresh ontology for the agent actions
 namespaceAct = Namespace("http://www.test.org/myOntologyActions#")
 ontologyAct=Graph()
-ontologyAct.namespace_manager.bind("base", namespaceAct)
+ontologyAct.bind("base", namespaceAct)
 
 #create a fresh ontology for the agent plan
 namespacePlan = Namespace("http://www.test.org/myOntologyPlans#")
 ontologyPlan=Graph()
-ontologyPlan.namespace_manager.bind("base", namespacePlan)
+ontologyPlan.bind("base", namespacePlan)
 
 # Create the graph
 b = BehaviorManager(ontology, namespace, None,
@@ -35,7 +35,7 @@ agentTemplateName=b.createAgentTemplate("MyAgentBehaviorTemplate")
 object1 = "http://www.test.org/myOntologyTemplate#template-object-entity-1"
 input1 = "http://www.test.org/myOntologyTemplate#template-input-entity-1"
 output1 = "http://www.test.org/myOntologyTemplate#template-output-entity-1"
-b.createAgentBehaviorTemplate("MyAgentBehaviorTemplate", "MyTemplateBehavior", "MyTemplateGoal", "MyTemplateTask",
+b.createAgentBehaviorTemplate("MyTemplateBehavior", "MyTemplateGoal", "MyTemplateTask",
                          ["MyTemplateTaskOperator", "turn"],
                          ["MyTemplateOperatorArgument", "off"],
                          [
@@ -47,15 +47,17 @@ b.createAgentBehaviorTemplate("MyAgentBehaviorTemplate", "MyTemplateBehavior", "
                          [
                              ["MyTemplateOutput1", "refersAsNewTo", output1]
                          ])
+#connect agent to agent behavior
+b.connectAgentTemplateToBehavior("MyAgentBehaviorTemplate", "MyTemplateBehavior")
 
 
-#Create agent
+#Crate agent
 b.createAgent("MyAgent")
 #create agent behavior
 agentobject1 = "http://www.test.org/myOntology#agent-object-entity-1"
 agentinput1 = "http://www.test.org/myOntology#agent-input-entity-1"
 agentoutput1 = "http://www.test.org/myOntology#agent-output-entity-1"
-b.createAgentBehavior("MyAgent", "MyAgentBehavior", "MyAgentGoal", "MyAgentTask",
+b.createAgentBehavior("MyAgentBehavior", "MyAgentGoal", "MyAgentTask",
                          ["MyAgentTaskOperator", "turn"],
                          ["MyAgentOperatorArgument", "off"],
                          [
@@ -80,7 +82,8 @@ b.createAgentBehavior("MyAgent", "MyAgentBehavior", "MyAgentGoal", "MyAgentTask"
                           ]
                          ])
 #connect agent to agent behavior
-#b.connectAgentToBehavior("MyAgent", "MyAgentBehavior")
+b.connectAgentToBehavior("MyAgent", "MyAgentBehavior")
+
 
 
 executionobject1 = "http://www.test.org/myExecOntology#execution-object-entity-1"
@@ -113,13 +116,12 @@ b.createAgentAction("MyAgent", "planExecution", "executionGoal", "executionTask"
                          ])
 
 
-
 #creating Plan
 planobject1 = "http://www.test.org/myPlanOntology#plan-object-entity-1"
 planinput1 = "http://www.test.org/myPlanOntology#plan-input-entity-1"
 planoutput1 = "http://www.test.org/myPlanOntology#plan-output-entity-1"
-#creating agent plan
-b.createAgentPlanRequestDescription("MyAgent", "planDescription", "planGoal", "planTask",
+#creating agent action
+b.createAgentPlanDescription("MyAgent", "planDescription", "planGoal", "planTask",
                          ["planOperator", "turn"],
                          ["planArgument", "off"],
                          [
@@ -129,7 +131,7 @@ b.createAgentPlanRequestDescription("MyAgent", "planDescription", "planGoal", "p
                              ["planInput1", "refersAsNewTo", planinput1]
                          ],
                          [
-                             ["planOutput1", "refersAsNewTo", planoutput1]
+                             ["planOutput1", "refersExactlyTo", planoutput1]
                          ])
 
 
