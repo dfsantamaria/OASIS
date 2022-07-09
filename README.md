@@ -167,9 +167,60 @@ C) Create a new agent and a new behavior eventually related with a behavior temp
            where:</br>
                -  "MyAgentOutput1", "MyTemplateOutput1" represent the entity name of the agent output and the agent output template, respectively.
 
-    
+  
+  
+  D) Generate a new plan by typing
+  
+         b.createAgentPlanRequestDescription(MyAgent, planDescription, planGoal, planTask,
+                         [planOperator,  action],
+                         ["planArgument", argument],
+                         [
+                             [planObject, taskObjectProperty, planobject1]
+                         ],
+                         [
+                             [planInput1, inputProp, planInput1]
+                         ],
+                         [
+                             [planOutput1, outputProp, planoutput1]
+                         ])
+  
        
- D) Generate a new action and connect it to the related behavior by typing
+  where:</br>
+  - "MyAgent" is the entity name of the agent requesting the plan.
+  - "planDescription" is the entity name of the plan.
+  - "planGoal" is the entity name of the goal.
+  - "planTask" is the entity name of the task.
+  - A list of element of the form:
+      - [planOperator, action] </br>
+        where:</br>
+         - "planOperator" is the name of the task operator.
+         - "action" is name of the action as defined in OASIS-ABox.
+      - [planArgument, argument] </br>
+        where:</br>
+        - "planArgument" is the name of the task argument.
+        - "argument" is the name of the argument as defined in OASIS-ABox.
+      - A list of element of the form:  
+        - [planObject, taskObjectProperty, planobject1] </br>
+          where: </br>
+          - "planObject" is the entity name of the task plan object.
+          - "taskObjectProperty" is  either "refersAsNewTo" or "refersExactlyTo".
+          - "planobject1" is the element associated with the task plan object.     
+      - A list of elements of the form:
+        - [planInput1, inputProp, planinput1] </br>
+          where: </br>
+             - "planInput1" is the entity name of task input.
+             - "inputProp" is either "refersAsNewTo" or "refersExactlyTo".
+             - "planinput1" is the element associated with the task input.
+       - A list of elements of the form:
+         - [planOutput1, outputProp, planOutput1] </br>
+           where: </br>
+             - "planOutput1" is the entity name of task output.
+             - "outputProp" is either "refersAsNewTo" or "refersExactlyTo".
+             - "planOutput1" is the element associated with the task output.
+
+
+       
+ E) Generate a new action and connect it to the related behavior by typing
  
        b.createAgentAction(MyAgent, planExecution, executionGoal, executionTask,
                          [executionOperator, action],
@@ -242,6 +293,49 @@ C) Create a new agent and a new behavior eventually related with a behavior temp
           - [executionOutput1, MyAgentOutput1] </br>
             where:</br>
               -  "executionOutput1", "MyAgentOutput1" represent the entity name of the action output and the agent behavior output, respectively.
+
+
+F) Associate the plan with its corresponding action by typing:
+
+            b.mapPlanToAction([
+                     [
+                           [planTask, executionTask],
+                     ],
+                             [
+                              [ planObject, executionObject]
+                             ],
+                            [
+                                [planInput, executionInput ]
+                            ],
+                            [
+                                [ planOutput, executionOutput]
+                            ]
+                     ]
+                    )
+
+with a list containing:</br>
+  - A list of element of the form:
+      - [planTask, executionTask] </br>
+        where:</br>
+         - "planTask" is the name of the task description of the plan.
+         - "executionTask" is name of the task description of the action.
+  - A list of element of the form:
+      - [planObject, executionObject] </br>
+        where:</br>
+         - "planObject" is the name of the task object of the plan.
+         - "executionObject" is name of the task object of the action.
+
+   - A list of element of the form:
+      - [planInput, executionInput] </br>
+        where:</br>
+         - "planInput" is the name of the task input of the plan.
+         - "executionInput" is name of the task input of the action.
+  
+    - A list of element of the form:
+      - [planOutput, executionOutput] </br>
+        where:</br>
+         - "planOutput" is the name of the task output of the plan.
+         - "executionOutput" is name of the task output of the action.
 
 
 
