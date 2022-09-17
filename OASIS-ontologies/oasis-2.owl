@@ -1445,9 +1445,9 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#hasExecutionObject -->
+    <!-- http://www.dmi.unict.it/oasis.owl#hasExecution -->
 
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasExecutionObject">
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasExecution">
         <rdfs:domain>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -1517,7 +1517,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasGoalExecution -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasGoalExecution">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasExecutionObject"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasExecution"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -1687,7 +1687,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasPlanExecution -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasPlanExecution">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasExecutionObject"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasExecution"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -1815,7 +1815,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasTaskExecution -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskExecution">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasExecutionObject"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasExecution"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -1934,7 +1934,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasTaskObjectExecution -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskObjectExecution">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasExecutionObject"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasExecution"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -2089,7 +2089,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasTaskParameterExecution -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskParameterExecution">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasExecutionObject"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasExecution"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -2644,6 +2644,16 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#performsPlanExecution -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#performsPlanExecution">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#performs"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Agent"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#planDescriptionSubmittedTo -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#planDescriptionSubmittedTo">
@@ -2871,7 +2881,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#requestsPlan">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#requests"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Agent"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
