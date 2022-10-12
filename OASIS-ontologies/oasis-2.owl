@@ -2339,6 +2339,15 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#isFeatureDescribedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isFeatureDescribedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isDescribedBy"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Feature"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#isInstanceOf -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isInstanceOf">

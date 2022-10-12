@@ -190,6 +190,9 @@
         <ObjectProperty IRI="#isEthereumTokenFeatureModifiedIn"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isInTheWalletOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#describesBlockchainSmartContractCreation"/>
     </Declaration>
     <Declaration>
@@ -2055,6 +2058,10 @@
         <ObjectProperty IRI="#isEthereumTokenFeatureModifiedIn"/>
         <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#associatedWithPerdurantFeature"/>
     </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isInTheWalletOf"/>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#isFeatureDescribedBy"/>
+    </SubObjectPropertyOf>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#describesEtherExchangeInteraction"/>
         <Class IRI="#EthereumTransaction"/>
@@ -2103,6 +2110,10 @@
         <ObjectProperty IRI="#isEthereumTokenFeatureModifiedIn"/>
         <Class IRI="#EthereumTokenDeprecatedPerdurantFeature"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isInTheWalletOf"/>
+        <Class IRI="#EthereumWalletOwnerPerdurantFeature"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#describesEtherExchangeInteraction"/>
         <Class IRI="#EtherExchangeSmartContractInteraction"/>
@@ -2150,6 +2161,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isEthereumTokenFeatureModifiedIn"/>
         <Class IRI="#EthereumTokenPerdurantFeature"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isInTheWalletOf"/>
+        <Class IRI="#EthereumAccount"/>
     </ObjectPropertyRange>
     <SubDataPropertyOf>
         <DataProperty IRI="#hasEthereumAccountAddress"/>
