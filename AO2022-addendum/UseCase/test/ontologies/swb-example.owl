@@ -7,91 +7,25 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#BronzeQuality">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.dmi.unict.it/swb.owl#QualityClass"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferSWBGoal">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
-    <oasis:consistsOfTaskDescription rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBTask"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N7ba50c82bf4b4243b02a4ff4572835a0">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://www.dmi.unict.it/swb.owl#hasQuantity"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskObject">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N64a916869ed64a38a4d55b9514c476a0">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://www.dmi.unict.it/swb.owl#hasProducer"/>
-    <owl:someValuesFrom rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumAccount"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintToken217Operator">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
-    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#mint"/>
-    <oasis:drawnBy rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBTaskOperator"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#GoldQuality">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.dmi.unict.it/swb.owl#QualityClass"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd816b03d61b940759e581d82e2764999">
-    <rdf:first rdf:resource="http://www.dmi.unict.it/swb.owl#GoldQuality"/>
-    <rdf:rest rdf:nodeID="N8db36272edc44275bc8f23daa18a2624"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintSWBTaskOperator">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
-    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#mint"/>
-    <oasis:overloads rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_task_operator"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#SWB_smart_contract_agent">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Agent"/>
-    <oasis:hasBehavior rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBTokenBehaviour"/>
-    <oasis:hasBehavior rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBTokenBehaviour"/>
-    <oasis:performs rdf:resource="http://www.dmi.unict.it/swb.owl#mintToken217Task"/>
-    <oasis:performs rdf:resource="http://www.dmi.unict.it/swb.owl#transferToken217Task-00"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferSWBTokenTaskObject">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
-    <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBTokenType"/>
-    <oasis:overloads rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_object_template"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#SWBWheatToken">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenERC721"/>
-    <rdfs:subClassOf rdf:nodeID="N64a916869ed64a38a4d55b9514c476a0"/>
-    <rdfs:subClassOf rdf:nodeID="N408569ffde7b4d328547f241e02c3dcf"/>
-    <rdfs:subClassOf rdf:nodeID="N7ba50c82bf4b4243b02a4ff4572835a0"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#hasProducer">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:domain rdf:resource="http://www.dmi.unict.it/swb.owl#SWBWheatToken"/>
-    <rdfs:range rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumAccount"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#swbtoken217">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.dmi.unict.it/swb.owl#SWBWheatToken"/>
-    <oasis:hasPerdurantFeature rdf:resource="http://www.dmi.unict.it/swb.owl#swbtoken217-pf-000"/>
+    <ether-oasis:hasEthereumTokenPerdurantFeature rdf:resource="http://www.dmi.unict.it/swb.owl#swbtoken217-pf-000"/>
+    <ether-oasis:hasEthereumTokenPerdurantFeature rdf:resource="http://www.dmi.unict.it/swb.owl#swbtoken217-pf-001"/>
     <base:hasProducer rdf:resource="http://www.dmi.unict.it/swb.owl#cp92producer"/>
     <base:hasQualityClass rdf:resource="http://www.dmi.unict.it/swb.owl#GoldQuality"/>
     <ether-oasis:hasEthereumTokenID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">217</ether-oasis:hasEthereumTokenID>
     <base:hasQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">98.0</base:hasQuantity>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintToken217Object">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
-    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/swb.owl#swbtoken217"/>
-    <oasis:drawnBy rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBTokenTaskObject"/>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferSWBTokenInput1">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalInputParameter"/>
+    <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBTokenType"/>
+    <oasis:overloads rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_input_template_1"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintSWBTokenTaskObject">
     <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
     <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBTokenType"/>
     <oasis:overloads rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_task_object_template"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferSWBWalletSource">
-    <rdf:type rdf:resource="EOA-EthereumAccount"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferToken217Task-00">
     <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskExecution"/>
@@ -103,48 +37,36 @@
     <oasis:hasTaskActualInputParameter rdf:resource="http://www.dmi.unict.it/swb.owl#transferToken217Input3-00"/>
     <oasis:drawnBy rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBTask"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N2ca1b9493c664f7cad809c963588d18e">
-    <rdf:first rdf:resource="http://www.dmi.unict.it/swb.owl#SilverClass"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintSWBTask">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+    <oasis:hasTaskOperator rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBTaskOperator"/>
+    <oasis:hasTaskOperatorArgument rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBTaskOperatorArgument"/>
+    <oasis:hasTaskObject rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBTokenTaskObject"/>
+    <oasis:hasTaskFormalOutputParameter rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBTokenOutput"/>
+    <oasis:overloads rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_task_description"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#hasQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="http://www.dmi.unict.it/swb.owl#SWBWheatToken"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#swbtoken217-pf-000">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumWalletOwnerPerdurantFeature"/>
-    <ether-oasis:isInTheWalletOf rdf:resource="http://www.dmi.unict.it/swb.owl#cp92producer"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferToken217Operator-00">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
-    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#transfer"/>
-    <oasis:drawnBy rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBTaskOperator"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-    <owl:imports rdf:resource="http://www.dmi.unict.it/ether-oasis.owl"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintSWBTokenOutput">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalOutputParameter"/>
-    <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBTokenType"/>
-    <oasis:overloads rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_task_object_template"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferSWBTaskOperatorArgument">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
-    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token"/>
-    <oasis:overloads rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_operator_argument"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferSWBTaskOperator">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
-    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#transfer"/>
-    <oasis:overloads rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_operator"/>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/ether-oasis.owl#hasEthereumTokenPerdurantFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferToken217Input2-00">
     <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskActualInputParameter"/>
     <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/swb.owl#cp92producer"/>
     <oasis:drawnBy rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBTokenInput2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#hasProducer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://www.dmi.unict.it/swb.owl#SWBWheatToken"/>
+    <rdfs:range rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumAccount"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N75345c878ba047ea825e182c7309fc04">
+    <rdf:first rdf:resource="http://www.dmi.unict.it/swb.owl#BronzeQuality"/>
+    <rdf:rest rdf:nodeID="N9ff79e33b3774b1f9df490b7644b73a7"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#cp132trader">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumAccount"/>
+    <ether-oasis:hasEthereumAccountAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0x3A9509c5C260389A5A96110Cfd848BFf370e18Bd</ether-oasis:hasEthereumAccountAddress>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferSWBTask">
     <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
@@ -156,102 +78,9 @@
     <oasis:hasTaskFormalInputParameter rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBTokenInput3"/>
     <oasis:overloads rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_description"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#QualityClass">
+  <rdf:Description rdf:nodeID="N4888c73c48fb4dd59d742fdb56cf8279">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:equivalentClass rdf:nodeID="N4834f34057af493f8f7549861a4d27e3"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintToken217plan">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanExecution"/>
-    <oasis:consistsOfGoalExecution rdf:resource="http://www.dmi.unict.it/swb.owl#mintToken217Goal"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferToken217Argument-00">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
-    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token"/>
-    <oasis:drawnBy rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBTaskOperatorArgument"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskFormalInputParameter">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferToken217Goal-00">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalExecution"/>
-    <oasis:consistsOfTaskExecution rdf:resource="http://www.dmi.unict.it/swb.owl#transferToken217Task-00"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskActualInputParameter">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintToken217Goal">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalExecution"/>
-    <oasis:consistsOfTaskExecution rdf:resource="http://www.dmi.unict.it/swb.owl#mintToken217Task"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfTaskExecution">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#cp92producer">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumAccount"/>
-    <ether-oasis:hasEthereumAccountAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0x41db48574b0a6e59f30ad59fee63f023eb7b9745</ether-oasis:hasEthereumAccountAddress>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#refersExactlyTo">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferToken217Input3-00">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskActualInputParameter"/>
-    <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/swb.owl#cp132trader"/>
-    <oasis:drawnBy rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBTokenInput3"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferSWBTokenBehaviour">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
-    <oasis:consistsOfGoalDescription rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBGoal"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferToken217Input1-00">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskActualInputParameter"/>
-    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/swb.owl#swbtoken217"/>
-    <oasis:drawnBy rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBTokenInput1"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskFormalOutputParameter">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferSWBTokenInput3">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalInputParameter"/>
-    <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBWalletDestination"/>
-    <oasis:overloads rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_input_template_3"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#cp132trader">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumAccount"/>
-    <ether-oasis:hasEthereumAccountAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0x3A9509c5C260389A5A96110Cfd848BFf370e18Bd</ether-oasis:hasEthereumAccountAddress>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintSWBTask">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
-    <oasis:hasTaskOperator rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBTaskOperator"/>
-    <oasis:hasTaskOperatorArgument rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBTaskOperatorArgument"/>
-    <oasis:hasTaskObject rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBTokenTaskObject"/>
-    <oasis:hasTaskFormalOutputParameter rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBTokenOutput"/>
-    <oasis:overloads rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_task_description"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N408569ffde7b4d328547f241e02c3dcf">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://www.dmi.unict.it/swb.owl#hasQualityClass"/>
-    <owl:someValuesFrom rdf:resource="http://www.dmi.unict.it/swb.owl#QualityClass"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#performs">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintToken217Output">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskActualOutputParameter"/>
-    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/swb.owl#swbtoken217"/>
-    <oasis:drawnBy rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBTokenOutput"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferSWBTokenInput2">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalInputParameter"/>
-    <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBWalletSource"/>
-    <oasis:overloads rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_input_template_2"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskOperator">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferSWBWalletDestination">
-    <rdf:type rdf:resource="EOA-EthereumAccount"/>
+    <owl:oneOf rdf:nodeID="N75345c878ba047ea825e182c7309fc04"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintToken217Task">
     <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskExecution"/>
@@ -261,45 +90,113 @@
     <oasis:hasTaskActualOutputParameter rdf:resource="http://www.dmi.unict.it/swb.owl#mintToken217Output"/>
     <oasis:drawnBy rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBTask"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintToken217Argument">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
-    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token"/>
-    <oasis:drawnBy rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBTaskOperatorArgument"/>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#SWB_smart_contract_agent">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Agent"/>
+    <oasis:hasBehavior rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBTokenBehaviour"/>
+    <oasis:hasBehavior rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBTokenBehaviour"/>
+    <oasis:performs rdf:resource="http://www.dmi.unict.it/swb.owl#mintToken217Task"/>
+    <oasis:performs rdf:resource="http://www.dmi.unict.it/swb.owl#transferToken217Task-00"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferSWBTaskOperator">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#transfer"/>
+    <oasis:overloads rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_operator"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintSWBTaskOperatorArgument">
     <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
     <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token"/>
     <oasis:overloads rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_task_operator_argument"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferToken217plan-00">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanExecution"/>
-    <oasis:consistsOfGoalExecution rdf:resource="http://www.dmi.unict.it/swb.owl#transferToken217Goal-00"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8db36272edc44275bc8f23daa18a2624">
-    <rdf:first rdf:resource="http://www.dmi.unict.it/swb.owl#PlatinumQuality"/>
-    <rdf:rest rdf:nodeID="N2ca1b9493c664f7cad809c963588d18e"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne621f32f6f2d4b1893be5bb0411edd29">
-    <rdf:first rdf:resource="http://www.dmi.unict.it/swb.owl#BronzeQuality"/>
-    <rdf:rest rdf:nodeID="Nd816b03d61b940759e581d82e2764999"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintSWBTokenType">
-    <rdf:type rdf:resource="SWBWheatToken"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#refersAsNewTo">
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskFormalOutputParameter">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfGoalExecution">
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferActivityToken217-00">
+    <rdf:type rdf:resource="EthereumTokenFeatureModificationActivity"/>
+    <ether-oasis:hasEthereumTokenFeatureModificationSource rdf:resource="http://www.dmi.unict.it/swb.owl#swbtoken217-pf-000"/>
+    <ether-oasis:hasEthereumTokenFeatureModificationResult rdf:resource="http://www.dmi.unict.it/swb.owl#swbtoken217-pf-001"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis-abox.owl#transfer">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/ether-oasis.owl#hasEthereumTokenFeatureModificationResult">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N4834f34057af493f8f7549861a4d27e3">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:oneOf rdf:nodeID="Ne621f32f6f2d4b1893be5bb0411edd29"/>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#hasQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.dmi.unict.it/swb.owl#SWBWheatToken"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferSWBTokenInput1">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalInputParameter"/>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#overloads">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferSWBTokenTaskObject">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
     <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBTokenType"/>
-    <oasis:overloads rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_input_template_1"/>
+    <oasis:overloads rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_object_template"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintSWBTokenOutput">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalOutputParameter"/>
+    <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBTokenType"/>
+    <oasis:overloads rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_task_object_template"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N23f5a7c92b6646a9a37e5ca988ce2aba">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.dmi.unict.it/swb.owl#hasProducer"/>
+    <owl:someValuesFrom rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumAccount"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/ether-oasis.owl#isInTheWalletOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf2636033b4164330b6b276b71b3353df">
+    <rdf:first rdf:resource="http://www.dmi.unict.it/swb.owl#SilverClass"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfTaskExecution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#SWBWheatToken">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenERC721"/>
+    <rdfs:subClassOf rdf:nodeID="N23f5a7c92b6646a9a37e5ca988ce2aba"/>
+    <rdfs:subClassOf rdf:nodeID="N530541eb56224622acca69b870fb112a"/>
+    <rdfs:subClassOf rdf:nodeID="N9d17d54e76a344af82983f32cc2027dc"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#swbtoken217-pf-000">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumWalletOwnerPerdurantFeature"/>
+    <ether-oasis:isInTheWalletOf rdf:resource="http://www.dmi.unict.it/swb.owl#cp92producer"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0957d0a1fd1f4baba7ec2a28900f1887">
+    <rdf:first rdf:resource="http://www.dmi.unict.it/swb.owl#PlatinumQuality"/>
+    <rdf:rest rdf:nodeID="Nf2636033b4164330b6b276b71b3353df"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferSWBGoal">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+    <oasis:consistsOfTaskDescription rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBTask"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintSWBTokenBehaviour">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+    <oasis:consistsOfGoalDescription rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBGoal"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9d17d54e76a344af82983f32cc2027dc">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.dmi.unict.it/swb.owl#hasQuantity"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintToken217Output">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskActualOutputParameter"/>
+    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/swb.owl#swbtoken217"/>
+    <oasis:drawnBy rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBTokenOutput"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintSWBTaskOperator">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#mint"/>
+    <oasis:overloads rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_task_operator"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N530541eb56224622acca69b870fb112a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://www.dmi.unict.it/swb.owl#hasQualityClass"/>
+    <owl:someValuesFrom rdf:resource="http://www.dmi.unict.it/swb.owl#QualityClass"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#hasQualityClass">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -307,67 +204,189 @@
     <rdfs:domain rdf:resource="http://www.dmi.unict.it/swb.owl#SWBWheatToken"/>
     <rdfs:range rdf:resource="http://www.dmi.unict.it/swb.owl#QualityClass"/>
   </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferToken217Goal-00">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalExecution"/>
+    <oasis:consistsOfTaskExecution rdf:resource="http://www.dmi.unict.it/swb.owl#transferToken217Task-00"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#cp92producer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumAccount"/>
+    <ether-oasis:hasEthereumAccountAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0x41db48574b0a6e59f30ad59fee63f023eb7b9745</ether-oasis:hasEthereumAccountAddress>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferSWBWalletSource">
+    <rdf:type rdf:resource="EOA-EthereumAccount"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintToken217Operator">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#mint"/>
+    <oasis:drawnBy rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBTaskOperator"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfGoalDescription">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferSWBTokenBehaviour">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+    <oasis:consistsOfGoalDescription rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBGoal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferSWBTokenInput2">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalInputParameter"/>
+    <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBWalletSource"/>
+    <oasis:overloads rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_input_template_2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#">
+    <owl:imports rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferToken217Operator-00">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#transfer"/>
+    <oasis:drawnBy rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBTaskOperator"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferToken217Object-00">
     <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
     <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/swb.owl#swbtoken217"/>
     <oasis:drawnBy rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBTokenTaskObject"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintSWBTokenBehaviour">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
-    <oasis:consistsOfGoalDescription rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBGoal"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#overloads">
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskActualOutputParameter">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#drawnBy">
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintToken217Object">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/swb.owl#swbtoken217"/>
+    <oasis:drawnBy rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBTokenTaskObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintToken217plan">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanExecution"/>
+    <oasis:consistsOfGoalExecution rdf:resource="http://www.dmi.unict.it/swb.owl#mintToken217Goal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferSWBTaskOperatorArgument">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
+    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token"/>
+    <oasis:overloads rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_operator_argument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#BronzeQuality">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.dmi.unict.it/swb.owl#QualityClass"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintToken217Argument">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
+    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token"/>
+    <oasis:drawnBy rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBTaskOperatorArgument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#refersAsNewTo">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#QualityClass">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:equivalentClass rdf:nodeID="N4888c73c48fb4dd59d742fdb56cf8279"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferSWBTokenInput3">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskFormalInputParameter"/>
+    <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBWalletDestination"/>
+    <oasis:overloads rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_input_template_3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9ff79e33b3774b1f9df490b7644b73a7">
+    <rdf:first rdf:resource="http://www.dmi.unict.it/swb.owl#GoldQuality"/>
+    <rdf:rest rdf:nodeID="N0957d0a1fd1f4baba7ec2a28900f1887"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintSWBTokenType">
+    <rdf:type rdf:resource="SWBWheatToken"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token">
     <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#imports">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintSWBGoal">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
-    <oasis:consistsOfTaskDescription rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBTask"/>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferToken217Argument-00">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
+    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token"/>
+    <oasis:drawnBy rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBTaskOperatorArgument"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#SilverClass">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.dmi.unict.it/swb.owl#QualityClass"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskOperatorArgument">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskActualOutputParameter">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis-abox.owl#mint">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfTaskDescription">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#">
-    <owl:imports rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfGoalDescription">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasBehavior">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferActivityToken217-00">
-    <rdf:type rdf:resource="EthereumTokenFeatureModificationActivity"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#PlatinumQuality">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.dmi.unict.it/swb.owl#QualityClass"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis-abox.owl#transfer">
-    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferToken217Input3-00">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskActualInputParameter"/>
+    <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/swb.owl#cp132trader"/>
+    <oasis:drawnBy rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBTokenInput3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferToken217Input1-00">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskActualInputParameter"/>
+    <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/swb.owl#swbtoken217"/>
+    <oasis:drawnBy rdf:resource="http://www.dmi.unict.it/swb.owl#transferSWBTokenInput1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintSWBGoal">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+    <oasis:consistsOfTaskDescription rdf:resource="http://www.dmi.unict.it/swb.owl#mintSWBTask"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#swbtoken217-pf-001">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumWalletOwnerPerdurantFeature"/>
+    <ether-oasis:isInTheWalletOf rdf:resource="http://www.dmi.unict.it/swb.owl#cp132-trader"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#drawnBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskActualInputParameter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferToken217plan-00">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanExecution"/>
+    <oasis:consistsOfGoalExecution rdf:resource="http://www.dmi.unict.it/swb.owl#transferToken217Goal-00"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferSWBWalletDestination">
+    <rdf:type rdf:resource="EOA-EthereumAccount"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskObject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/ether-oasis.owl#hasEthereumTokenFeatureModificationSource">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#performs">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#transferSWBTokenType">
     <rdf:type rdf:resource="SWBWheatToken"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#GoldQuality">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.dmi.unict.it/swb.owl#QualityClass"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:imports rdf:resource="http://www.dmi.unict.it/ether-oasis.owl"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis-abox.owl#mint">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Action"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#mintToken217Goal">
+    <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalExecution"/>
+    <oasis:consistsOfTaskExecution rdf:resource="http://www.dmi.unict.it/swb.owl#mintToken217Task"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#imports">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskFormalInputParameter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#refersExactlyTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskOperator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasTaskOperatorArgument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfGoalExecution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#hasBehavior">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
 </rdf:RDF>

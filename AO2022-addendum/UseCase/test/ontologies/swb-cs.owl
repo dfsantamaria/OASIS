@@ -164,6 +164,15 @@
     
 
 
+    <!-- http://www.dmi.unict.it/swb.owl#cp132trader -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/swb.owl#cp132trader">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumAccount"/>
+        <ether-oasis:hasEthereumAccountAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0x3A9509c5C260389A5A96110Cfd848BFf370e18Bd</ether-oasis:hasEthereumAccountAddress>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.dmi.unict.it/swb.owl#cp92producer -->
 
     <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/swb.owl#cp92producer">
@@ -177,10 +186,20 @@
 
     <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/swb.owl#swbtoken217">
         <rdf:type rdf:resource="http://www.dmi.unict.it/swb.owl#SWBWheatToken"/>
+        <ether-oasis:hasEthereumTokenPerdurantFeature rdf:resource="http://www.dmi.unict.it/swb.owl#swbtoken217-pf-000"/>
         <hasProducer rdf:resource="http://www.dmi.unict.it/swb.owl#cp92producer"/>
         <hasQualityClass rdf:resource="http://www.dmi.unict.it/swb.owl#GoldQuality"/>
         <ether-oasis:hasEthereumTokenID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">217</ether-oasis:hasEthereumTokenID>
         <hasQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">98.0</hasQuantity>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/swb.owl#swbtoken217-pf-000 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/swb.owl#swbtoken217-pf-000">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumWalletOwnerPerdurantFeature"/>
+        <ether-oasis:isInTheWalletOf rdf:resource="http://www.dmi.unict.it/swb.owl#cp92producer"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 
