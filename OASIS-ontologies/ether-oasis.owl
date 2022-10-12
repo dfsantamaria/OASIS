@@ -223,9 +223,6 @@
         <DataProperty IRI="#hasEthereumDataDescription"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasEthereumFeatureDataDescription"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#hasEthereumTokenID"/>
     </Declaration>
     <Declaration>
@@ -236,9 +233,6 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasEthereumTransactionToAddress"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#isInTheWalletOf"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainAccountAddress"/>
@@ -2218,10 +2212,6 @@
         <DataProperty IRI="#hasEthereumTransactionToAddress"/>
         <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionToAddress"/>
     </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#isInTheWalletOf"/>
-        <DataProperty IRI="#hasEthereumFeatureDataDescription"/>
-    </SubDataPropertyOf>
     <FunctionalDataProperty>
         <DataProperty IRI="#hasEthereumTransactionHashValue"/>
     </FunctionalDataProperty>
@@ -2253,10 +2243,6 @@
         <DataProperty IRI="#hasEthereumTransactionToAddress"/>
         <Class IRI="#EthereumTransaction"/>
     </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#isInTheWalletOf"/>
-        <Class IRI="#EthereumWalletOwnerPerdurantFeature"/>
-    </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="#hasEthereumAccountAddress"/>
         <Datatype abbreviatedIRI="xsd:string"/>
@@ -2279,10 +2265,6 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasEthereumTransactionToAddress"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#isInTheWalletOf"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
 </Ontology>
