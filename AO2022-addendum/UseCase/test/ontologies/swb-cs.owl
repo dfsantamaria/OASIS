@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.dmi.unict.it/swb.owl#"
+     xml:base="http://www.dmi.unict.it/swb.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:swb="http://www.dmi.unict.it/swb.owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:oasis="http://www.dmi.unict.it/oasis.owl#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:ether-oasis="http://www.dmi.unict.it/ether-oasis.owl#">
+    <owl:Ontology rdf:about="http://www.dmi.unict.it/swb.owl">
+        <owl:imports rdf:resource="http://www.dmi.unict.it/ether-oasis.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dmi.unict.it/swb.owl#hasProducer -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/swb.owl#hasProducer">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/swb.owl#SWBWheatToken"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumAccount"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/swb.owl#hasQualityClass -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/swb.owl#hasQualityClass">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/swb.owl#SWBWheatToken"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/swb.owl#QualityClass"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dmi.unict.it/swb.owl#hasQuantity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dmi.unict.it/swb.owl#hasQuantity">
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/swb.owl#SWBWheatToken"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dmi.unict.it/swb.owl#QualityClass -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/swb.owl#QualityClass">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#BronzeQuality"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#GoldQuality"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#PlatinumQuality"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/swb.owl#SilverClass"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/swb.owl#SWBWheatToken -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/swb.owl#SWBWheatToken">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenERC721"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.dmi.unict.it/swb.owl#hasProducer"/>
+                <owl:someValuesFrom rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumAccount"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.dmi.unict.it/swb.owl#hasQualityClass"/>
+                <owl:someValuesFrom rdf:resource="http://www.dmi.unict.it/swb.owl#QualityClass"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.dmi.unict.it/swb.owl#hasQuantity"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dmi.unict.it/swb.owl#BronzeQuality -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/swb.owl#BronzeQuality">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/swb.owl#QualityClass"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/swb.owl#GoldQuality -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/swb.owl#GoldQuality">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/swb.owl#QualityClass"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/swb.owl#PlatinumQuality -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/swb.owl#PlatinumQuality">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/swb.owl#QualityClass"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/swb.owl#SilverClass -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/swb.owl#SilverClass">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/swb.owl#QualityClass"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/swb.owl#cp92producer -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/swb.owl#cp92producer">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumAccount"/>
+        <ether-oasis:hasEthereumAccountAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0x41db48574b0a6e59f30ad59fee63f023eb7b9745</ether-oasis:hasEthereumAccountAddress>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/swb.owl#swbtoken217 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/swb.owl#swbtoken217">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/swb.owl#SWBWheatToken"/>
+        <hasProducer rdf:resource="http://www.dmi.unict.it/swb.owl#cp92producer"/>
+        <hasQualityClass rdf:resource="http://www.dmi.unict.it/swb.owl#GoldQuality"/>
+        <ether-oasis:hasEthereumTokenID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">217</ether-oasis:hasEthereumTokenID>
+        <hasQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">98.0</hasQuantity>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
