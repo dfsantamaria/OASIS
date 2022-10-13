@@ -30,12 +30,12 @@ b = BehaviourManager(ontology, namespace, None,
 
 
 #create agent template
-agentTemplateName=b.createAgentTemplate("MyAgentBehaviorTemplate")
-#create behavior template
+agentTemplateName=b.createAgentTemplate("MyAgentBehaviourTemplate")
+#create Behaviour template
 object1 = "http://www.test.org/myOntologyTemplate#template-object-entity-1"
 input1 = "http://www.test.org/myOntologyTemplate#template-input-entity-1"
 output1 = "http://www.test.org/myOntologyTemplate#template-output-entity-1"
-b.createAgentBehaviorTemplate("MyAgentBehaviorTemplate", "MyTemplateBehavior", "MyTemplateGoal", "MyTemplateTask",
+b.createAgentBehaviourTemplate("MyAgentBehaviourTemplate", "MyTemplateBehaviour", "MyTemplateGoal", "MyTemplateTask",
                          ["MyTemplateTaskOperator", "turn"],
                          ["MyTemplateOperatorArgument", "off"],
                          [
@@ -51,11 +51,11 @@ b.createAgentBehaviorTemplate("MyAgentBehaviorTemplate", "MyTemplateBehavior", "
 
 #Create agent
 b.createAgent("MyAgent")
-#create agent behavior
+#create agent Behaviour
 agentobject1 = "http://www.test.org/myOntology#agent-object-entity-1"
 agentinput1 = "http://www.test.org/myOntology#agent-input-entity-1"
 agentoutput1 = "http://www.test.org/myOntology#agent-output-entity-1"
-b.createAgentBehavior("MyAgent", "MyAgentBehavior", "MyAgentGoal", "MyAgentTask",
+b.createAgentBehaviour("MyAgent", "MyAgentBehaviour", "MyAgentGoal", "MyAgentTask",
                          ["MyAgentTaskOperator", "turn"],
                          ["MyAgentOperatorArgument", "off"],
                          [
@@ -79,8 +79,8 @@ b.createAgentBehavior("MyAgent", "MyAgentBehavior", "MyAgentGoal", "MyAgentTask"
                               ["MyAgentOutput1", "MyTemplateOutput1"]
                           ]
                          ])
-#connect agent to agent behavior
-#b.connectAgentToBehavior("MyAgent", "MyAgentBehavior")
+#connect agent to agent Behaviour
+#b.connectAgentToBehaviour("MyAgent", "MyAgentBehaviour")
 
 
 #creating Plan
