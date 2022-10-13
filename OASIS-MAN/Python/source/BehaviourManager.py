@@ -163,24 +163,24 @@ class BehaviourManager:
         return baseTemplateAgent
 
 
-    #connect a agent template  with a behavior
-    def connectAgentTemplateToBehavior(self, agentName, behaviorName):
-        self.__connectAgentToGeneralBehavior__(self.ontologies[self.ontoMap["template"]["onto"]], self.ontoMap["template"]["namespace"], agentName, behaviorName)
+    #connect a agent template  with a Behaviour
+    def connectAgentTemplateToBehaviour(self, agentName, BehaviourName):
+        self.__connectAgentToGeneralBehaviour__(self.ontologies[self.ontoMap["template"]["onto"]], self.ontoMap["template"]["namespace"], agentName, BehaviourName)
 
-    # connect a agent  with a behavior
-    def connectAgentToBehavior(self, agentName, behaviorName):
-        self.__connectAgentToGeneralBehavior__(self.ontologies[self.ontoMap["base"]["onto"]], self.ontoMap["base"]["namespace"], agentName, behaviorName)
-
-
-    def __connectAgentToGeneralBehavior__(self, ontology, namespace, agentName, behaviorName):
-        self.addObjPropAssertion(ontology, namespace + agentName,  self.getOASISEntityByName("hasBehavior"), namespace + behaviorName)
+    # connect a agent  with a Behaviour
+    def connectAgentToBehaviour(self, agentName, BehaviourName):
+        self.__connectAgentToGeneralBehaviour__(self.ontologies[self.ontoMap["base"]["onto"]], self.ontoMap["base"]["namespace"], agentName, BehaviourName)
 
 
-    #add a goal to a selected behavior given the behavior IRI and goal name
-    def addGoalToBehavior(self, ontology, namespace, behavior, goalName):
+    def __connectAgentToGeneralBehaviour__(self, ontology, namespace, agentName, BehaviourName):
+        self.addObjPropAssertion(ontology, namespace + agentName,  self.getOASISEntityByName("hasBehaviour"), namespace + BehaviourName)
+
+
+    #add a goal to a selected Behaviour given the Behaviour IRI and goal name
+    def addGoalToBehaviour(self, ontology, namespace, Behaviour, goalName):
         goal = namespace + goalName
         self.addClassAssertion(ontology, goal, self.getOASISEntityByName("GoalDescription"))
-        self.addObjPropAssertion(ontology, behavior, self.getOASISEntityByName("consistsOfGoalDescription"), goal)
+        self.addObjPropAssertion(ontology, Behaviour, self.getOASISEntityByName("consistsOfGoalDescription"), goal)
         return goal
 
 
@@ -215,13 +215,13 @@ class BehaviourManager:
 
 
     def __createPlanPath__(self, ontology,  namespace, thingname, planName, className, goalName, taskName, operators, operatorsArguments):
-        behavior = namespace + planName
-        self.addClassAssertion(ontology, behavior, self.getOASISEntityByName(className))
+        Behaviour = namespace + planName
+        self.addClassAssertion(ontology, Behaviour, self.getOASISEntityByName(className))
 
-        self.addClassAssertion(ontology, behavior, self.getOASISEntityByName(thingname))
+        self.addClassAssertion(ontology, Behaviour, self.getOASISEntityByName(thingname))
 
         # create, add, and connect the goal
-        goal = self.addGoalToBehavior(ontology, namespace, behavior, goalName)
+        goal = self.addGoalToBehaviour(ontology, namespace, Behaviour, goalName)
         self.addClassAssertion(ontology, goal, self.getOASISEntityByName(thingname))
 
         # create, add, and connect the task
@@ -238,7 +238,7 @@ class BehaviourManager:
             self.addClassAssertion(ontology, taskOperatorArgument, self.getOASISEntityByName(thingname))
         else:
             taskOperatorArgument = None
-        return behavior, goal, task, taskOperator, taskOperatorArgument
+        return Behaviour, goal, task, taskOperator, taskOperatorArgument
 
 
     # add task object to the selected task given the object name,  the task obj entity property, and the task object entity
@@ -267,11 +267,11 @@ class BehaviourManager:
                                  elementity)  # the object
         return object
 
-    def __createBehavior__(self, ontology, thingname, behaviorName, className, goalName, taskName, operators, operatorsArguments, objects, inputs,
+    def __createBehaviour__(self, ontology, thingname, BehaviourName, className, goalName, taskName, operators, operatorsArguments, objects, inputs,
                        outputs):
-        # create  and add the behavior
-        behavior, goal, task, taskOperator, taskOperatorArgument = self.__createPlanPath__(
-            self.ontologies[self.ontoMap[ontology]["onto"]], self.ontoMap[ontology]["namespace"], thingname, behaviorName, className, goalName,
+        # create  and add the Behaviour
+        Behaviour, goal, task, taskOperator, taskOperatorArgument = self.__createPlanPath__(
+            self.ontologies[self.ontoMap[ontology]["onto"]], self.ontoMap[ontology]["namespace"], thingname, BehaviourName, className, goalName,
             taskName, operators, operatorsArguments)
         # create, add, and connect the task object
         if objects:
@@ -290,31 +290,31 @@ class BehaviourManager:
             for output in outputs:
                 outputName = self.__addTaskOutputToTask__(self.ontologies[self.ontoMap[ontology]["onto"]], self.ontoMap[ontology]["namespace"],thingname, task, output[0], output[1], output[2])
 
-        return behavior, goal, task, taskOperator, taskOperatorArgument
+        return Behaviour, goal, task, taskOperator, taskOperatorArgument
 
-    #create a behavior template given an agent template IRI
-    def createAgentBehaviorTemplate(self, agentName, behaviorName, goalName, taskName, operators, operatorsArguments, objects, inputs, outputs):
+    #create a Behaviour template given an agent template IRI
+    def createAgentBehaviourTemplate(self, agentName, BehaviourName, goalName, taskName, operators, operatorsArguments, objects, inputs, outputs):
         agent = URIRef(self.ontoMap["template"]["namespace"]+ agentName)
-        #create  and add the behavior
-        behavior, goal, task, taskOperator, taskOperatorArgument=self.__createBehavior__("template", "TemplateThing", behaviorName, "Behaviour", goalName, taskName, operators, operatorsArguments, objects, inputs, outputs)
-        self.connectAgentTemplateToBehavior(agentName, behaviorName)
+        #create  and add the Behaviour
+        Behaviour, goal, task, taskOperator, taskOperatorArgument=self.__createBehaviour__("template", "TemplateThing", BehaviourName, "Behaviour", goalName, taskName, operators, operatorsArguments, objects, inputs, outputs)
+        self.connectAgentTemplateToBehaviour(agentName, BehaviourName)
 
 
-    def createAgentBehavior(self, agentName, behaviorName, goalName, taskName, operators, operatorsArguments, objects, inputs,  outputs, mapping):
-        # create  and add the behavior
-        behavior, goal, task, taskOperator, taskOperatorArgument  = self.__createBehavior__("base", "BehaviourThing", behaviorName, "Behaviour", goalName, taskName, operators, operatorsArguments, objects, inputs,  outputs)
+    def createAgentBehaviour(self, agentName, BehaviourName, goalName, taskName, operators, operatorsArguments, objects, inputs,  outputs, mapping):
+        # create  and add the Behaviour
+        Behaviour, goal, task, taskOperator, taskOperatorArgument  = self.__createBehaviour__("base", "BehaviourThing", BehaviourName, "Behaviour", goalName, taskName, operators, operatorsArguments, objects, inputs,  outputs)
         agent = URIRef(self.ontoMap["base"]["namespace"]+agentName)
         self.addClassAssertion(self.ontologies[self.ontoMap["base"]["onto"]], agent, self.getOASISEntityByName("BehaviourThing"))
-        self.connectAgentToBehavior(agentName, behaviorName)
-        #linking agent behavior with the corresponding behavior template
+        self.connectAgentToBehaviour(agentName, BehaviourName)
+        #linking agent Behaviour with the corresponding Behaviour template
         if mapping:
             #mapping the task
             task_op = URIRef(self.ontoMap["template"]["namespace"]+mapping[0])
             for subject in self.ontologies[self.ontoMap["template"]["onto"]].subjects(self.getOASISEntityByName("consistsOfTaskDescription"), task_op):
                 self.addObjPropAssertion(self.ontologies[self.ontoMap["base"]["onto"]], goal, self.getOASISEntityByName("overloadsGoalDescription"), subject)
                 for beh in self.ontologies[self.ontoMap["template"]["onto"]].subjects(self.getOASISEntityByName("consistsOfGoalDescription"), subject):
-                    self.addObjPropAssertion(self.ontologies[self.ontoMap["base"]["onto"]], behavior, self.getOASISEntityByName("overloadsBehavior"), beh)
-                    for ag in self.ontologies[self.ontoMap["template"]["onto"]].subjects(self.getOASISEntityByName("hasBehavior"), beh):
+                    self.addObjPropAssertion(self.ontologies[self.ontoMap["base"]["onto"]], Behaviour, self.getOASISEntityByName("overloadsBehaviour"), beh)
+                    for ag in self.ontologies[self.ontoMap["template"]["onto"]].subjects(self.getOASISEntityByName("hasBehaviour"), beh):
                         self.addObjPropAssertion(self.ontologies[self.ontoMap["base"]["onto"]], agent, self.getOASISEntityByName("overloadsAgent"), ag)
                         break
                     break
@@ -347,10 +347,10 @@ class BehaviourManager:
 
 
     #create and link an action to the agent responsible for it
-    #  behaviorName, goalName, taskName, operators, operatorsArguments, objects, inputs,  outputs, mapping):
+    #  BehaviourName, goalName, taskName, operators, operatorsArguments, objects, inputs,  outputs, mapping):
     def createAgentAction(self, agentname, planName, goalName, taskName, operators, operatorsArguments, objects, inputs, outputs, mapping):
         agent = self.ontoMap["base"]["namespace"]+agentname
-        behavior, goal, task, taskOperator, taskOperatorArgument = self.__createBehavior__("action", "ExecutionThing",
+        Behaviour, goal, task, taskOperator, taskOperatorArgument = self.__createBehaviour__("action", "ExecutionThing",
                                                                                            planName, "PlanDescription",
                                                                                            goalName, taskName,
                                                                                            operators,
@@ -359,7 +359,7 @@ class BehaviourManager:
 
         self.addObjPropAssertion(self.ontologies[self.ontoMap["action"]["onto"]], agent, self.getOASISEntityByName("performs"), task)
 
-        # linking agent action with the corresponding behavior template
+        # linking agent action with the corresponding Behaviour template
         if mapping:
         # mapping the task
           task_op = URIRef(self.ontoMap["base"]["namespace"] + mapping[0])
@@ -395,7 +395,7 @@ class BehaviourManager:
     def createAgentPlanRequestDescription(self, agentname, planName, goalName, taskName, operators, operatorsArguments,
                         objects, inputs, outputs):
         agent = self.ontoMap["base"]["namespace"] + agentname;
-        plan, goal, task, taskOperator, taskOperatorArgument = self.__createBehavior__("plan", "PlanningThing",
+        plan, goal, task, taskOperator, taskOperatorArgument = self.__createBehaviour__("plan", "PlanningThing",
                                                                                            planName, "PlanDescription",
                                                                                            goalName, taskName,
                                                                                            operators,
