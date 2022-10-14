@@ -1,2273 +1,1816 @@
 <?xml version="1.0"?>
-<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+<rdf:RDF xmlns="http://www.dmi.unict.it/ether-oasis.owl"
      xml:base="http://www.dmi.unict.it/ether-oasis.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://www.dmi.unict.it/ether-oasis.owl">
-    <Prefix name="" IRI="http://www.dmi.unict.it/ether-oasis.owl"/>
-    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
-    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
-    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Import>http://www.dmi.unict.it/oasis-abox.owl</Import>
-    <Import>http://www.dmi.unict.it/oasis.owl</Import>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
-        <Literal>Daniele Francesco Santamaria</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
-        <Literal>Domenico Cantone</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
-        <Literal>Giampaolo Bella</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
-        <Literal>Marianna Nicolosi Asmundo</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
-        <Literal>This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://www.dmi.unict.it/oasis.owl#importsOntologyToken"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">4</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://www.dmi.unict.it/oasis.owl#ontologyTokenEthereumSmartContractAddress"/>
-        <Literal>0x36194ab80f7649572cab9ec524950df32f638b08</Literal>
-    </Annotation>
-    <Declaration>
-        <Class IRI="#EOA-EthereumAccount"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ERC20SmartContractAgent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EtherCryptocurrency"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EtherExchangeSmartContractInteraction"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumAccount"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumBlock"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumCustomToken"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumERC1150SmartContractAgent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumERC721SmartContractAgent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumFungibleSmartContractAgent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumFungibleToken"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumGeneralPurposeSmartContractAgent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumNode"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumNonFungibleSmartContractAgent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumNonFungibleToken"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumSemiFungibleSmartContractAgent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumSemiFungibleToken"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumSmartContractAccount"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumSmartContractCreation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumSmartContractInteraction"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumSystem"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumToken"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTokenActivePerdurantFeature"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTokenDeprecatedPerdurantFeature"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTokenERC1155"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTokenERC20"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTokenERC721"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTokenFeatureModificationActivity"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTokenPerdurantFeature"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTokenPerdurantFeatureStatusChanged"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTokenPerdurantFeatureType"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTokenProtocolCompliant"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTransaction"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTransactionHash"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumWalletOwnerPerdurantFeature"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainTransactionHash"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#RequestDescriptionObject"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#describesEtherExchangeInteraction"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#describesEthereumSmartContractCreation"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#describesEthereumSmartContractInteraction"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#embedsEthereumTransaction"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasEthereumSmartContractAccount"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasEthereumTokenFeatureModificationResult"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasEthereumTokenFeatureModificationSource"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasEthereumTokenPerdurantFeature"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasEthereumTransactionHash"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasEthereumTransactionStatus"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isDescribedByEthereumToken"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isEthereumTokenFeatureModifiedIn"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isInTheWalletOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#describesBlockchainSmartContractCreation"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#describesBlockchainSmartContractInteraction"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#describesCryptocurrencyExchangeBlockchainInteraction"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#embedsBlockchainTransaction"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainAccount"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionHash"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#isDescribedByDigitalToken"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasEthereumAccountAddress"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasEthereumBlockHeight"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasEthereumDataDescription"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasEthereumTokenID"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasEthereumTransactionFromAddress"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasEthereumTransactionHashValue"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasEthereumTransactionToAddress"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainAccountAddress"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainBlockHeight"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainDataDescription"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTokenID"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionFromAddress"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionHashValue"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionToAddress"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_EOA-Account"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_operator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation_object"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation_property"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation_subject"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_set"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_token"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_token_behavior"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_token_goal_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_input_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_object_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_operator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_operator_argument"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_EOA-Account"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_conditional_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_operator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation_object"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation_property"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation_subject"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_conditional_set"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_token"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_token_behavior"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_token_goal_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_token_task_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_token_task_input_template_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_token_task_input_template_2"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_token_task_object_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_token_task_operator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_token_task_operator_argument"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#burn_ERC721_token"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#burn_ERC721_token_behavior"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#burn_ERC721_token_goal_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#burn_ERC721_token_task_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#burn_ERC721_token_task_input_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#burn_ERC721_token_task_object_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#burn_ERC721_token_task_operator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#burn_ERC721_token_task_operator_argument"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#ether_cryptocurrency"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#ethereum_mainnet"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#ethereum_ERC20_behavior_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#ethereum_ERC721_smart_contract_behavior_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#mint_ERC721_token"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#mint_ERC721_token_behavior"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#mint_ERC721_token_goal_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#mint_ERC721_token_task_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#mint_ERC721_token_task_object_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#mint_ERC721_token_task_operator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#mint_ERC721_token_task_operator_argument"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#mint_ERC721_token_task_output_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_EOA-Account"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_conditional_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom_object"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom_operator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom_subject"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_conditional_set"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_token"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_token_behavior"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_token_goal_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_token_task_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_token_task_input_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_token_task_object_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_token_task_operator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_token_task_operator_argument"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_token_task_output_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_Ethereum_account_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_Ethereum_account_2"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_conditional"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom_operator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom_subject"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom_subject_transfer_activity"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_set"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_token"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_token_behavior"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_token_goal_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_input_template_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_input_template_2"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_input_template_3"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_object_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_operator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_operator_argument"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_EOA-Account_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_EOA-Account_2"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom_operator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom_subject"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom_subject_activity"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_set"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_token"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_token_behavior"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_token_goal_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_input_template_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_input_template_2"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_input_template_3"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_object_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_operator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_operator_argument"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#any"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#burn"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#delegate"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#exist"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#mint"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#own"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#owner"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#ownership"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#retrieve"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#transfer"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/license"/>
-    </Declaration>
-    <EquivalentClasses>
-        <Class IRI="#EthereumTokenPerdurantFeature"/>
-        <ObjectIntersectionOf>
-            <Class IRI="#EthereumTokenPerdurantFeatureStatusChanged"/>
-            <Class IRI="#EthereumTokenPerdurantFeatureType"/>
-        </ObjectIntersectionOf>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#EthereumTokenPerdurantFeatureStatusChanged"/>
-        <ObjectUnionOf>
-            <Class IRI="#EthereumTokenActivePerdurantFeature"/>
-            <Class IRI="#EthereumTokenDeprecatedPerdurantFeature"/>
-        </ObjectUnionOf>
-    </EquivalentClasses>
-    <SubClassOf>
-        <Class IRI="#EOA-EthereumAccount"/>
-        <Class IRI="#EthereumAccount"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EOA-EthereumAccount"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#EOA-BlockchainAccount"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ERC20SmartContractAgent"/>
-        <Class IRI="#EthereumFungibleSmartContractAgent"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EtherCryptocurrency"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Cryptocurrency"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EtherExchangeSmartContractInteraction"/>
-        <Class IRI="#EthereumSmartContractInteraction"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EtherExchangeSmartContractInteraction"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#CryptocurrencyExchangeBlockchainInteraction"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumAccount"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainAccount"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumBlock"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainBlock"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumCustomToken"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#CustomToken"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumERC1150SmartContractAgent"/>
-        <Class IRI="#EthereumSemiFungibleSmartContractAgent"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumERC721SmartContractAgent"/>
-        <Class IRI="#EthereumNonFungibleSmartContractAgent"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumFungibleSmartContractAgent"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#FungibleBlockchainSmartContractAgent"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumFungibleToken"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#FungibleToken"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumGeneralPurposeSmartContractAgent"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#GeneralPurposeBlockchainSmartContractAgent"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumNode"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchaiNode"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumNonFungibleSmartContractAgent"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#NonFungibleBlockchainSmartContractAgent"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumNonFungibleToken"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#NonFungibleToken"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumSemiFungibleSmartContractAgent"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#SemiFungibleBlockChainSmartContractAgent"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumSemiFungibleToken"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#SemiFungibleToken"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumSmartContractAccount"/>
-        <Class IRI="#EthereumAccount"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumSmartContractAccount"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainSmartContractAccount"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumSmartContractCreation"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainSmartContractCreation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumSmartContractInteraction"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainSmartContractInteraction"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumSystem"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainSystem"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumToken"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainDigitalToken"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumTokenActivePerdurantFeature"/>
-        <Class IRI="#EthereumTokenPerdurantFeatureStatusChanged"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumTokenDeprecatedPerdurantFeature"/>
-        <Class IRI="#EthereumTokenPerdurantFeatureStatusChanged"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumTokenDeprecatedPerdurantFeature"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#DeprecatedThing"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumTokenERC1155"/>
-        <Class IRI="#EthereumSemiFungibleToken"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumTokenERC1155"/>
-        <Class IRI="#EthereumTokenProtocolCompliant"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumTokenERC20"/>
-        <Class IRI="#EthereumFungibleToken"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumTokenERC20"/>
-        <Class IRI="#EthereumTokenProtocolCompliant"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumTokenERC721"/>
-        <Class IRI="#EthereumNonFungibleToken"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumTokenERC721"/>
-        <Class IRI="#EthereumTokenProtocolCompliant"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumTokenFeatureModificationActivity"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TokenFeatureModificationActivity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumTokenPerdurantFeature"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#PerdurantFeature"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumTokenPerdurantFeatureStatusChanged"/>
-        <Class IRI="#EthereumTokenPerdurantFeature"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumTokenPerdurantFeatureType"/>
-        <Class IRI="#EthereumTokenPerdurantFeature"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumTokenPerdurantFeatureType"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Type"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumTokenProtocolCompliant"/>
-        <Class IRI="#EthereumToken"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumTransaction"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainTransaction"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumTransactionHash"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainTransactionHash"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumWalletOwnerPerdurantFeature"/>
-        <Class IRI="#EthereumTokenPerdurantFeatureType"/>
-    </SubClassOf>
-    <ClassAssertion>
-        <Class IRI="#EOA-EthereumAccount"/>
-        <NamedIndividual IRI="#approveAll_ERC721_EOA-Account"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Conditional"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalBody"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalBodyAtom"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalOperator"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_operator"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalSubject"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#DelegationActivity"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#DelegationObject"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation_object"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#DelegationProperty"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation_property"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#DelegationSubject"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation_subject"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalSet"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_set"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#EthereumTokenERC721"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ExternalBehavior"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_behavior"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_goal_description"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_description"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_input_template"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskObjectTemplate"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_object_template"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_operator"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_operator_argument"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#EOA-EthereumAccount"/>
-        <NamedIndividual IRI="#approve_ERC721_EOA-Account"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Conditional"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalBody"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalBodyAtom"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalOperator"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_operator"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalSubject"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#DelegationActivity"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#DelegationObject"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation_object"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#DelegationProperty"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation_property"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#DelegationSubject"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation_subject"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalSet"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_set"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#EthereumTokenERC721"/>
-        <NamedIndividual IRI="#approve_ERC721_token"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ExternalBehavior"/>
-        <NamedIndividual IRI="#approve_ERC721_token_behavior"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
-        <NamedIndividual IRI="#approve_ERC721_token_goal_description"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
-        <NamedIndividual IRI="#approve_ERC721_token_task_description"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
-        <NamedIndividual IRI="#approve_ERC721_token_task_input_template_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
-        <NamedIndividual IRI="#approve_ERC721_token_task_input_template_2"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskObjectTemplate"/>
-        <NamedIndividual IRI="#approve_ERC721_token_task_object_template"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
-        <NamedIndividual IRI="#approve_ERC721_token_task_operator"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
-        <NamedIndividual IRI="#approve_ERC721_token_task_operator_argument"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#EthereumTokenERC721"/>
-        <NamedIndividual IRI="#burn_ERC721_token"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ExternalBehavior"/>
-        <NamedIndividual IRI="#burn_ERC721_token_behavior"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#RequestDescriptionObject"/>
-        <NamedIndividual IRI="#burn_ERC721_token_goal_description"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
-        <NamedIndividual IRI="#burn_ERC721_token_task_description"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
-        <NamedIndividual IRI="#burn_ERC721_token_task_input_template"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskObjectTemplate"/>
-        <NamedIndividual IRI="#burn_ERC721_token_task_object_template"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
-        <NamedIndividual IRI="#burn_ERC721_token_task_operator"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
-        <NamedIndividual IRI="#burn_ERC721_token_task_operator_argument"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#EtherCryptocurrency"/>
-        <NamedIndividual IRI="#ether_cryptocurrency"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#PunningClass"/>
-        <NamedIndividual IRI="#ether_cryptocurrency"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#System"/>
-        <NamedIndividual IRI="#ethereum_mainnet"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#AgentBehaviorTemplate"/>
-        <NamedIndividual IRI="#ethereum_ERC20_behavior_template"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#SoftwareAgentBehaviorTemplate"/>
-        <NamedIndividual IRI="#ethereum_ERC721_smart_contract_behavior_template"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#EthereumTokenERC721"/>
-        <NamedIndividual IRI="#mint_ERC721_token"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ExternalBehavior"/>
-        <NamedIndividual IRI="#mint_ERC721_token_behavior"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
-        <NamedIndividual IRI="#mint_ERC721_token_goal_description"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
-        <NamedIndividual IRI="#mint_ERC721_token_task_description"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskObjectTemplate"/>
-        <NamedIndividual IRI="#mint_ERC721_token_task_object_template"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
-        <NamedIndividual IRI="#mint_ERC721_token_task_operator"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
-        <NamedIndividual IRI="#mint_ERC721_token_task_operator_argument"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskOutputParameterTemplate"/>
-        <NamedIndividual IRI="#mint_ERC721_token_task_output_template"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#EOA-EthereumAccount"/>
-        <NamedIndividual IRI="#owner_ERC721_EOA-Account"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Conditional"/>
-        <NamedIndividual IRI="#owner_ERC721_conditional_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalBody"/>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalBodyAtom"/>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalObject"/>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom_object"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalOperator"/>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom_operator"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalSubject"/>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom_subject"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalSet"/>
-        <NamedIndividual IRI="#owner_ERC721_conditional_set"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#EthereumTokenERC721"/>
-        <NamedIndividual IRI="#owner_ERC721_token"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ExternalBehavior"/>
-        <NamedIndividual IRI="#owner_ERC721_token_behavior"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
-        <NamedIndividual IRI="#owner_ERC721_token_goal_description"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
-        <NamedIndividual IRI="#owner_ERC721_token_task_description"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
-        <NamedIndividual IRI="#owner_ERC721_token_task_input_template"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskObjectTemplate"/>
-        <NamedIndividual IRI="#owner_ERC721_token_task_object_template"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
-        <NamedIndividual IRI="#owner_ERC721_token_task_operator"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
-        <NamedIndividual IRI="#owner_ERC721_token_task_operator_argument"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskOutputParameterTemplate"/>
-        <NamedIndividual IRI="#owner_ERC721_token_task_output_template"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#EthereumAccount"/>
-        <NamedIndividual IRI="#transfer_ERC20_Ethereum_account_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#EthereumAccount"/>
-        <NamedIndividual IRI="#transfer_ERC20_Ethereum_account_2"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Conditional"/>
-        <NamedIndividual IRI="#transfer_ERC20_conditional"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalBody"/>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalBodyAtom"/>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalOperator"/>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom_operator"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalSubject"/>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom_subject"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TransferActivity"/>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom_subject_transfer_activity"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalSet"/>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_set"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#EtherCryptocurrency"/>
-        <NamedIndividual IRI="#transfer_ERC20_token"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Behavior"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_behavior"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_goal_description"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_description"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_input_template_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_input_template_2"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_input_template_3"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskObjectTemplate"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_object_template"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_operator"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_operator_argument"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#EOA-EthereumAccount"/>
-        <NamedIndividual IRI="#transfer_ERC721_EOA-Account_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#EOA-EthereumAccount"/>
-        <NamedIndividual IRI="#transfer_ERC721_EOA-Account_2"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Conditional"/>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalBody"/>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalBodyAtom"/>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalOperator"/>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom_operator"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalSubject"/>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom_subject"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TransferActivity"/>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom_subject_activity"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ConditionalSet"/>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_set"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#EthereumTokenERC721"/>
-        <NamedIndividual IRI="#transfer_ERC721_token"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ExternalBehavior"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_behavior"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_goal_description"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_description"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_input_template_1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_input_template_2"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_input_template_3"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskObjectTemplate"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_object_template"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_operator"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_operator_argument"/>
-    </ClassAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditionalBody"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditionalBodyAtom"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditionalOperator"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_operator"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditionalSubject"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersExactlyTo"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_operator"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#exist"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasDelegationObject"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation_object"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasDelegationProperty"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation_property"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasDelegationSubject"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation_subject"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasSpecificity"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation_object"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#any"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation_object"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersExactlyTo"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation_property"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#burn"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersExactlyTo"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation_property"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#transfer"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation_subject"/>
-        <NamedIndividual IRI="#approveAll_ERC721_EOA-Account"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditional"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_set"/>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#consistsOfGoalDescription"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_behavior"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_goal_description"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#consistsOfTaskDescription"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_goal_description"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_description"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskInputParameterTemplate"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_input_template"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskObjectTemplate"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_object_template"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskOperator"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_operator"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskOperatorArgument"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_operator_argument"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_input_template"/>
-        <NamedIndividual IRI="#approveAll_ERC721_EOA-Account"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_object_template"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersExactlyTo"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_operator"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#delegate"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersExactlyTo"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_operator_argument"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#ownership"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditionalBody"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_1"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditionalBodyAtom"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditionalOperator"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_operator"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditionalSubject"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersExactlyTo"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_operator"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#exist"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasDelegationObject"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation_object"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasDelegationProperty"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation_property"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasDelegationSubject"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation_subject"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation_object"/>
-        <NamedIndividual IRI="#approve_ERC721_token"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersExactlyTo"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation_property"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#burn"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersExactlyTo"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation_property"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#transfer"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation_subject"/>
-        <NamedIndividual IRI="#approve_ERC721_EOA-Account"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditional"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_set"/>
-        <NamedIndividual IRI="#approve_ERC721_conditional_1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#consistsOfGoalDescription"/>
-        <NamedIndividual IRI="#approve_ERC721_token_behavior"/>
-        <NamedIndividual IRI="#approve_ERC721_token_goal_description"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#consistsOfTaskDescription"/>
-        <NamedIndividual IRI="#approve_ERC721_token_goal_description"/>
-        <NamedIndividual IRI="#approve_ERC721_token_task_description"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskInputParameterTemplate"/>
-        <NamedIndividual IRI="#approve_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#approve_ERC721_token_task_input_template_1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskInputParameterTemplate"/>
-        <NamedIndividual IRI="#approve_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#approve_ERC721_token_task_input_template_2"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskObjectTemplate"/>
-        <NamedIndividual IRI="#approve_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#approve_ERC721_token_task_object_template"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskOperator"/>
-        <NamedIndividual IRI="#approve_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#approve_ERC721_token_task_operator"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskOperatorArgument"/>
-        <NamedIndividual IRI="#approve_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#approve_ERC721_token_task_operator_argument"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#approve_ERC721_token_task_input_template_1"/>
-        <NamedIndividual IRI="#approve_ERC721_token"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#approve_ERC721_token_task_input_template_2"/>
-        <NamedIndividual IRI="#approve_ERC721_EOA-Account"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#approve_ERC721_token_task_object_template"/>
-        <NamedIndividual IRI="#approve_ERC721_token"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#approve_ERC721_token_task_operator"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#delegate"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersExactlyTo"/>
-        <NamedIndividual IRI="#approve_ERC721_token_task_operator_argument"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#ownership"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#consistsOfGoalDescription"/>
-        <NamedIndividual IRI="#burn_ERC721_token_behavior"/>
-        <NamedIndividual IRI="#burn_ERC721_token_goal_description"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#consistsOfTaskDescription"/>
-        <NamedIndividual IRI="#burn_ERC721_token_goal_description"/>
-        <NamedIndividual IRI="#burn_ERC721_token_task_description"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskInputParameterTemplate"/>
-        <NamedIndividual IRI="#burn_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#burn_ERC721_token_task_input_template"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskObjectTemplate"/>
-        <NamedIndividual IRI="#burn_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#burn_ERC721_token_task_object_template"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskOperator"/>
-        <NamedIndividual IRI="#burn_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#burn_ERC721_token_task_operator"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskOperatorArgument"/>
-        <NamedIndividual IRI="#burn_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#burn_ERC721_token_task_operator_argument"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#burn_ERC721_token_task_input_template"/>
-        <NamedIndividual IRI="#burn_ERC721_token"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#burn_ERC721_token_task_object_template"/>
-        <NamedIndividual IRI="#burn_ERC721_token"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersExactlyTo"/>
-        <NamedIndividual IRI="#burn_ERC721_token_task_operator"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#burn"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersExactlyTo"/>
-        <NamedIndividual IRI="#burn_ERC721_token_task_operator_argument"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBehavior"/>
-        <NamedIndividual IRI="#ethereum_ERC20_behavior_template"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_behavior"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBehavior"/>
-        <NamedIndividual IRI="#ethereum_ERC721_smart_contract_behavior_template"/>
-        <NamedIndividual IRI="#approveAll_ERC721_token_behavior"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBehavior"/>
-        <NamedIndividual IRI="#ethereum_ERC721_smart_contract_behavior_template"/>
-        <NamedIndividual IRI="#approve_ERC721_token_behavior"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBehavior"/>
-        <NamedIndividual IRI="#ethereum_ERC721_smart_contract_behavior_template"/>
-        <NamedIndividual IRI="#burn_ERC721_token_behavior"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBehavior"/>
-        <NamedIndividual IRI="#ethereum_ERC721_smart_contract_behavior_template"/>
-        <NamedIndividual IRI="#mint_ERC721_token_behavior"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBehavior"/>
-        <NamedIndividual IRI="#ethereum_ERC721_smart_contract_behavior_template"/>
-        <NamedIndividual IRI="#owner_ERC721_token_behavior"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBehavior"/>
-        <NamedIndividual IRI="#ethereum_ERC721_smart_contract_behavior_template"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_behavior"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#consistsOfGoalDescription"/>
-        <NamedIndividual IRI="#mint_ERC721_token_behavior"/>
-        <NamedIndividual IRI="#mint_ERC721_token_goal_description"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#consistsOfTaskDescription"/>
-        <NamedIndividual IRI="#mint_ERC721_token_goal_description"/>
-        <NamedIndividual IRI="#mint_ERC721_token_task_description"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskObjectTemplate"/>
-        <NamedIndividual IRI="#mint_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#mint_ERC721_token_task_object_template"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskOperator"/>
-        <NamedIndividual IRI="#mint_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#mint_ERC721_token_task_operator"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskOperatorArgument"/>
-        <NamedIndividual IRI="#mint_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#mint_ERC721_token_task_operator_argument"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskOutputParameterTemplate"/>
-        <NamedIndividual IRI="#mint_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#mint_ERC721_token_task_output_template"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#mint_ERC721_token_task_object_template"/>
-        <NamedIndividual IRI="#mint_ERC721_token"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersExactlyTo"/>
-        <NamedIndividual IRI="#mint_ERC721_token_task_operator"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#mint"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersExactlyTo"/>
-        <NamedIndividual IRI="#mint_ERC721_token_task_operator_argument"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#mint_ERC721_token_task_output_template"/>
-        <NamedIndividual IRI="#mint_ERC721_token"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditionalBody"/>
-        <NamedIndividual IRI="#owner_ERC721_conditional_1"/>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditionalBodyAtom"/>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body"/>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditionalObject"/>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom"/>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom_object"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditionalOperator"/>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom"/>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom_operator"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditionalSubject"/>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom"/>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom_subject"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom_object"/>
-        <NamedIndividual IRI="#owner_ERC721_token"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersExactlyTo"/>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom_operator"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#own"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom_subject"/>
-        <NamedIndividual IRI="#owner_ERC721_EOA-Account"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditional"/>
-        <NamedIndividual IRI="#owner_ERC721_conditional_set"/>
-        <NamedIndividual IRI="#owner_ERC721_conditional_1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#consistsOfGoalDescription"/>
-        <NamedIndividual IRI="#owner_ERC721_token_behavior"/>
-        <NamedIndividual IRI="#owner_ERC721_token_goal_description"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#consistsOfTaskDescription"/>
-        <NamedIndividual IRI="#owner_ERC721_token_goal_description"/>
-        <NamedIndividual IRI="#owner_ERC721_token_task_description"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskInputParameterTemplate"/>
-        <NamedIndividual IRI="#owner_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#owner_ERC721_token_task_input_template"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskObjectTemplate"/>
-        <NamedIndividual IRI="#owner_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#owner_ERC721_token_task_object_template"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskOperator"/>
-        <NamedIndividual IRI="#owner_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#owner_ERC721_token_task_operator"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskOperatorArgument"/>
-        <NamedIndividual IRI="#owner_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#owner_ERC721_token_task_operator_argument"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskOutputParameterTemplate"/>
-        <NamedIndividual IRI="#owner_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#owner_ERC721_token_task_output_template"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#owner_ERC721_token_task_input_template"/>
-        <NamedIndividual IRI="#owner_ERC721_token"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#owner_ERC721_token_task_object_template"/>
-        <NamedIndividual IRI="#owner_ERC721_token"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersExactlyTo"/>
-        <NamedIndividual IRI="#owner_ERC721_token_task_operator"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#retrieve"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersExactlyTo"/>
-        <NamedIndividual IRI="#owner_ERC721_token_task_operator_argument"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#owner"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#owner_ERC721_token_task_output_template"/>
-        <NamedIndividual IRI="#owner_ERC721_EOA-Account"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditionalBody"/>
-        <NamedIndividual IRI="#transfer_ERC20_conditional"/>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditionalBodyAtom"/>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body"/>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditionalOperator"/>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom"/>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom_operator"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersExactlyTo"/>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom_operator"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#exist"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom_subject"/>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom_subject_transfer_activity"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTransferDestination"/>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom_subject_transfer_activity"/>
-        <NamedIndividual IRI="#transfer_ERC20_Ethereum_account_2"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTransferSource"/>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom_subject_transfer_activity"/>
-        <NamedIndividual IRI="#transfer_ERC20_Ethereum_account_1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditional"/>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_set"/>
-        <NamedIndividual IRI="#transfer_ERC20_conditional"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#consistsOfGoalDescription"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_behavior"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_goal_description"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#consistsOfTaskDescription"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_goal_description"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_description"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskInputParameterTemplate"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_description"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_input_template_1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskInputParameterTemplate"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_description"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_input_template_2"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskInputParameterTemplate"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_description"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_input_template_3"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskObjectTemplate"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_description"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_object_template"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskOperator"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_description"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_operator"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskOperatorArgument"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_description"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_operator_argument"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_input_template_1"/>
-        <NamedIndividual IRI="#transfer_ERC20_token"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_input_template_2"/>
-        <NamedIndividual IRI="#transfer_ERC20_Ethereum_account_1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_input_template_3"/>
-        <NamedIndividual IRI="#transfer_ERC20_Ethereum_account_2"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_object_template"/>
-        <NamedIndividual IRI="#transfer_ERC20_token"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersExactlyTo"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_operator"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#transfer"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersExactlyTo"/>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_operator_argument"/>
-        <NamedIndividual IRI="#ether_cryptocurrency"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditionalBody"/>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_1"/>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditionalBodyAtom"/>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body"/>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditionalOperator"/>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom"/>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom_operator"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditionalSubject"/>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom"/>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom_subject"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersExactlyTo"/>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom_operator"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#exist"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom_subject"/>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom_subject_activity"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTransferDestination"/>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom_subject_activity"/>
-        <NamedIndividual IRI="#transfer_ERC721_EOA-Account_2"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTransferObject"/>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom_subject_activity"/>
-        <NamedIndividual IRI="#transfer_ERC721_token"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTransferSource"/>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom_subject_activity"/>
-        <NamedIndividual IRI="#transfer_ERC721_EOA-Account_1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasConditional"/>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_set"/>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#consistsOfGoalDescription"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_behavior"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_goal_description"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#consistsOfTaskDescription"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_goal_description"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_description"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskInputParameterTemplate"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_input_template_1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskInputParameterTemplate"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_input_template_2"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskInputParameterTemplate"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_input_template_3"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskObjectTemplate"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_object_template"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskOperator"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_operator"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTaskOperatorArgument"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_description"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_operator_argument"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_input_template_1"/>
-        <NamedIndividual IRI="#transfer_ERC721_token"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_input_template_2"/>
-        <NamedIndividual IRI="#transfer_ERC721_EOA-Account_1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_input_template_3"/>
-        <NamedIndividual IRI="#transfer_ERC721_EOA-Account_2"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersAsNewTo"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_object_template"/>
-        <NamedIndividual IRI="#transfer_ERC721_token"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersExactlyTo"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_operator"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#transfer"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#refersExactlyTo"/>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_operator_argument"/>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token"/>
-    </ObjectPropertyAssertion>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#describesEtherExchangeInteraction"/>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#describesCryptocurrencyExchangeBlockchainInteraction"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#describesEthereumSmartContractCreation"/>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#describesBlockchainSmartContractCreation"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#describesEthereumSmartContractInteraction"/>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#describesBlockchainSmartContractInteraction"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#embedsEthereumTransaction"/>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#embedsBlockchainTransaction"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasEthereumSmartContractAccount"/>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainAccount"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasEthereumTokenFeatureModificationResult"/>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTokenFeatureModificationResult"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasEthereumTokenFeatureModificationSource"/>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTokenFeatureModificationSource"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasEthereumTokenPerdurantFeature"/>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasPerdurantFeature"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasEthereumTransactionHash"/>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionHash"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasEthereumTransactionStatus"/>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasTransactionStatus"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isDescribedByEthereumToken"/>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#isDescribedByDigitalToken"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isEthereumTokenFeatureModifiedIn"/>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#associatedWithPerdurantFeature"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isInTheWalletOf"/>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#isFeatureDescribedBy"/>
-    </SubObjectPropertyOf>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#describesEtherExchangeInteraction"/>
-        <Class IRI="#EthereumTransaction"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#describesEthereumSmartContractCreation"/>
-        <Class IRI="#EthereumTransaction"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#describesEthereumSmartContractInteraction"/>
-        <Class IRI="#EthereumTransaction"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#embedsEthereumTransaction"/>
-        <Class IRI="#EthereumBlock"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasEthereumSmartContractAccount"/>
-        <Class IRI="#EthereumSmartContractCreation"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasEthereumTokenFeatureModificationResult"/>
-        <Class IRI="#EthereumTokenFeatureModificationActivity"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasEthereumTokenFeatureModificationSource"/>
-        <Class IRI="#EthereumTokenFeatureModificationActivity"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasEthereumTokenPerdurantFeature"/>
-        <Class IRI="#EthereumToken"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasEthereumTransactionHash"/>
-        <Class IRI="#EthereumTransaction"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasEthereumTransactionStatus"/>
-        <Class IRI="#EthereumTransaction"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isDescribedByEthereumToken"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Asset"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isEthereumTokenFeatureModifiedIn"/>
-        <Class IRI="#EthereumTokenDeprecatedPerdurantFeature"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isInTheWalletOf"/>
-        <Class IRI="#EthereumWalletOwnerPerdurantFeature"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#describesEtherExchangeInteraction"/>
-        <Class IRI="#EtherExchangeSmartContractInteraction"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#describesEthereumSmartContractCreation"/>
-        <Class IRI="#EthereumSmartContractCreation"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#describesEthereumSmartContractInteraction"/>
-        <Class IRI="#EthereumSmartContractInteraction"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#embedsEthereumTransaction"/>
-        <Class IRI="#EthereumTransaction"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasEthereumSmartContractAccount"/>
-        <Class IRI="#EthereumSmartContractAccount"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasEthereumTokenFeatureModificationResult"/>
-        <Class IRI="#EthereumTokenPerdurantFeature"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasEthereumTokenFeatureModificationSource"/>
-        <Class IRI="#EthereumTokenDeprecatedPerdurantFeature"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasEthereumTokenPerdurantFeature"/>
-        <Class IRI="#EthereumTokenPerdurantFeature"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasEthereumTransactionHash"/>
-        <Class IRI="#EthereumTransactionHash"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasEthereumTransactionStatus"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainTransactionStatus"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isDescribedByEthereumToken"/>
-        <Class IRI="#EthereumToken"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isEthereumTokenFeatureModifiedIn"/>
-        <Class IRI="#EthereumTokenPerdurantFeature"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isInTheWalletOf"/>
-        <Class IRI="#EthereumAccount"/>
-    </ObjectPropertyRange>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#hasEthereumAccountAddress"/>
-        <DataProperty IRI="#hasEthereumDataDescription"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#hasEthereumAccountAddress"/>
-        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainAccountAddress"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#hasEthereumBlockHeight"/>
-        <DataProperty IRI="#hasEthereumDataDescription"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#hasEthereumBlockHeight"/>
-        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainBlockHeight"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#hasEthereumDataDescription"/>
-        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainDataDescription"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#hasEthereumTokenID"/>
-        <DataProperty IRI="#hasEthereumDataDescription"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#hasEthereumTokenID"/>
-        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTokenID"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#hasEthereumTransactionFromAddress"/>
-        <DataProperty IRI="#hasEthereumDataDescription"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#hasEthereumTransactionFromAddress"/>
-        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionFromAddress"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#hasEthereumTransactionHashValue"/>
-        <DataProperty IRI="#hasEthereumDataDescription"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#hasEthereumTransactionHashValue"/>
-        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionHashValue"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#hasEthereumTransactionToAddress"/>
-        <DataProperty IRI="#hasEthereumDataDescription"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#hasEthereumTransactionToAddress"/>
-        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionToAddress"/>
-    </SubDataPropertyOf>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#hasEthereumTransactionHashValue"/>
-    </FunctionalDataProperty>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasEthereumAccountAddress"/>
-        <Class IRI="#EthereumAccount"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasEthereumBlockHeight"/>
-        <Class IRI="#EthereumBlock"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasEthereumDataDescription"/>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainObjectDescription"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasEthereumTokenID"/>
-        <Class IRI="#EthereumToken"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasEthereumTransactionFromAddress"/>
-        <Class IRI="#EthereumTransaction"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasEthereumTransactionHashValue"/>
-        <Class IRI="#EthereumTransactionHash"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasEthereumTransactionToAddress"/>
-        <Class IRI="#EthereumTransaction"/>
-    </DataPropertyDomain>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasEthereumAccountAddress"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasEthereumBlockHeight"/>
-        <Datatype abbreviatedIRI="xsd:integer"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasEthereumTokenID"/>
-        <Datatype abbreviatedIRI="xsd:integer"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasEthereumTransactionFromAddress"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasEthereumTransactionHashValue"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasEthereumTransactionToAddress"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-</Ontology>
+     xmlns:oasis="http://www.dmi.unict.it/oasis.owl#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://www.dmi.unict.it/ether-oasis.owl">
+        <owl:imports rdf:resource="http://www.dmi.unict.it/oasis-abox.owl"/>
+        <owl:imports rdf:resource="http://www.dmi.unict.it/oasis.owl"/>
+        <terms:created>Daniele Francesco Santamaria</terms:created>
+        <terms:created>Domenico Cantone</terms:created>
+        <terms:created>Giampaolo Bella</terms:created>
+        <terms:created>Marianna Nicolosi Asmundo</terms:created>
+        <terms:created>This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.</terms:created>
+        <oasis:importsOntologyToken rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</oasis:importsOntologyToken>
+        <oasis:ontologyTokenEthereumSmartContractAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0x36194ab80f7649572cab9ec524950df32f638b08</oasis:ontologyTokenEthereumSmartContractAddress>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#describesEtherExchangeInteraction -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/ether-oasis.owl#describesEtherExchangeInteraction">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#describesCryptocurrencyExchangeBlockchainInteraction"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTransaction"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EtherExchangeSmartContractInteraction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#describesEthereumSmartContractCreation -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/ether-oasis.owl#describesEthereumSmartContractCreation">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#describesBlockchainSmartContractCreation"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTransaction"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumSmartContractCreation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#describesEthereumSmartContractInteraction -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/ether-oasis.owl#describesEthereumSmartContractInteraction">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#describesBlockchainSmartContractInteraction"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTransaction"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumSmartContractInteraction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#embedsEthereumTransaction -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/ether-oasis.owl#embedsEthereumTransaction">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#embedsBlockchainTransaction"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumBlock"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTransaction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#hasEthereumSmartContractAccount -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/ether-oasis.owl#hasEthereumSmartContractAccount">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasBlockchainAccount"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumSmartContractCreation"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumSmartContractAccount"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#hasEthereumTokenFeatureModificationResult -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/ether-oasis.owl#hasEthereumTokenFeatureModificationResult">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTokenFeatureModificationResult"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenFeatureModificationActivity"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenPerdurantFeature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#hasEthereumTokenFeatureModificationSource -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/ether-oasis.owl#hasEthereumTokenFeatureModificationSource">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTokenFeatureModificationSource"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenFeatureModificationActivity"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenDeprecatedPerdurantFeature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#hasEthereumTokenPerdurantFeature -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/ether-oasis.owl#hasEthereumTokenPerdurantFeature">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasPerdurantFeature"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumToken"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenPerdurantFeature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#hasEthereumTransactionHash -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/ether-oasis.owl#hasEthereumTransactionHash">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionHash"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTransaction"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTransactionHash"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#hasEthereumTransactionStatus -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/ether-oasis.owl#hasEthereumTransactionStatus">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTransactionStatus"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTransaction"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainTransactionStatus"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#isDescribedByEthereumToken -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/ether-oasis.owl#isDescribedByEthereumToken">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isDescribedByDigitalToken"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Asset"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumToken"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#isEthereumTokenFeatureModifiedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/ether-oasis.owl#isEthereumTokenFeatureModifiedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#associatedWithPerdurantFeature"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenDeprecatedPerdurantFeature"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenPerdurantFeature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#isInTheWalletOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/ether-oasis.owl#isInTheWalletOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isFeatureDescribedBy"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumWalletOwnerPerdurantFeature"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumAccount"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#describesBlockchainSmartContractCreation -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#describesBlockchainSmartContractCreation"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#describesBlockchainSmartContractInteraction -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#describesBlockchainSmartContractInteraction"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#describesCryptocurrencyExchangeBlockchainInteraction -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#describesCryptocurrencyExchangeBlockchainInteraction"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#embedsBlockchainTransaction -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#embedsBlockchainTransaction"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#hasBlockchainAccount -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasBlockchainAccount"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionHash -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionHash"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#isDescribedByDigitalToken -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isDescribedByDigitalToken"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#hasEthereumAccountAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dmi.unict.it/ether-oasis.owl#hasEthereumAccountAddress">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#hasEthereumDataDescription"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasBlockchainAccountAddress"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumAccount"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#hasEthereumBlockHeight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dmi.unict.it/ether-oasis.owl#hasEthereumBlockHeight">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#hasEthereumDataDescription"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasBlockchainBlockHeight"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumBlock"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#hasEthereumDataDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dmi.unict.it/ether-oasis.owl#hasEthereumDataDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasBlockchainDataDescription"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainObjectDescription"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#hasEthereumTokenID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dmi.unict.it/ether-oasis.owl#hasEthereumTokenID">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#hasEthereumDataDescription"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasBlockchainTokenID"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumToken"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#hasEthereumTransactionFromAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dmi.unict.it/ether-oasis.owl#hasEthereumTransactionFromAddress">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#hasEthereumDataDescription"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionFromAddress"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTransaction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#hasEthereumTransactionHashValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dmi.unict.it/ether-oasis.owl#hasEthereumTransactionHashValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#hasEthereumDataDescription"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionHashValue"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTransactionHash"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#hasEthereumTransactionToAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dmi.unict.it/ether-oasis.owl#hasEthereumTransactionToAddress">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#hasEthereumDataDescription"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionToAddress"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTransaction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#hasBlockchainAccountAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasBlockchainAccountAddress"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#hasBlockchainBlockHeight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasBlockchainBlockHeight"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#hasBlockchainDataDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasBlockchainDataDescription"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#hasBlockchainTokenID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasBlockchainTokenID"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionFromAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionFromAddress"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionHashValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionHashValue"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionToAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionToAddress"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EOA-EthereumAccount -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EOA-EthereumAccount">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumAccount"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#EOA-BlockchainAccount"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#ERC20SmartContractAgent -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#ERC20SmartContractAgent">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumFungibleSmartContractAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EtherCryptocurrency -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EtherCryptocurrency">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Cryptocurrency"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EtherExchangeSmartContractInteraction -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EtherExchangeSmartContractInteraction">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumSmartContractInteraction"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#CryptocurrencyExchangeBlockchainInteraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumAccount -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumAccount">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainAccount"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumBlock -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumBlock">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainBlock"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumCustomToken -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumCustomToken">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#CustomToken"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumERC1150SmartContractAgent -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumERC1150SmartContractAgent">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumSemiFungibleSmartContractAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumERC721SmartContractAgent -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumERC721SmartContractAgent">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumNonFungibleSmartContractAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumFungibleSmartContractAgent -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumFungibleSmartContractAgent">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#FungibleBlockchainSmartContractAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumFungibleToken -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumFungibleToken">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#FungibleToken"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumGeneralPurposeSmartContractAgent -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumGeneralPurposeSmartContractAgent">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#GeneralPurposeBlockchainSmartContractAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumNode -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumNode">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchaiNode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumNonFungibleSmartContractAgent -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumNonFungibleSmartContractAgent">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#NonFungibleBlockchainSmartContractAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumNonFungibleToken -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumNonFungibleToken">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#NonFungibleToken"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumSemiFungibleSmartContractAgent -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumSemiFungibleSmartContractAgent">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#SemiFungibleBlockChainSmartContractAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumSemiFungibleToken -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumSemiFungibleToken">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#SemiFungibleToken"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumSmartContractAccount -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumSmartContractAccount">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumAccount"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainSmartContractAccount"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumSmartContractCreation -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumSmartContractCreation">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainSmartContractCreation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumSmartContractInteraction -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumSmartContractInteraction">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainSmartContractInteraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumSystem -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumSystem">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumToken -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumToken">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainDigitalToken"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenActivePerdurantFeature -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenActivePerdurantFeature">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenPerdurantFeatureStatusChanged"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenDeprecatedPerdurantFeature -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenDeprecatedPerdurantFeature">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenPerdurantFeatureStatusChanged"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#DeprecatedThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenERC1155 -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenERC1155">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumSemiFungibleToken"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenProtocolCompliant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenERC20 -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenERC20">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumFungibleToken"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenProtocolCompliant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenERC721 -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenERC721">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumNonFungibleToken"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenProtocolCompliant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenFeatureModificationActivity -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenFeatureModificationActivity">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TokenFeatureModificationActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenPerdurantFeature -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenPerdurantFeature">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenPerdurantFeatureStatusChanged"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenPerdurantFeatureType"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#PerdurantFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenPerdurantFeatureStatusChanged -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenPerdurantFeatureStatusChanged">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenActivePerdurantFeature"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenDeprecatedPerdurantFeature"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenPerdurantFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenPerdurantFeatureType -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenPerdurantFeatureType">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenPerdurantFeature"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenProtocolCompliant -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenProtocolCompliant">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumToken"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumTransaction -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumTransaction">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainTransaction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumTransactionHash -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumTransactionHash">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainTransactionHash"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#EthereumWalletOwnerPerdurantFeature -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/ether-oasis.owl#EthereumWalletOwnerPerdurantFeature">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenPerdurantFeatureType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#BlockchainTransactionHash -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#BlockchainTransactionHash"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#RequestDescriptionObject -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#RequestDescriptionObject"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_EOA-Account -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_EOA-Account">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EOA-EthereumAccount"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Conditional"/>
+        <oasis:hasConditionalBody rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalBody"/>
+        <oasis:hasConditionalBodyAtom rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body_atom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body_atom -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body_atom">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalBodyAtom"/>
+        <oasis:hasConditionalOperator rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body_atom_operator"/>
+        <oasis:hasConditionalSubject rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body_atom_subject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body_atom_operator -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body_atom_operator">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalOperator"/>
+        <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#exist"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body_atom_subject -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body_atom_subject">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalSubject"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body_atom_subject_delegation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body_atom_subject_delegation -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body_atom_subject_delegation">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#DelegationActivity"/>
+        <oasis:hasDelegationObject rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body_atom_subject_delegation_object"/>
+        <oasis:hasDelegationProperty rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body_atom_subject_delegation_property"/>
+        <oasis:hasDelegationSubject rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body_atom_subject_delegation_subject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body_atom_subject_delegation_object -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body_atom_subject_delegation_object">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#DelegationObject"/>
+        <oasis:hasSpecificity rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#any"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body_atom_subject_delegation_property -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body_atom_subject_delegation_property">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#DelegationProperty"/>
+        <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#burn"/>
+        <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#transfer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body_atom_subject_delegation_subject -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_body_atom_subject_delegation_subject">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#DelegationSubject"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_EOA-Account"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_set -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional_set">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalSet"/>
+        <oasis:hasConditional rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_conditional"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenERC721"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token_behavior -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token_behavior">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ExternalBehavior"/>
+        <oasis:consistsOfGoalDescription rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token_goal_description"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token_goal_description -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token_goal_description">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+        <oasis:consistsOfTaskDescription rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token_task_description"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token_task_description -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token_task_description">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+        <oasis:hasTaskInputParameterTemplate rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token_task_input_template"/>
+        <oasis:hasTaskObjectTemplate rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token_task_object_template"/>
+        <oasis:hasTaskOperator rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token_task_operator"/>
+        <oasis:hasTaskOperatorArgument rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token_task_operator_argument"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token_task_input_template -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token_task_input_template">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_EOA-Account"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token_task_object_template -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token_task_object_template">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObjectTemplate"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token_task_operator -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token_task_operator">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+        <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#delegate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token_task_operator_argument -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token_task_operator_argument">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
+        <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#ownership"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_EOA-Account -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_EOA-Account">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EOA-EthereumAccount"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_1">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Conditional"/>
+        <oasis:hasConditionalBody rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalBody"/>
+        <oasis:hasConditionalBodyAtom rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body_atom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body_atom -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body_atom">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalBodyAtom"/>
+        <oasis:hasConditionalOperator rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body_atom_operator"/>
+        <oasis:hasConditionalSubject rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body_atom_subject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body_atom_operator -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body_atom_operator">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalOperator"/>
+        <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#exist"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body_atom_subject -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body_atom_subject">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalSubject"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body_atom_subject_delegation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body_atom_subject_delegation -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body_atom_subject_delegation">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#DelegationActivity"/>
+        <oasis:hasDelegationObject rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body_atom_subject_delegation_object"/>
+        <oasis:hasDelegationProperty rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body_atom_subject_delegation_property"/>
+        <oasis:hasDelegationSubject rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body_atom_subject_delegation_subject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body_atom_subject_delegation_object -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body_atom_subject_delegation_object">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#DelegationObject"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body_atom_subject_delegation_property -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body_atom_subject_delegation_property">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#DelegationProperty"/>
+        <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#burn"/>
+        <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#transfer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body_atom_subject_delegation_subject -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_body_atom_subject_delegation_subject">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#DelegationSubject"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_EOA-Account"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_set -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_set">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalSet"/>
+        <oasis:hasConditional rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_conditional_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenERC721"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_behavior -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_behavior">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ExternalBehavior"/>
+        <oasis:consistsOfGoalDescription rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_goal_description"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_goal_description -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_goal_description">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+        <oasis:consistsOfTaskDescription rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_task_description"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_task_description -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_task_description">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+        <oasis:hasTaskInputParameterTemplate rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_task_input_template_1"/>
+        <oasis:hasTaskInputParameterTemplate rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_task_input_template_2"/>
+        <oasis:hasTaskObjectTemplate rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_task_object_template"/>
+        <oasis:hasTaskOperator rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_task_operator"/>
+        <oasis:hasTaskOperatorArgument rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_task_operator_argument"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_task_input_template_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_task_input_template_1">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_task_input_template_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_task_input_template_2">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_EOA-Account"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_task_object_template -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_task_object_template">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObjectTemplate"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_task_operator -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_task_operator">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#delegate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_task_operator_argument -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_task_operator_argument">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
+        <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#ownership"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenERC721"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token_behavior -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token_behavior">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ExternalBehavior"/>
+        <oasis:consistsOfGoalDescription rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token_goal_description"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token_goal_description -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token_goal_description">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#RequestDescriptionObject"/>
+        <oasis:consistsOfTaskDescription rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token_task_description"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token_task_description -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token_task_description">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+        <oasis:hasTaskInputParameterTemplate rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token_task_input_template"/>
+        <oasis:hasTaskObjectTemplate rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token_task_object_template"/>
+        <oasis:hasTaskOperator rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token_task_operator"/>
+        <oasis:hasTaskOperatorArgument rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token_task_operator_argument"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token_task_input_template -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token_task_input_template">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token_task_object_template -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token_task_object_template">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObjectTemplate"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token_task_operator -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token_task_operator">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+        <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#burn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token_task_operator_argument -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token_task_operator_argument">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
+        <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#ether_cryptocurrency -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#ether_cryptocurrency">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EtherCryptocurrency"/>
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#PunningClass"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#ethereum_ERC20_behavior_template -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#ethereum_ERC20_behavior_template">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#AgentBehaviorTemplate"/>
+        <oasis:hasBehavior rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_behavior"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#ethereum_ERC721_smart_contract_behavior_template -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#ethereum_ERC721_smart_contract_behavior_template">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#SoftwareAgentBehaviorTemplate"/>
+        <oasis:hasBehavior rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approveAll_ERC721_token_behavior"/>
+        <oasis:hasBehavior rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#approve_ERC721_token_behavior"/>
+        <oasis:hasBehavior rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#burn_ERC721_token_behavior"/>
+        <oasis:hasBehavior rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_behavior"/>
+        <oasis:hasBehavior rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_behavior"/>
+        <oasis:hasBehavior rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_behavior"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#ethereum_mainnet -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#ethereum_mainnet">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#System"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenERC721"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_behavior -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_behavior">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ExternalBehavior"/>
+        <oasis:consistsOfGoalDescription rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_goal_description"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_goal_description -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_goal_description">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+        <oasis:consistsOfTaskDescription rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_task_description"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_task_description -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_task_description">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+        <oasis:hasTaskObjectTemplate rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_task_object_template"/>
+        <oasis:hasTaskOperator rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_task_operator"/>
+        <oasis:hasTaskOperatorArgument rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_task_operator_argument"/>
+        <oasis:hasTaskOutputParameterTemplate rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_task_output_template"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_task_object_template -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_task_object_template">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObjectTemplate"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_task_operator -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_task_operator">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+        <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#mint"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_task_operator_argument -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_task_operator_argument">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
+        <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_task_output_template -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token_task_output_template">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOutputParameterTemplate"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#mint_ERC721_token"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_EOA-Account -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_EOA-Account">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EOA-EthereumAccount"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_conditional_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_conditional_1">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Conditional"/>
+        <oasis:hasConditionalBody rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_conditional_body"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_conditional_body -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_conditional_body">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalBody"/>
+        <oasis:hasConditionalBodyAtom rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_conditional_body_atom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_conditional_body_atom -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_conditional_body_atom">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalBodyAtom"/>
+        <oasis:hasConditionalObject rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_conditional_body_atom_object"/>
+        <oasis:hasConditionalOperator rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_conditional_body_atom_operator"/>
+        <oasis:hasConditionalSubject rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_conditional_body_atom_subject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_conditional_body_atom_object -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_conditional_body_atom_object">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalObject"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_conditional_body_atom_operator -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_conditional_body_atom_operator">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalOperator"/>
+        <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#own"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_conditional_body_atom_subject -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_conditional_body_atom_subject">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalSubject"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_EOA-Account"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_conditional_set -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_conditional_set">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalSet"/>
+        <oasis:hasConditional rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_conditional_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenERC721"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_behavior -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_behavior">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ExternalBehavior"/>
+        <oasis:consistsOfGoalDescription rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_goal_description"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_goal_description -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_goal_description">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+        <oasis:consistsOfTaskDescription rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_task_description"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_task_description -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_task_description">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+        <oasis:hasTaskInputParameterTemplate rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_task_input_template"/>
+        <oasis:hasTaskObjectTemplate rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_task_object_template"/>
+        <oasis:hasTaskOperator rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_task_operator"/>
+        <oasis:hasTaskOperatorArgument rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_task_operator_argument"/>
+        <oasis:hasTaskOutputParameterTemplate rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_task_output_template"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_task_input_template -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_task_input_template">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_task_object_template -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_task_object_template">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObjectTemplate"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_task_operator -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_task_operator">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+        <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#retrieve"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_task_operator_argument -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_task_operator_argument">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
+        <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#owner"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_task_output_template -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_token_task_output_template">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOutputParameterTemplate"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#owner_ERC721_EOA-Account"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_Ethereum_account_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_Ethereum_account_1">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumAccount"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_Ethereum_account_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_Ethereum_account_2">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumAccount"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_conditional -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_conditional">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Conditional"/>
+        <oasis:hasConditionalBody rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_conditional_body"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_conditional_body -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_conditional_body">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalBody"/>
+        <oasis:hasConditionalBodyAtom rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_conditional_body_atom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_conditional_body_atom -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_conditional_body_atom">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalBodyAtom"/>
+        <oasis:hasConditionalOperator rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_conditional_body_atom_operator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_conditional_body_atom_operator -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_conditional_body_atom_operator">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalOperator"/>
+        <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#exist"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_conditional_body_atom_subject -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_conditional_body_atom_subject">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalSubject"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_conditional_body_atom_subject_transfer_activity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_conditional_body_atom_subject_transfer_activity -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_conditional_body_atom_subject_transfer_activity">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TransferActivity"/>
+        <oasis:hasTransferDestination rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_Ethereum_account_2"/>
+        <oasis:hasTransferSource rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_Ethereum_account_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_conditional_set -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_conditional_set">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalSet"/>
+        <oasis:hasConditional rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_conditional"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EtherCryptocurrency"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_behavior -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_behavior">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+        <oasis:consistsOfGoalDescription rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_goal_description"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_goal_description -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_goal_description">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+        <oasis:consistsOfTaskDescription rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_task_description"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_task_description -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_task_description">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+        <oasis:hasTaskInputParameterTemplate rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_task_input_template_1"/>
+        <oasis:hasTaskInputParameterTemplate rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_task_input_template_2"/>
+        <oasis:hasTaskInputParameterTemplate rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_task_input_template_3"/>
+        <oasis:hasTaskObjectTemplate rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_task_object_template"/>
+        <oasis:hasTaskOperator rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_task_operator"/>
+        <oasis:hasTaskOperatorArgument rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_task_operator_argument"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_task_input_template_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_task_input_template_1">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_task_input_template_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_task_input_template_2">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_Ethereum_account_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_task_input_template_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_task_input_template_3">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_Ethereum_account_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_task_object_template -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_task_object_template">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObjectTemplate"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_task_operator -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_task_operator">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+        <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#transfer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_task_operator_argument -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC20_token_task_operator_argument">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
+        <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#ether_cryptocurrency"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_EOA-Account_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_EOA-Account_1">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EOA-EthereumAccount"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_EOA-Account_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_EOA-Account_2">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EOA-EthereumAccount"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_conditional_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_conditional_1">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#Conditional"/>
+        <oasis:hasConditionalBody rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_conditional_body"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_conditional_body -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_conditional_body">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalBody"/>
+        <oasis:hasConditionalBodyAtom rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_conditional_body_atom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_conditional_body_atom -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_conditional_body_atom">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalBodyAtom"/>
+        <oasis:hasConditionalOperator rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_conditional_body_atom_operator"/>
+        <oasis:hasConditionalSubject rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_conditional_body_atom_subject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_conditional_body_atom_operator -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_conditional_body_atom_operator">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalOperator"/>
+        <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#exist"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_conditional_body_atom_subject -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_conditional_body_atom_subject">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalSubject"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_conditional_body_atom_subject_activity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_conditional_body_atom_subject_activity -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_conditional_body_atom_subject_activity">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TransferActivity"/>
+        <oasis:hasTransferDestination rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_EOA-Account_2"/>
+        <oasis:hasTransferObject rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token"/>
+        <oasis:hasTransferSource rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_EOA-Account_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_conditional_set -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_conditional_set">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ConditionalSet"/>
+        <oasis:hasConditional rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_conditional_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#EthereumTokenERC721"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_behavior -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_behavior">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#ExternalBehavior"/>
+        <oasis:consistsOfGoalDescription rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_goal_description"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_goal_description -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_goal_description">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#GoalDescription"/>
+        <oasis:consistsOfTaskDescription rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_description"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_description -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_description">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskDescription"/>
+        <oasis:hasTaskInputParameterTemplate rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_input_template_1"/>
+        <oasis:hasTaskInputParameterTemplate rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_input_template_2"/>
+        <oasis:hasTaskInputParameterTemplate rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_input_template_3"/>
+        <oasis:hasTaskObjectTemplate rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_object_template"/>
+        <oasis:hasTaskOperator rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_operator"/>
+        <oasis:hasTaskOperatorArgument rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_operator_argument"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_input_template_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_input_template_1">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_input_template_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_input_template_2">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_EOA-Account_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_input_template_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_input_template_3">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskInputParameterTemplate"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_EOA-Account_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_object_template -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_object_template">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskObjectTemplate"/>
+        <oasis:refersAsNewTo rdf:resource="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_operator -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_operator">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+        <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#transfer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_operator_argument -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/ether-oasis.owl#transfer_ERC721_token_task_operator_argument">
+        <rdf:type rdf:resource="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
+        <oasis:refersExactlyTo rdf:resource="http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#any -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#any"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#burn -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#burn"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#delegate -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#delegate"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#exist -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#exist"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#mint -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#mint"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#own -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#own"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#owner -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#owner"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#ownership -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#ownership"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#retrieve -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#retrieve"/>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis-abox.owl#transfer -->
+
+    <owl:NamedIndividual rdf:about="http://www.dmi.unict.it/oasis-abox.owl#transfer"/>
+</rdf:RDF>
 
 
 
