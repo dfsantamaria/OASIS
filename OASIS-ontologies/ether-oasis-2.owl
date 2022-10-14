@@ -13,8 +13,8 @@
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Import>https://www.dmi.unict.it/santamaria/projects/oasis/sources/oasis-2.owl</Import>
-    <Import>https://www.dmi.unict.it/santamaria/projects/oasis/sources/oasis-abox-2.owl</Import>
+    <Import>http://www.dmi.unict.it/oasis.owl/2.0</Import>
+    <Import>https://www.dmi.unict.it/santamaria/projects/oasis/sources/v2/oasis-abox-2.owl</Import>
     <Annotation>
         <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
         <Literal>Daniele Francesco Santamaria</Literal>
@@ -149,7 +149,13 @@
         <Class IRI="#EthereumWalletOwnerPerdurantFeature"/>
     </Declaration>
     <Declaration>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainTransactionHash"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#ExternalBehavior"/>
     </Declaration>
     <Declaration>
         <Class IRI="http://www.dmi.unict.it/oasis.owl#RequestDescriptionObject"/>
@@ -204,6 +210,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#embedsBlockchainTransaction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBehavior"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainAccount"/>
@@ -401,7 +410,7 @@
         <NamedIndividual IRI="#ether_cryptocurrency"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#ethereum-system"/>
+        <NamedIndividual IRI="#ethereum_mainnet"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#ethereum_ERC20_behavior_template"/>
@@ -633,15 +642,6 @@
     </Declaration>
     <Declaration>
         <AnnotationProperty IRI="http://purl.org/dc/terms/license"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#Behavior"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#ExternalBehavior"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBehavior"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="#EthereumTokenPerdurantFeature"/>
@@ -1135,7 +1135,7 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://www.dmi.unict.it/oasis.owl#System"/>
-        <NamedIndividual IRI="#ethereum-system"/>
+        <NamedIndividual IRI="#ethereum_mainnet"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://www.dmi.unict.it/oasis.owl#Agent"/>
