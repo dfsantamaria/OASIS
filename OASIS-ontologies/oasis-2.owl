@@ -318,8 +318,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:domain>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
                     <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:domain>
@@ -343,8 +343,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:domain>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
                     <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1691,7 +1691,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:domain>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
                     <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
                 </owl:intersectionOf>
             </owl:Class>
@@ -1699,8 +1699,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:range>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
                     <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:range>
@@ -2526,7 +2526,14 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#nonTerminatingProcedureStateImplementedByPlan">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#implementedBy"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#NonTerminatingProcedureState"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2653,6 +2660,23 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#performsEntrustment -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#performsEntrustment">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#performs"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Agent"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#performsPlanExecution -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#performsPlanExecution">
@@ -2670,7 +2694,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:domain>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
                     <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
                 </owl:intersectionOf>
             </owl:Class>
@@ -2694,15 +2718,15 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:domain>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
                     <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:domain>
         <rdfs:range>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
                     <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
                 </owl:intersectionOf>
             </owl:Class>
@@ -2718,8 +2742,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:domain>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
                     <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:domain>
@@ -2742,16 +2766,16 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:domain>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
                     <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#EntrustmentThing"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:domain>
         <rdfs:range>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
                     <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:range>
@@ -2766,8 +2790,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:domain>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
                     <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:domain>
@@ -2893,7 +2917,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:range>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
                     <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
                 </owl:intersectionOf>
             </owl:Class>
@@ -5497,14 +5521,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#PlanDescription -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#PlanDescription">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.dmi.unict.it/oasis.owl#PlanningThing -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
@@ -5585,16 +5601,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#RejectedStatus">
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ClosedStatus"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#RequestPlanDescription -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#RequestPlanDescription">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
-        <rdfs:comment xml:lang="en">This class describes the description of  a plan.</rdfs:comment>
-        <rdfs:label xml:lang="en">Plan description</rdfs:label>
     </owl:Class>
     
 
