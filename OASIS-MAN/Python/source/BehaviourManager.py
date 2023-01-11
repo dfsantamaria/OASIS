@@ -157,7 +157,7 @@ class BehaviourManager:
     def createAgentTemplate(self, agentName):
         baseTemplateAgent = self.ontoMap["template"]["namespace"] + agentName
         self.addClassAssertion(self.ontologies[self.ontoMap["template"]["onto"]], baseTemplateAgent, self.getOASISEntityByName("Agent"))
-        self.addClassAssertion(self.ontologies[self.ontoMap["template"]["onto"]], baseTemplateAgent, self.getOASISEntityByName("Template"))
+        self.addClassAssertion(self.ontologies[self.ontoMap["template"]["onto"]], baseTemplateAgent, self.getOASISEntityByName("TemplateThing"))
 
         # print(self.baseNamespace, self.oasisNamespace, self.oasisABoxNamespace)
         return baseTemplateAgent
