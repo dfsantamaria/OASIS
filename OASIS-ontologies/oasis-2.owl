@@ -163,9 +163,17 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#changesIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#changesIn"/>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#composedOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#composedOf"/>
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#composedOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isMadeOf"/>
+    </owl:ObjectProperty>
     
 
 
@@ -226,8 +234,18 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#consistsOf -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isMadeOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:comment xml:lang="en">This property links things to their forming parts</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#consistsOfActivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfActivity">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOf"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Activity"/>
     </owl:ObjectProperty>
     
 
@@ -278,24 +296,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOf"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
         <rdfs:comment xml:lang="en">This property links things to an execution object</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#consistsOfFinalProcedureState -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfFinalProcedureState">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOfNextProcedureState"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#InitialProcedureState"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#NonTerminatingProcedureState"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#FinalProcedureState"/>
-        <rdfs:comment>This property connects a process state to the final process state.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -353,31 +353,12 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#consistsOfNextProcedureState -->
+    <!-- http://www.dmi.unict.it/oasis.owl#consistsOfInternalActivity -->
 
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfNextProcedureState">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOfProcedureState"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcedureState"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcedureState"/>
-        <rdfs:comment xml:lang="eng">This property connects a process state with the next process state.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#consistsOfNonTerminatingProcedureState -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfNonTerminatingProcedureState">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOfNextProcedureState"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#InitialProcedureState"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#NonTerminatingProcedureState"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#NonTerminatingProcedureState"/>
-        <rdfs:comment xml:lang="eng">This property connects a process state with a non terminating process state.</rdfs:comment>
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfInternalActivity">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOfActivity"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Activity"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Activity"/>
     </owl:ObjectProperty>
     
 
@@ -385,7 +366,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#consistsOfProcedureState -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#consistsOfProcedureState">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOf"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOfInternalActivity"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcedureState"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcedureState"/>
         <rdfs:comment xml:lang="eng">This property connects a process state to another process state.</rdfs:comment>
@@ -699,7 +680,9 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <!-- http://www.dmi.unict.it/oasis.owl#describes -->
 
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#describes"/>
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#describes">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
+    </owl:ObjectProperty>
     
 
 
@@ -772,7 +755,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#embeds -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#embeds">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#interactsWith"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
     </owl:ObjectProperty>
     
 
@@ -895,7 +878,19 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <!-- http://www.dmi.unict.it/oasis.owl#evolvesIn -->
 
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#evolvesIn"/>
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#evolvesIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#changesIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#executionDrawnBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#executionDrawnBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#drawnBy"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#IntentionDescriptionObject"/>
+    </owl:ObjectProperty>
     
 
 
@@ -1018,7 +1013,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#goalExecutionDrawnBy -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#goalExecutionDrawnBy">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#drawnBy"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#executionDrawnBy"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -1039,9 +1034,18 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#has -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#has">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#hasAppellation -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasAppellation">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#has"/>
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isDescribedBy"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Appellation"/>
         <rdfs:comment xml:lang="en">This property links things to an appellation</rdfs:comment>
@@ -1052,6 +1056,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasBehaviour -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasBehaviour">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#has"/>
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isDescribedBy"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Actor"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
@@ -1080,6 +1085,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasBlockchainAccount -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasBlockchainAccount">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#has"/>
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isDescribedBy"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainSmartContractCreation"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainSmartContractAccount"/>
@@ -1090,6 +1096,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionHash -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionHash">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#has"/>
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isDescribedBy"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainTransaction"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainTransactionHash"/>
@@ -1100,6 +1107,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasCompositeValue -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasCompositeValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#has"/>
         <rdfs:comment xml:lang="en">This property links things to a value</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -1274,7 +1282,9 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <!-- http://www.dmi.unict.it/oasis.owl#hasConditionalThing -->
 
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasConditionalThing"/>
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasConditionalThing">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#has"/>
+    </owl:ObjectProperty>
     
 
 
@@ -1322,6 +1332,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasCurrency -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasCurrency">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#has"/>
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isDescribedBy"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Currency"/>
     </owl:ObjectProperty>
@@ -1351,7 +1362,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasDelegationRelationWith -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasDelegationRelationWith">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#has"/>
     </owl:ObjectProperty>
     
 
@@ -1369,6 +1380,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasDescriptor -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasDescriptor">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#has"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Descriptor"/>
         <rdfs:comment xml:lang="en">This property links things to a descriptor</rdfs:comment>
     </owl:ObjectProperty>
@@ -1403,51 +1415,10 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#hasEventDescriptor -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasEventDescriptor">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasDescriptor"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Event"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#hasEventObject -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasEventObject">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasEventDescriptor"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasObjectThing"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Event"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#EventObject"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#hasEventOperator -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasEventOperator">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasEventDescriptor"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasOperator"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Event"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#EventOperator"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#hasEventSubject -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasEventSubject">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasEventDescriptor"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasSubjectThing"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Event"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#EventSubject"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.dmi.unict.it/oasis.owl#hasExecution -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasExecution">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#has"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -1490,13 +1461,34 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <!-- http://www.dmi.unict.it/oasis.owl#hasFeature -->
 
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasFeature"/>
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasFeature">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#has"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#hasFinalProcedureState -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasFinalProcedureState">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasNextTerminatingProcedureState"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#InitialProcedureState"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#NonTerminatingProcedureState"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#FinalProcedureState"/>
+        <rdfs:comment>This property connects a process state to the final process state.</rdfs:comment>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://www.dmi.unict.it/oasis.owl#hasFormat -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasFormat">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#has"/>
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isDescribedBy"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Format"/>
     </owl:ObjectProperty>
@@ -1596,7 +1588,57 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasNext -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasNext">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#has"/>
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isDescribedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#hasNextActivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasNextActivity">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasNext"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Activity"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#hasNextNonTerminatingProcedureState -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasNextNonTerminatingProcedureState">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasNextProcedureState"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#InitialProcedureState"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#NonTerminatingProcedureState"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#NonTerminatingProcedureState"/>
+        <rdfs:comment xml:lang="eng">This property connects a process state with a non terminating process state.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#hasNextProcedure -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasNextProcedure">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasNextActivity"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Procedure"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Procedure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#hasNextProcedureState -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasNextProcedureState">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasNextActivity"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcedureState"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcedureState"/>
+        <rdfs:comment xml:lang="eng">This property connects a process state with the next process state.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -1625,15 +1667,35 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#hasNextTerminatingProcedureState -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasNextTerminatingProcedureState">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasNextProcedureState"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#InitialProcedureState"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#NonTerminatingProcedureState"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TerminatingProcedureState"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#hasObjectThing -->
 
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasObjectThing"/>
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasObjectThing">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#has"/>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://www.dmi.unict.it/oasis.owl#hasOperator -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasOperator">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#has"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Operator"/>
         <rdfs:comment xml:lang="en">This property links things with operators</rdfs:comment>
     </owl:ObjectProperty>
@@ -1643,6 +1705,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasOperatorArgument -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasOperatorArgument">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#has"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#OperatorArgument"/>
     </owl:ObjectProperty>
     
@@ -1661,6 +1724,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasParameter -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasParameter">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#has"/>
         <rdfs:comment xml:lang="en">This property links things to their parameters</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -1720,6 +1784,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasRealization -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasRealization">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#has"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#RealizationThing"/>
     </owl:ObjectProperty>
@@ -1759,7 +1824,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasSpaceSpan -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasSpaceSpan">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#has"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Space"/>
         <rdfs:comment xml:lang="en">This property links things to spaces</rdfs:comment>
     </owl:ObjectProperty>
@@ -1798,6 +1863,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasSubjectThing -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasSubjectThing">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#has"/>
         <rdfs:comment xml:lang="en">This property links things to a subject</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -2138,7 +2204,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasTimeSpan -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTimeSpan">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#has"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TemporalEntity"/>
         <rdfs:comment xml:lang="en">This property links things to a temporal entity</rdfs:comment>
     </owl:ObjectProperty>
@@ -2259,7 +2325,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasTransferRelationWith -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTransferRelationWith">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#has"/>
     </owl:ObjectProperty>
     
 
@@ -2277,14 +2343,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasValidityPerTimeUnit">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasCompositeValue"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#TemporalEntity"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#implementedBy -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#implementedBy">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
     </owl:ObjectProperty>
     
 
@@ -2307,7 +2365,9 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <!-- http://www.dmi.unict.it/oasis.owl#involves -->
 
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#involves"/>
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#involves">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#interactsWith"/>
+    </owl:ObjectProperty>
     
 
 
@@ -2324,6 +2384,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#isDescribedBy -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isDescribedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
         <rdfs:comment xml:lang="en">This property links things to a description thing</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -2339,11 +2400,29 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#isEventDescribedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isEventDescribedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isDescribedBy"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Event"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#isFeatureDescribedBy -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isFeatureDescribedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isDescribedBy"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Feature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#isImplementedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isImplementedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
     </owl:ObjectProperty>
     
 
@@ -2368,7 +2447,9 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <!-- http://www.dmi.unict.it/oasis.owl#isInvolvedIn -->
 
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isInvolvedIn"/>
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isInvolvedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
+    </owl:ObjectProperty>
     
 
 
@@ -2394,6 +2475,12 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isInvolvedInSchedulingWith">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isInvolvedIn"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#isMadeOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isMadeOf"/>
     
 
 
@@ -2450,6 +2537,24 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isInvolvedInConfigurationSetUpWith"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#ConfiguredThing"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Actor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#isProvidedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isProvidedWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#isProvidedWithBehaviour -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isProvidedWithBehaviour">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasBehaviour"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isProvidedWith"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
     </owl:ObjectProperty>
     
 
@@ -2511,6 +2616,16 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#isTriggeredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isTriggeredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#interactsWith"/>
+        <owl:inverseOf rdf:resource="http://www.dmi.unict.it/oasis.owl#triggers"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Event"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#mines -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#mines">
@@ -2524,7 +2639,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#nonTerminatingProcedureStateImplementedByPlan -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#nonTerminatingProcedureStateImplementedByPlan">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#implementedBy"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isImplementedBy"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#NonTerminatingProcedureState"/>
         <rdfs:range>
             <owl:Class>
@@ -2647,7 +2762,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#owns -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#owns">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#interactsWith"/>
     </owl:ObjectProperty>
     
 
@@ -2786,7 +2901,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#planExecutionDrawnBy -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#planExecutionDrawnBy">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#drawnBy"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#executionDrawnBy"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -2803,6 +2918,16 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#playsRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#playsRole">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasRole"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Agent"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Role"/>
     </owl:ObjectProperty>
     
 
@@ -2853,10 +2978,92 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#procedureConsistsOfProcedureState -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#procedureConsistsOfProcedureState">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOf"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOfInternalActivity"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Procedure"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#ProcedureState"/>
         <rdfs:comment xml:lang="eng">This property connects a process with its process state.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#procedureDrawnBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#procedureDrawnBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#drawnBy"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Procedure"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Procedure"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#procedureStateDrawnBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#procedureStateDrawnBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#drawnBy"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ProcedureState"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ProcedureState"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#processConsistsOfProcedure -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#processConsistsOfProcedure">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOf"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Process"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Procedure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#processDrawnBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#processDrawnBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#drawnBy"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#PlanningThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Process"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Process"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -2865,6 +3072,17 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#provides">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#interactsWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#providesBehaviour -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#providesBehaviour">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasBehaviour"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#provides"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Role"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
     </owl:ObjectProperty>
     
 
@@ -2950,7 +3168,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#settles -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#settles">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#consistsOf"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#interactsWith"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -3079,7 +3297,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#taskExecutionDrawnBy -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskExecutionDrawnBy">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#drawnBy"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#executionDrawnBy"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -3124,6 +3342,54 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
+    <!-- http://www.dmi.unict.it/oasis.owl#taskExecutionObjectDrawnBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskExecutionObjectDrawnBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#executionDrawnBy"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#taskExecutionOperatorDrawnBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskExecutionOperatorDrawnBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#executionDrawnBy"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dmi.unict.it/oasis.owl#taskExecutionOutputParameterDrawnBy -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskExecutionOutputParameterDrawnBy">
@@ -3151,7 +3417,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#taskExecutionParameterDrawnBy -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskExecutionParameterDrawnBy">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#drawnBy"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#executionDrawnBy"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -3285,30 +3551,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
                     <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskInputParameter"/>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:range>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#taskObjectDrawnBy -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskObjectDrawnBy">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#drawnBy"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskObject"/>
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:range>
@@ -3477,30 +3719,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
                     <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperatorArgument"/>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:range>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#taskOperatorDrawnBy -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#taskOperatorDrawnBy">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#drawnBy"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#ExecutionThing"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
-                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#TaskOperator"/>
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:range>
@@ -3772,20 +3990,10 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#triggeredBy -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#triggeredBy">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#interactsWith"/>
-        <owl:inverseOf rdf:resource="http://www.dmi.unict.it/oasis.owl#triggers"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Event"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.dmi.unict.it/oasis.owl#triggeredFor -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#triggeredFor">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#interactsWith"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Event"/>
     </owl:ObjectProperty>
     
@@ -3797,6 +4005,15 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#interactsWith"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Event"/>
         <rdfs:comment xml:lang="en">This property links agents to triggered events</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#triggersEvent -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#triggersEvent">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#triggers"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Event"/>
     </owl:ObjectProperty>
     
 
@@ -4795,14 +5012,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#DeprecatedActivity -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#DeprecatedActivity">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Activity"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.dmi.unict.it/oasis.owl#DeprecatedThing -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#DeprecatedThing"/>
@@ -4915,43 +5124,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#TemporalEntity"/>
         <rdfs:comment xml:lang="en">This class describes a general event</rdfs:comment>
         <rdfs:label xml:lang="en">Event</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#EventDescriptor -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EventDescriptor">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Descriptor"/>
-        <rdfs:comment xml:lang="eng">This class describes an event descriptor</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#EventObject -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EventObject">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#EventDescriptor"/>
-        <rdfs:comment xml:lang="eng">This class describes the object of an event</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#EventOperator -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EventOperator">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#EventDescriptor"/>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Operator"/>
-        <rdfs:comment xml:lang="eng">This class describes the action of an event</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#EventSubject -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#EventSubject">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#EventDescriptor"/>
-        <rdfs:comment xml:lang="eng">This class describes the subject of an event</rdfs:comment>
     </owl:Class>
     
 
@@ -5540,7 +5712,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#Procedure -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Procedure">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ActionThing"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Activity"/>
         <rdfs:comment xml:lang="en">This class represents a process by folllowing the Abstract State Machine model.</rdfs:comment>
         <rdfs:label xml:lang="en">Process</rdfs:label>
     </owl:Class>
@@ -5558,17 +5730,17 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
                 </owl:unionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ActionThing"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Activity"/>
         <rdfs:comment xml:lang="en">This class represents the processes state of a process.</rdfs:comment>
         <rdfs:label xml:lang="en">Process State</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#ProcedureStateOutcome -->
+    <!-- http://www.dmi.unict.it/oasis.owl#Process -->
 
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#ProcedureStateOutcome">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Event"/>
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Process">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ActionThing"/>
     </owl:Class>
     
 
