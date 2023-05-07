@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.ngi.ontochain/ontologies/oc-found.owl#"
+     xml:base="http://www.ngi.ontochain/ontologies/oc-found.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:oasis="http://www.dmi.unict.it/oasis.owl#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://www.ngi.ontochain/ontologies/oc-found.owl">
+        <owl:imports rdf:resource="http://www.dmi.unict.it/oasis-abox.owl"/>
+        <owl:imports rdf:resource="http://www.dmi.unict.it/oasis.owl"/>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cristiano Longo</terms:created>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Daniele Francesco Santamaria</terms:created>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Domenico Cantone</terms:created>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Giampaolo Bella</terms:created>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marianna Nicolosi Asmundo</terms:created>
+        <terms:license>This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.</terms:license>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ngi.ontochain/ontologies/oc-found.owl#hasDigitalIdentity -->
+
+    <owl:ObjectProperty rdf:about="http://www.ngi.ontochain/ontologies/oc-found.owl#hasDigitalIdentity">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#owns"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Agent"/>
+        <rdfs:range rdf:resource="http://www.ngi.ontochain/ontologies/oc-found.owl#DigitalIdentity"/>
+        <rdfs:comment xml:lang="en">This property connects agents to their digital identities, i.e., instance of DigitalIdentity</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ngi.ontochain/ontologies/oc-found.owl#hasQualityValuationResult -->
+
+    <owl:ObjectProperty rdf:about="http://www.ngi.ontochain/ontologies/oc-found.owl#hasQualityValuationResult">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasCompositeValue"/>
+        <rdfs:domain rdf:resource="http://www.ngi.ontochain/ontologies/oc-found.owl#QualityValuationActivity"/>
+        <rdfs:range rdf:resource="http://www.ngi.ontochain/ontologies/oc-found.owl#QualityValuationResult"/>
+        <rdfs:comment xml:lang="en">This property connects a quality valuation activity (i.e., instance of QualityValuationActivity) to quality valuation result computed</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ngi.ontochain/ontologies/oc-found.owl#hasSupplyChainActivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.ngi.ontochain/ontologies/oc-found.owl#hasSupplyChainActivity">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#encompassesActivity"/>
+        <rdfs:domain rdf:resource="http://www.ngi.ontochain/ontologies/oc-found.owl#SupplyChainManagement"/>
+        <rdfs:range rdf:resource="http://www.ngi.ontochain/ontologies/oc-found.owl#SupplyChainActivity"/>
+        <rdfs:comment xml:lang="en">This property connects a supply chain management activity to its internal activities</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ngi.ontochain/ontologies/oc-found.owl#hasSupplyChainManagement -->
+
+    <owl:ObjectProperty rdf:about="http://www.ngi.ontochain/ontologies/oc-found.owl#hasSupplyChainManagement">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWithActivity"/>
+        <rdfs:range rdf:resource="http://www.ngi.ontochain/ontologies/oc-found.owl#SupplyChainManagement"/>
+        <rdfs:comment xml:lang="en">This property connects a resource to its supply chain management activity</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ngi.ontochain/ontologies/oc-found.owl#performsQualityValuation -->
+
+    <owl:ObjectProperty rdf:about="http://www.ngi.ontochain/ontologies/oc-found.owl#performsQualityValuation">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWithActivity"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#performs"/>
+        <rdfs:domain rdf:resource="http://www.ngi.ontochain/ontologies/oc-found.owl#QualityValuerAgent"/>
+        <rdfs:range rdf:resource="http://www.ngi.ontochain/ontologies/oc-found.owl#QualityValuationActivity"/>
+        <rdfs:comment xml:lang="en">This property connects a valuer agent (i.e., instance of QualityValuerAgent) to the performed quality valuation activity (i.e., instance of QualityValuationActivity)</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ngi.ontochain/ontologies/oc-found.owl#qualityValuationPerformedOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.ngi.ontochain/ontologies/oc-found.owl#qualityValuationPerformedOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#involves"/>
+        <rdfs:domain rdf:resource="http://www.ngi.ontochain/ontologies/oc-found.owl#QualityValuationActivity"/>
+        <rdfs:comment xml:lang="en">This property connects a quality valuation activity (i.e., instance of QualityValuationActivity) to the resource for which the quality valuation has been performed</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ngi.ontochain/ontologies/oc-found.owl#supplyChainActivityImplementedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.ngi.ontochain/ontologies/oc-found.owl#supplyChainActivityImplementedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#implementedBy"/>
+        <rdfs:domain rdf:resource="http://www.ngi.ontochain/ontologies/oc-found.owl#SupplyChainActivity"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Asset"/>
+                    <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Behavior"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ngi.ontochain/ontologies/oc-found.owl#DigitalIdentity -->
+
+    <owl:Class rdf:about="http://www.ngi.ontochain/ontologies/oc-found.owl#DigitalIdentity">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
+        <rdfs:comment xml:lang="en">This class describes the digital identities associated with legal entities or agents</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ngi.ontochain/ontologies/oc-found.owl#LegalEntity -->
+
+    <owl:Class rdf:about="http://www.ngi.ontochain/ontologies/oc-found.owl#LegalEntity">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Agent"/>
+        <rdfs:comment xml:lang="en">This class describes legal entities such as companies, people, societies</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ngi.ontochain/ontologies/oc-found.owl#QualityValuationActivity -->
+
+    <owl:Class rdf:about="http://www.ngi.ontochain/ontologies/oc-found.owl#QualityValuationActivity">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Activity"/>
+        <rdfs:comment xml:lang="en">This class describes a quality valuation activity performed by some quality valuer agents (i.e., instance of QualityValuerAgent)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ngi.ontochain/ontologies/oc-found.owl#QualityValuationResult -->
+
+    <owl:Class rdf:about="http://www.ngi.ontochain/ontologies/oc-found.owl#QualityValuationResult">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#CompositeValue"/>
+        <rdfs:comment xml:lang="en">This class describes the output of a quality valuation performed by a quality valuer agent, i.e., instance of QualityValuerAgent</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ngi.ontochain/ontologies/oc-found.owl#QualityValuerAgent -->
+
+    <owl:Class rdf:about="http://www.ngi.ontochain/ontologies/oc-found.owl#QualityValuerAgent">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Agent"/>
+        <rdfs:comment xml:lang="en">This class describes a quality valuer agent, i.e., an agent performing quality valuations on resources of supply chain activities.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ngi.ontochain/ontologies/oc-found.owl#SupplyChainActivity -->
+
+    <owl:Class rdf:about="http://www.ngi.ontochain/ontologies/oc-found.owl#SupplyChainActivity">
+        <rdfs:subClassOf rdf:resource="http://www.ngi.ontochain/ontologies/oc-found.owl#SupplyChainThing"/>
+        <rdfs:comment xml:lang="en">This class describes an activity concerning the supply chain of resources</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ngi.ontochain/ontologies/oc-found.owl#SupplyChainDeliveryActivity -->
+
+    <owl:Class rdf:about="http://www.ngi.ontochain/ontologies/oc-found.owl#SupplyChainDeliveryActivity">
+        <rdfs:subClassOf rdf:resource="http://www.ngi.ontochain/ontologies/oc-found.owl#SupplyChainActivity"/>
+        <rdfs:comment xml:lang="en">This class describes the delivery activity  of resources involved in some supply chains.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ngi.ontochain/ontologies/oc-found.owl#SupplyChainManagement -->
+
+    <owl:Class rdf:about="http://www.ngi.ontochain/ontologies/oc-found.owl#SupplyChainManagement">
+        <rdfs:subClassOf rdf:resource="http://www.ngi.ontochain/ontologies/oc-found.owl#SupplyChainThing"/>
+        <rdfs:comment xml:lang="en">This class describes the management activity concerning supply chain of resources</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ngi.ontochain/ontologies/oc-found.owl#SupplyChainPaymentActivity -->
+
+    <owl:Class rdf:about="http://www.ngi.ontochain/ontologies/oc-found.owl#SupplyChainPaymentActivity">
+        <rdfs:subClassOf rdf:resource="http://www.ngi.ontochain/ontologies/oc-found.owl#SupplyChainActivity"/>
+        <rdfs:comment xml:lang="en">This class describes the payment activity  of resources involved in some supply chains.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ngi.ontochain/ontologies/oc-found.owl#SSupplyChainOfferingProofActivity -->
+
+    <owl:Class rdf:about="http://www.ngi.ontochain/ontologies/oc-found.owl#SupplyChainOfferingProofActivity">
+        <rdfs:subClassOf rdf:resource="http://www.ngi.ontochain/ontologies/oc-found.owl#SupplyChainActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ngi.ontochain/ontologies/oc-found.owl#SupplyChainReleaseActivity -->
+
+    <owl:Class rdf:about="http://www.ngi.ontochain/ontologies/oc-found.owl#SupplyChainReleaseActivity">
+        <rdfs:subClassOf rdf:resource="http://www.ngi.ontochain/ontologies/oc-found.owl#SupplyChainActivity"/>
+        <rdfs:comment xml:lang="en">This class describes the release activity  of resources involved in some supply chains.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ngi.ontochain/ontologies/oc-found.owl#SupplyChainThing -->
+
+    <owl:Class rdf:about="http://www.ngi.ontochain/ontologies/oc-found.owl#SupplyChainThing">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#Activity"/>
+        <rdfs:comment xml:lang="en">This class  encompasses all the classes concerning the supply chain environment</rdfs:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
