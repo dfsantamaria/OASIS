@@ -1,4 +1,4 @@
-# OASIS - An ontology for Agent, Systems, and Integration of Services
+# OASIS - An ontology for Agent, Systems, and Integration of Services version 2
 
 
 # Projects based on OASIS
