@@ -1,3 +1,4 @@
+import rdflib.collection
 from rdflib import *
 
 
@@ -8,7 +9,7 @@ def __init__():
 
     # Namespaces
     tbox = Namespace(tbox_iri+"#")
-    oasis = Namespace("http://www.dmi.unict.it/oasis.owl")
+    oasis = Namespace("http://www.dmi.unict.it/oasis.owl"+"#")
 
     # Ontology
     ontology = Graph(base=tbox)
@@ -18,6 +19,19 @@ def __init__():
     ontology.add((URIRef(tbox), RDF.type, OWL.Ontology))
 
     # Classes
+    actor = oasis.Actor
+    #Restriction
+    c = BNode()
+    ontology.add((c, RDF.type, OWL.Class))
+    rdflib.collection.Collection(ontology, c, [oasis.Behaviour, oasis.BehaviourThing])
+    br1 = BNode()
+    ontology.add((br1, RDF.type, OWL.Class))
+    ontology.add((br1, OWL.intersectionOf, c))
+    br = BNode()
+    ontology.add((br, RDF.type, OWL.Restriction))
+    ontology.add((br, OWL.onProperty, oasis.hasBehaviour))
+    ontology.add((br, OWL.someValuesFrom, br1))
+    ontology.add((actor, OWL.equivalentClass, br))
 
     # ObjectProperties
 
