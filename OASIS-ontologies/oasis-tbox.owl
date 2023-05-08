@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xml:base="http://www.dmi.unict.it/oasis-tbox.owl#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+>
+  <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Actor">
+    <owl:equivalentClass>
+      <owl:Restriction rdf:nodeID="N805d1756dfd043ecb1e878d4b876287d">
+        <owl:onProperty rdf:resource="http://www.dmi.unict.it/oasis.owl#hasBehaviour"/>
+        <owl:someValuesFrom>
+          <owl:Class rdf:nodeID="Ncb4d641f41a6433f9d595032ef11b015">
+            <owl:intersectionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
+              <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
+            </owl:intersectionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </rdf:Description>
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="https://raw.githubusercontent.com/dfsantamaria/OASIS/v2/OASIS-ontologies/oasis.owl"/>
+  </owl:Ontology>
+</rdf:RDF>
