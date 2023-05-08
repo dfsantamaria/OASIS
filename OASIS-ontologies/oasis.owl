@@ -4431,19 +4431,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#Actor -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#Actor">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.dmi.unict.it/oasis.owl#hasBehaviour"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#Behaviour"/>
-                            <rdf:Description rdf:about="http://www.dmi.unict.it/oasis.owl#BehaviourThing"/>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#ActionThing"/>
         <rdfs:comment xml:lang="en">This class describes actors</rdfs:comment>
         <rdfs:label xml:lang="en">Actor</rdfs:label>
