@@ -16,623 +16,679 @@
     <Import>http://www.dmi.unict.it/oasis.owl</Import>
     <Annotation>
         <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
-        <Literal>Daniele Francesco Santamaria</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Marianna Nicolosi Asmundo</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://www.dmi.unict.it/oasis.owl#ontologyTokenEthereumSmartContractAddress"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0x36194ab80f7649572cab9ec524950df32f638b08</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
-        <Literal>Domenico Cantone</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
-        <Literal>Giampaolo Bella</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
-        <Literal>Marianna Nicolosi Asmundo</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
-        <Literal>This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Giampaolo Bella</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty IRI="http://www.dmi.unict.it/oasis.owl#importsOntologyToken"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">4</Literal>
     </Annotation>
     <Annotation>
-        <AnnotationProperty IRI="http://www.dmi.unict.it/oasis.owl#ontologyTokenEthereumSmartContractAddress"/>
-        <Literal>0x36194ab80f7649572cab9ec524950df32f638b08</Literal>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Daniele Francesco Santamaria</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Domenico Cantone</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.</Literal>
     </Annotation>
     <Declaration>
-        <Class IRI="#EOA-EthereumAccount"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ERC20SmartContractAgent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EtherCryptocurrency"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EtherExchangeSmartContractInteraction"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumAccount"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumBlock"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumCustomToken"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumERC1150SmartContractAgent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumERC721SmartContractAgent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumFungibleSmartContractAgent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumFungibleToken"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumGeneralPurposeSmartContractAgent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumNode"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumNonFungibleSmartContractAgent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumNonFungibleToken"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumSemiFungibleSmartContractAgent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumSemiFungibleToken"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumSmartContractAccount"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumSmartContractCreation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumSmartContractInteraction"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumSystem"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumToken"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTokenActivePerdurantFeature"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTokenDeprecatedPerdurantFeature"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTokenERC1155"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTokenERC20"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTokenERC721"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTokenFeatureModificationActivity"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTokenPerdurantFeature"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTokenPerdurantFeatureStatusChanged"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTokenPerdurantFeatureType"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTokenProtocolCompliant"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTransaction"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumTransactionHash"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumWalletOwnerPerdurantFeature"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainTransactionHash"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#RequestDescriptionObject"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#describesEtherExchangeInteraction"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#describesEthereumSmartContractCreation"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#describesEthereumSmartContractInteraction"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#embedsEthereumTransaction"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasEthereumSmartContractAccount"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasEthereumTokenFeatureModificationResult"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasEthereumTokenFeatureModificationSource"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasEthereumTokenPerdurantFeature"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasEthereumTransactionHash"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasEthereumTransactionStatus"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isDescribedByEthereumToken"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isEthereumTokenFeatureModifiedIn"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isInTheWalletOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#describesBlockchainSmartContractCreation"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#describesBlockchainSmartContractInteraction"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#describesCryptocurrencyExchangeBlockchainInteraction"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#embedsBlockchainTransaction"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainAccount"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionHash"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#isDescribedByDigitalToken"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasEthereumAccountAddress"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasEthereumBlockHeight"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasEthereumDataDescription"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasEthereumTokenID"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#hasEthereumTransactionFromAddress"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasEthereumTransactionHashValue"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasEthereumTransactionToAddress"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainAccountAddress"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainBlockHeight"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainDataDescription"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTokenID"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionFromAddress"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionHashValue"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionToAddress"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_EOA-Account"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_operator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation_object"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation_property"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation_subject"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_conditional_set"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_token"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_token_behavior"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_token_goal_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_input_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_object_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_operator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approveAll_ERC721_token_task_operator_argument"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_EOA-Account"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_conditional_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_operator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation_object"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation_property"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation_subject"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_conditional_set"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_token"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_token_behavior"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_token_goal_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_token_task_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_token_task_input_template_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_token_task_input_template_2"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_token_task_object_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_token_task_operator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#approve_ERC721_token_task_operator_argument"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#burn_ERC721_token"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#burn_ERC721_token_behavior"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#burn_ERC721_token_goal_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#burn_ERC721_token_task_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#burn_ERC721_token_task_input_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#burn_ERC721_token_task_object_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#burn_ERC721_token_task_operator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#burn_ERC721_token_task_operator_argument"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#ether_cryptocurrency"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#ethereum_mainnet"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#ethereum_ERC20_behavior_template"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#ethereum_ERC721_smart_contract_behavior_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#mint_ERC721_token"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#mint_ERC721_token_behavior"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#mint_ERC721_token_goal_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#mint_ERC721_token_task_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#mint_ERC721_token_task_object_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#mint_ERC721_token_task_operator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#mint_ERC721_token_task_operator_argument"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#mint_ERC721_token_task_output_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_EOA-Account"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_conditional_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom_object"/>
+        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#owner"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#owner_ERC721_conditional_body_atom_operator"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom_subject"/>
+        <DataProperty IRI="#hasEthereumTransactionHashValue"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_conditional_set"/>
+        <DataProperty IRI="#hasEthereumBlockHeight"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_token"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_token_behavior"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_token_goal_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_token_task_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_token_task_input_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_token_task_object_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_token_task_operator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_token_task_operator_argument"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#owner_ERC721_token_task_output_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_Ethereum_account_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_Ethereum_account_2"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_conditional"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom_operator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom_subject"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom_subject_transfer_activity"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_conditional_set"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_token"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_token_behavior"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_token_goal_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_input_template_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_input_template_2"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_input_template_3"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_object_template"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_operator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC20_token_task_operator_argument"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_EOA-Account_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_EOA-Account_2"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom_operator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom_subject"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom_subject_activity"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_conditional_set"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_token"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_token_behavior"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_token_goal_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_description"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_input_template_1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_input_template_2"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_input_template_3"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#transfer_ERC721_token_task_object_template"/>
+        <ObjectProperty IRI="#hasEthereumTokenFeatureModificationSource"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#transfer_ERC721_token_task_operator"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#transfer_ERC721_token"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTokenPerdurantFeatureStatusChanged"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#burn_ERC721_token_goal_description"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC20_token_task_input_template_3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC721_token_task_input_template_3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approveAll_ERC721_token_behavior"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#burn_ERC721_token_task_operator_argument"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC20_conditional_set"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation_property"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainAccountAddress"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#owner_ERC721_token_behavior"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC20_Ethereum_account_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approve_ERC721_token_task_object_template"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approveAll_ERC721_conditional_body"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTokenProtocolCompliant"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#burn_ERC721_token_behavior"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumToken"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#transfer_ERC721_token_task_operator_argument"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumNonFungibleToken"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#mint_ERC721_token_task_operator_argument"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainTransactionHash"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumNode"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom_subject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC20_Ethereum_account_2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#owner_ERC721_conditional_set"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumSmartContractCreation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation_subject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#mint_ERC721_token"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEthereumTokenPerdurantFeature"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#owner_ERC721_conditional_1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#RequestDescriptionObject"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#any"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token"/>
+        <Class IRI="#ERC20SmartContractAgent"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#burn"/>
+        <NamedIndividual IRI="#approveAll_ERC721_token_task_input_template"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#delegate"/>
+        <NamedIndividual IRI="#ethereum_ERC721_smart_contract_behavior_template"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#exist"/>
+        <Class IRI="#EthereumSystem"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#mint"/>
+        <ObjectProperty IRI="#describesEtherExchangeInteraction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isEthereumTokenFeatureModifiedIn"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation_subject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#owner_ERC721_conditional_body"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#mint_ERC721_token_goal_description"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionToAddress"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEthereumSmartContractAccount"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approveAll_ERC721_conditional_set"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#describesCryptocurrencyExchangeBlockchainInteraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTokenActivePerdurantFeature"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEthereumAccountAddress"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approve_ERC721_token_task_operator"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#owner_ERC721_token_goal_description"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_operator"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#isDescribedByDigitalToken"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_operator"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEthereumTransactionToAddress"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEthereumTransactionStatus"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC20_token_goal_description"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC20_conditional"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC721_conditional_set"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainBlockHeight"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEthereumTokenID"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#own"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#owner"/>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#describesBlockchainSmartContractCreation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC20_token_task_operator"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#delegate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approve_ERC721_conditional_body"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approveAll_ERC721_token"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#describesEthereumSmartContractInteraction"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC721_token_task_input_template_1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumSemiFungibleToken"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approve_ERC721_token_task_operator_argument"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC721_token_task_description"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#exist"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#owner_ERC721_token"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approveAll_ERC721_token_goal_description"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTransaction"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#mint_ERC721_token_task_object_template"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTokenID"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#owner_ERC721_token_task_operator"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approve_ERC721_token_goal_description"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approve_ERC721_token_behavior"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approve_ERC721_token"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC721_token_task_input_template_2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTokenERC1155"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumSmartContractAccount"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation_object"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionFromAddress"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC721_EOA-Account_1"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionHash"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#owner_ERC721_token_task_operator_argument"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumGeneralPurposeSmartContractAgent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTokenDeprecatedPerdurantFeature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTokenERC721"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC20_token"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC20_conditional_body"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTokenFeatureModificationActivity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC721_token_behavior"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC721_EOA-Account_2"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#describesBlockchainSmartContractInteraction"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#owner_ERC721_token_task_description"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ether_cryptocurrency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EtherExchangeSmartContractInteraction"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approve_ERC721_conditional_1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumNonFungibleSmartContractAgent"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#owner_ERC721_token_task_input_template"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainDataDescription"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#embedsBlockchainTransaction"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC20_token_task_description"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainAccount"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#burn_ERC721_token_task_input_template"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTokenERC20"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EOA-EthereumAccount"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#mint_ERC721_token_task_output_template"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumSmartContractInteraction"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTokenPerdurantFeature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EtherCryptocurrency"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#burn_ERC721_token_task_operator"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#mint_ERC721_token_behavior"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEthereumTransactionHash"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTokenPerdurantFeatureType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#burn_ERC721_token_task_description"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC20_token_task_object_template"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC721_conditional_1"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#ownership"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#describesEthereumSmartContractCreation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#embedsEthereumTransaction"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom_subject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#burn_ERC721_token_task_object_template"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#burn"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC20_token_behavior"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approve_ERC721_conditional_set"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approveAll_ERC721_EOA-Account"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC721_token_task_object_template"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumWalletOwnerPerdurantFeature"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ethereum_mainnet"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#owner_ERC721_token_task_object_template"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumTransactionHash"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approve_ERC721_token_task_input_template_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom_subject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation_object"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#owner_ERC721_conditional_body_atom_object"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEthereumDataDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom_operator"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#owner_ERC721_token_task_output_template"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#retrieve"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject_delegation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumBlock"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumFungibleToken"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approveAll_ERC721_token_task_object_template"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject_delegation_property"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEthereumTokenFeatureModificationResult"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumSemiFungibleSmartContractAgent"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approveAll_ERC721_conditional_body_atom_subject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isInTheWalletOf"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumERC721SmartContractAgent"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approveAll_ERC721_token_task_description"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC20_token_task_input_template_1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC721_conditional_body"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom_operator"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#owner_ERC721_EOA-Account"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approveAll_ERC721_conditional"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#mint"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approveAll_ERC721_token_task_operator_argument"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC721_token_goal_description"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approve_ERC721_conditional_body_atom_subject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumCustomToken"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isDescribedByEthereumToken"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC20_conditional_body_atom_subject_transfer_activity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC721_conditional_body_atom_subject_activity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumERC1150SmartContractAgent"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#mint_ERC721_token_task_description"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#mint_ERC721_token_task_operator"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC20_token_task_operator_argument"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#transfer_ERC20_token_task_input_template_2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approve_ERC721_token_task_description"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approve_ERC721_token_task_input_template_2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#burn_ERC721_token"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approve_ERC721_EOA-Account"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#approveAll_ERC721_token_task_operator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/license"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.dmi.unict.it/oasis.owl#hasBlockchainTransactionHashValue"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#transfer"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/license"/>
+        <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#blockchain_digital_token"/>
     </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumAccount"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumFungibleSmartContractAgent"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#EthereumAccount"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasEthereumAccountAddress"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#EthereumBlock"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#embeds"/>
+            <Class IRI="#EthereumTransaction"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#EthereumBlock"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasEthereumBlockHeight"/>
+            <Datatype abbreviatedIRI="xsd:int"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#EthereumNode"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#constitutes"/>
+            <Class IRI="#EthereumSystem"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#EthereumNode"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#mines"/>
+            <Class IRI="#EthereumBlock"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#EthereumSmartContractCreation"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasEthereumSmartContractAccount"/>
+            <Class IRI="#EthereumSmartContractAccount"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#EthereumSmartContractCreation"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#describes"/>
+            <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainSmartContractAgent"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#EthereumToken"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasEthereumTokenID"/>
+            <Datatype abbreviatedIRI="xsd:int"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#EthereumTokenPerdurantFeature"/>
         <ObjectIntersectionOf>
@@ -646,6 +702,27 @@
             <Class IRI="#EthereumTokenActivePerdurantFeature"/>
             <Class IRI="#EthereumTokenDeprecatedPerdurantFeature"/>
         </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#EthereumTransaction"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasEthereumTransactionHash"/>
+            <Class IRI="#EthereumTransactionHash"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#EthereumTransaction"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasEthereumTransactionFromAddress"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#EthereumTransactionHash"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasEthereumTransactionHashValue"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
     </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#EOA-EthereumAccount"/>
@@ -740,6 +817,20 @@
         <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainSmartContractInteraction"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#EthereumSmartContractInteraction"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#associatedWith"/>
+            <Class IRI="#EthereumSmartContractAccount"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumSmartContractInteraction"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#describes"/>
+            <Class IRI="http://www.dmi.unict.it/oasis.owl#PlanDescription"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#EthereumSystem"/>
         <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainSystem"/>
     </SubClassOf>
@@ -810,6 +901,17 @@
     <SubClassOf>
         <Class IRI="#EthereumTransaction"/>
         <Class IRI="http://www.dmi.unict.it/oasis.owl#BlockchainTransaction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumTransaction"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.dmi.unict.it/oasis.owl#describes"/>
+            <ObjectUnionOf>
+                <Class IRI="#EtherExchangeSmartContractInteraction"/>
+                <Class IRI="#EthereumSmartContractCreation"/>
+                <Class IRI="#EthereumSmartContractInteraction"/>
+            </ObjectUnionOf>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#EthereumTransactionHash"/>
@@ -1016,16 +1118,16 @@
         <NamedIndividual IRI="#ether_cryptocurrency"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#System"/>
-        <NamedIndividual IRI="#ethereum_mainnet"/>
-    </ClassAssertion>
-    <ClassAssertion>
         <Class IRI="http://www.dmi.unict.it/oasis.owl#AgentBehaviorTemplate"/>
         <NamedIndividual IRI="#ethereum_ERC20_behavior_template"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://www.dmi.unict.it/oasis.owl#SoftwareAgentBehaviorTemplate"/>
         <NamedIndividual IRI="#ethereum_ERC721_smart_contract_behavior_template"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#System"/>
+        <NamedIndividual IRI="#ethereum_mainnet"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#EthereumTokenERC721"/>
@@ -2271,5 +2373,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
 
