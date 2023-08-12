@@ -7,7 +7,7 @@
 - POC4COMMERCE NGI-ONTOCHAIN https://github.com/dfsantamaria/POC4COMMERCE
 
 # Papers and articles
-
+-  The ontology for agents, systems and integration of services: OASIS version 2. Giampaolo Bella, Domenico Cantone, Carmelo Fabio Longo, Marianna Nicolosi-Asmundo and Daniele Francesco Santamaria. Intelligenza Artificiale, vol. 17, no. 1, pp. 51-62, 2023.
 -  Blockchains through ontologies: the case study of the Ethereum ERC721 standard in OASIS. Giampaolo Bella, Domenico Cantone, Cristiano Longo, Marianna Nicolosi-Asmundo, Daniele Francesco Santamaria. In D. Camacho et al. (eds.), Intelligent Distributed Computing XIV, Studies in Computational Intelligence 1026, Chapter 23,  pp. 249-259.
 -  Semantic Representation as a Key Enabler for Blockchain-Based Commerce. Giampaolo Bella, Domenico Cantone, Cristiano Longo, Marianna Nicolosi-Asmundo and Daniele Francesco Santamaria. In: K. Tserpes et al. (Eds.): GECON 2021, Lecture Note in Computer Science, Vol. 13072, pp. 191–198, Springer, 2021.
 -  Ontological Smart Contracts in OASIS: Ontology forAgents, Systems, and Integration of Services. Domenico Cantone, Carmelo Fabio Longo, Marianna Nicolosi-Asmundo, Daniele Francesco Santamaria, Corrado Santoro. In D. Camacho et al. (eds.), Intelligent Distributed Computing XIV, Studies in Computational Intelligence 1026, Chapter 22, pp. 237-247.
