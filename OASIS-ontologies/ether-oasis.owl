@@ -166,9 +166,6 @@
         <NamedIndividual IRI="http://www.dmi.unict.it/oasis-abox.owl#any"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#RequestDescriptionObject"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#ERC20SmartContractAgent"/>
     </Declaration>
     <Declaration>
@@ -1093,7 +1090,7 @@
         <NamedIndividual IRI="#burn_ERC721_token_behavior"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="http://www.dmi.unict.it/oasis.owl#RequestDescriptionObject"/>
+        <Class IRI="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
         <NamedIndividual IRI="#burn_ERC721_token_goal_description"/>
     </ClassAssertion>
     <ClassAssertion>
