@@ -726,16 +726,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     
 
 
-    <!-- http://www.dmi.unict.it/oasis.owl#descriptionProvidedByEntity -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#descriptionProvidedByEntity">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isRelatedWith"/>
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#OntologyDescriptionObject"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.dmi.unict.it/oasis.owl#drawnBy -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#drawnBy">
@@ -2396,6 +2386,16 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isDescribedBy"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Asset"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#DigitalToken"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#isDescriptionProvidedByEntity -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#isDescriptionProvidedByEntity">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#isDescribedBy"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     </owl:ObjectProperty>
     
 
