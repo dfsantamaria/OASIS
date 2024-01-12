@@ -1803,7 +1803,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasRoleType -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasRoleType">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasEndurantFeature"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasType"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Role"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#RoleType"/>
     </owl:ObjectProperty>
@@ -2334,6 +2334,15 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTransferSource">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTransferRelationWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#hasType -->
+
+    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasType">
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasEndurantFeature"/>
+        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Type"/>
     </owl:ObjectProperty>
     
 
