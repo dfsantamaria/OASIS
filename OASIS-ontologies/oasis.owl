@@ -1803,7 +1803,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasRoleType -->
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasRoleType">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasType"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasEndurantFeature"/>
         <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#Role"/>
         <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#RoleType"/>
     </owl:ObjectProperty>
@@ -2334,15 +2334,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
     <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasTransferSource">
         <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasTransferRelationWith"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#hasType -->
-
-    <owl:ObjectProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasType">
-        <rdfs:subPropertyOf rdf:resource="http://www.dmi.unict.it/oasis.owl#hasEndurantFeature"/>
-        <rdfs:range rdf:resource="http://www.dmi.unict.it/oasis.owl#Type"/>
     </owl:ObjectProperty>
     
 
@@ -4140,7 +4131,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#hasBlockchainDataDescription -->
 
     <owl:DatatypeProperty rdf:about="http://www.dmi.unict.it/oasis.owl#hasBlockchainDataDescription">
-        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainObjectDescription"/>
+        <rdfs:domain rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainDescriptionObject"/>
     </owl:DatatypeProperty>
     
 
@@ -4536,7 +4527,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#BlockchainAccount -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#BlockchainAccount">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainObjectDescription"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainDescriptionObject"/>
     </owl:Class>
     
 
@@ -4544,7 +4535,15 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#BlockchainBlock -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#BlockchainBlock">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainObjectDescription"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainDescriptionObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dmi.unict.it/oasis.owl#BlockchainDescriptionObject -->
+
+    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#BlockchainDescriptionObject">
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
     </owl:Class>
     
 
@@ -4552,7 +4551,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#BlockchainDigitalToken -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#BlockchainDigitalToken">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainObjectDescription"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainDescriptionObject"/>
     </owl:Class>
     
 
@@ -4560,15 +4559,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#BlockchainInteraction -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#BlockchainInteraction">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainObjectDescription"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.dmi.unict.it/oasis.owl#BlockchainObjectDescription -->
-
-    <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#BlockchainObjectDescription">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#DescriptionObject"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainDescriptionObject"/>
     </owl:Class>
     
 
@@ -4616,7 +4607,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#BlockchainTransaction -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#BlockchainTransaction">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainObjectDescription"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainDescriptionObject"/>
     </owl:Class>
     
 
@@ -4624,7 +4615,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <!-- http://www.dmi.unict.it/oasis.owl#BlockchainTransactionHash -->
 
     <owl:Class rdf:about="http://www.dmi.unict.it/oasis.owl#BlockchainTransactionHash">
-        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainObjectDescription"/>
+        <rdfs:subClassOf rdf:resource="http://www.dmi.unict.it/oasis.owl#BlockchainDescriptionObject"/>
     </owl:Class>
     
 
