@@ -1,0 +1,14 @@
+SELECT ?offering ?firstNeg ?lastNeg ?purchase (count(?midNeg) as ?i)
+ WHERE {
+SELECT ?offering ?firstNeg ?lastNeg ?midNeg ?purchase
+ WHERE {
+ ?lastNeg ecoasis:negFinalizedIn ?purchase.
+ OPTIONAL { ?firstNeg ecoasis:hasNextNeg* ?midNeg.
+ ?midNeg ecoasis:hasNextNeg* ?lastNeg.}
+ ?firstNeg test:toA ?offering.
+ ?lastNeg ecoasis:negotiatesAbout ?proposal.
+ ?proposal ecoasis:hasPriceDetail ?price.
+ ?price ecoasis:hasOfferingPrice ?cost.
+ ?cost oasis:hasCostValue ?value.
+ ?cost oasis:hasCurrency ?currency. } }
+ GROUP BY ?offering ?firstNeg ?lastNeg ?purchase

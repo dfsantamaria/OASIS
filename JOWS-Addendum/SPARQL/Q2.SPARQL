@@ -1,0 +1,9 @@
+#Let offering be the offering of which the supply chain should be discovered.
+SELECT DISTINCT ?plan ?type ?agent
+WHERE {
+offering ecoasis:hasSupplyChain ?supplyChain.
+?supplyChain ecoasis:supplyChainImplementedBy ?plan.
+?plan a ?type.
+?type rdfs:subClassOf ecoasis:SupplyChainPlan.
+?plan oasis:planDescriptionSubmittedTo ?behaviour.
+?agent oasis:hasBehavior ?behaviour.}

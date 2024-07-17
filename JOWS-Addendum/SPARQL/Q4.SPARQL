@@ -1,0 +1,13 @@
+#Let offering be the offering that should be checked for NFT minting.
+ASK {
+ offering ecoasis:hasSupplyChain ?suppChain.
+ ?suppChain ecoasis:supplyChainImplementedBy ?proofPlan.
+ ?proofPlan a ecoasis:SupplyChainProofPlan.
+ ?proofPlan oasis:planDescriptionSubmittedTo ?behaviour.
+ ?behaviour oasis:hasTaskOperator ?operator.
+ ?behaviour oasis:hasTaskOperatorArgument ?argument.
+ ?argument oasis:refersExactlyTo aoasis:blockchain digital token.
+ ?operator oasis:refersExactlyTo aoasis:mint.
+ ?behaviour oasis:hasTaskObject ?object.
+ ?object oasis:refersAsNewTo ?token.
+ ?token a oasis:NonFungibleToken. }
