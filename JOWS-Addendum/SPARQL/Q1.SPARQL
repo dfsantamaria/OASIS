@@ -1,0 +1,17 @@
+SELECT DISTINCT ?offering ?type ?value ?currency
+WHERE {
+?taskExec a oasis:TaskExecution.
+?taskExec oasis:hasTaskObject ?taskob.
+?taskob oasis:refersExactlyTo ?offering.
+?offering a ?offer.
+FILTER(?offer = ecoasis:Offering)
+FILTER NOT EXISTS { ?offering oasis:hasStatus ?status.
+?status a oasis:ClosedStatus.}
+FILTER NOT EXISTS { ?offering a oasis:Deprecated.}
+?offering ecoasis:isOfferingAbout ?asset.
+?asset oasis:isAssetAssociatedWithResource ?product.
+?product a ?type.
+?offering ecoasis:hasPriceDetail ?price.
+?price ecoasis:hasOfferingPrice ?cost.
+?cost oasis:hasCostValue ?value.
+?cost oasis:hasCurrency ?currency. }
