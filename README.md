@@ -5,7 +5,6 @@
 
 - CLARA (former PROFONTO) https://github.com/dfsantamaria/CLARA
 - POC4COMMERCE NGI-ONTOCHAIN https://github.com/dfsantamaria/POC4COMMERCE
-- 
 
 # Papers and articles
 
