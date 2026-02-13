@@ -341,5 +341,3 @@ with a list containing:</br>
 
 Check the file
 - OASIS-MAN\Python\test\Test-BehaviorManager.py
-
-for an example.
