@@ -1,5 +1,5 @@
 lightgbm
-scikit-learn
 numpy
+scikit-learn
 pytest
 pandas
