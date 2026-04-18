@@ -1,24 +1,25 @@
 import lightgbm as lgb
 import numpy as np
 import pytest
+from sklearn.metrics import accuracy_score
 
-# Sample test data
-X = np.array([[1, 2], [3, 4], [5, 6]])
-y = np.array([0, 1, 0])
+# Sample data - separate train/test sets with clear class separation
+X_train = np.array([[1, 2], [3, 4], [5, 6], [1, 2], [3, 4], [5, 6]])
+y_train = np.array([0, 1, 0, 0, 1, 0])
 
-# Create a LightGBM model
-model = lgb.LGBMClassifier()
+X_test = np.array([[1, 2], [3, 4], [5, 6]])
+y_test = np.array([0, 1, 0])
 
-# Fit the model
-model.fit(X, y)
+model = lgb.LGBMClassifier(num_leaves=3, min_child_samples=1, min_data_in_leaf=1)
+model.fit(X_train, y_train)
 
-# Test if the model predicts correctly
 
-def test_model_prediction():
-    predictions = model.predict(X)
-            expected_predictions = np.array([0, 0, 0])  # Expected outputs for the sample data
-    assert np.array_equal(predictions, expected_predictions), "Model predictions do not match expected outputs!"
+def test_model_accuracy():
+    predictions = model.predict(X_test)
+    accuracy = accuracy_score(y_test, predictions)
+    assert accuracy >= 0.66, f"Accuracy {accuracy} is too low"
+    np.testing.assert_array_equal(predictions, y_test)
 
-# Run the test
+
 if __name__ == '__main__':
     pytest.main()
