@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v5
 
     - name: Set up Python 3.10
-      uses: actions/setup-python@v5        # bumped from @v3 – Node 20 deprecated June 2026
+      uses: actions/setup-python@v5
       with:
         python-version: '3.10'
 
@@ -26,9 +26,7 @@ jobs:
 
     - name: Lint with flake8
       run: |
-        # Stop the build if there are Python syntax errors or undefined names
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # Exit-zero treats all errors as warnings. GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
     - name: Test with pytest
