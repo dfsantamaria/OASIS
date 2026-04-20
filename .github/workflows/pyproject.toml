@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "oasis"
+version = "0.1.0"
+description = "Ontology for Agents, Systems and Integration of Services"
+readme = "README.md"
+license = {text = "GPL-3.0"}
+authors = [
+  {name = "Giampaolo Bella"},
+  {name = "Domenico Cantone"},
+  {name = "Marianna Nicolosi Asmundo"},
+  {name = "Daniele Francesco Santamaria"}
+]
+requires-python = ">=3.10"
+dependencies = [
+  "rdflib",
+  "owlready2",
+  "sparqlwrapper",
+  "web3",
+  "pandas",
+  "numpy",
+  "requests",
+]
+
+[project.urls]
+Homepage = "https://github.com/dfsantamaria/OASIS"
+CLARA = "https://github.com/dfsantamaria/CLARA"
+POC4COMMERCE = "https://github.com/dfsantamaria/POC4COMMERCE"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.flake8]
+max-line-length = 127
+max-complexity = 10
+exclude = [".git", "__pycache__", "build", "dist"]
