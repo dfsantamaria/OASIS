@@ -1,0 +1,13 @@
+OASIS/
+├── .github/
+│   └── workflows/
+│       └── python-package-conda.yml
+├── oasis/
+│   └── __init__.py
+├── tests/
+│   └── test_basic.py
+├── environment.yml
+├── pyproject.toml
+├── setup.cfg
+├── setup.py        # can delete this now
+└── README.md
