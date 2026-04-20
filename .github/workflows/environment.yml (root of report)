@@ -1,0 +1,15 @@
+name: oasis
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - pandas
+  - requests
+  - rdflib
+  - sparqlwrapper
+  - pip:
+    - owlready2
+    - web3
