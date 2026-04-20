@@ -1,0 +1,10 @@
+from setuptools import setup, find_packages
+
+setup(
+    name="oasis",
+    version="0.1.0",
+    author="Daniele Francesco Santamaria",
+    description="Ontology for Agents, Systems and Integration of Services",
+    packages=find_packages(),
+    python_requires=">=3.10",
+)
