@@ -1,0 +1,14 @@
+# Ontology & Semantic Web
+owlready2
+rdflib
+SPARQLWrapper
+
+# Blockchain / Ethereum
+web3
+
+# Data handling
+pandas
+numpy
+
+# Utilities
+requests
