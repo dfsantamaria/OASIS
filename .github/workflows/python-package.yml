@@ -99,10 +99,8 @@ jobs:
       #         Replace @v0 with the latest release from:
       #         https://github.com/actions/component-detection-dependency-submission-action/releases
       - name: Submit dependency snapshot
-        uses: actions/component-detection-dependency-submission-action@v0
-        with:
+        uses: actions/component-detection-dependency-submission-action@v0.0.2with:
           scanType: "register"
-
   # ================================================================
   #  JOB 3: CodeQL Security Scanning
   # ================================================================
