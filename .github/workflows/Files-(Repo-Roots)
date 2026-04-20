@@ -1,0 +1,5 @@
+OASIS/
+├── .github/workflows/python-package-conda.yml
+├── environment.yml
+├── setup.py
+└── your_oasis_code/
