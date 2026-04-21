@@ -1,0 +1,188 @@
+name: Secure CI Pipeline
+
+on:
+  push:
+    branches: [main, develop, 'feature/**']
+  pull_request:
+    branches: [main]
+
+# ─── TOP-LEVEL PERMISSIONS (Default for all jobs) ─────────
+permissions:
+  contents: read        # Only read repo contents
+  pull-requests: write  # Can comment on PRs
+  actions: read         # Read workflow info
+
+jobs:
+  # ─── JOB 1: MINIMAL PERMISSIONS ───────────────────────
+  lint:
+    name: 🔍 Lint
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read      # Minimal: only read code
+      statuses: write     # Update commit status
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run ESLint
+        run: |
+          npm ci
+          npx eslint . --ext .js,.ts
+
+  # ─── JOB 2: TEST (No extra permissions needed) ──────────
+  test:
+    name: 🧪 Test
+    runs-on: ubuntu-latest
+    needs: lint
+    permissions:
+      contents: read      # Inherits minimal read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node & Python
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Tests
+        run: |
+          npm ci
+          npm test
+
+  # ─── JOB 3: SECURITY SCAN (Needs SARIF upload) ──────────
+  security:
+    name: 🔒 Security Scan
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write   # Upload to GitHub Security tab
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Trivy
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+
+      - name: Upload to GitHub Security
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: 'trivy-results.sarif'
+
+  # ─── JOB 4: BUILD & PUSH IMAGE (Needs packages write) ───
+  build-docker:
+    name: 🐳 Build & Push Docker
+    runs-on: ubuntu-latest
+    needs: [test, security]
+    permissions:
+      contents: read
+      packages: write       # Push to GHCR (GitHub Container Registry)
+      id-token: write       # OIDC for AWS/Azure if needed
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build & Push
+        run: |
+          docker build -t ghcr.io/${{ github.repository }}:${{ github.sha }} .
+          docker push ghcr.io/${{ github.repository }}:${{ github.sha }}
+
+  # ─── JOB 5: DEPLOY (Needs cloud provider access) ────────
+  deploy:
+    name: 🚀 Deploy
+    runs-on: ubuntu-latest
+    needs: build-docker
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+      id-token: write       # OIDC token for cloud auth
+    environment:
+      name: production
+      url: https://app.example.com
+    steps:
+      - name: Configure AWS (OIDC - no long-term secrets)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::123456789:role/GitHubActionsRole
+          aws-region: us-east-1
+
+      - name: Deploy to ECS/EKS
+        run: |
+          aws ecs update-service --cluster prod --service app --force-new-deployment
+
+  # ─── JOB 6: PR COMMENTS (Needs PR write) ────────────────
+  pr-comment:
+    name: 💬 PR Comment
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    permissions:
+      pull-requests: write   # Comment on PRs only
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Post PR Comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `✅ CI passed for commit \`${{ github.sha }}\``
+            })
+
+  # ─── JOB 7: RELEASE (Needs contents write for tags) ─────
+  release:
+    name: 🏷️ Create Release
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: write       # Create tags & releases
+      packages: write       # Push release artifacts
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create Tag
+        run: |
+          git tag v1.0.${{ github.run_number }}
+          git push origin v1.0.${{ github.run_number }}
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.${{ github.run_number }}
+          generate_release_notes: true
+Permission	Scope	Use Case	
+`contents: read`	All jobs	Safe default — only read code	
+`contents: write`	Release job	Create tags, releases, push commits	
+`packages: write`	Docker/Release	Push to GHCR, npm, PyPI	
+`security-events: write`	Security scan	Upload SARIF to Security tab	
+`pull-requests: write`	PR jobs	Comment, label, approve PRs	
+`id-token: write`	Deploy jobs	OIDC auth (AWS, Azure, GCP)	
+`actions: read`	Info jobs	Read workflow runs, artifacts	
+`statuses: write`	Lint/Test	Update commit status checks	
+┌─────────────────────────────────────────┐
+│  🔒 LEAST PRIVILEGE PRINCIPLE           │
+├─────────────────────────────────────────┤
+│  1. Set top-level permissions minimal   │
+│  2. Override per-job with exact needs     │
+│  3. Use OIDC (id-token) not secrets     │
+│  4. Never use GITHUB_TOKEN with write   │
+│     unless absolutely required            │
+│  5. Restrict packages write to build job│
+└─────────────────────────────────────────┘
