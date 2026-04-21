@@ -1,0 +1,22 @@
+name: oasis-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+  # Core scientific stack
+  - numpy
+  - pandas
+  - scipy
+  # Visualization
+  - matplotlib
+  - seaborn
+  # Testing
+  - pytest
+  - pytest-cov
+  # Utilities
+  - pyyaml
+  - tqdm
+  - pip:
+    - -r requirements.txt  # remove if you don't have a requirements.txt
