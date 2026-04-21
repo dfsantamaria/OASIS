@@ -1,0 +1,22 @@
+name: Your Workflow
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# 1. Lock down all permissions at the workflow level
+permissions:
+  contents: read        # default safe baseline
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # 2. Elevate only what this specific job requires
+    permissions:
+      contents: read
+      security-events: write   # needed if uploading SARIF/code scanning results
+      pull-requests: write     # needed if the job posts PR comments
+    steps:
+      - uses: actions/checkout@v4
+      # ... rest of steps
