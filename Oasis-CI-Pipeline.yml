@@ -1,0 +1,526 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [main, develop, staging, 'feature/**', 'hotfix/**']
+  pull_request:
+    branches: [main, develop]
+
+env:
+  NODE_VERSION: '20'
+  PYTHON_VERSION: '3.12'
+
+jobs:
+  # ─── STAGE 1: INFO & SETUP ─────────────────────────────
+  pipeline-info:
+    name: 📋 Pipeline Info
+    runs-on: ubuntu-latest
+    outputs:
+      branch: ${{ github.ref_name }}
+      sha: ${{ github.sha }}
+      short_sha: ${{ steps.vars.outputs.short_sha }}
+      is_main: ${{ steps.vars.outputs.is_main }}
+      is_pr: ${{ steps.vars.outputs.is_pr }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract Variables
+        id: vars
+        run: |
+          echo "short_sha=$(echo ${{ github.sha }} | cut -c1-7)" >> $GITHUB_OUTPUT
+          echo "is_main=$([ '${{ github.ref_name }}' == 'main' ] && echo 'true' || echo 'false')" >> $GITHUB_OUTPUT
+          echo "is_pr=$([ '${{ github.event_name }}' == 'pull_request' ] && echo 'true' || echo 'false')" >> $GITHUB_OUTPUT
+
+      - name: Pipeline Details
+        run: |
+          echo "╔══════════════════════════════════════════╗"
+          echo "║         🚀 CI PIPELINE STARTED           ║"
+          echo "╠══════════════════════════════════════════╣"
+          echo "║ Repository:    ${{ github.repository }}"
+          echo "║ Branch:        ${{ github.ref_name }}"
+          echo "║ Commit SHA:    ${{ github.sha }}"
+          echo "║ Short SHA:     ${{ steps.vars.outputs.short_sha }}"
+          echo "║ Triggered by:  ${{ github.actor }}"
+          echo "║ Event:         ${{ github.event_name }}"
+          echo "║ Is Main:       ${{ steps.vars.outputs.is_main }}"
+          echo "║ Is PR:         ${{ steps.vars.outputs.is_pr }}"
+          echo "╚══════════════════════════════════════════╝"
+
+  # ─── STAGE 2: LINT & FORMAT ────────────────────────────
+  lint:
+    name: 🔍 Lint & Format
+    runs-on: ubuntu-latest
+    needs: pipeline-info
+    steps:
+      - uses: actions/checkout@v4
+
+      # Node Lint
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install Node Deps
+        run: npm ci
+
+      - name: ESLint
+        run: npx eslint . --ext .js,.jsx,.ts,.tsx
+        continue-on-error: true
+
+      - name: Prettier Check
+        run: npx prettier --check .
+        continue-on-error: true
+
+      # Python Lint
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install Python Deps
+        run: |
+          pip install ruff black
+          pip install -r requirements.txt || true
+
+      - name: Ruff Check
+        run: ruff check .
+        continue-on-error: true
+
+      - name: Black Format Check
+        run: black --check .
+        continue-on-error: true
+
+  # ─── STAGE 3: SECURITY SCAN ────────────────────────────
+  security:
+    name: 🔒 Security Scan
+    runs-on: ubuntu-latest
+    needs: pipeline-info
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+        continue-on-error: true
+
+      - name: Upload Trivy scan results
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: 'trivy-results.sarif'
+
+      - name: npm audit
+        run: npm audit --audit-level=moderate
+        continue-on-error: true
+
+  # ─── STAGE 4: TEST ─────────────────────────────────────
+  test-node:
+    name: 🧪 Node Tests
+    runs-on: ubuntu-latest
+    needs: [lint, security]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install & Test
+        run: |
+          npm ci
+          npm test -- --coverage --watchAll=false
+
+      - name: Upload Coverage
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./coverage/lcov.info
+          fail_ci_if_error: false
+
+  test-python:
+    name: 🐍 Python Tests
+    runs-on: ubuntu-latest
+    needs: [lint, security]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+
+      - name: Install & Test
+        run: |
+          pip install pytest pytest-cov
+          pip install -r requirements.txt
+          pytest --cov=src --cov-report=xml
+
+      - name: Upload Coverage
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./coverage.xml
+          fail_ci_if_error: false
+
+  # ─── STAGE 5: BUILD ────────────────────────────────────
+  build:
+    name: 📦 Build
+    runs-on: ubuntu-latest
+    needs: [test-node, test-python]
+    outputs:
+      build_id: ${{ steps.build.outputs.build_id }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Build Application
+        id: build
+        run: |
+          npm ci
+          npm run build
+          echo "build_id=${{ github.run_id }}-${{ github.run_number }}" >> $GITHUB_OUTPUT
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ github.ref_name }}-${{ github.sha }}
+          path: |
+            dist/
+            build/
+            public/
+          retention-days: 30
+
+  # ─── STAGE 6: DEPLOY (BRANCH-AWARE) ────────────────────
+  deploy-staging:
+    name: 🚀 Deploy to Staging
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/staging'
+    environment:
+      name: staging
+      url: https://staging.example.com
+    steps:
+      - name: Download Build
+        uses: actions/download-artifact@v4
+        with:
+          name: build-${{ github.ref_name }}-${{ github.sha }}
+
+      - name: Deploy to Staging
+        run: |
+          echo "Deploying to STAGING..."
+          echo "Build ID: ${{ needs.build.outputs.build_id }}"
+          echo "Branch: ${{ github.ref_name }}"
+          # Add: aws s3 sync, vercel --prod, rsync, etc.
+
+  deploy-production:
+    name: 🚀 Deploy to Production
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    environment:
+      name: production
+      url: https://example.com
+    steps:
+      - name: Download Build
+        uses: actions/download-artifact@v4
+        with:
+          name: build-${{ github.ref_name }}-${{ github.sha }}
+
+      - name: Deploy to Production
+        run: |
+          echo "🚀 DEPLOYING TO PRODUCTION"
+          echo "Build ID: ${{ needs.build.outputs.build_id }}"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Commit: ${{ github.sha }}"
+          # Add production deploy command
+
+  # ─── STAGE 7: NOTIFICATIONS ────────────────────────────
+  notify:
+    name: 📢 Notify
+    runs-on: ubuntu-latest
+    needs: [build, deploy-staging, deploy-production]
+    if: always()
+    steps:
+      - name: Pipeline Status
+        run: |
+          echo "╔══════════════════════════════════════════╗"
+          echo "║         📊 PIPELINE COMPLETE             ║"
+          echo "╠══════════════════════════════════════════╣"
+          echo "║ Build:     ${{ needs.build.result }}"
+          echo "║ Staging:   ${{ needs.deploy-staging.result || 'N/A' }}"
+          echo "║ Prod:      ${{ needs.deploy-production.result || 'N/A' }}"
+          echo "╚══════════════════════════════════════════╝"
+name: CI Pipeline
+
+on:
+  push:
+    branches: [main, develop, staging, 'feature/**', 'hotfix/**']
+  pull_request:
+    branches: [main, develop]
+
+env:
+  NODE_VERSION: '20'
+  PYTHON_VERSION: '3.12'
+
+jobs:
+  # ─── STAGE 1: INFO & SETUP ─────────────────────────────
+  pipeline-info:
+    name: 📋 Pipeline Info
+    runs-on: ubuntu-latest
+    outputs:
+      branch: ${{ github.ref_name }}
+      sha: ${{ github.sha }}
+      short_sha: ${{ steps.vars.outputs.short_sha }}
+      is_main: ${{ steps.vars.outputs.is_main }}
+      is_pr: ${{ steps.vars.outputs.is_pr }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract Variables
+        id: vars
+        run: |
+          echo "short_sha=$(echo ${{ github.sha }} | cut -c1-7)" >> $GITHUB_OUTPUT
+          echo "is_main=$([ '${{ github.ref_name }}' == 'main' ] && echo 'true' || echo 'false')" >> $GITHUB_OUTPUT
+          echo "is_pr=$([ '${{ github.event_name }}' == 'pull_request' ] && echo 'true' || echo 'false')" >> $GITHUB_OUTPUT
+
+      - name: Pipeline Details
+        run: |
+          echo "╔══════════════════════════════════════════╗"
+          echo "║         🚀 CI PIPELINE STARTED           ║"
+          echo "╠══════════════════════════════════════════╣"
+          echo "║ Repository:    ${{ github.repository }}"
+          echo "║ Branch:        ${{ github.ref_name }}"
+          echo "║ Commit SHA:    ${{ github.sha }}"
+          echo "║ Short SHA:     ${{ steps.vars.outputs.short_sha }}"
+          echo "║ Triggered by:  ${{ github.actor }}"
+          echo "║ Event:         ${{ github.event_name }}"
+          echo "║ Is Main:       ${{ steps.vars.outputs.is_main }}"
+          echo "║ Is PR:         ${{ steps.vars.outputs.is_pr }}"
+          echo "╚══════════════════════════════════════════╝"
+
+  # ─── STAGE 2: LINT & FORMAT ────────────────────────────
+  lint:
+    name: 🔍 Lint & Format
+    runs-on: ubuntu-latest
+    needs: pipeline-info
+    steps:
+      - uses: actions/checkout@v4
+
+      # Node Lint
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install Node Deps
+        run: npm ci
+
+      - name: ESLint
+        run: npx eslint . --ext .js,.jsx,.ts,.tsx
+        continue-on-error: true
+
+      - name: Prettier Check
+        run: npx prettier --check .
+        continue-on-error: true
+
+      # Python Lint
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install Python Deps
+        run: |
+          pip install ruff black
+          pip install -r requirements.txt || true
+
+      - name: Ruff Check
+        run: ruff check .
+        continue-on-error: true
+
+      - name: Black Format Check
+        run: black --check .
+        continue-on-error: true
+
+  # ─── STAGE 3: SECURITY SCAN ────────────────────────────
+  security:
+    name: 🔒 Security Scan
+    runs-on: ubuntu-latest
+    needs: pipeline-info
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+        continue-on-error: true
+
+      - name: Upload Trivy scan results
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: 'trivy-results.sarif'
+
+      - name: npm audit
+        run: npm audit --audit-level=moderate
+        continue-on-error: true
+
+  # ─── STAGE 4: TEST ─────────────────────────────────────
+  test-node:
+    name: 🧪 Node Tests
+    runs-on: ubuntu-latest
+    needs: [lint, security]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install & Test
+        run: |
+          npm ci
+          npm test -- --coverage --watchAll=false
+
+      - name: Upload Coverage
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./coverage/lcov.info
+          fail_ci_if_error: false
+
+  test-python:
+    name: 🐍 Python Tests
+    runs-on: ubuntu-latest
+    needs: [lint, security]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+
+      - name: Install & Test
+        run: |
+          pip install pytest pytest-cov
+          pip install -r requirements.txt
+          pytest --cov=src --cov-report=xml
+
+      - name: Upload Coverage
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./coverage.xml
+          fail_ci_if_error: false
+
+  # ─── STAGE 5: BUILD ────────────────────────────────────
+  build:
+    name: 📦 Build
+    runs-on: ubuntu-latest
+    needs: [test-node, test-python]
+    outputs:
+      build_id: ${{ steps.build.outputs.build_id }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Build Application
+        id: build
+        run: |
+          npm ci
+          npm run build
+          echo "build_id=${{ github.run_id }}-${{ github.run_number }}" >> $GITHUB_OUTPUT
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ github.ref_name }}-${{ github.sha }}
+          path: |
+            dist/
+            build/
+            public/
+          retention-days: 30
+
+  # ─── STAGE 6: DEPLOY (BRANCH-AWARE) ────────────────────
+  deploy-staging:
+    name: 🚀 Deploy to Staging
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/staging'
+    environment:
+      name: staging
+      url: https://staging.example.com
+    steps:
+      - name: Download Build
+        uses: actions/download-artifact@v4
+        with:
+          name: build-${{ github.ref_name }}-${{ github.sha }}
+
+      - name: Deploy to Staging
+        run: |
+          echo "Deploying to STAGING..."
+          echo "Build ID: ${{ needs.build.outputs.build_id }}"
+          echo "Branch: ${{ github.ref_name }}"
+          # Add: aws s3 sync, vercel --prod, rsync, etc.
+
+  deploy-production:
+    name: 🚀 Deploy to Production
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    environment:
+      name: production
+      url: https://example.com
+    steps:
+      - name: Download Build
+        uses: actions/download-artifact@v4
+        with:
+          name: build-${{ github.ref_name }}-${{ github.sha }}
+
+      - name: Deploy to Production
+        run: |
+          echo "🚀 DEPLOYING TO PRODUCTION"
+          echo "Build ID: ${{ needs.build.outputs.build_id }}"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Commit: ${{ github.sha }}"
+          # Add production deploy command
+
+  # ─── STAGE 7: NOTIFICATIONS ────────────────────────────
+  notify:
+    name: 📢 Notify
+    runs-on: ubuntu-latest
+    needs: [build, deploy-staging, deploy-production]
+    if: always()
+    steps:
+      - name: Pipeline Status
+        run: |
+          echo "╔══════════════════════════════════════════╗"
+          echo "║         📊 PIPELINE COMPLETE             ║"
+          echo "╠══════════════════════════════════════════╣"
+          echo "║ Build:     ${{ needs.build.result }}"
+          echo "║ Staging:   ${{ needs.deploy-staging.result || 'N/A' }}"
+          echo "║ Prod:      ${{ needs.deploy-production.result || 'N/A' }}"
+          echo "╚══════════════════════════════════════════╝"
