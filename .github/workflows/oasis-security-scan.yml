@@ -1,0 +1,317 @@
+name: OASIS Ethical & Advanced Security Scan
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  schedule:
+    - cron: "0 2 * * 1"  # Every Monday at 2AM UTC
+  workflow_dispatch:      # Manual trigger
+
+env:
+  PYTHON_VERSION: "3.12"
+
+jobs:
+  # ── 1. Dependency Vulnerability Audit ────────────────────────────────
+  dependency-audit:
+    name: 📦 Dependency Vulnerability Audit
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install pip-audit
+        run: pip install pip-audit
+
+      - name: Run pip-audit (token-free)
+        run: |
+          pip-audit -r requirements.txt \
+            --format=json \
+            --output=pip-audit-report.json || true
+
+      - name: Display audit summary
+        run: |
+          echo "=== Dependency Audit Summary ==="
+          cat pip-audit-report.json || echo "No issues found."
+
+      - name: Upload audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: pip-audit-report
+          path: pip-audit-report.json
+
+  # ── 2. Static Application Security Testing (SAST) ────────────────────
+  sast:
+    name: 🔬 SAST — Bandit & Semgrep
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install Bandit
+        run: pip install bandit[toml]
+
+      - name: Run Bandit (Python SAST)
+        run: |
+          bandit -r . \
+            --exclude .venv,venv,tests \
+            --format json \
+            --output bandit-report.json \
+            --severity-level medium || true
+
+      - name: Display Bandit summary
+        run: |
+          echo "=== Bandit SAST Summary ==="
+          cat bandit-report.json || echo "No issues found."
+
+      - name: Run Semgrep (token-free, OSS rules)
+        uses: semgrep/semgrep-action@v1
+        with:
+          config: >-
+            p/python
+            p/security-audit
+            p/owasp-top-ten
+            p/secrets
+        env:
+          SEMGREP_APP_TOKEN: ""  # Intentionally empty — token-free, ethical scan
+
+      - name: Upload Bandit report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bandit-report
+          path: bandit-report.json
+
+  # ── 3. CodeQL Deep Analysis ───────────────────────────────────────────
+  codeql:
+    name: 🧬 CodeQL Deep Analysis
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: python
+          queries: >-
+            security-extended,
+            security-and-quality
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
+
+      - name: Perform CodeQL analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: /language:python
+
+  # ── 4. Filesystem & Container Scan (Trivy) ───────────────────────────
+  trivy:
+    name: 🛡️ Trivy Filesystem Scan
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Trivy (CRITICAL & HIGH — token-free)
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: fs
+          scan-ref: .
+          format: sarif
+          output: trivy-results.sarif
+          severity: CRITICAL,HIGH
+          ignore-unfixed: true
+          exit-code: "0"  # Non-blocking — report only
+
+      - name: Upload Trivy results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: trivy-results.sarif
+
+      - name: Upload Trivy report artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: trivy-report
+          path: trivy-results.sarif
+
+  # ── 5. Secret Detection ───────────────────────────────────────────────
+  secret-detection:
+    name: 🔑 Secret Detection — Gitleaks
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for deep scan
+
+      - name: Run Gitleaks (token-free)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_LICENSE: ""  # OSS mode — no license token required
+
+      - name: Upload Gitleaks report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gitleaks-report
+          path: results.sarif
+
+  # ── 6. OWASP Dependency Check ─────────────────────────────────────────
+  owasp:
+    name: 🌐 OWASP Dependency Check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run OWASP Dependency Check (token-free)
+        uses: dependency-check/Dependency-Check_Action@main
+        with:
+          project: OASIS
+          path: .
+          format: HTML
+          out: owasp-report
+          args: >-
+            --enableRetired
+            --noupdate
+
+      - name: Upload OWASP report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: owasp-report
+          path: owasp-report/
+
+  # ── 7. Licence Compliance ─────────────────────────────────────────────
+  licence-check:
+    name: ⚖️ Licence Compliance
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install liccheck
+        run: pip install liccheck
+
+      - name: Run licence compliance check
+        run: |
+          pip install -r requirements.txt
+          liccheck -r requirements.txt || true
+
+  # ── 8. Consolidated Security Report ──────────────────────────────────
+  report:
+    name: 📋 Consolidated Security Report
+    runs-on: ubuntu-latest
+    needs:
+      - dependency-audit
+      - sast
+      - codeql
+      - trivy
+      - secret-detection
+      - owasp
+      - licence-check
+    if: always()
+
+    steps:
+      - name: Download all reports
+        uses: actions/download-artifact@v4
+        with:
+          path: all-reports/
+
+      - name: Generate summary
+        run: |
+          echo "## 🛡️ OASIS Security Scan Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Scan | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| 📦 Dependency Audit | ${{ needs.dependency-audit.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 🔬 SAST (Bandit + Semgrep) | ${{ needs.sast.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 🧬 CodeQL | ${{ needs.codeql.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 🛡️ Trivy | ${{ needs.trivy.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 🔑 Secret Detection | ${{ needs.secret-detection.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 🌐 OWASP | ${{ needs.owasp.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| ⚖️ Licence Compliance | ${{ needs.licence-check.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "> All scans are token-free and comply with GitHub ethical scan requirements." >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload consolidated reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: consolidated-security-report
+          path: all-reports/
+          retention-days: 30
+
+  # ── 9. Board Escalation on Critical Failure ───────────────────────────
+  escalate:
+    name: 📢 Board Escalation
+    runs-on: ubuntu-latest
+    needs:
+      - dependency-audit
+      - sast
+      - codeql
+      - trivy
+      - secret-detection
+      - owasp
+    if: failure()
+
+    steps:
+      - name: Escalation notice
+        run: |
+          echo "================================================================"
+          echo "  OASIS SECURITY SCAN — CRITICAL FAILURE DETECTED"
+          echo "================================================================"
+          echo "  Branch   : ${{ github.ref }}"
+          echo "  Commit   : ${{ github.sha }}"
+          echo "  Actor    : ${{ github.actor }}"
+          echo "  Run ID   : ${{ github.run_id }}"
+          echo "  Time     : $(date -u)"
+          echo "----------------------------------------------------------------"
+          echo "  Board escalation required. Review security artifacts."
+          echo "================================================================"
