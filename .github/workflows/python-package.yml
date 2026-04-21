@@ -1,169 +1,154 @@
-# ============================================================
-#  OASIS — Python Package CI/CD Workflow
-#  Fixes applied:
-#    1. Explicit least-privilege permissions (resolves alert #4)
-#    2. Pinned python-version (resolves setup-ecosystem warning)
-#    3. Updated component-detection action off Node.js 20
-#    4. Separated concerns: test, publish, security scanning
-# ============================================================
-
-name: Python Package using Conda
+name: OASIS CI Pipeline
 
 on:
-  pull_request:
-    branches: [main]
   push:
-    branches: [main]
-  release:
-    types: [published]
-
-# ------------------------------------------------------------------
-# FIX 1: Top-level default permissions — deny everything by default,
-#         then grant only what each job actually needs.
-# ------------------------------------------------------------------
-permissions:
-  contents: read
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
 
 jobs:
+  # â”€â”€ 1. Setup & Environment â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  setup:
+    name: Setup Conda Environment
+    runs-on: ubuntu-latest
 
-  # ================================================================
-  #  JOB 1: Test
-  # ================================================================
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          activate-environment: oasis-env
+          environment-file: environment.yml
+          python-version: "3.12"
+          auto-activate-base: false
+
+      - name: Verify environment
+        shell: bash -el {0}
+        run: |
+          conda info
+          conda list
+
+  # â”€â”€ 2. Code Quality â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  lint:
+    name: Lint & Format Check
+    runs-on: ubuntu-latest
+    needs: setup
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          activate-environment: oasis-env
+          environment-file: environment.yml
+          python-version: "3.12"
+          auto-activate-base: false
+
+      - name: Run flake8
+        shell: bash -el {0}
+        run: |
+          pip install flake8
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+
+      - name: Run black (format check)
+        shell: bash -el {0}
+        run: |
+          pip install black
+          black --check .
+
+  # â”€â”€ 3. Testing â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   test:
     name: Run Tests
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: read          # checkout
-      checks: write           # publish test results
+    needs: setup
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      # FIX 2: Explicit Python version — no more "whatever is in PATH"
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Set up Conda environment
+      - name: Setup Miniconda
         uses: conda-incubator/setup-miniconda@v3
         with:
-          python-version: "3.12"
-          auto-update-conda: true
           activate-environment: oasis-env
-
-      - name: Install dependencies
-        shell: bash -el {0}
-        run: |
-          conda install -c conda-forge \
-            numpy=2.4.4 \
-            pandas=3.0.2 \
-            scikit-learn=1.8.0 \
-            lightgbm=4.6.0 \
-            pytest=9.0.3
-          pip install --upgrade pip
+          environment-file: environment.yml
+          python-version: "3.12"
+          auto-activate-base: false
 
       - name: Run pytest
         shell: bash -el {0}
-        run: pytest --tb=short -v
+        run: |
+          pytest --cov=. --cov-report=xml --cov-report=term-missing
 
-  # ================================================================
-  #  JOB 2: Dependency Snapshot Submission
-  # ================================================================
-  dependency-snapshot:
-    name: Submit Dependency Snapshot
-    runs-on: ubuntu-latest
-    needs: test
-
-    permissions:
-      contents: write         # required to submit dependency snapshot
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v5
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
         with:
-          python-version: "3.12"
+          name: coverage-report
+          path: coverage.xml
 
-      - name: Install pip-tools
-        run: pip install pip-tools==7.5.3
-
-      - name: Compile requirements
-        run: pip-compile requirements.in -o requirements.txt
-
-      # FIX 3: Updated action — Node.js 24 compatible release tag.
-      #         Replace @v0 with the latest release from:
-      #         https://github.com/actions/component-detection-dependency-submission-action/releases
-      - name: Submit dependency snapshot
-        uses: actions/component-detection-dependency-submission-action@v0.0.2with:
-          scanType: "register"
-  # ================================================================
-  #  JOB 3: CodeQL Security Scanning
-  # ================================================================
-  codeql:
-    name: CodeQL Advanced
+  # â”€â”€ 4. Security Scan (token-free, GitHub compliant) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  security:
+    name: Security Scan
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' || github.ref == 'refs/heads/main'
-
+    needs: setup
     permissions:
+      actions: read
       contents: read
-      security-events: write  # required to upload CodeQL results
-      actions: read           # required for private repos
+      security-events: write
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
+      - name: Run Trivy vulnerability scan
+        uses: aquasecurity/trivy-action@master
         with:
-          languages: python
-          queries: security-extended  # catches more issues than default
+          scan-type: fs
+          scan-ref: .
+          format: sarif
+          output: trivy-results.sarif
+          severity: CRITICAL,HIGH
 
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v3
-
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
+      - name: Upload Trivy results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v3
         with:
-          category: "/language:python"
+          sarif_file: trivy-results.sarif
 
-  # ================================================================
-  #  JOB 4: Publish to PyPI  (runs only on GitHub Release)
-  # ================================================================
-  publish:
-    name: Publish to PyPI
+      - name: Run pip-audit (dependency audit)
+        shell: bash
+        run: |
+          pip install pip-audit
+          pip-audit
+
+  # â”€â”€ 5. Build Artifact â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  build:
+    name: Build & Package
     runs-on: ubuntu-latest
-    needs: [test, dependency-snapshot]
-    if: github.event_name == 'release' && github.event.action == 'published'
-
-    permissions:
-      contents: read
-      id-token: write         # required for trusted PyPI publishing (OIDC)
-
-    environment:
-      name: pypi
-      url: https://pypi.org/project/oasis/
+    needs: [lint, test, security]
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v5
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v3
         with:
+          activate-environment: oasis-env
+          environment-file: environment.yml
           python-version: "3.12"
-
-      - name: Install build tools
-        run: pip install build
+          auto-activate-base: false
 
       - name: Build package
-        run: python -m build
+        shell: bash -el {0}
+        run: |
+          pip install build
+          python -m build
 
-      # Trusted publishing via OIDC — no API token needed in secrets
-      - name: Publish to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: oasis-build
+          path: dist/
