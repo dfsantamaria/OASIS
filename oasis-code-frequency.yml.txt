@@ -1,0 +1,300 @@
+name: OASIS Code Frequency Analysis
+
+on:
+  push:
+    branches: [main, develop]
+  schedule:
+    - cron: "0 0 * * 0"  # Every Sunday midnight UTC (weekly report)
+  workflow_dispatch:
+
+env:
+  PYTHON_VERSION: "3.12"
+
+jobs:
+  # ── 1. Commit Frequency ───────────────────────────────────────────────
+  commit-frequency:
+    name: 📊 Commit Frequency
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Analyse commit frequency
+        run: |
+          echo "=== Commit Frequency Report ===" >> commit-report.txt
+          echo "" >> commit-report.txt
+
+          echo "--- Commits per Author ---" >> commit-report.txt
+          git shortlog -sn --all >> commit-report.txt
+
+          echo "" >> commit-report.txt
+          echo "--- Commits per Day (Last 30 Days) ---" >> commit-report.txt
+          git log --since="30 days ago" --format="%ad" --date=short \
+            | sort | uniq -c >> commit-report.txt
+
+          echo "" >> commit-report.txt
+          echo "--- Commits per Week (Last 12 Weeks) ---" >> commit-report.txt
+          git log --since="12 weeks ago" --format="%ad" --date=format:"%Y-W%V" \
+            | sort | uniq -c >> commit-report.txt
+
+          echo "" >> commit-report.txt
+          echo "--- Commits per Month ---" >> commit-report.txt
+          git log --format="%ad" --date=format:"%Y-%m" \
+            | sort | uniq -c >> commit-report.txt
+
+          cat commit-report.txt
+
+      - name: Upload commit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: commit-frequency-report
+          path: commit-report.txt
+
+  # ── 2. Code Churn & Change Frequency ─────────────────────────────────
+  code-churn:
+    name: 🔄 Code Churn Analysis
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Analyse code churn
+        run: |
+          echo "=== Code Churn Report ===" >> churn-report.txt
+          echo "" >> churn-report.txt
+
+          echo "--- Top 20 Most Changed Files ---" >> churn-report.txt
+          git log --all --name-only --format="" \
+            | grep -v "^$" \
+            | sort | uniq -c \
+            | sort -rn \
+            | head -20 >> churn-report.txt
+
+          echo "" >> churn-report.txt
+          echo "--- Lines Added/Removed (Last 30 Days) ---" >> churn-report.txt
+          git log --since="30 days ago" --numstat --format="" \
+            | awk 'NF==3 {add+=$1; del+=$2} END {print "Added: "add"\nDeleted: "del}' \
+            >> churn-report.txt
+
+          echo "" >> churn-report.txt
+          echo "--- Churn by File Type ---" >> churn-report.txt
+          git log --all --name-only --format="" \
+            | grep -v "^$" \
+            | sed 's/.*\.//' \
+            | sort | uniq -c \
+            | sort -rn >> churn-report.txt
+
+          cat churn-report.txt
+
+      - name: Upload churn report
+        uses: actions/upload-artifact@v4
+        with:
+          name: code-churn-report
+          path: churn-report.txt
+
+  # ── 3. Lines of Code (LOC) Metrics ───────────────────────────────────
+  loc-metrics:
+    name: 📏 Lines of Code Metrics
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install cloc
+        run: sudo apt-get install -y cloc
+
+      - name: Run cloc analysis
+        run: |
+          echo "=== Lines of Code Report ===" >> loc-report.txt
+          echo "" >> loc-report.txt
+
+          echo "--- By Language ---" >> loc-report.txt
+          cloc . \
+            --exclude-dir=.git,venv,.venv,node_modules,dist,build \
+            --quiet >> loc-report.txt
+
+          echo "" >> loc-report.txt
+          echo "--- By File ---" >> loc-report.txt
+          cloc . \
+            --exclude-dir=.git,venv,.venv,node_modules,dist,build \
+            --by-file \
+            --quiet >> loc-report.txt
+
+          cat loc-report.txt
+
+      - name: Upload LOC report
+        uses: actions/upload-artifact@v4
+        with:
+          name: loc-metrics-report
+          path: loc-report.txt
+
+  # ── 4. Hotspot Analysis ───────────────────────────────────────────────
+  hotspot:
+    name: 🔥 Hotspot Analysis
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install radon (complexity tool)
+        run: pip install radon
+
+      - name: Run cyclomatic complexity
+        run: |
+          echo "=== Hotspot & Complexity Report ===" >> hotspot-report.txt
+          echo "" >> hotspot-report.txt
+
+          echo "--- Cyclomatic Complexity (Grade D, E, F) ---" >> hotspot-report.txt
+          radon cc . -n D -s >> hotspot-report.txt || echo "No high complexity found." >> hotspot-report.txt
+
+          echo "" >> hotspot-report.txt
+          echo "--- Maintainability Index ---" >> hotspot-report.txt
+          radon mi . -s >> hotspot-report.txt || echo "No issues found." >> hotspot-report.txt
+
+          echo "" >> hotspot-report.txt
+          echo "--- Most Frequently Changed Files (Hotspots) ---" >> hotspot-report.txt
+          git log --all --name-only --format="" \
+            | grep "\.py$" \
+            | sort | uniq -c \
+            | sort -rn \
+            | head -15 >> hotspot-report.txt
+
+          cat hotspot-report.txt
+
+      - name: Upload hotspot report
+        uses: actions/upload-artifact@v4
+        with:
+          name: hotspot-report
+          path: hotspot-report.txt
+
+  # ── 5. Contributor Activity ───────────────────────────────────────────
+  contributor-activity:
+    name: 👥 Contributor Activity
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Analyse contributor activity
+        run: |
+          echo "=== Contributor Activity Report ===" >> contributor-report.txt
+          echo "" >> contributor-report.txt
+
+          echo "--- All Contributors ---" >> contributor-report.txt
+          git shortlog -sne --all >> contributor-report.txt
+
+          echo "" >> contributor-report.txt
+          echo "--- Active Contributors (Last 30 Days) ---" >> contributor-report.txt
+          git log --since="30 days ago" --format="%an" \
+            | sort | uniq -c | sort -rn >> contributor-report.txt
+
+          echo "" >> contributor-report.txt
+          echo "--- First & Last Commit per Contributor ---" >> contributor-report.txt
+          git log --format="%an %ad" --date=short \
+            | sort -k1,1 -k2,2 \
+            | awk '{
+                if ($1 != prev) {
+                  if (prev != "") print prev, "first:", first, "last:", last
+                  prev=$1; first=$2; last=$2
+                } else { last=$2 }
+              }
+              END { if (prev != "") print prev, "first:", first, "last:", last }
+            ' >> contributor-report.txt
+
+          cat contributor-report.txt
+
+      - name: Upload contributor report
+        uses: actions/upload-artifact@v4
+        with:
+          name: contributor-activity-report
+          path: contributor-report.txt
+
+  # ── 6. Consolidated Frequency Report ─────────────────────────────────
+  summary:
+    name: 📋 Consolidated Report
+    runs-on: ubuntu-latest
+    needs:
+      - commit-frequency
+      - code-churn
+      - loc-metrics
+      - hotspot
+      - contributor-activity
+    if: always()
+
+    steps:
+      - name: Download all reports
+        uses: actions/download-artifact@v4
+        with:
+          path: all-reports/
+
+      - name: Merge all reports
+        run: |
+          echo "================================================================" >> final-report.txt
+          echo "  OASIS CODE FREQUENCY — CONSOLIDATED REPORT" >> final-report.txt
+          echo "  Generated: $(date -u)" >> final-report.txt
+          echo "  Branch: ${{ github.ref_name }}" >> final-report.txt
+          echo "  Commit: ${{ github.sha }}" >> final-report.txt
+          echo "================================================================" >> final-report.txt
+          echo "" >> final-report.txt
+
+          for report in all-reports/**/*.txt; do
+            echo "----------------------------------------------------------------" >> final-report.txt
+            echo "  $(basename $report)" >> final-report.txt
+            echo "----------------------------------------------------------------" >> final-report.txt
+            cat "$report" >> final-report.txt
+            echo "" >> final-report.txt
+          done
+
+      - name: Post summary to GitHub Actions
+        run: |
+          echo "## 📊 OASIS Code Frequency Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Analysis | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| 📊 Commit Frequency | ${{ needs.commit-frequency.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 🔄 Code Churn | ${{ needs.code-churn.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 📏 Lines of Code | ${{ needs.loc-metrics.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 🔥 Hotspot Analysis | ${{ needs.hotspot.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 👥 Contributor Activity | ${{ needs.contributor-activity.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "> Report generated on $(date -u). Available in Actions artifacts." >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload consolidated report
+        uses: actions/upload-artifact@v4
+        with:
+          name: oasis-code-frequency-report
+          path: final-report.txt
+          retention-days: 90
