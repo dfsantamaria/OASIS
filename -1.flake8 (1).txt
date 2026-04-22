@@ -1,0 +1,33 @@
+[flake8]
+# Maximum line length (black compatible)
+max-line-length = 88
+
+# Ignore rules that conflict with black formatter
+extend-ignore =
+    E203,  # whitespace before ':'
+    E501,  # line too long (handled by black)
+    W503   # line break before binary operator
+
+# Directories and files to exclude
+exclude =
+    .git,
+    __pycache__,
+    .tox,
+    .eggs,
+    *.egg,
+    build,
+    dist,
+    .venv,
+    venv,
+    env,
+    node_modules
+
+# Complexity threshold
+max-complexity = 10
+
+# Per-file ignores
+per-file-ignores =
+    # Allow unused imports in __init__.py
+    __init__.py: F401
+    # Allow assert statements in tests
+    tests/*: S101

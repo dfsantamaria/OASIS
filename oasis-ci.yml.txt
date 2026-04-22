@@ -1,0 +1,154 @@
+name: OASIS CI Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  # ── 1. Setup & Environment ───────────────────────────────────────────
+  setup:
+    name: Setup Conda Environment
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          activate-environment: oasis-env
+          environment-file: environment.yml
+          python-version: "3.12"
+          auto-activate-base: false
+
+      - name: Verify environment
+        shell: bash -el {0}
+        run: |
+          conda info
+          conda list
+
+  # ── 2. Code Quality ──────────────────────────────────────────────────
+  lint:
+    name: Lint & Format Check
+    runs-on: ubuntu-latest
+    needs: setup
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          activate-environment: oasis-env
+          environment-file: environment.yml
+          python-version: "3.12"
+          auto-activate-base: false
+
+      - name: Run flake8
+        shell: bash -el {0}
+        run: |
+          pip install flake8
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+
+      - name: Run black (format check)
+        shell: bash -el {0}
+        run: |
+          pip install black
+          black --check .
+
+  # ── 3. Testing ───────────────────────────────────────────────────────
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    needs: setup
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          activate-environment: oasis-env
+          environment-file: environment.yml
+          python-version: "3.12"
+          auto-activate-base: false
+
+      - name: Run pytest
+        shell: bash -el {0}
+        run: |
+          pytest --cov=. --cov-report=xml --cov-report=term-missing
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage.xml
+
+  # ── 4. Security Scan (token-free, GitHub compliant) ──────────────────
+  security:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    needs: setup
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Trivy vulnerability scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: fs
+          scan-ref: .
+          format: sarif
+          output: trivy-results.sarif
+          severity: CRITICAL,HIGH
+
+      - name: Upload Trivy results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: trivy-results.sarif
+
+      - name: Run pip-audit (dependency audit)
+        shell: bash
+        run: |
+          pip install pip-audit
+          pip-audit
+
+  # ── 5. Build Artifact ─────────────────────────────────────────────────
+  build:
+    name: Build & Package
+    runs-on: ubuntu-latest
+    needs: [lint, test, security]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          activate-environment: oasis-env
+          environment-file: environment.yml
+          python-version: "3.12"
+          auto-activate-base: false
+
+      - name: Build package
+        shell: bash -el {0}
+        run: |
+          pip install build
+          python -m build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: oasis-build
+          path: dist/
