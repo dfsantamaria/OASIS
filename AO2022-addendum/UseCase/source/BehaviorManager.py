@@ -83,8 +83,18 @@ class BehaviorManager:
 
     #create an ontology object from a given URL
     def loadOntology(self, ontoURL):
-        g=Graph()
-        g.load(ontoURL)
+        import requests
+        # Basic URL validation
+        if not ontoURL.startswith(("http://", "https://")):
+            raise ValueError("Invalid URL protocol")
+        
+        # Fetch content with a timeout to prevent SSRF hanging
+        response = requests.get(ontoURL, timeout=10)
+        response.raise_for_status()
+        
+        g = Graph()
+        # Parse the content explicitly
+        g.parse(data=response.text, format="xml")
         return g
 
     # Get the base namespace of an ontology given the ontology object
