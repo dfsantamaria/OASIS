@@ -1,0 +1,57 @@
+name: lintr
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  lint:
+    name: 🔍 R Static Analysis — lintr
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      metadata: read
+      security-events: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Cache R packages manually using cache@v4 (avoids deprecated v2)
+      - name: Cache R packages
+        uses: actions/cache@v4                        # ✅ Fixed: was v2 via r-lib/actions
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: r-${{ runner.os }}-${{ hashFiles('**/DESCRIPTION') }}
+          restore-keys: |
+            r-${{ runner.os }}-
+
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2               # ✅ Pinned to v2 (uses cache@v4 internally)
+        with:
+          use-public-rspm: true
+
+      - name: Setup R dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2  # ✅ Pinned to v2
+        with:
+          extra-packages: any::lintr, any::rcmdcheck
+          needs: lint
+
+      - name: Run lintr
+        run: |
+          lintr::lint_package(
+            linters = lintr::linters_with_defaults(
+              lintr::line_length_linter(120),
+              lintr::object_name_linter("snake_case")
+            )
+          )
+        shell: Rscript {0}
+
+      - name: Upload lintr SARIF results
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: lintr-results.sarif

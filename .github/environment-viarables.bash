@@ -1,0 +1,3 @@
+NODE_ENV=production
+API_KEY=your-secret-key
+DATABASE_URL=postgresql://...
