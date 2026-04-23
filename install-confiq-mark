@@ -1,0 +1,35 @@
+# Project Name
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/username/repo/actions)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/username/repo/releases)
+
+> A concise, compelling description of what your project does and the problem it solves. Keep it to 1-2 sentences that immediately communicate value.
+
+## Table of Contents
+
+- [Features](#features)
+- [Demo](#demo)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Configuration](#configuration)
+- [API Reference](#api-reference)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
+## Features
+
+- **Core Feature One**: Brief description of what it does and why it matters
+- **Core Feature Two**: Highlight performance, security, or usability benefits
+- **Core Feature Three**: Mention integrations or extensibility
+- **Developer Experience**: Type safety, comprehensive testing, clear documentation
+
+## Demo
+
+[Live Demo](https://your-demo-link.com) | [Video Walkthrough](https://youtube.com/watch?v=xxx)
+
+```bash
+# Quick preview of the most impressive capability
+$ your-cli-tool --example
+✓ Generated 42 files in 1.2s
