@@ -1,0 +1,36 @@
+name: Dependabot Auto Merge
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Enable auto-merge for patch/minor updates
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const pr = context.payload.pull_request;
+            const title = pr.title.toLowerCase();
+            const safe = title.includes('bump') || title.includes('deps');
+            if (safe) {
+              await github.graphql(`
+                mutation($pullRequestId:ID!) {
+                  enablePullRequestAutoMerge(input:{pullRequestId:$pullRequestId, mergeMethod:SQUASH}) {
+                    clientMutationId
+                  }
+                }
+              `, { pullRequestId: pr.node_id });
+              core.info('Auto-merge enabled.');
+            } else {
+              core.info('Skipped auto-merge.');
+            }
