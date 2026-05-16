@@ -1,0 +1,1 @@
+__pycache__/ *.pyc *.pyo *.egg-info/ build/ dist/ .pytest_cache/ .mypy_cache/ .ruff_cache/ coverage.xml htmlcov/ .env .venv/ .vscode/ .idea/ .DS_Store
