@@ -1,0 +1,29 @@
+name: OASIS Ultimate Conda CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: mamba-org/setup-micromamba@v2
+        with:
+          environment-file: environment.yml
+          environment-name: oasis
+
+      - shell: bash -l {0}
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt || true
+          pytest
