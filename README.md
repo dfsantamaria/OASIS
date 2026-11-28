@@ -3,8 +3,8 @@
 
 # Projects based on OASIS
 
-- CLARA (former PROFONTO) https://github.com/dfsantamaria/CLARA
-- POC4COMMERCE NGI-ONTOCHAIN https://github.com/dfsantamaria/POC4COMMERCE
+- CLARA (former PROFONTO)
+- POC4COMMERCE NGI-ONTOCHAIN https://github.com/sunshinehead -WALLACE HUANG JIAJUN
 
 # Papers and articles
 
